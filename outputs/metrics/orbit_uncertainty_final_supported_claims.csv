@@ -1,0 +1,24 @@
+﻿claim_level,claim_id,claim,allowed_wording,boundary,evidence
+SUPPORTED,S1,Public ordinary-GP disagreement has statistically supported freshness dependence in the studied data.,Element age is a supported conditioning variable for the empirical disagreement scale.,Do not claim every residual increases monotonically with age.,"April association, partial May transfer, stable June conditional P99."
+SUPPORTED,S2,"Position residuals exhibit strong, cross-month stable RTN anisotropy with T dominance.",T-dominance replicated at 96.2%/96.2%/97.2% in April/May/June.,Restricted to the studied cohort/time/reference.,Signed RTN summaries.
+SUPPORTED,S3,An isotropic position-norm sphere does not preserve the observed directional structure.,A signed RTN representation retains anisotropy that a norm-only sphere omits.,"This is a representation claim, not universal superiority for every task.",Cross-month RTN anisotropy.
+SUPPORTED,S4,A freshness-conditioned signed 3D RTN joint set is an appropriate decision representation for this pipeline.,Freshness-Conditioned Robust Empirical RTN Ellipsoid is the frozen primary uncertainty gate.,Do not call its covariance true orbit covariance.,"Stage-1F internal validation, volume rule, June confirmation."
+SUPPORTED,S5,The April+May frozen Ellipsoid achieved 99.4619% empirical P99 joint coverage on untouched June.,Legitimate ordinary-GP disagreement coverage was 5360/5389 with satellite-cluster CI 98.9915%-99.8530%.,"Not accuracy, attack detection accuracy, or true-orbit coverage.",June locked confirmatory manifest.
+SUPPORTED,S6,A fixed satellite-wide scalar lacks sufficient stable cross-month evidence for the primary model.,Satellite scale remains a subgroup diagnostic rather than a primary fitted effect.,Do not claim satellite identity never matters.,May M2 partial support and June satellite distribution.
+SUPPORTED,S7,Publication age did not show stable additional transfer benefit after element-age conditioning.,M1 was not supported in the April-to-May locked transfer.,Do not claim publication age is universally irrelevant.,May partial locked external validation.
+LIMITED,L1,Population scope,"20 same-shell Starlink satellites near the studied 53.16-degree, 473-km shell.",Not universal Starlink or all LEO.,Frozen cohort and manifests.
+LIMITED,L2,Temporal scope,April-June 2026 historical evaluation.,No untested year/season extrapolation.,Formal windows.
+LIMITED,L3,Reference semantics,SpaceX-E/SupGP higher-quality historical reference.,Not ground truth.,Stage-1B comparison semantics.
+LIMITED,L4,Freshness support,Empirically calibrated for 0<element age<=36 h; outside is DEFER.,36 h is not a universal GP validity limit.,Frozen protocol.
+LIMITED,L5,P99 role,A conservative preregistered security-design gate for this study.,Not an aerospace or industry universal standard.,Freeze manifest.
+LIMITED,L6,Temporal episodes,Continuous out-of-set episodes demonstrate clustered exceedances/nonstationarity.,Do not label episodes maneuvers.,June episode audit.
+LIMITED,L7,P95/reference sensitivity,P95 transfers less stably and is lower in RMS Q4; P99 conclusion remains supported.,Do not hide P95 undercoverage or make RMS operational.,June confirmatory diagnostics.
+UNSUPPORTED_PROHIBITED,P1,Universal Starlink uncertainty model,PROHIBITED,Cohort/time-limited evidence only.,Scope restriction.
+UNSUPPORTED_PROHIBITED,P2,Applicable to all LEO,PROHIBITED,No cross-constellation/orbit evidence.,Scope restriction.
+UNSUPPORTED_PROHIBITED,P3,SupGP is ground truth or covariance is true covariance,PROHIBITED,Reference-relative empirical disagreement only.,Comparison semantics.
+UNSUPPORTED_PROHIBITED,P4,A high-score episode confirms a maneuver,PROHIBITED,Use continuous out-of-set episode.,Frozen episode semantics.
+UNSUPPORTED_PROHIBITED,P5,Orbits older than 36 h are impossible or invalid,PROHIBITED,They are outside calibrated support and deferred.,Support semantics.
+UNSUPPORTED_PROHIBITED,P6,P99 is an industry standard,PROHIBITED,Study-specific preregistered choice.,Freeze protocol.
+UNSUPPORTED_PROHIBITED,P7,0.5381% is an attack false-positive rate or attack success probability,PROHIBITED,It is legitimate false-orbit-distinct rate.,Decision semantics.
+UNSUPPORTED_PROHIBITED,P8,99.4619% attack detection accuracy,PROHIBITED,It is legitimate reference-relative empirical joint coverage.,June endpoint definition.
+UNSUPPORTED_PROHIBITED,P9,A fixed universal kilometer boundary,PROHIBITED,The gate is freshness-conditioned and anisotropic.,Frozen parameterization.

@@ -1,0 +1,66 @@
+{
+  "manifest_name": "CURRENT_EXPERIMENT_REPOSITORY_DATA_SELECTION",
+  "generated_local": "2026-09-15T22:37:51+08:00",
+  "repository": "2021xs/data-simulation",
+  "branch": "main",
+  "current_experiment": {
+    "name": "LEGITIMATE_ORBIT_ERROR_TO_DOPPLER_STAGE_A",
+    "status": "COMPLETE",
+    "final_verdict": "GEOMETRY_EFFECT_DOMINATES_OR_INTERACTS_STRONGLY",
+    "stage_b_warranted": true,
+    "stage_b_status": "NOT_EXECUTED",
+    "stage_b_focus": "delta_k, geometry"
+  },
+  "frozen_mainline": {
+    "name": "JOINT_SECURITY_RESULT_FREEZE_AND_PAPER_SYNTHESIS",
+    "status": "JOINT_SECURITY_RESULTS_FROZEN",
+    "optimization_status": "STOPPED"
+  },
+  "authoritative_manifests": [
+    "outputs/metrics/orbit_error_to_doppler_legitimate_population_manifest.json",
+    "outputs/metrics/orbit_error_to_doppler_legitimate_exploratory_manifest.json",
+    "outputs/metrics/orbit_error_to_doppler_legitimate_june_confirmatory_manifest.json",
+    "outputs/metrics/orbit_error_to_doppler_legitimate_final_manifest.json",
+    "outputs/metrics/orbit_error_to_doppler_legitimate_protected_frozen_bindings_manifest.json",
+    "outputs/metrics/joint_security_final_results_manifest.json"
+  ],
+  "repository_selection": {
+    "newly_included_data_files": 54,
+    "newly_included_size_bytes": 281060060,
+    "newly_included_size_mib": 268.039761,
+    "largest_file_size_mib": 81.10,
+    "files_at_or_above_100_mib": 0,
+    "manifest_and_binding_sha256_checks": 89,
+    "manifest_and_binding_sha256_failures": 0
+  },
+  "included_current_stage_patterns": [
+    "outputs/datasets/orbit_error_to_doppler_legitimate_*.csv",
+    "outputs/datasets/legitimate_orbit_error_to_doppler_segments.csv",
+    "outputs/metrics/orbit_error_to_doppler_legitimate_*.csv",
+    "outputs/metrics/legitimate_orbit_error_*.csv",
+    "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_satellite_selection.csv"
+  ],
+  "included_frozen_dependency_patterns": [
+    "outputs/datasets/causal_a_doppler_r3_observation_rows.csv",
+    "outputs/datasets/causal_a_doppler_r3_unit_summary.csv",
+    "outputs/datasets/controlled_altitude_difference_realization_dataset.csv",
+    "outputs/datasets/m2_segment_local_expanded_sample_dataset.csv",
+    "outputs/datasets/same_pair_multi_pass_realization_dataset.csv",
+    "outputs/metrics/active_compensation_first_pass_sequence_eval.csv",
+    "outputs/metrics/causal_a_doppler_r2_*.csv",
+    "outputs/metrics/causal_a_doppler_r3_*.csv",
+    "outputs/metrics/joint_security_final_*.csv",
+    "outputs/metrics/orbit_distinct_doppler_*.csv",
+    "outputs/metrics/orbit_uncertainty_final_*.csv",
+    "outputs/metrics/orbit_uncertainty_stage1f_lite_frozen_parameters.csv"
+  ],
+  "excluded_local_only": {
+    "dataset_files": 83,
+    "dataset_size_mib": 12395.22,
+    "metric_csv_files": 605,
+    "metric_csv_size_mib": 373.48,
+    "policy": "Not referenced by the current Stage-A authoritative manifest/protection closure; includes historical baseline, superseded intermediate, smoke, archive, and regenerable candidate/time-series artifacts.",
+    "local_files_deleted": 0
+  },
+  "interpretation_boundary": "Repository inclusion means required for the current reproducible evidence chain; exclusion does not by itself declare every historical artifact scientifically invalid."
+}

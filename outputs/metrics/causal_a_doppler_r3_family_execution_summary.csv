@@ -1,0 +1,5 @@
+﻿experiment_family,planned_units,executed_units,planned_rows,executed_rows,orbit_scored_units,DEFER_units,verifier_completed_rows,failed_rows,new_randomness_rows,provenance_failures,rho99_min,rho99_max
+segment_local_heatmap_and_direction_sensitivity,37,37,6200,6200,37,0,6200,0,0,0,0.01692842655016002,2677.57196412757
+controlled_altitude_difference_synthetic_B,300,300,18000,18000,300,0,18000,0,0,0,0.015322250249780192,21.460074028426465
+same_pair_multi_pass_real_TLE,40,40,2400,2400,40,0,2400,0,0,0,36.88535737303945,2968.465923544956
+active_compensation_first_pass,30,30,180,180,30,0,180,0,0,0,1.9720762998401695,2852.0498165888075

@@ -1,0 +1,6 @@
+claim_level,claim_id,supported,evidence,statement_cn
+LEVEL_1_DIRECTLY_SUPPORTED,OD_DOPPLER_ACCEPTANCE_EXISTS,True,"198/265 ORBIT_DISTINCT LEVEL-A units have fraction>0; distribution, not a real-world probability",被冻结的 causal-A core population 中，超出 P99 合法公开轨道不确定性的 units 仍可出现 Doppler ACCEPT。
+LEVEL_1_DIRECTLY_SUPPORTED,FAR_FROM_BOUNDARY_ACCEPTANCE_EXISTS,True,"rho99>10: 75/138 non-zero, max fraction=0.6",该现象并不局限于 rho99 刚超过 1 的边界附近。
+LEVEL_2_CONDITIONAL_PATTERN,MULTIPASS_NOT_PERSISTENT_IN_FROZEN_PAIRS,True,0/10 pairs show non-zero acceptance on multiple passes,冻结的真实 B multi-pass 样本中，单次过境 ambiguity 未在同一 pair 的多个 pass 持续出现。
+LEVEL_2_CONDITIONAL_PATTERN,DIRECT_S_COMPENSATION_EFFECT,True,exact paired REJECT->ACCEPT transitions: 25/30,在冻结的 direct-S ideal 上界条件中，主动补偿明显改变 orbit-distinct B 的 Doppler 判决；subpoint-A 条件未产生同类变化。
+LEVEL_3_NOT_SUPPORTED,REAL_WORLD_ATTACK_PROBABILITY,False,controlled observation model and structurally selected core population,不能声称真实 Starlink attack success probability、普适安全距离或系统已经不安全。

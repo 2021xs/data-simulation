@@ -1,0 +1,14 @@
+preferred_english,preferred_chinese,definition,avoid
+claimed satellite A,被声明卫星 A,Claimed identity whose causal public GP drives both orbit and Doppler layers,target truth satellite
+candidate/non-target satellite B,候选/非目标卫星 B,Real or causally reconstructed synthetic candidate evaluated against A,attacker success sample
+causal public orbit prediction,因果公开轨道预测,Latest eligible GP with CREATION_DATE<=evaluation_time,future TLE / best later orbit
+legitimate public-orbit uncertainty,合法公开轨道不确定性,Reference-relative empirical disagreement of causal ordinary GP,true covariance / ground-truth error
+Freshness-Conditioned Robust Empirical RTN Ellipsoid,新鲜度条件化稳健经验 RTN 椭球,Frozen signed 3D empirical uncertainty gate,Gaussian truth covariance ellipsoid
+orbit-distinct,轨道可区分,Within support and D2>c99,attack / malicious / physically impossible
+uncertainty-normalized orbit distance rho99,不确定性归一化轨道距离 rho99,sqrt(D2/c99); boundary at 1,probability / confidence
+conditional verifier acceptance fraction,条件验证器接受比例,Accepted frozen observation realizations within a LEVEL-A unit,attack success probability/rate
+orbit-distinct yet Doppler-accepted,轨道可区分但 Doppler 被接受,Security-relevant joint state in this study,successful real attack
+single-pass ambiguity,单次过境模糊性,Non-zero controlled acceptance in a studied pass,permanent vulnerability
+multi-pass repeatability,跨过境重复性,Pair-aware persistence across frozen passes,independent satellite-pair trials
+ideal direct-S compensation,理想 direct-S 补偿,Receiver-specific idealized upper-bound condition,realistic active compensation
+effective constant frequency bias,有效常数频偏,Registered/effective residual parameter b,true CFO / CFO ground truth

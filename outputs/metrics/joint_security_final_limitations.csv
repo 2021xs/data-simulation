@@ -1,0 +1,17 @@
+limitation_id,topic,frozen_scope,required_boundary,placement
+L01,Population,20-satellite same-shell Starlink cohort near the studied shell,No universal Starlink or all-LEO extrapolation,MAIN_TEXT
+L02,Time,April-June 2026 historical period,No untested season/year extrapolation,MAIN_TEXT
+L03,Reference,SpaceX-E/SupGP is a higher-quality historical reference,Not ground truth,MAIN_TEXT
+L04,Orbit support,0<element_age_hours<=36 h,Outside support is DEFER; 36 h is not universal validity,MAIN_TEXT
+L05,P99 semantics,Study-specific preregistered conservative security gate,Not an aerospace or industry standard,MAIN_TEXT
+L06,Observation model,Controlled b/k/sigma/noise realizations,Not an operational or real-world attack distribution,MAIN_TEXT
+L07,Receiver scope,Single-station claimed-satellite verifier,No multi-receiver spatial consistency conclusion,MAIN_TEXT
+L08,Scheduling,Public beam/service scheduling was not reconstructed,No claim about real service availability or traffic,MAIN_TEXT
+L09,Service center C,Analytical attack reference,Not a claimed real beam center,MAIN_TEXT
+L10,Compensation,Direct-S ideal is an idealized upper-bound condition,No operational feasibility or multi-receiver generalization,MAIN_TEXT
+L11,Multi-pass,"10 real pairs, four studied passes each","Conditional repeatability evidence, not a guarantee",MAIN_TEXT
+L12,Execution population,407 result-blind structurally selected LEVEL-A units across four families,Not a prevalence sample; family endpoints are heterogeneous,MAIN_TEXT
+L13,NOT_ORBIT_DISTINCT control,Only 3/23 units had a primary endpoint; 20 were reference-only,Do not treat n=3 distribution as complete control population,SUPPLEMENT
+L14,P95 calibration,"Untouched June P95=93.6909%, with reference-quality sensitivity",P99 primary conclusion does not erase P95 undercoverage,MAIN_TEXT
+L15,Temporal dependence,Out-of-set exceedances cluster; max June U99 episode=18.55 h,Pointwise coverage is not temporal independence; no maneuver attribution,MAIN_TEXT
+L16,Attack execution,No real attack was executed,No real-world success or feasibility claim,MAIN_TEXT

@@ -1,0 +1,15 @@
+prohibited_claim_id,prohibited_wording,reason,required_replacement
+P01,Starlink attack success rate = ...,No real-world attack sampling distribution was modeled.,Report unit-level conditional verifier acceptance under the controlled observation model.
+P02,198/265 attacks succeed,198 is an existence count over structurally selected units.,198/265 ORBIT_DISTINCT units had at least one accepted controlled realization.
+P03,Doppler verification is insecure in general,"Evidence is single-station, cohort-, family-, and period-limited.",The studied single-station verifier retained ambiguity in part of the frozen population.
+P04,5 km is unsafe,"km is a construction factor, not the uncertainty gate.",Some +/-5 km cases crossed the P99 boundary in the studied geometry.
+P05,10 km is safe,"ORBIT_DISTINCT does not imply Doppler rejection, and no universal km threshold exists.","All studied +/-10 km cases were orbit-distinct, with non-zero controlled acceptance."
+P06,rho99>1 means attack,rho99 is a normalized distance and the decision concerns orbit distinctness only.,rho99>1 means D2>c99 under the frozen empirical gate.
+P07,P99 is an aerospace universal standard,P99 is a preregistered security-design choice for this study.,Use study-specific empirical P99 gate.
+P08,SupGP is ground truth,SupGP is a higher-quality historical reference.,Use reference-relative public-orbit disagreement.
+P09,Multi-pass guarantees security,Only 10 real pairs and four passes per pair were studied.,No studied pair had non-zero acceptance on multiple passes.
+P10,Direct-S compensation is realistic,It is an ideal receiver-specific upper-bound condition.,Use ideal direct-S compensation bound.
+P11,These pairs are permanently vulnerable,Pass dependence was observed and future geometry was not tested.,Describe pass-specific ambiguity only.
+P12,All Starlink / all LEO satellites,Cohort is 20 same-shell Starlink satellites in Apr-Jun 2026.,State the exact studied cohort and period.
+P13,99.4619% is true-orbit or attack-detection accuracy,It is legitimate ordinary-GP disagreement coverage relative to SupGP.,Use empirical reference-relative joint coverage.
+P14,0.5381% is an attack false-positive rate,It is the legitimate false-orbit-distinct rate in June validation.,Use legitimate false-orbit-distinct rate.

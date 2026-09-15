@@ -1,0 +1,6 @@
+table_id,title,source_artifact,columns_or_content,analysis_unit,placement,priority
+T1,Orbit-Uncertainty external validation summary,outputs/metrics/orbit_uncertainty_final_evidence_matrix.csv,"P99 coverage/CI, P95 limitation, T-dominance, support",historical evaluation epoch,MAIN,1
+T2,ORBIT_DISTINCT family-level joint result,outputs/metrics/orbit_distinct_doppler_family_summary.csv,"Family, unit N, rho99 median[IQR], acceptance median[IQR], zero/non-zero/high/full",LEVEL-A unit,MAIN,2
+T3,Primary acceptance distribution and far-boundary checks,outputs/metrics/orbit_distinct_doppler_rho99_summary.csv,"265-unit distribution, descriptive rho99 bins and Spearman",LEVEL-A unit,SUPPLEMENT,3
+T4,Claim-evidence and limitations matrix,outputs/metrics/joint_security_final_claim_evidence_matrix.csv,Allowed/prohibited wording with scope and evidence,claim,SUPPLEMENT_OR_WRITING_CONTROL,4
+T5,Verifier gate attribution,outputs/metrics/orbit_distinct_doppler_gate_attribution.csv,Exclusive reject mechanisms,observation row,SUPPLEMENT,5

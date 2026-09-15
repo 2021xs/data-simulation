@@ -14,6 +14,22 @@
 
 前期 SatNOGS / STRF / rffit 工作提供工程级 effective residual 参数来源；当前 Starlink 阶段用这些参数构造 controlled orbit-based simulation 和 verifier stress test。所有结论都应理解为受控仿真 baseline，不代表真实 Starlink Ku-band residual 分布，也不代表真实攻击成功率。
 
+## 当前权威进度（2026-09-15 审计）
+
+仓库早期 Verifier v2、fine sweep 和 hard-case temporal 内容仍是研究基础，但已经不是最新待执行阶段。当前权威状态为：
+
+1. `JOINT_SECURITY_RESULT_FREEZE_AND_PAPER_SYNTHESIS` 已于 2026-09-07 完成并冻结；orbit-uncertainty、Causal-A R2/R3 与 orbit-distinct Doppler 联合主线不再继续调参。
+2. 独立的“合法 A 公开轨道误差 → Doppler / OLS Stage-A”已于 2026-09-14 完成。April/May exploratory 与 June confirmatory 共覆盖 2088 segments / 696 passes / 20 satellites。
+3. Stage-A verdict 为 `GEOMETRY_EFFECT_DOMINATES_OR_INTERACTS_STRONGLY`；Stage B 值得继续，重点是 `delta_k, geometry`，但尚未执行，也没有修改 production verifier、threshold 或 b/k gate。
+4. 当前仓库上传 Stage-A 的 population、segment results、timeseries、summary，以及其保护审计所依赖的 frozen joint-security 数据。smoke、archive、旧 candidate library 和被最终版本取代的中间数据保留在本地，不进入 Git。
+
+数据上传范围与完整性结果见：
+
+```text
+outputs/reports/current_experiment_repository_data_audit.md
+outputs/metrics/current_experiment_repository_manifest.json
+```
+
 ## 1. 核心模型
 
 默认观测模型为：
@@ -38,16 +54,19 @@ f_obs(t) = f_geo(t) + b + k(t - t0) + noise
 
 ## 2. 当前输入与配置
 
-主要输入：
+最新 Stage-A 主要输入：
 
 ```text
-configs/simulation_parameter_config.yaml
 configs/orbit_simulation_cases.yaml
-data/tle/starlink_tle.txt
-data/source_residual_datasets/
-outputs/datasets/controlled_starlink_20target_partial_pass_candidate_library.csv
-outputs/metrics/controlled_starlink_20target_selection_table.csv
+data/orbit_uncertainty_stage1/raw/spacetrack_gp/
+data/orbit_uncertainty_stage1/raw/celestrak_supgp/
+data/orbit_uncertainty_stage1/respecialdatarequest (4)/
+data/orbit_uncertainty_stage1/june/
+outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_satellite_selection.csv
+outputs/metrics/orbit_error_to_doppler_legitimate_population_protocol.json
 ```
+
+早期 controlled Starlink baseline 仍使用 `configs/simulation_parameter_config.yaml`、`data/tle/starlink_tle.txt` 和 `data/source_residual_datasets/`。大型 candidate library 已保留在本地，但不属于最新 Stage-A 的直接输入，因此不上传 Git。
 
 默认受控 station：
 

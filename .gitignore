@@ -32,9 +32,34 @@ Desktop.ini
 *.temp
 ~$*
 
-# Large generated experiment artifacts. These remain available locally and
-# can be regenerated from the tracked scripts/configuration.
-outputs/datasets/
+# Large generated experiment artifacts. These remain available locally.
+# Only the current Stage-A data and its frozen joint-security dependencies
+# are allow-listed below; historical/smoke/archive datasets stay untracked.
+outputs/datasets/*
 outputs/metrics/**/*.csv
 outputs/metrics/*.csv
 
+# Current experiment: legitimate-A public-orbit-error -> Doppler/OLS Stage-A.
+!outputs/datasets/orbit_error_to_doppler_legitimate_population.csv
+!outputs/datasets/orbit_error_to_doppler_legitimate_exploratory_segment_results.csv
+!outputs/datasets/orbit_error_to_doppler_legitimate_exploratory_timeseries.csv
+!outputs/datasets/orbit_error_to_doppler_legitimate_june_confirmatory_segment_results.csv
+!outputs/datasets/orbit_error_to_doppler_legitimate_june_confirmatory_timeseries.csv
+!outputs/datasets/legitimate_orbit_error_to_doppler_segments.csv
+!outputs/metrics/orbit_error_to_doppler_legitimate_*.csv
+!outputs/metrics/legitimate_orbit_error_*.csv
+!outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_satellite_selection.csv
+
+# Frozen data dependencies retained by the current Stage-A protection audit.
+!outputs/datasets/causal_a_doppler_r3_observation_rows.csv
+!outputs/datasets/causal_a_doppler_r3_unit_summary.csv
+!outputs/datasets/controlled_altitude_difference_realization_dataset.csv
+!outputs/datasets/m2_segment_local_expanded_sample_dataset.csv
+!outputs/datasets/same_pair_multi_pass_realization_dataset.csv
+!outputs/metrics/active_compensation_first_pass_sequence_eval.csv
+!outputs/metrics/causal_a_doppler_r2_*.csv
+!outputs/metrics/causal_a_doppler_r3_*.csv
+!outputs/metrics/joint_security_final_*.csv
+!outputs/metrics/orbit_distinct_doppler_*.csv
+!outputs/metrics/orbit_uncertainty_final_*.csv
+!outputs/metrics/orbit_uncertainty_stage1f_lite_frozen_parameters.csv

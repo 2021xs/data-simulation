@@ -1,0 +1,26 @@
+﻿check,observed,expected,passed
+frozen LEVEL-A unit completeness,407,407,True
+frozen observation row completeness,26780,26780,True
+family unit/row completeness,"{""segment_local_heatmap_and_direction_sensitivity"": [37, 6200], ""controlled_altitude_difference_synthetic_B"": [300, 18000], ""same_pair_multi_pass_real_TLE"": [40, 2400], ""active_compensation_first_pass"": [30, 180]}","{""segment_local_heatmap_and_direction_sensitivity"": [37, 6200], ""controlled_altitude_difference_synthetic_B"": [300, 18000], ""same_pair_multi_pass_real_TLE"": [40, 2400], ""active_compensation_first_pass"": [30, 180]}",True
+causal A GP violation,0,0,True
+future publication count,0,0,True
+negative age formal score,0,0,True
+>36 h formal score,0,0,True
+outside-support incorrectly scored,0,0,True
+SupGP operational use,0,0,True
+new unintended random draw,0,0,True
+A semantic split,0,0,True
+R1-validated verifier path reuse,1.0,1.0,True
+verifier execution failures,0,0,True
+public RTN orthonormality,4.440892098500626e-16,"""<=1e-12""",True
+public RTN sign mapping,0.0,"""<=1e-12 km""",True
+rho99 identity,407,"""all within 1e-13""",True
+active compensation orbit-score consistency,0,0,True
+frozen 30-row spot-check identities,"[30, 30]","[30, 30]",True
+frozen spot-check failures,0,0,True
+spot-check categorical mismatch,0,0,True
+frozen verifier threshold modifications,0,0,True
+frozen b/k modifications,0,0,True
+frozen Orbit-Uncertainty parameter modifications,0,0,True
+population modification,"[407, 26780]","[407, 26780]",True
+protected source artifact modifications,[],[],True

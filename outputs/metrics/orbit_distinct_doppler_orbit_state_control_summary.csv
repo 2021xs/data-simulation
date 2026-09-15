@@ -1,0 +1,5 @@
+orbit_decision,all_LEVEL_A_units,endpoint_available_units,endpoint_missing_reference_only_units,acceptance_fraction_mean,acceptance_fraction_p10,acceptance_fraction_q1,acceptance_fraction_median,acceptance_fraction_q3,acceptance_fraction_p90,acceptance_fraction_min,acceptance_fraction_max,nonzero_acceptance_units,full_acceptance_units,analysis_status
+NOT_ORBIT_DISTINCT,23,3,20,0.5333333333333333,0.16000000000000003,0.4,0.8,0.8,0.8,0.0,0.8,2,0,DESCRIPTIVE_CONTROL
+AMBIGUOUS,119,119,0,0.8274509803921568,0.7193333333333333,0.7833333333333333,0.8333333333333334,0.9,0.95,0.0,0.9666666666666668,118,0,DESCRIPTIVE_CONTROL
+ORBIT_DISTINCT,265,265,0,0.3070566037735849,0.0,0.0,0.3333333333333333,0.55,0.7,0.0,0.9666666666666668,198,0,PRIMARY
+DEFER,0,0,0,,,,,,,,,0,0,DESCRIPTIVE_CONTROL
