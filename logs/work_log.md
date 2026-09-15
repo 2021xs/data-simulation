@@ -8460,3 +8460,37 @@ population=2088 segments/696 passes；April+May=1386，June=702；limited satell
 ### F. 问题与下一步
 
 本轮 verifier v2 gate evaluation=未运行；visibility diagnostic=未运行；未生成新 dataset/metrics/figures/report。大型生成 CSV 需要从脚本和配置重建，或后续按需放入外部数据存储。完成首次提交和推送后，应在安装项目测试依赖的环境中补跑 pytest。
+
+## 2026-09-15 22:39 - 当前实验进度与仓库数据依赖审计上传
+
+### A. 本轮目标
+
+审计项目实际最新实验进度，按 authoritative manifest 与保护依赖闭包识别当前实验所需数据并上传 GitHub；只排除不属于当前证据链的 archive、smoke、superseded intermediate、旧 candidate library 和可重建历史生成数据。
+
+### B. 实际操作
+
+读取 README、work log、Stage-A 四级 manifest、joint-security final freeze 与 52 项 protected frozen bindings。确认最新权威阶段是 2026-09-14 完成的合法 A 公开轨道误差到 Doppler/OLS Stage-A；2026-09-07 joint-security 主线保持 frozen。按 Stage-A 直接输出和 frozen protection closure 修改 `.gitignore` allowlist，更新 README，生成中文审计报告与机器可读仓库清单。对拟上传数据执行 SHA-256、CSV 表头、JSON 解析、Git 索引闭包和单文件体积检查。
+
+### C. 新增/修改文件
+
+- 修改 `.gitignore`：显式纳入当前 Stage-A 和 frozen joint-security 依赖。
+- 修改 `README.md`：增加 2026-09-15 权威进度和当前输入说明。
+- 新增 `outputs/reports/current_experiment_repository_data_audit.md`。
+- 新增 `outputs/metrics/current_experiment_repository_manifest.json`。
+- 新纳入 Git 的实验 CSV 共 54 个，包含 11 个 dataset 与 43 个 metrics CSV。
+- 追加本日志。
+- 未修改配置、实验脚本、threshold、seed、population、原始输入或既有实验数值；未删除本地文件。
+
+### D. 运行命令
+
+- 使用 `rg`、`Get-Content`、`Import-Csv`、`Get-FileHash` 和 Git 索引命令完成阶段、依赖、SHA 与上传范围审计。
+- `git commit -m "Track current experiment data and frozen dependencies"`
+- `git push`
+
+### E. 结果摘要
+
+Stage-A 状态=`COMPLETE`，2088 segments / 696 passes / 20 satellites，verdict=`GEOMETRY_EFFECT_DOMINATES_OR_INTERACTS_STRONGLY`；Stage B warranted=`True`，focus=`delta_k, geometry`，但尚未执行。新增数据 54 文件、281060060 bytes（268.039761 MiB）；89 项 manifest/binding SHA-256 检查全部通过，59 项当前/冻结依赖路径全部进入 Git 索引，54 个 CSV 均有表头，0 个文件达到 100 MiB。提交 `647e7ca` 已成功推送到 `origin/main`。GitHub 对 77.69 MB 与 81.01 MB 两个 frozen realization dataset 给出超过推荐 50 MB 的 warning，但上传成功且未达到硬限制。
+
+### F. 问题与下一步
+
+仍有 83 个 dataset（约 12395.22 MiB）和 605 个 metrics CSV（约 373.48 MiB）保持本地不上传；它们不在当前 Stage-A authoritative/protection closure 中。此次未运行 verifier v2 gate evaluation、visibility diagnostic、orbit propagation、OLS science、Monte Carlo 或 pytest；原因是本轮只做数据依赖审计与仓库上传，没有修改科学代码。若继续实验，应先冻结 Stage-B nominal legitimate b/k anchoring 与 geometry 分层协议。
