@@ -1,0 +1,244 @@
+{
+  "stage": "Orbit Uncertainty Stage-1 locked external validation preflight",
+  "status": "MAY_LOCKED_EXTERNAL_VALIDATION_BLOCKED_APRIL_PARAMETER_PROVENANCE",
+  "generated_utc": "2026-09-06T01:21:49Z",
+  "training_window": "[2026-04-01T00:00:00Z, 2026-05-01T00:00:00Z)",
+  "test_window": "[2026-05-01T00:00:00Z, 2026-06-01T00:00:00Z)",
+  "april_model_freeze_decision": "HETEROGENEITY_OR_REGIME_NOT_RESOLVED",
+  "blockers": [
+    "April M3/M4 causal classifier export is incomplete: standardized coefficients are present, but logistic intercept, scaler means/scales, imputer statistics and a serialized fitted pipeline (or equivalent complete parameter record) are absent.",
+    "Recomputing these parameters from April labels/features would be an April refit and is forbidden by the locked external-validation protocol."
+  ],
+  "parameter_freeze": {
+    "audit_status": "APRIL_PARAMETER_FREEZE_AUDIT_BLOCKED",
+    "may_derived_fitted_parameter_count": 0,
+    "recoverable_candidates": [
+      "M0",
+      "M1",
+      "M2",
+      "M0_DESCRIPTIVE_VELOCITY"
+    ],
+    "blocked_candidates": [
+      "M3",
+      "M4"
+    ],
+    "details": {
+      "counts": {
+        "m0_position_base_curve_rows": 104,
+        "m0_velocity_curve_rows": 78,
+        "m1_publication_factor_rows": 40,
+        "m2_satellite_factor_rows": 160,
+        "m3_risk_factor_rows": 24,
+        "m4_satellite_factor_rows": 160,
+        "m4_risk_factor_rows": 24,
+        "risk_metadata_rows": 8,
+        "classifier_coefficient_rows": 16
+      },
+      "classifier_coefficient_features_exact": true,
+      "risk_cutpoints": [
+        [
+          0.056590403752348924,
+          0.6610751129385267
+        ]
+      ],
+      "fallback_values_by_model": {
+        "M1": [
+          0.978707542,
+          0.980062427,
+          0.981515595,
+          0.990562978,
+          0.993544503,
+          1.00290189,
+          1.00572624,
+          1.00744416
+        ],
+        "M2": [
+          0.978707542,
+          0.980062427,
+          0.981515595,
+          0.990562978,
+          0.993544503,
+          1.00290189,
+          1.00572624,
+          1.00744416
+        ],
+        "M3": [
+          0.978707542,
+          0.980062427,
+          0.981515595,
+          0.990562978,
+          0.993544503,
+          1.00290189,
+          1.00572624,
+          1.00744416
+        ],
+        "M4": [
+          0.970854652,
+          0.971648244,
+          0.978707542,
+          0.980062427,
+          0.981515595,
+          0.983082724,
+          0.983143359,
+          0.98537029,
+          0.990246955,
+          0.990562978,
+          0.993544503,
+          0.996575228,
+          0.996721306,
+          1.00290189,
+          1.00572624,
+          1.00744416
+        ]
+      },
+      "fallback_parameter_counts_by_model": {
+        "M1": 8,
+        "M2": 8,
+        "M3": 8,
+        "M4": 16
+      },
+      "risk_cutpoint_parameter_count": 16,
+      "missing_classifier_parameter_families": [
+        "logistic_intercept",
+        "StandardScaler.mean_",
+        "StandardScaler.scale_",
+        "SimpleImputer.statistics_",
+        "serialized_fitted_pipeline_or_equivalent_complete_parameter_record"
+      ],
+      "serialized_model_candidates": []
+    }
+  },
+  "april_protection": {
+    "artifact_count": 81,
+    "mismatch_count": 0,
+    "mismatches": [],
+    "frozen_input_hashes_before_after_equal": true
+  },
+  "inputs": {
+    "april_stage1b_dataset": {
+      "path": "outputs/datasets/orbit_uncertainty_stage1b_20260401_20260430_rtn_residual_library.csv",
+      "sha256": "2B02C40FDEA69F6079D256B5E274652ABAB2D5BC2F9899866C7F1CAFFB469F23"
+    },
+    "april_stage1b_manifest": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1b_20260401_20260430_manifest.json",
+      "sha256": "81FC7EF0F4E6401A316A893C1C010840136AA43BEBEC48094A74F06FE020E4E3"
+    },
+    "april_stage1d_manifest": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1d_20260401_20260430_manifest.json",
+      "sha256": "834917C94E18E1AD8E643687AF4312A88B28DFADA4E6FE25C407F091E04C0617"
+    },
+    "april_stage1d_grid": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1d_20260401_20260430_conditional_model_grid.csv",
+      "sha256": "609B6412B370CC4961A35406CF491AD8032BF0DDBD23D9A74024486F81331CB2"
+    },
+    "april_stage1d_quantiles": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1d_20260401_20260430_freshness_quantiles.csv",
+      "sha256": "E29E25CBE55B1EBA040D83408BBEDB14475425A20049AB55A2FB72A648591DC0"
+    },
+    "april_stage1e_manifest": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1e_20260401_20260430_manifest.json",
+      "sha256": "888FACF353F5F6FC0B011F45521187781BE007943D8DB84AAF3B961DB300883D"
+    },
+    "april_stage1e_componentwise_calibration": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1e_20260401_20260430_componentwise_calibration.csv",
+      "sha256": "215F155A382C08A4515E1EB69DF7B3C337F10BEA7B936ED997974680DFA94E6D"
+    },
+    "april_stage1e_regime_association": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1e_20260401_20260430_regime_feature_association.csv",
+      "sha256": "5A794DE74E6BD54C3CF97F41C28C0F60D6E222A19AC9887B43A514D75BCD83A4"
+    },
+    "april_stage1e_model_comparison": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1e_20260401_20260430_model_comparison.csv",
+      "sha256": "B01016B9F688ED43E58B810DE4EC06F048F9D14F470B8D6BC1AA70A69FFFD293"
+    },
+    "april_stage1e_causal_features": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1e_20260401_20260430_causal_regime_features.csv",
+      "sha256": "434F1C9CBA569B96B5C4990BA68F69CEBA43817659794A5900A5F3016E670CD4"
+    },
+    "may_stage1b_dataset": {
+      "path": "outputs/datasets/orbit_uncertainty_stage1b_20260501_20260531_rtn_residual_library.csv",
+      "sha256": "119F2DAA3896476E120F010A436D0B250E404D41326B57FAABFEAA9F2F73EF3F"
+    },
+    "may_stage1b_manifest": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1b_20260501_20260531_manifest.json",
+      "sha256": "9631AF3F4B4AA0F9D4C9804AE05A2C5F7608428CC0D1B2D7C22CC145F6EF38CD"
+    },
+    "may_stage1a_manifests": [
+      {
+        "name": "acquisition",
+        "path": "outputs/metrics/orbit_uncertainty_stage1_20260501_20260531_acquisition_download_manifest.json",
+        "expected_sha256": "1B069590257660C5683A3232E2A7BB914FA8C5A4EAD35FC238914FF10BDDA2E1",
+        "current_sha256": "1B069590257660C5683A3232E2A7BB914FA8C5A4EAD35FC238914FF10BDDA2E1",
+        "matched": true
+      },
+      {
+        "name": "reference_quality",
+        "path": "outputs/metrics/orbit_uncertainty_stage1_20260501_20260531_supgp_reference_quality_manifest.json",
+        "expected_sha256": "7EFC2606B6B5FE6DDE7ABA2CF6954C996D85728C90CCCBD4A7745402422B22BB",
+        "current_sha256": "7EFC2606B6B5FE6DDE7ABA2CF6954C996D85728C90CCCBD4A7745402422B22BB",
+        "matched": true
+      },
+      {
+        "name": "causal_support_audit",
+        "path": "outputs/metrics/orbit_uncertainty_stage1_20260501_20260531_ordinary_gp_causal_support_audit.csv",
+        "expected_sha256": "86DBA6187CB6BE4F37F4D7B4021DB6309957549E7C1826024A687F2250BEDBED",
+        "current_sha256": "86DBA6187CB6BE4F37F4D7B4021DB6309957549E7C1826024A687F2250BEDBED",
+        "matched": true
+      },
+      {
+        "name": "cohort_selection",
+        "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_satellite_selection.csv",
+        "expected_sha256": "30D7A846DDDE5850645CD3C1C03C061E7971AE40A2EE052FFB4E8BA3E7F4ED36",
+        "current_sha256": "30D7A846DDDE5850645CD3C1C03C061E7971AE40A2EE052FFB4E8BA3E7F4ED36",
+        "matched": true
+      }
+    ]
+  },
+  "support_audit": {
+    "rows": 6181,
+    "nominal_rows": 6181,
+    "primary_external_validation_rows": 6094,
+    "outside_april_calibrated_freshness_support_rows": 87,
+    "support_condition": "0 < element_age_seconds / 3600 <= 36"
+  },
+  "correctness": {
+    "passed": 17,
+    "total": 18,
+    "failed_checks": [
+      "M3/M4 complete frozen classifier recoverable"
+    ],
+    "frozen_input_hashes_before_after_equal": true
+  },
+  "builder": {
+    "path": "D:/Project/data-simulation/scripts/run_orbit_uncertainty_stage1_external_202605_locked_validation.py",
+    "sha256": "DCCAE0D74D997CBE4B6A0F70F25D61448642497D1D818313490843295B5B4B9E"
+  },
+  "outputs": {
+    "orbit_uncertainty_stage1_external_202605_parameter_freeze_audit.csv": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1_external_202605_parameter_freeze_audit.csv",
+      "sha256": "AC90048C0A8BCE2F1F65949715EFB569AF3FC37D387AA3605FD5BF1A2A497C45",
+      "size_bytes": 3290
+    },
+    "orbit_uncertainty_stage1_external_202605_correctness_audit.csv": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1_external_202605_correctness_audit.csv",
+      "sha256": "7FA7EA8C0EFDE9797C3554396002DC3FB6F72800ED0C31F5E984B6F59728E750",
+      "size_bytes": 2421
+    },
+    "orbit_uncertainty_stage1_external_202605_locked_validation_report.md": {
+      "path": "outputs/reports/orbit_uncertainty_stage1_external_202605_locked_validation_report.md",
+      "sha256": "AE9F36895407A4B7ED2D01976680CB070028D4D25613E34476A0EBF1BF2BC574",
+      "size_bytes": 2711
+    }
+  },
+  "scope_guards": {
+    "external_coverage_computed": false,
+    "may_refit_performed": false,
+    "april_refit_performed": false,
+    "may_causal_features_generated": false,
+    "risk_scores_generated": false,
+    "outside_support_predictions_generated": false,
+    "rms_used_operationally": false,
+    "stage1f_entered": false,
+    "synthetic_b_or_doppler_run": false
+  }
+}

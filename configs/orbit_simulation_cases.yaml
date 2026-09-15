@@ -1,0 +1,210 @@
+mode: "controlled_starlink"
+
+station:
+  name: "controlled_example_station"
+  lat_deg: 52.2100
+  lon_deg: 5.1600
+  alt_m: 14
+
+frequency:
+  center_freq_hz: 1623192000
+
+ku_band_experiment:
+  experiment_name: "controlled_starlink_ku_band_frequency_variant"
+  source_center_freq_hz: 1623192000
+  simulation_center_freq_hz: 11325000000
+  # frequency_scaled is a frequency sensitivity setting, not true Starlink Ku-band CFO distribution.
+  error_model_variants:
+    - unscaled
+    - frequency_scaled
+  target_count: 10
+  candidate_limit: 200
+  num_sims_per_target: 50
+  scenarios:
+    - clean
+    - offset_only
+    - offset_plus_noise
+    - offset_linear_noise
+
+near_neighbor_stress:
+  experiment_name: "controlled_starlink_ku_band_near_neighbor_stress"
+  mode: "controlled_starlink"
+  observation_id: null
+  source_center_freq_hz: 1623192000
+  simulation_center_freq_hz: 11325000000
+  target:
+    name: "STARLINK-1008"
+    norad_id: 44714
+  known_nearest_neighbor:
+    name: "STARLINK-35760"
+    norad_id: 66274
+  error_model_variants:
+    - unscaled
+    - frequency_scaled
+  sigma_multipliers:
+    - 1
+    - 2
+    - 5
+    - 10
+  partial_pass_windows:
+    - full
+    - first_30_percent
+    - middle_30_percent
+    - last_30_percent
+    - center_60s
+    - center_120s
+    - center_180s
+  candidate_limits:
+    - 200
+    - 500
+    - 1000
+  num_sims_per_setting: 100
+  scenarios:
+    - offset_plus_noise
+    - offset_linear_noise
+  notes:
+    - "This is controlled near-neighbor stress / robustness baseline, not attack evaluation."
+    - "frequency_scaled is a frequency sensitivity setting, not true Starlink Ku-band CFO distribution."
+
+partial_pass_time_alignment_stress:
+  experiment_name: "controlled_starlink_ku_band_partial_pass_time_alignment_stress"
+  mode: "controlled_starlink"
+  observation_id: null
+  source_center_freq_hz: 1623192000
+  simulation_center_freq_hz: 11325000000
+  target:
+    name: "STARLINK-1008"
+    norad_id: 44714
+  hard_wrong_candidates:
+    - name: "STARLINK-33818"
+      norad_id: 63502
+    - name: "STARLINK-34596"
+      norad_id: 64732
+    - name: "STARLINK-35760"
+      norad_id: 66274
+  error_model_variant: "frequency_scaled"
+  sigma_multiplier: 10
+  scenario: "offset_plus_noise"
+  candidate_limit: 1000
+  window_durations_s:
+    - 30
+    - 45
+    - 60
+    - 90
+    - 120
+    - 150
+    - 180
+    - 240
+    - full
+  window_center_offsets_s:
+    - -90
+    - -60
+    - -45
+    - -30
+    - -15
+    - 0
+    - 15
+    - 30
+    - 45
+    - 60
+    - 90
+  num_sims_per_setting: 100
+  notes:
+    - "This is controlled partial-pass / time-alignment stress, not attack evaluation."
+    - "frequency_scaled is a frequency sensitivity setting, not true Starlink Ku-band CFO distribution."
+
+multi_target_partial_pass_validation:
+  experiment_name: "controlled_starlink_ku_band_20target_partial_pass_validation"
+  mode: "controlled_starlink"
+  observation_id: null
+  source_center_freq_hz: 1623192000
+  simulation_center_freq_hz: 11325000000
+  target_count: 20
+  candidate_limit: 1000
+  error_model_variant: "frequency_scaled"
+  sigma_multiplier: 10
+  scenario: "offset_plus_noise"
+  window_durations:
+    - full
+    - center_180s
+    - center_120s
+    - center_60s
+    - center_30s
+  num_sims_per_target_per_window: 50
+  random_seed: 20260505
+  notes:
+    - "This is controlled multi-target partial-pass validation, not attack evaluation."
+    - "frequency_scaled is a frequency sensitivity setting, not true Starlink Ku-band CFO distribution."
+
+boundary_refinement:
+  experiment_name: "controlled_starlink_20target_partial_pass_boundary_refinement"
+  mode: "controlled_starlink"
+  observation_id: null
+  source_center_freq_hz: 1623192000
+  simulation_center_freq_hz: 11325000000
+  target_selection_table: "outputs/metrics/controlled_starlink_20target_selection_table.csv"
+  target_count: 20
+  candidate_limit: 1000
+  scenario: "offset_plus_noise"
+  error_model_variant: "frequency_scaled"
+  window_boundary:
+    enabled: true
+    sigma_multiplier: 10
+    window_center_offset_s: 0
+    window_durations:
+      - full
+      - 240
+      - 180
+      - 150
+      - 120
+      - 100
+      - 90
+      - 80
+      - 70
+      - 60
+      - 45
+      - 30
+    num_sims_per_target_per_window: 50
+  sigma_boundary:
+    enabled: true
+    window_durations:
+      - full
+      - 120
+      - 90
+      - 60
+      - 30
+    sigma_multipliers:
+      - 1
+      - 2
+      - 3
+      - 5
+      - 7
+      - 10
+    window_center_offset_s: 0
+    num_sims_per_target_per_setting: 50
+  random_seed: 20260505
+  notes:
+    - "This is controlled matcher stability boundary refinement, not attack evaluation."
+    - "frequency_scaled is a frequency sensitivity setting, not true Starlink Ku-band CFO distribution."
+
+tle:
+  file: "data/tle/starlink_tle.txt"
+  target_name: "STARLINK-1008"
+
+time_window:
+  mode: "auto_pass_search"
+  search_start_utc: "2026-03-10T00:00:00Z"
+  search_duration_h: 24
+  min_elevation_deg: 10
+  step_s: 1
+  max_pass_duration_s: 600
+
+simulation:
+  scenarios:
+    - clean
+    - offset_only
+    - offset_plus_noise
+    - offset_linear_noise
+  range_type: "main"
+  num_sims_per_target: 100
+  seed: 42

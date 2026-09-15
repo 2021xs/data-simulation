@@ -1,0 +1,382 @@
+{
+  "stage": "Orbit Uncertainty Stage-1F-lite design and freeze",
+  "status": "STAGE1F_LITE_DESIGN_AND_FREEZE_COMPLETE",
+  "generated_utc": "2026-09-06T03:37:41Z",
+  "comparison_semantics": "empirical ordinary-GP disagreement relative to SpaceX-E/SupGP higher-quality historical reference; not true orbit covariance",
+  "june_blindness_preflight": {
+    "scan_type": "PATH_AND_METADATA_ONLY_NO_FILE_CONTENT_READ",
+    "candidate_future_window": "[2026-06-01T00:00:00Z, 2026-07-01T00:00:00Z)",
+    "june_stage1_scientific_data_present_before_freeze": false,
+    "suspicious_paths": [],
+    "contextual_noncontaminating_path_matches": [
+      {
+        "path": "data/orbit_uncertainty_stage1/raw/spacetrack_gp/spacetrack_gp_history_20260428_20260601_20sat_omm.json",
+        "size_bytes": 2606503,
+        "mtime_utc": "2026-09-03T16:06:49.320030+00:00",
+        "classification": "MAY_ACQUISITION_RIGHT_BOUNDARY_NOT_JUNE_DATA"
+      },
+      {
+        "path": "data/orbit_uncertainty_pilot/raw/sentinel_poeorb/S1A_OPER_AUX_POEORB_OPOD_20260718T070712_V20260627T225942_20260629T005942.EOF",
+        "size_bytes": 4653276,
+        "mtime_utc": "2026-08-23T12:00:08.091979+00:00",
+        "classification": "UNRELATED_NON_STAGE1_PATH_MATCH"
+      },
+      {
+        "path": "data/orbit_uncertainty_pilot/raw/sentinel_poeorb/S1A_OPER_AUX_POEORB_OPOD_20260719T070640_V20260628T225942_20260630T005942.EOF",
+        "size_bytes": 4653048,
+        "mtime_utc": "2026-08-23T12:00:11.262166+00:00",
+        "classification": "UNRELATED_NON_STAGE1_PATH_MATCH"
+      },
+      {
+        "path": "data/orbit_uncertainty_pilot/raw/sentinel_poeorb/S1A_OPER_AUX_POEORB_OPOD_20260720T070517_V20260629T225942_20260701T005942.EOF",
+        "size_bytes": 4653695,
+        "mtime_utc": "2026-08-23T12:00:13.884286+00:00",
+        "classification": "UNRELATED_NON_STAGE1_PATH_MATCH"
+      },
+      {
+        "path": "data/orbit_uncertainty_pilot/raw/spacetrack_gp/sentinel1a_gp_history_20260624_20260702.json",
+        "size_bytes": 41199,
+        "mtime_utc": "2026-08-23T12:00:16.936304+00:00",
+        "classification": "UNRELATED_NON_STAGE1_PATH_MATCH"
+      }
+    ],
+    "june_scientific_rows_read": 0
+  },
+  "inputs": {
+    "april_stage1b_dataset": {
+      "path": "outputs/datasets/orbit_uncertainty_stage1b_20260401_20260430_rtn_residual_library.csv",
+      "sha256": "2B02C40FDEA69F6079D256B5E274652ABAB2D5BC2F9899866C7F1CAFFB469F23"
+    },
+    "may_stage1b_dataset": {
+      "path": "outputs/datasets/orbit_uncertainty_stage1b_20260501_20260531_rtn_residual_library.csv",
+      "sha256": "119F2DAA3896476E120F010A436D0B250E404D41326B57FAABFEAA9F2F73EF3F"
+    },
+    "april_stage1b_manifest": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1b_20260401_20260430_manifest.json",
+      "sha256": "81FC7EF0F4E6401A316A893C1C010840136AA43BEBEC48094A74F06FE020E4E3"
+    },
+    "may_stage1b_manifest": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1b_20260501_20260531_manifest.json",
+      "sha256": "9631AF3F4B4AA0F9D4C9804AE05A2C5F7608428CC0D1B2D7C22CC145F6EF38CD"
+    },
+    "april_stage1d_manifest": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1d_20260401_20260430_manifest.json",
+      "sha256": "834917C94E18E1AD8E643687AF4312A88B28DFADA4E6FE25C407F091E04C0617"
+    },
+    "april_stage1e_manifest": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1e_20260401_20260430_manifest.json",
+      "sha256": "888FACF353F5F6FC0B011F45521187781BE007943D8DB84AAF3B961DB300883D"
+    },
+    "may_partial_external_manifest": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1_external_202605_partial_manifest.json",
+      "sha256": "720797459ABAE320C341F785D8425B0B08C8904B003C149B7F6C5A0DF9E2B311"
+    },
+    "cohort_selection": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_satellite_selection.csv",
+      "sha256": "30D7A846DDDE5850645CD3C1C03C061E7971AE40A2EE052FFB4E8BA3E7F4ED36"
+    }
+  },
+  "frame_and_residual": {
+    "residual_sign": "ordinary minus reference",
+    "rtn_convention": "reference-defined: R along reference position, N along reference angular momentum, T=NxR",
+    "common_frame": "GCRS"
+  },
+  "support_audit": {
+    "rows_removed": 0,
+    "outside_support_fit_rows": 0,
+    "april_rows": 5675,
+    "april_support_rows": 5662,
+    "april_outside_rows": 13,
+    "may_rows": 6181,
+    "may_support_rows": 6094,
+    "may_outside_rows": 87,
+    "combined_rows": 11856,
+    "supported_rows": 11756,
+    "outside_rows": 100,
+    "satellite_count": 20,
+    "formal_support": "0 < element_age_hours <= 36"
+  },
+  "scientific_protocol": {
+    "data_roles": {
+      "APRIL": "DEVELOPMENT_CALIBRATION",
+      "MAY": "DEVELOPMENT_CALIBRATION",
+      "JUNE": "UNTOUCHED_CONFIRMATORY"
+    },
+    "state": "signed position RTN 3D only",
+    "support": {
+      "lower_hours_exclusive": 0.0,
+      "upper_hours_inclusive": 36.0
+    },
+    "freshness_bins_hours": [
+      0.0,
+      6.0,
+      9.0,
+      12.0,
+      18.0,
+      24.0,
+      36.0
+    ],
+    "candidate_count": 2,
+    "candidates": {
+      "JOINT_MAX_SCORE_BOX": {
+        "center": "per-bin component median",
+        "scale": "1.4826 * component MAD",
+        "score": "max_j abs(e_j-mu_j)/s_j",
+        "scale_floor_km": 1e-12,
+        "volume": "8*c^3*s_R*s_T*s_N"
+      },
+      "ROBUST_EMPIRICAL_ELLIPSOID": {
+        "estimator": "sklearn.covariance.MinCovDet",
+        "random_state": 0,
+        "support_fraction": null,
+        "assume_centered": false,
+        "score": "(e-mu)^T Sigma^-1 (e-mu)",
+        "volume": "(4/3)*pi*c^(3/2)*sqrt(det(Sigma))",
+        "condition_number_max": 100000000.0,
+        "fallback_regularization": "NONE"
+      }
+    },
+    "thresholds": {
+      "quantiles": [
+        0.95,
+        0.99
+      ],
+      "source": "all training legitimate empirical scores",
+      "numpy_method": "higher",
+      "gaussian_chi_square_used": false
+    },
+    "internal_validation": [
+      "APRIL_TO_MAY",
+      "MAY_TO_APRIL",
+      "20_FOLD_LOSO",
+      "3_FORWARD_CONTIGUOUS_TIME_BLOCKS"
+    ],
+    "internal_candidate_pass": {
+      "month_direction_pooled_p99_min": 0.98,
+      "loso_pooled_p99_min": 0.98,
+      "structural_bin_min_n": 100,
+      "structural_bin_p99_min": 0.95
+    },
+    "complexity_rule": {
+      "ellipse_min_stable_p99_volume_reduction": 0.1,
+      "ellipse_max_pooled_p99_coverage_degradation": 0.005,
+      "ellipse_must_create_no_structural_bin_undercoverage": true,
+      "otherwise_prefer_simple_box": true
+    },
+    "decision_semantics": {
+      "score_le_c95": "NOT_ORBIT_DISTINCT",
+      "c95_lt_score_le_c99": "AMBIGUOUS",
+      "score_gt_c99": "ORBIT_DISTINCT",
+      "outside_support": "OUTSIDE_CALIBRATED_SUPPORT / DEFER"
+    },
+    "nonstationarity": {
+      "regime_detector": "OPTIONAL",
+      "handling": "U95/U99 plus AMBIGUOUS plus continuous out-of-set reporting",
+      "episode_break_gap_hours": 6.0,
+      "episode_name": "continuous out-of-set episode; never maneuver"
+    },
+    "velocity": {
+      "role": "DESCRIPTIVE_ONLY",
+      "six_dimensional_extension_decision": "NOT_NEEDED_YET",
+      "reason": "delta_T and delta_v_R are nearly perfectly coupled in April and May, but no incremental security-decision value has been established"
+    }
+  },
+  "candidate_selection": {
+    "candidate_status": {
+      "JOINT_MAX_SCORE_BOX": {
+        "internal_calibration_status": "PASS",
+        "pooled_p99": {
+          "MONTH_DIRECTION": 0.9895372575706023,
+          "LEAVE_ONE_SATELLITE_OUT": 0.9897073834637632
+        },
+        "structural_bin_undercoverage_count": 0
+      },
+      "ROBUST_EMPIRICAL_ELLIPSOID": {
+        "internal_calibration_status": "PASS",
+        "pooled_p99": {
+          "MONTH_DIRECTION": 0.9890268798911195,
+          "LEAVE_ONE_SATELLITE_OUT": 0.9897924464103437
+        },
+        "structural_bin_undercoverage_count": 0
+      }
+    },
+    "ellipse_minus_box_pooled_p99_coverage": {
+      "MONTH_DIRECTION": -0.0005103776794828097,
+      "LEAVE_ONE_SATELLITE_OUT": 8.506294658050528e-05
+    },
+    "ellipse_no_material_coverage_degradation": true,
+    "ellipse_new_structural_bin_undercoverage_count": 0,
+    "ellipse_over_box_p99_geometric_mean_volume_ratio": {
+      "MONTH_DIRECTION": 0.7915959848103035,
+      "LEAVE_ONE_SATELLITE_OUT": 0.6974379338381321,
+      "FINAL_COMBINED": 0.6943604324158382
+    },
+    "ellipse_stable_volume_reduction_at_least_10pct": true,
+    "selection_rule_case": "CASE_3_BOTH_PASS_ELLIPSOID_EARNS_COMPLEXITY",
+    "primary_candidate_for_june": "ROBUST_EMPIRICAL_ELLIPSOID",
+    "secondary_sensitivity_candidate": "JOINT_MAX_SCORE_BOX"
+  },
+  "final_fit": {
+    "development_rows": 11756,
+    "frozen_parameter_rows": 12,
+    "parameter_path": "outputs/metrics/orbit_uncertainty_stage1f_lite_frozen_parameters.csv",
+    "parameter_sha256": "6F17F8340BA14B5B48F7AEAFFD776F1D0A07B4D50F882B2AFCA73756F9FF55D1",
+    "satellite_specific_parameter_count": 0,
+    "publication_age_parameter_count": 0,
+    "regime_parameter_count": 0,
+    "rms_operational_parameter_count": 0,
+    "credential_value_matches": 0,
+    "velocity_operational_parameter_count": 0
+  },
+  "june_confirmatory_protocol": {
+    "window": "[2026-06-01T00:00:00Z, 2026-07-01T00:00:00Z)",
+    "primary_candidate": "ROBUST_EMPIRICAL_ELLIPSOID",
+    "secondary_candidate": "JOINT_MAX_SCORE_BOX",
+    "primary_endpoints": [
+      "P99 joint legitimate coverage",
+      "1-P99 legitimate false-orbit-distinct rate"
+    ],
+    "secondary_endpoints": [
+      "P95 joint coverage",
+      "freshness-bin P99/P95",
+      "per-satellite coverage distribution",
+      "June first-half/second-half coverage",
+      "continuous out-of-set episode metrics",
+      "uncertainty-set volume",
+      "signed center/correlation stability",
+      "T-dominance replication"
+    ],
+    "supportive_endpoints": [
+      "satellite ranking persistence",
+      "velocity delta_T-delta_v_R coupling",
+      "RMS reference sensitivity"
+    ],
+    "pooled_p99_minimum": 0.98,
+    "structural_bin_rule": {
+      "minimum_n_for_hard_rule": 100,
+      "p99_minimum": 0.95,
+      "status": "STRUCTURAL_BIN_UNDERCOVERAGE"
+    },
+    "small_bin_rule": "n<100: no hard pass/fail; report point estimate and uncertainty",
+    "time_halves": {
+      "first": "[2026-06-01T00:00:00Z, 2026-06-16T00:00:00Z)",
+      "second": "[2026-06-16T00:00:00Z, 2026-07-01T00:00:00Z)"
+    },
+    "cluster_bootstrap": {
+      "unit": "satellite",
+      "sampling": "sample the observed June satellite IDs with replacement; retain every row in each sampled cluster and repeat clusters according to multiplicity",
+      "repetitions": 2000,
+      "random_seed": 20260601,
+      "ci": "2.5% and 97.5% empirical percentiles",
+      "quantile_method": "linear"
+    },
+    "continuous_episode_metrics": [
+      "maximum consecutive out-of-U99 duration",
+      "maximum consecutive out-of-U95 duration",
+      "number of continuous out-of-U99 episodes",
+      "per-episode NORAD/start/end/duration/row count/max score"
+    ],
+    "success_status": "JOINT_UNCERTAINTY_CONFIRMATORY_SUPPORT",
+    "failure_status": "CONFIRMATORY_UNDERCOVERAGE",
+    "requirements": [
+      "no June fitting",
+      "no >36 h extrapolation",
+      "no method/numerical failure",
+      "no primary/secondary swap after June"
+    ]
+  },
+  "branch_stopping_rule": {
+    "orbit_uncertainty_branch_complete_if": [
+      "freshness structure has no qualitative failure",
+      "RTN anisotropy has no qualitative reversal",
+      "primary joint set meets frozen confirmatory coverage",
+      "no commonly populated freshness bin has persistent severe undercoverage",
+      "box/ellipsoid complexity comparison is complete",
+      "no new stable fixed satellite-wide scale evidence",
+      "regime classifier is unnecessary for downstream security conclusion",
+      "reference sensitivity does not reverse the primary conclusion"
+    ],
+    "then": "ORBIT_UNCERTAINTY_BRANCH_COMPLETE; stop M5/M6, per-satellite tuning, regime tuning, and further-month predictor search",
+    "task_level": "Do not reopen predictor optimization when simple vs complex sets only alter a few boundary synthetic-B cases without materially reversing orbit-distinct or Doppler-security conclusions"
+  },
+  "correctness": {
+    "passed": 30,
+    "total": 30,
+    "all_passed": true
+  },
+  "protection": {
+    "april_artifact_count": 81,
+    "april_before_after_equal": true,
+    "may_dataset_before_after_equal": true
+  },
+  "builder": {
+    "path": "D:/Project/data-simulation/scripts/run_orbit_uncertainty_stage1f_lite_freeze.py",
+    "sha256": "7AB9493AECD95B9332134B564A243A25C56AEBB41CA239F72033BDED6723748D",
+    "git_state": "NOT_A_GIT_WORK_TREE"
+  },
+  "environment": {
+    "python": "3.13.5",
+    "platform": "Windows-11-10.0.26100-SP0",
+    "numpy": "2.1.3",
+    "pandas": "2.2.3",
+    "scipy": "1.15.3",
+    "sklearn": "1.6.1"
+  },
+  "outputs": {
+    "orbit_uncertainty_stage1f_lite_signed_rtn_summary.csv": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1f_lite_signed_rtn_summary.csv",
+      "sha256": "31A64D200388C62122263AB152BCD5EAE1E4532F8F996B9BED7F252E5A5E9DD9",
+      "size_bytes": 24161
+    },
+    "orbit_uncertainty_stage1f_lite_candidate_internal_validation.csv": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1f_lite_candidate_internal_validation.csv",
+      "sha256": "8398D48DF373CD3E77861326A0D97F55B947B93DD71E461D9C242863DB6F87B0",
+      "size_bytes": 121971
+    },
+    "orbit_uncertainty_stage1f_lite_candidate_volume.csv": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1f_lite_candidate_volume.csv",
+      "sha256": "97DB9AABBE196D1E1C7500A5B401A211CBF40C1FDE31AD2C4E6C77BB7C4B2592",
+      "size_bytes": 90120
+    },
+    "orbit_uncertainty_stage1f_lite_frozen_parameters.csv": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1f_lite_frozen_parameters.csv",
+      "sha256": "6F17F8340BA14B5B48F7AEAFFD776F1D0A07B4D50F882B2AFCA73756F9FF55D1",
+      "size_bytes": 7508
+    },
+    "orbit_uncertainty_stage1f_lite_velocity_diagnostic.csv": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1f_lite_velocity_diagnostic.csv",
+      "sha256": "46E879269FD7A87C78FFF7809378BF80ABA080911E39466D981248D4B621D361",
+      "size_bytes": 1103
+    },
+    "orbit_uncertainty_stage1f_lite_reference_sensitivity.csv": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1f_lite_reference_sensitivity.csv",
+      "sha256": "D29635C3FEAC8B0E2B0CD90646D316A2E3990091F3E0FEBAFA769A499B6AB6B7",
+      "size_bytes": 1520
+    },
+    "orbit_uncertainty_stage1f_lite_correctness_audit.csv": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1f_lite_correctness_audit.csv",
+      "sha256": "7803E1075D1DF9BAA93E8D7390C22B9FAA4ED61516D16B2CD4A2FD6C0FE4FF43",
+      "size_bytes": 2524
+    },
+    "orbit_uncertainty_stage1f_lite_design_freeze_report.md": {
+      "path": "outputs/reports/orbit_uncertainty_stage1f_lite_design_freeze_report.md",
+      "sha256": "001CF7C56661B1243CE6AAE06766537F9F7D1B8805C041F6A0DF33332678CA71",
+      "size_bytes": 19660
+    }
+  },
+  "scope_guards": {
+    "june_rows_read": 0,
+    "rows_removed": 0,
+    "outside_support_fit_rows": 0,
+    "candidate_count": 2,
+    "signed_residual_use": true,
+    "gaussian_chi_square_threshold_use": 0,
+    "satellite_specific_fitted_parameter_count": 0,
+    "publication_age_parameter_count": 0,
+    "regime_parameter_count": 0,
+    "rms_operational_parameter_count": 0,
+    "six_dimensional_set_built": false,
+    "outlier_or_episode_filtering": false,
+    "synthetic_b_or_doppler_entered": false
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "stage": "LEGITIMATE_ORBIT_ERROR_PROTECTED_FROZEN_BINDING_AUDIT",
+  "status": "PASS",
+  "generated_utc": "2026-09-14T00:07:56.069274Z",
+  "checked_bindings": 52,
+  "passed_bindings": 52,
+  "failed_bindings": 0,
+  "protected_files_modified": [],
+  "source_manifests": [
+    {
+      "path": "outputs/metrics/orbit_error_to_doppler_feasibility_manifest.json",
+      "sha256": "5AC4A75964B8733E68BCA0B5C3C4428CF3ED33D2712247E2E84ADA32AF54858B",
+      "size_bytes": 6513
+    },
+    {
+      "path": "outputs/metrics/joint_security_final_results_manifest.json",
+      "sha256": "01688F7373D8869DEAC00A34C4FEB876EB0704F61C28F13BD810C614F4ED8AE7",
+      "size_bytes": 12972
+    }
+  ],
+  "audit": {
+    "path": "outputs/metrics/orbit_error_to_doppler_legitimate_protected_frozen_bindings.csv",
+    "sha256": "0E61A1E85424B02459021AD77450877B534D1C53B8269A1EC7AF98213D631567",
+    "size_bytes": 12211
+  }
+}

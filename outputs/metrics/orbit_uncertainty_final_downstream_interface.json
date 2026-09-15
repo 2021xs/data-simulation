@@ -1,0 +1,74 @@
+{
+  "interface_name": "FROZEN_ORBIT_UNCERTAINTY_TO_DOPPLER_SECURITY_V1",
+  "model_name": "Freshness-Conditioned Robust Empirical RTN Ellipsoid",
+  "status": "FROZEN_READY_FOR_DOWNSTREAM",
+  "parameter_artifact": {
+    "path": "outputs/metrics/orbit_uncertainty_stage1f_lite_frozen_parameters.csv",
+    "sha256": "6F17F8340BA14B5B48F7AEAFFD776F1D0A07B4D50F882B2AFCA73756F9FF55D1"
+  },
+  "input": {
+    "claimed_A_public_GP_prediction": "GCRS state propagated causally to evaluation_time",
+    "evaluation_time": "UTC",
+    "candidate_B_state": "GCRS state at the same evaluation_time"
+  },
+  "derived": {
+    "freshness": "element_age_hours of claimed A public GP",
+    "rtn_basis": "claimed A public predicted state",
+    "signed_displacement": "d_B = candidate B state - claimed A public predicted state, projected into claimed-A-defined RTN",
+    "score": "D2 = (d_B - frozen_mu_k)^T frozen_Sigma_k^-1 (d_B - frozen_mu_k)",
+    "threshold_lookup": "frozen freshness bin k"
+  },
+  "support": {
+    "lower_hours_exclusive": 0.0,
+    "upper_hours_inclusive": 36.0,
+    "outside_decision": "DEFER"
+  },
+  "freshness_bins_hours": [
+    [
+      0,
+      6
+    ],
+    [
+      6,
+      9
+    ],
+    [
+      9,
+      12
+    ],
+    [
+      12,
+      18
+    ],
+    [
+      18,
+      24
+    ],
+    [
+      24,
+      36
+    ]
+  ],
+  "decision": [
+    {
+      "condition": "age<=0 or age>36 h",
+      "output": "DEFER"
+    },
+    {
+      "condition": "within support and D2<=c95",
+      "output": "NOT_ORBIT_DISTINCT"
+    },
+    {
+      "condition": "within support and c95<D2<=c99",
+      "output": "AMBIGUOUS"
+    },
+    {
+      "condition": "within support and D2>c99",
+      "output": "ORBIT_DISTINCT"
+    }
+  ],
+  "semantic_guard": "ORBIT_DISTINCT is an uncertainty-gate decision, not attack success/failure.",
+  "next_research_question": "For candidate B cases classified ORBIT_DISTINCT, can the Doppler claimed-identity verifier still accept B?",
+  "danger_region": "ORBIT_DISTINCT + DOPPLER_INDISTINGUISHABLE",
+  "fitting_or_recalibration_allowed": false
+}

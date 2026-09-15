@@ -1,0 +1,151 @@
+{
+  "protocol_name": "CAUSAL_A_ALIGNED_DOPPLER_RECONSTRUCTION_V1",
+  "status": "DOPPLER_SEMANTIC_RECONSTRUCTION_METHOD_FROZEN",
+  "stage": "R0_METHOD_DECISION_ONLY",
+  "scientific_execution_performed": false,
+  "legacy_direct_relabel": "NOT_SUFFICIENT",
+  "core_strategy": "CAUSAL-A-ALIGNED DOPPLER RECONSTRUCTION",
+  "old_verifier_output": "REUSE ONLY WHEN A SEMANTICS MATCH",
+  "semantic_invariant": "The identical causally selected A public prediction must drive orbit scoring, claimed-A Doppler, active compensation when applicable, and verifier residuals.",
+  "frozen_orbit_interface": {
+    "model": "Freshness-Conditioned Robust Empirical RTN Ellipsoid",
+    "parameter_sha256": "6F17F8340BA14B5B48F7AEAFFD776F1D0A07B4D50F882B2AFCA73756F9FF55D1",
+    "application_rtn": "PUBLIC_DEFINED_RTN",
+    "score_vector": "z_B=RTN_public(x_A_public-x_B)",
+    "support": "0<element_age_hours<=36",
+    "outside_support": "DEFER",
+    "modified": false
+  },
+  "analysis_units": {
+    "orbit": "A x B x segment/time",
+    "joint": "A x B x segment/time x observation_realization",
+    "orbit_evaluation_time": "SEGMENT_CENTER",
+    "doppler_evaluation": "FULL_SAVED_SEGMENT_TIMESERIES"
+  },
+  "B_semantic_policy": {
+    "REAL_B": "Preserve original real-B identity and historical physical orbit state at the frozen evaluation segment.",
+    "SYNTHETIC_RELATIVE_TO_A": "Rebuild B_new=Perturb(A_causal,delta) with the identical perturbation rule, factor values, direction and seeds; do not preserve B_old absolute state.",
+    "SYNTHETIC_ABSOLUTE_STATE": "Preserve absolute B only where the authoritative experiment definition explicitly freezes B independently of A; no selected core family currently relies on this class."
+  },
+  "deterministic_transform_decision": "FULL_DOPPLER_RECOMPUTATION_REQUIRED_FOR_A_SEMANTICS_MISMATCH",
+  "deterministic_transform_reason": "Aggregate score, b_hat, k_hat and residual do not retain the time-varying claimed-curve difference; active compensation and A-relative B additionally change the observation itself.",
+  "scientifically_frozen": [
+    "verifier algorithm",
+    "score threshold",
+    "current b/k limits",
+    "observation parameter distribution",
+    "compensation formula",
+    "segment-local/fixed-site-segment-center/single-window convention"
+  ],
+  "legacy_replaced": [
+    "old A TLE/state",
+    "legacy A-dependent cached Doppler geometry",
+    "legacy A-relative C/S coordinates"
+  ],
+  "randomness_policy": {
+    "priority": [
+      "reuse exact saved observation draws",
+      "replay explicit per-realization seeds and verify hashes",
+      "freeze an explicit draw map before R2"
+    ],
+    "new_sampling_allowed": false,
+    "missing_draw_action": "RANDOMNESS_RECONSTRUCTION_REQUIRED"
+  },
+  "core_families": [
+    "active_compensation_first_pass",
+    "segment_local_heatmap_and_direction_sensitivity",
+    "same_pair_multi_pass_real_TLE",
+    "controlled_altitude_difference_synthetic_B"
+  ],
+  "sensitivity_families": [
+    "historical_TLE_multi_pass_real_TLE"
+  ],
+  "historical_only_families": [
+    "score_only_verifier_and_synthetic_orbit_attacks",
+    "verifier_v2_gate_ablation"
+  ],
+  "dropped_mainline_families": [
+    "controlled_multitarget_legitimate_baseline",
+    "fixed_point_active_compensation_summary",
+    "differential_doppler_mechanism_representatives"
+  ],
+  "mode_policy": {
+    "primary": "current_bk",
+    "sensitivity": [
+      "no_bk",
+      "wide_bk"
+    ]
+  },
+  "minimum_core_questions": [
+    "Whether any ORBIT_DISTINCT B remains Doppler accepted",
+    "Dependence on orbit displacement/geometry direction",
+    "Dependence on rho99 while retaining physical distance",
+    "Whether multipass evidence reduces orbit-distinct yet Doppler-accepted cases",
+    "Impact of active compensation",
+    "Impact of the frozen current b/k gate"
+  ],
+  "R1_reproduction_gate": {
+    "orbit_unit_count": 64,
+    "primary_source_rows_bound_to_units": 6480,
+    "primary_source_row_breakdown": {
+      "initial_score_only": 300,
+      "active_compensation": 60,
+      "same_pair_multi_pass": 720,
+      "controlled_altitude": 5400
+    },
+    "derived_verifier_v2_view_rows": 200,
+    "required_scope": "all 64 compatible orbit units and all bound primary source realization/mode rows; V2 view is a duplicate cross-check",
+    "tolerances": {
+      "evaluation_time_and_time_grid": "exact string/value equality; t_rel absolute error <=1e-12 s",
+      "selected_A_GP_ID_and_TLE": "exact equality",
+      "A_position": "max vector norm error <=1e-6 km",
+      "A_velocity": "max vector norm error <=1e-9 km/s",
+      "B_position": "max vector norm error <=1e-6 km",
+      "B_velocity": "max vector norm error <=1e-9 km/s",
+      "Doppler_geometry_curves": "max absolute error <=1e-6 Hz",
+      "active_compensation_curve": "max absolute error <=1e-6 Hz when applicable",
+      "observation_and_raw_residual": "max absolute error <=1e-6 Hz",
+      "b_hat_and_score": "absolute error <=1e-6 Hz",
+      "k_hat": "absolute error <=1e-9 Hz/s",
+      "gate_booleans_and_final_decision": "exact equality; zero mismatches",
+      "saved_random_seeds_and_vector_hashes": "exact equality where available"
+    },
+    "pass_rule": "ALL checks must pass; this is an implementation equivalence gate, not a statistical acceptance rate."
+  },
+  "minimum_reconstruction_policy": {
+    "rerun_all_158520_rows": false,
+    "selection_rules": [
+      "directly answers a final joint-security question",
+      "A/B semantics are fully reconstructable",
+      "randomness is exactly replayable",
+      "current_bk primary rows are retained",
+      "redundant derived views and legacy summaries are excluded",
+      "rho99 transition coverage is audited after R2"
+    ],
+    "boundary_expansion": "R4 only, and only if reconstructed existing perturbation grids do not cover the rho99 transition region"
+  },
+  "joint_states": [
+    "DEFER",
+    "NOT_ORBIT_DISTINCT_AND_DOPPLER_ACCEPTED",
+    "NOT_ORBIT_DISTINCT_AND_DOPPLER_REJECTED",
+    "AMBIGUOUS_AND_DOPPLER_ACCEPTED",
+    "AMBIGUOUS_AND_DOPPLER_REJECTED",
+    "ORBIT_DISTINCT_AND_DOPPLER_ACCEPTED",
+    "ORBIT_DISTINCT_AND_DOPPLER_REJECTED"
+  ],
+  "terminology_guard": "ORBIT_DISTINCT_AND_DOPPLER_ACCEPTED is a security-relevant case, not an attack success rate.",
+  "stages": [
+    "R0 method decision (this artifact)",
+    "R1 64-compatible-unit reproduction validation",
+    "R2 reduced core-family causal-A reconstruction",
+    "R3 joint orbit-distinct plus Doppler analysis",
+    "R4 optional targeted rho99-boundary expansion only if required"
+  ],
+  "output_namespace": {
+    "datasets": "outputs/datasets/doppler_causal_a_reconstruction_*",
+    "metrics": "outputs/metrics/doppler_causal_a_reconstruction_*",
+    "legacy_outputs_mutable": false
+  },
+  "next_step": "CAUSAL_A_DOPPLER_RECONSTRUCTION_REPRODUCTION_VALIDATION",
+  "dependency_row_count": 26
+}

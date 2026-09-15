@@ -1,0 +1,26 @@
+{
+  "stage": "legitimate_orbit_uncertainty_stage0_pre_acquisition_audit",
+  "created_at": "2026-08-23T17:21:00+08:00",
+  "status": "blocked_before_download",
+  "downloads_performed": false,
+  "blockers": [
+    "Space-Track credentials are not available in the current environment",
+    "CelesTrak historical SupGP requires a manual CAPTCHA/e-mail request and no returned raw file is cached",
+    "No Sentinel-1A AUX_POEORB product or Copernicus Data Space authorization is available locally"
+  ],
+  "existing_cache_not_downloaded_this_stage": [
+    {
+      "path": "data/tle/history/starlink_gp_history_20260301_20260320.json",
+      "sha256": "C96E23C84F5B8921B1BB7C08A237728B8821F14A1C100118AD407D67E2DE4DFA",
+      "records": 431,
+      "objects": 7,
+      "source": "Space-Track gp_history",
+      "historical_download_report_generated_at": "2026-06-10T15:59:15"
+    },
+    {
+      "path": "data/tle/history/starlink_gp_history_20260301_20260320_raw_batches.json",
+      "sha256": "89C8D80137F31CA12D20FD3CE823CE2923132406D11431A627BC4A4E710F56C5"
+    }
+  ],
+  "policy": "No authentication bypass, CAPTCHA automation, substitute reference, or repeated historical download was attempted."
+}

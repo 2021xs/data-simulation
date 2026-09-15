@@ -1,0 +1,57 @@
+\begin{lstlisting}[language=Python,caption={claimed-identity Doppler residual verifier 核心流程简化代码},label={lst:claimed_identity_verifier}]
+import numpy as np
+
+def fit_bias_slope_and_score(f_obs_hz, f_geo_A_hz, t_rel_s):
+    """Paper appendix version, not the full engineering script."""
+    t_centered = t_rel_s - np.mean(t_rel_s)
+    delta_A = f_obs_hz - f_geo_A_hz
+
+    design = np.column_stack([np.ones_like(t_centered), t_centered])
+    coef, *_ = np.linalg.lstsq(design, delta_A, rcond=None)
+    b_hat, k_hat = float(coef[0]), float(coef[1])
+
+    fitted_profile = design @ coef
+    residual = delta_A - fitted_profile
+    score_rmse_hz = float(np.sqrt(np.mean(residual ** 2)))
+    return score_rmse_hz, b_hat, k_hat, residual
+
+def verify_claimed_identity(
+    f_obs_hz,
+    f_geo_A_hz,
+    t_rel_s,
+    score_threshold_hz,
+    k_min_hz_s=None,
+    k_max_hz_s=None,
+):
+    score, b_hat, k_hat, residual = fit_bias_slope_and_score(
+        f_obs_hz, f_geo_A_hz, t_rel_s
+    )
+    score_ok = score <= score_threshold_hz
+
+    if k_min_hz_s is None or k_max_hz_s is None:
+        k_gate_ok = True
+    else:
+        k_gate_ok = (k_min_hz_s <= k_hat <= k_max_hz_s)
+
+    accepted = bool(score_ok and k_gate_ok)
+    return {
+        "accepted": accepted,
+        "score_rmse_hz": score,
+        "b_hat_hz": b_hat,
+        "k_hat_hz_s": k_hat,
+        "score_ok": bool(score_ok),
+        "k_gate_ok": bool(k_gate_ok),
+    }
+
+def sweep_thresholds(legit_scores, attack_scores, thresholds):
+    rows = []
+    for th in thresholds:
+        legit_accept = np.asarray(legit_scores) <= th
+        attack_accept = np.asarray(attack_scores) <= th
+        rows.append({
+            "threshold_hz": float(th),
+            "false_reject_rate": float(1.0 - legit_accept.mean()),
+            "false_accept_rate": float(attack_accept.mean()),
+        })
+    return rows
+\end{lstlisting}

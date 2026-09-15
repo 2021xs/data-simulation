@@ -1,0 +1,25 @@
+{
+  "experiment": "doppler_identifiability_theory_audit",
+  "created_at": "2026-08-23T11:09:14.441251",
+  "new_geometry_generated": false,
+  "threshold_recalibrated": false,
+  "verifier_modified": false,
+  "input_files": {
+    "mechanism_rows": "outputs\\metrics\\differential_doppler_mechanism_row_summary.csv",
+    "mechanism_ts": "outputs\\datasets\\differential_doppler_mechanism_timeseries.csv",
+    "fixed_geometry": "outputs\\metrics\\fixed_geometry_multi_realization_geometry_summary.csv",
+    "fixed_data": "outputs\\datasets\\fixed_geometry_multi_realization_dataset.csv",
+    "multipass_geometry": "outputs\\metrics\\same_pair_multi_pass_geometry_summary.csv",
+    "multipass_data": "outputs\\datasets\\same_pair_multi_pass_realization_dataset.csv",
+    "multipass_directions": "outputs\\metrics\\same_pair_multi_pass_direction_candidates.csv",
+    "altitude_geometry": "outputs\\metrics\\controlled_altitude_difference_geometry_summary.csv",
+    "altitude_data": "outputs\\datasets\\controlled_altitude_difference_realization_dataset.csv",
+    "altitude_directions": "outputs\\metrics\\controlled_altitude_difference_direction_candidates.csv"
+  },
+  "projection_audit": {
+    "curve_count": 1582,
+    "max_absolute_difference_hz": 0.0,
+    "global_rmse_difference_hz": 0.0
+  },
+  "audit_all_required_passed": true
+}

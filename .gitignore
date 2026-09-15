@@ -1,0 +1,40 @@
+# Python caches and local environments
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+env/
+
+# Editor and operating-system files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Local secrets and credentials
+.env
+.env.*
+*.pem
+*.key
+*.pfx
+*.p12
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+~$*
+
+# Large generated experiment artifacts. These remain available locally and
+# can be regenerated from the tracked scripts/configuration.
+outputs/datasets/
+outputs/metrics/**/*.csv
+outputs/metrics/*.csv
+

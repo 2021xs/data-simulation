@@ -1,0 +1,568 @@
+{
+  "stage": "Stage-1F-lite June SupGP confirmatory candidate reference availability audit",
+  "status": "JUNE_CONFIRMATORY_WINDOW_ACCEPTABLE",
+  "generated_utc": "2026-09-06T12:12:57Z",
+  "candidate_identity": {
+    "path": "data/orbit_uncertainty_stage1/june",
+    "selection_basis": "priority directory plus CelesTrak SupGP schema, frozen cohort, June EPOCH, DATA_SOURCE/RMS content and recent mtime",
+    "candidate_set_count": 1
+  },
+  "window": {
+    "formal": "[2026-06-01T00:00:00Z, 2026-07-01T00:00:00Z)",
+    "boundary_tolerance_hours": 24.0,
+    "internal_gap_threshold_hours": 48.0,
+    "ordinary_gp_future_acquisition_window": "[2026-05-29T00:00:00Z, 2026-07-01T00:00:00Z)"
+  },
+  "cohort": {
+    "expected_ids": [
+      "44714",
+      "65686",
+      "65421",
+      "65409",
+      "65410",
+      "47749",
+      "47383",
+      "65411",
+      "48309",
+      "45230",
+      "47844",
+      "65407",
+      "47767",
+      "65405",
+      "48672",
+      "48111",
+      "65693",
+      "60265",
+      "58380",
+      "48458"
+    ],
+    "expected_count": 20,
+    "returned_ids": [
+      "44714",
+      "45230",
+      "47383",
+      "47749",
+      "47767",
+      "47844",
+      "48111",
+      "48309",
+      "48458",
+      "48672",
+      "58380",
+      "60265",
+      "65405",
+      "65407",
+      "65409",
+      "65410",
+      "65411",
+      "65421",
+      "65686",
+      "65693"
+    ],
+    "returned_count": 20,
+    "missing_ids": [],
+    "extra_ids": []
+  },
+  "raw": {
+    "file_count": 20,
+    "record_count": 5927,
+    "formal_window_record_count": 5927,
+    "outside_window_record_count": 0,
+    "hashes_before_after_equal": true,
+    "header_consistent": true,
+    "filename_content_norad_consistent": true,
+    "inventory": [
+      {
+        "raw_file": "D:/Project/data-simulation/data/orbit_uncertainty_stage1/june/sat000044714.csv",
+        "file_size_bytes": 48068,
+        "sha256": "F91F0DA10678FA8B4BBDEBC15B9D96435ECFD92205FFA13417B9E47754646E40",
+        "row_count": 300,
+        "header_json": "[\"OBJECT_NAME\", \"OBJECT_ID\", \"EPOCH\", \"MEAN_MOTION\", \"ECCENTRICITY\", \"INCLINATION\", \"RA_OF_ASC_NODE\", \"ARG_OF_PERICENTER\", \"MEAN_ANOMALY\", \"EPHEMERIS_TYPE\", \"CLASSIFICATION_TYPE\", \"NORAD_CAT_ID\", \"ELEMENT_SET_NO\", \"REV_AT_EPOCH\", \"BSTAR\", \"MEAN_MOTION_DOT\", \"MEAN_MOTION_DDOT\", \"RMS\", \"DATA_SOURCE\"]",
+        "norad_ids": "44714",
+        "first_epoch": "2026-06-01T02:55:42.000010Z",
+        "last_epoch": "2026-06-30T23:49:41.999981Z",
+        "parse_notes": "",
+        "mtime_utc": "2026-09-06T12:02:46Z",
+        "filename_norad_id": "44714",
+        "content_norad_ids": "44714",
+        "filename_content_norad_consistent": true
+      },
+      {
+        "raw_file": "D:/Project/data-simulation/data/orbit_uncertainty_stage1/june/sat000045230.csv",
+        "file_size_bytes": 47489,
+        "sha256": "A086445B48BCEA5D6D786487B3F9BAAB43C341130589A86BCBB60E49241950E8",
+        "row_count": 293,
+        "header_json": "[\"OBJECT_NAME\", \"OBJECT_ID\", \"EPOCH\", \"MEAN_MOTION\", \"ECCENTRICITY\", \"INCLINATION\", \"RA_OF_ASC_NODE\", \"ARG_OF_PERICENTER\", \"MEAN_ANOMALY\", \"EPHEMERIS_TYPE\", \"CLASSIFICATION_TYPE\", \"NORAD_CAT_ID\", \"ELEMENT_SET_NO\", \"REV_AT_EPOCH\", \"BSTAR\", \"MEAN_MOTION_DOT\", \"MEAN_MOTION_DDOT\", \"RMS\", \"DATA_SOURCE\"]",
+        "norad_ids": "45230",
+        "first_epoch": "2026-06-01T00:54:41.999990Z",
+        "last_epoch": "2026-06-30T19:53:41.999971Z",
+        "parse_notes": "",
+        "mtime_utc": "2026-09-06T12:02:46Z",
+        "filename_norad_id": "45230",
+        "content_norad_ids": "45230",
+        "filename_content_norad_consistent": true
+      },
+      {
+        "raw_file": "D:/Project/data-simulation/data/orbit_uncertainty_stage1/june/sat000047383.csv",
+        "file_size_bytes": 48131,
+        "sha256": "6A97ABED011A96AE20108B2FFAB622CC78ED39D918CC694CBFCE03E18290B2FA",
+        "row_count": 297,
+        "header_json": "[\"OBJECT_NAME\", \"OBJECT_ID\", \"EPOCH\", \"MEAN_MOTION\", \"ECCENTRICITY\", \"INCLINATION\", \"RA_OF_ASC_NODE\", \"ARG_OF_PERICENTER\", \"MEAN_ANOMALY\", \"EPHEMERIS_TYPE\", \"CLASSIFICATION_TYPE\", \"NORAD_CAT_ID\", \"ELEMENT_SET_NO\", \"REV_AT_EPOCH\", \"BSTAR\", \"MEAN_MOTION_DOT\", \"MEAN_MOTION_DDOT\", \"RMS\", \"DATA_SOURCE\"]",
+        "norad_ids": "47383",
+        "first_epoch": "2026-06-01T00:57:41.999962Z",
+        "last_epoch": "2026-06-30T21:58:42.000010Z",
+        "parse_notes": "",
+        "mtime_utc": "2026-09-06T12:02:46Z",
+        "filename_norad_id": "47383",
+        "content_norad_ids": "47383",
+        "filename_content_norad_consistent": true
+      },
+      {
+        "raw_file": "D:/Project/data-simulation/data/orbit_uncertainty_stage1/june/sat000047749.csv",
+        "file_size_bytes": 47656,
+        "sha256": "0CE3EE486737D6898F4E0960379BB2CF5D672CBD2C80BC161C0E3F96D2261670",
+        "row_count": 295,
+        "header_json": "[\"OBJECT_NAME\", \"OBJECT_ID\", \"EPOCH\", \"MEAN_MOTION\", \"ECCENTRICITY\", \"INCLINATION\", \"RA_OF_ASC_NODE\", \"ARG_OF_PERICENTER\", \"MEAN_ANOMALY\", \"EPHEMERIS_TYPE\", \"CLASSIFICATION_TYPE\", \"NORAD_CAT_ID\", \"ELEMENT_SET_NO\", \"REV_AT_EPOCH\", \"BSTAR\", \"MEAN_MOTION_DOT\", \"MEAN_MOTION_DDOT\", \"RMS\", \"DATA_SOURCE\"]",
+        "norad_ids": "47749",
+        "first_epoch": "2026-06-01T02:57:42.000019Z",
+        "last_epoch": "2026-06-30T22:39:41.999990Z",
+        "parse_notes": "",
+        "mtime_utc": "2026-09-06T12:02:46Z",
+        "filename_norad_id": "47749",
+        "content_norad_ids": "47749",
+        "filename_content_norad_consistent": true
+      },
+      {
+        "raw_file": "D:/Project/data-simulation/data/orbit_uncertainty_stage1/june/sat000047767.csv",
+        "file_size_bytes": 46744,
+        "sha256": "6E26A6FFCB0389E48C81BEEAD935A847B2444F9441CBE4C1AD8107642DE7DD5F",
+        "row_count": 291,
+        "header_json": "[\"OBJECT_NAME\", \"OBJECT_ID\", \"EPOCH\", \"MEAN_MOTION\", \"ECCENTRICITY\", \"INCLINATION\", \"RA_OF_ASC_NODE\", \"ARG_OF_PERICENTER\", \"MEAN_ANOMALY\", \"EPHEMERIS_TYPE\", \"CLASSIFICATION_TYPE\", \"NORAD_CAT_ID\", \"ELEMENT_SET_NO\", \"REV_AT_EPOCH\", \"BSTAR\", \"MEAN_MOTION_DOT\", \"MEAN_MOTION_DDOT\", \"RMS\", \"DATA_SOURCE\"]",
+        "norad_ids": "47767",
+        "first_epoch": "2026-06-01T00:30:41.999962Z",
+        "last_epoch": "2026-06-30T22:41:42Z",
+        "parse_notes": "",
+        "mtime_utc": "2026-09-06T12:02:46Z",
+        "filename_norad_id": "47767",
+        "content_norad_ids": "47767",
+        "filename_content_norad_consistent": true
+      },
+      {
+        "raw_file": "D:/Project/data-simulation/data/orbit_uncertainty_stage1/june/sat000047844.csv",
+        "file_size_bytes": 47799,
+        "sha256": "FE1F3D11E12AC1E3987E760842AEC279FE294DEAF66BE25CA508FB5254D084DD",
+        "row_count": 295,
+        "header_json": "[\"OBJECT_NAME\", \"OBJECT_ID\", \"EPOCH\", \"MEAN_MOTION\", \"ECCENTRICITY\", \"INCLINATION\", \"RA_OF_ASC_NODE\", \"ARG_OF_PERICENTER\", \"MEAN_ANOMALY\", \"EPHEMERIS_TYPE\", \"CLASSIFICATION_TYPE\", \"NORAD_CAT_ID\", \"ELEMENT_SET_NO\", \"REV_AT_EPOCH\", \"BSTAR\", \"MEAN_MOTION_DOT\", \"MEAN_MOTION_DDOT\", \"RMS\", \"DATA_SOURCE\"]",
+        "norad_ids": "47844",
+        "first_epoch": "2026-06-01T00:17:42.000029Z",
+        "last_epoch": "2026-06-30T22:58:42.000038Z",
+        "parse_notes": "",
+        "mtime_utc": "2026-09-06T12:02:46Z",
+        "filename_norad_id": "47844",
+        "content_norad_ids": "47844",
+        "filename_content_norad_consistent": true
+      },
+      {
+        "raw_file": "D:/Project/data-simulation/data/orbit_uncertainty_stage1/june/sat000048111.csv",
+        "file_size_bytes": 47438,
+        "sha256": "63E98DFF9634CD904EDA2CF3528E739282097399B04E926A453B20B62792D5D5",
+        "row_count": 297,
+        "header_json": "[\"OBJECT_NAME\", \"OBJECT_ID\", \"EPOCH\", \"MEAN_MOTION\", \"ECCENTRICITY\", \"INCLINATION\", \"RA_OF_ASC_NODE\", \"ARG_OF_PERICENTER\", \"MEAN_ANOMALY\", \"EPHEMERIS_TYPE\", \"CLASSIFICATION_TYPE\", \"NORAD_CAT_ID\", \"ELEMENT_SET_NO\", \"REV_AT_EPOCH\", \"BSTAR\", \"MEAN_MOTION_DOT\", \"MEAN_MOTION_DDOT\", \"RMS\", \"DATA_SOURCE\"]",
+        "norad_ids": "48111",
+        "first_epoch": "2026-06-01T03:01:42.000038Z",
+        "last_epoch": "2026-06-30T21:58:42.000010Z",
+        "parse_notes": "",
+        "mtime_utc": "2026-09-06T12:02:46Z",
+        "filename_norad_id": "48111",
+        "content_norad_ids": "48111",
+        "filename_content_norad_consistent": true
+      },
+      {
+        "raw_file": "D:/Project/data-simulation/data/orbit_uncertainty_stage1/june/sat000048309.csv",
+        "file_size_bytes": 46891,
+        "sha256": "79D62147447BEB30EC557417B61811EF138EF8094DC33D3F68D9F90E474F7689",
+        "row_count": 290,
+        "header_json": "[\"OBJECT_NAME\", \"OBJECT_ID\", \"EPOCH\", \"MEAN_MOTION\", \"ECCENTRICITY\", \"INCLINATION\", \"RA_OF_ASC_NODE\", \"ARG_OF_PERICENTER\", \"MEAN_ANOMALY\", \"EPHEMERIS_TYPE\", \"CLASSIFICATION_TYPE\", \"NORAD_CAT_ID\", \"ELEMENT_SET_NO\", \"REV_AT_EPOCH\", \"BSTAR\", \"MEAN_MOTION_DOT\", \"MEAN_MOTION_DDOT\", \"RMS\", \"DATA_SOURCE\"]",
+        "norad_ids": "48309",
+        "first_epoch": "2026-06-01T00:45:41.999990Z",
+        "last_epoch": "2026-06-30T18:12:41.999962Z",
+        "parse_notes": "",
+        "mtime_utc": "2026-09-06T12:02:46Z",
+        "filename_norad_id": "48309",
+        "content_norad_ids": "48309",
+        "filename_content_norad_consistent": true
+      },
+      {
+        "raw_file": "D:/Project/data-simulation/data/orbit_uncertainty_stage1/june/sat000048458.csv",
+        "file_size_bytes": 47671,
+        "sha256": "091BB60895838155D6E08F3AB53CB4B529B9EB7F826CA2A0FB9BFADE0198C1C6",
+        "row_count": 295,
+        "header_json": "[\"OBJECT_NAME\", \"OBJECT_ID\", \"EPOCH\", \"MEAN_MOTION\", \"ECCENTRICITY\", \"INCLINATION\", \"RA_OF_ASC_NODE\", \"ARG_OF_PERICENTER\", \"MEAN_ANOMALY\", \"EPHEMERIS_TYPE\", \"CLASSIFICATION_TYPE\", \"NORAD_CAT_ID\", \"ELEMENT_SET_NO\", \"REV_AT_EPOCH\", \"BSTAR\", \"MEAN_MOTION_DOT\", \"MEAN_MOTION_DDOT\", \"RMS\", \"DATA_SOURCE\"]",
+        "norad_ids": "48458",
+        "first_epoch": "2026-06-01T02:58:41.999981Z",
+        "last_epoch": "2026-06-30T23:24:41.999990Z",
+        "parse_notes": "",
+        "mtime_utc": "2026-09-06T12:02:46Z",
+        "filename_norad_id": "48458",
+        "content_norad_ids": "48458",
+        "filename_content_norad_consistent": true
+      },
+      {
+        "raw_file": "D:/Project/data-simulation/data/orbit_uncertainty_stage1/june/sat000048672.csv",
+        "file_size_bytes": 47953,
+        "sha256": "9CCC0F6B332261080A38A7EF3636C88202FADE4135B08985F943785C7A1E9415",
+        "row_count": 297,
+        "header_json": "[\"OBJECT_NAME\", \"OBJECT_ID\", \"EPOCH\", \"MEAN_MOTION\", \"ECCENTRICITY\", \"INCLINATION\", \"RA_OF_ASC_NODE\", \"ARG_OF_PERICENTER\", \"MEAN_ANOMALY\", \"EPHEMERIS_TYPE\", \"CLASSIFICATION_TYPE\", \"NORAD_CAT_ID\", \"ELEMENT_SET_NO\", \"REV_AT_EPOCH\", \"BSTAR\", \"MEAN_MOTION_DOT\", \"MEAN_MOTION_DDOT\", \"RMS\", \"DATA_SOURCE\"]",
+        "norad_ids": "48672",
+        "first_epoch": "2026-06-01T01:05:42Z",
+        "last_epoch": "2026-06-30T22:15:41.999962Z",
+        "parse_notes": "",
+        "mtime_utc": "2026-09-06T12:02:46Z",
+        "filename_norad_id": "48672",
+        "content_norad_ids": "48672",
+        "filename_content_norad_consistent": true
+      },
+      {
+        "raw_file": "D:/Project/data-simulation/data/orbit_uncertainty_stage1/june/sat000058380.csv",
+        "file_size_bytes": 48193,
+        "sha256": "3EDD695EBC2FD369BB6D3F364CEB1C354CEB8FF41D75D9C0E85CB4203365E2E7",
+        "row_count": 297,
+        "header_json": "[\"OBJECT_NAME\", \"OBJECT_ID\", \"EPOCH\", \"MEAN_MOTION\", \"ECCENTRICITY\", \"INCLINATION\", \"RA_OF_ASC_NODE\", \"ARG_OF_PERICENTER\", \"MEAN_ANOMALY\", \"EPHEMERIS_TYPE\", \"CLASSIFICATION_TYPE\", \"NORAD_CAT_ID\", \"ELEMENT_SET_NO\", \"REV_AT_EPOCH\", \"BSTAR\", \"MEAN_MOTION_DOT\", \"MEAN_MOTION_DDOT\", \"RMS\", \"DATA_SOURCE\"]",
+        "norad_ids": "58380",
+        "first_epoch": "2026-06-01T01:07:42.000010Z",
+        "last_epoch": "2026-06-30T22:17:41.999971Z",
+        "parse_notes": "",
+        "mtime_utc": "2026-09-06T12:02:46Z",
+        "filename_norad_id": "58380",
+        "content_norad_ids": "58380",
+        "filename_content_norad_consistent": true
+      },
+      {
+        "raw_file": "D:/Project/data-simulation/data/orbit_uncertainty_stage1/june/sat000060265.csv",
+        "file_size_bytes": 47939,
+        "sha256": "310CEC01430FB37300D0520AC911958B04898B003A2B2906A630DA9E075D20EF",
+        "row_count": 296,
+        "header_json": "[\"OBJECT_NAME\", \"OBJECT_ID\", \"EPOCH\", \"MEAN_MOTION\", \"ECCENTRICITY\", \"INCLINATION\", \"RA_OF_ASC_NODE\", \"ARG_OF_PERICENTER\", \"MEAN_ANOMALY\", \"EPHEMERIS_TYPE\", \"CLASSIFICATION_TYPE\", \"NORAD_CAT_ID\", \"ELEMENT_SET_NO\", \"REV_AT_EPOCH\", \"BSTAR\", \"MEAN_MOTION_DOT\", \"MEAN_MOTION_DDOT\", \"RMS\", \"DATA_SOURCE\"]",
+        "norad_ids": "60265",
+        "first_epoch": "2026-06-01T00:11:42Z",
+        "last_epoch": "2026-06-30T19:51:41.999962Z",
+        "parse_notes": "",
+        "mtime_utc": "2026-09-06T12:02:46Z",
+        "filename_norad_id": "60265",
+        "content_norad_ids": "60265",
+        "filename_content_norad_consistent": true
+      },
+      {
+        "raw_file": "D:/Project/data-simulation/data/orbit_uncertainty_stage1/june/sat000065405.csv",
+        "file_size_bytes": 48281,
+        "sha256": "10707AFA6592FB845A94CB76E13C89BAD9EFA77F9A31B0B3C5036D80E7E87A62",
+        "row_count": 298,
+        "header_json": "[\"OBJECT_NAME\", \"OBJECT_ID\", \"EPOCH\", \"MEAN_MOTION\", \"ECCENTRICITY\", \"INCLINATION\", \"RA_OF_ASC_NODE\", \"ARG_OF_PERICENTER\", \"MEAN_ANOMALY\", \"EPHEMERIS_TYPE\", \"CLASSIFICATION_TYPE\", \"NORAD_CAT_ID\", \"ELEMENT_SET_NO\", \"REV_AT_EPOCH\", \"BSTAR\", \"MEAN_MOTION_DOT\", \"MEAN_MOTION_DDOT\", \"RMS\", \"DATA_SOURCE\"]",
+        "norad_ids": "65405",
+        "first_epoch": "2026-06-01T00:26:42.000029Z",
+        "last_epoch": "2026-06-30T23:07:42.000038Z",
+        "parse_notes": "",
+        "mtime_utc": "2026-09-06T12:02:46Z",
+        "filename_norad_id": "65405",
+        "content_norad_ids": "65405",
+        "filename_content_norad_consistent": true
+      },
+      {
+        "raw_file": "D:/Project/data-simulation/data/orbit_uncertainty_stage1/june/sat000065407.csv",
+        "file_size_bytes": 48010,
+        "sha256": "1D5D20428BDA125132468A3B81A5A0011425555B1C761A0A7A4BD8F31D76DA01",
+        "row_count": 296,
+        "header_json": "[\"OBJECT_NAME\", \"OBJECT_ID\", \"EPOCH\", \"MEAN_MOTION\", \"ECCENTRICITY\", \"INCLINATION\", \"RA_OF_ASC_NODE\", \"ARG_OF_PERICENTER\", \"MEAN_ANOMALY\", \"EPHEMERIS_TYPE\", \"CLASSIFICATION_TYPE\", \"NORAD_CAT_ID\", \"ELEMENT_SET_NO\", \"REV_AT_EPOCH\", \"BSTAR\", \"MEAN_MOTION_DOT\", \"MEAN_MOTION_DDOT\", \"RMS\", \"DATA_SOURCE\"]",
+        "norad_ids": "65407",
+        "first_epoch": "2026-06-01T00:24:42.000019Z",
+        "last_epoch": "2026-06-30T19:16:42.000010Z",
+        "parse_notes": "",
+        "mtime_utc": "2026-09-06T12:02:46Z",
+        "filename_norad_id": "65407",
+        "content_norad_ids": "65407",
+        "filename_content_norad_consistent": true
+      },
+      {
+        "raw_file": "D:/Project/data-simulation/data/orbit_uncertainty_stage1/june/sat000065409.csv",
+        "file_size_bytes": 48295,
+        "sha256": "C82A923C1B14CF8F30B1B5DDBB30C6CB9AE3A8DB51A9A3F182BEC8348A9F0DF5",
+        "row_count": 298,
+        "header_json": "[\"OBJECT_NAME\", \"OBJECT_ID\", \"EPOCH\", \"MEAN_MOTION\", \"ECCENTRICITY\", \"INCLINATION\", \"RA_OF_ASC_NODE\", \"ARG_OF_PERICENTER\", \"MEAN_ANOMALY\", \"EPHEMERIS_TYPE\", \"CLASSIFICATION_TYPE\", \"NORAD_CAT_ID\", \"ELEMENT_SET_NO\", \"REV_AT_EPOCH\", \"BSTAR\", \"MEAN_MOTION_DOT\", \"MEAN_MOTION_DDOT\", \"RMS\", \"DATA_SOURCE\"]",
+        "norad_ids": "65409",
+        "first_epoch": "2026-06-01T01:29:42.000029Z",
+        "last_epoch": "2026-06-30T23:47:41.999971Z",
+        "parse_notes": "",
+        "mtime_utc": "2026-09-06T12:02:46Z",
+        "filename_norad_id": "65409",
+        "content_norad_ids": "65409",
+        "filename_content_norad_consistent": true
+      },
+      {
+        "raw_file": "D:/Project/data-simulation/data/orbit_uncertainty_stage1/june/sat000065410.csv",
+        "file_size_bytes": 48915,
+        "sha256": "480E0881CFF425F783D504E2B784746BB847F6C9A822B6001FD1AFCD7FF9CBC4",
+        "row_count": 302,
+        "header_json": "[\"OBJECT_NAME\", \"OBJECT_ID\", \"EPOCH\", \"MEAN_MOTION\", \"ECCENTRICITY\", \"INCLINATION\", \"RA_OF_ASC_NODE\", \"ARG_OF_PERICENTER\", \"MEAN_ANOMALY\", \"EPHEMERIS_TYPE\", \"CLASSIFICATION_TYPE\", \"NORAD_CAT_ID\", \"ELEMENT_SET_NO\", \"REV_AT_EPOCH\", \"BSTAR\", \"MEAN_MOTION_DOT\", \"MEAN_MOTION_DDOT\", \"RMS\", \"DATA_SOURCE\"]",
+        "norad_ids": "65410",
+        "first_epoch": "2026-06-01T00:19:42.000038Z",
+        "last_epoch": "2026-06-30T22:44:41.999971Z",
+        "parse_notes": "",
+        "mtime_utc": "2026-09-06T12:02:46Z",
+        "filename_norad_id": "65410",
+        "content_norad_ids": "65410",
+        "filename_content_norad_consistent": true
+      },
+      {
+        "raw_file": "D:/Project/data-simulation/data/orbit_uncertainty_stage1/june/sat000065411.csv",
+        "file_size_bytes": 48411,
+        "sha256": "26E105CAB95698D658010132E70DA6D62EE0D10BD67ED831612077EEE7C12C95",
+        "row_count": 299,
+        "header_json": "[\"OBJECT_NAME\", \"OBJECT_ID\", \"EPOCH\", \"MEAN_MOTION\", \"ECCENTRICITY\", \"INCLINATION\", \"RA_OF_ASC_NODE\", \"ARG_OF_PERICENTER\", \"MEAN_ANOMALY\", \"EPHEMERIS_TYPE\", \"CLASSIFICATION_TYPE\", \"NORAD_CAT_ID\", \"ELEMENT_SET_NO\", \"REV_AT_EPOCH\", \"BSTAR\", \"MEAN_MOTION_DOT\", \"MEAN_MOTION_DDOT\", \"RMS\", \"DATA_SOURCE\"]",
+        "norad_ids": "65411",
+        "first_epoch": "2026-06-01T01:47:42.000029Z",
+        "last_epoch": "2026-06-30T19:50:42Z",
+        "parse_notes": "",
+        "mtime_utc": "2026-09-06T12:02:46Z",
+        "filename_norad_id": "65411",
+        "content_norad_ids": "65411",
+        "filename_content_norad_consistent": true
+      },
+      {
+        "raw_file": "D:/Project/data-simulation/data/orbit_uncertainty_stage1/june/sat000065421.csv",
+        "file_size_bytes": 48752,
+        "sha256": "47F2014ECBC8E7384C87E8BF3D80DB676A195CA775414C519EDF2550466E6CB3",
+        "row_count": 301,
+        "header_json": "[\"OBJECT_NAME\", \"OBJECT_ID\", \"EPOCH\", \"MEAN_MOTION\", \"ECCENTRICITY\", \"INCLINATION\", \"RA_OF_ASC_NODE\", \"ARG_OF_PERICENTER\", \"MEAN_ANOMALY\", \"EPHEMERIS_TYPE\", \"CLASSIFICATION_TYPE\", \"NORAD_CAT_ID\", \"ELEMENT_SET_NO\", \"REV_AT_EPOCH\", \"BSTAR\", \"MEAN_MOTION_DOT\", \"MEAN_MOTION_DDOT\", \"RMS\", \"DATA_SOURCE\"]",
+        "norad_ids": "65421",
+        "first_epoch": "2026-06-01T01:42:41.999962Z",
+        "last_epoch": "2026-06-30T23:34:42.000038Z",
+        "parse_notes": "",
+        "mtime_utc": "2026-09-06T12:02:46Z",
+        "filename_norad_id": "65421",
+        "content_norad_ids": "65421",
+        "filename_content_norad_consistent": true
+      },
+      {
+        "raw_file": "D:/Project/data-simulation/data/orbit_uncertainty_stage1/june/sat000065686.csv",
+        "file_size_bytes": 47457,
+        "sha256": "B6BC6FF15B3CA146A8A5647889EB05C3E5134E71663266D0DFF94290D3AA7A5B",
+        "row_count": 293,
+        "header_json": "[\"OBJECT_NAME\", \"OBJECT_ID\", \"EPOCH\", \"MEAN_MOTION\", \"ECCENTRICITY\", \"INCLINATION\", \"RA_OF_ASC_NODE\", \"ARG_OF_PERICENTER\", \"MEAN_ANOMALY\", \"EPHEMERIS_TYPE\", \"CLASSIFICATION_TYPE\", \"NORAD_CAT_ID\", \"ELEMENT_SET_NO\", \"REV_AT_EPOCH\", \"BSTAR\", \"MEAN_MOTION_DOT\", \"MEAN_MOTION_DDOT\", \"RMS\", \"DATA_SOURCE\"]",
+        "norad_ids": "65686",
+        "first_epoch": "2026-06-01T00:59:41.999971Z",
+        "last_epoch": "2026-06-30T22:48:41.999990Z",
+        "parse_notes": "",
+        "mtime_utc": "2026-09-06T12:02:46Z",
+        "filename_norad_id": "65686",
+        "content_norad_ids": "65686",
+        "filename_content_norad_consistent": true
+      },
+      {
+        "raw_file": "D:/Project/data-simulation/data/orbit_uncertainty_stage1/june/sat000065693.csv",
+        "file_size_bytes": 48171,
+        "sha256": "D31425DC1D7BF768E17AFC34A7D7E516943AB5AC5C7598CCE830821EDB62E3E7",
+        "row_count": 297,
+        "header_json": "[\"OBJECT_NAME\", \"OBJECT_ID\", \"EPOCH\", \"MEAN_MOTION\", \"ECCENTRICITY\", \"INCLINATION\", \"RA_OF_ASC_NODE\", \"ARG_OF_PERICENTER\", \"MEAN_ANOMALY\", \"EPHEMERIS_TYPE\", \"CLASSIFICATION_TYPE\", \"NORAD_CAT_ID\", \"ELEMENT_SET_NO\", \"REV_AT_EPOCH\", \"BSTAR\", \"MEAN_MOTION_DOT\", \"MEAN_MOTION_DDOT\", \"RMS\", \"DATA_SOURCE\"]",
+        "norad_ids": "65693",
+        "first_epoch": "2026-06-01T01:11:42.000029Z",
+        "last_epoch": "2026-06-30T18:07:41.999981Z",
+        "parse_notes": "",
+        "mtime_utc": "2026-09-06T12:02:46Z",
+        "filename_norad_id": "65693",
+        "content_norad_ids": "65693",
+        "filename_content_norad_consistent": true
+      }
+    ]
+  },
+  "reference_quality": {
+    "total_records": 5927,
+    "records_within_june": 5927,
+    "records_outside_june": 0,
+    "unparseable_epoch_count": 0,
+    "data_source_set": "SpaceX-E",
+    "data_source_distribution": "{\"SpaceX-E\": 5927}",
+    "source_switch_satellites": 0,
+    "missing_data_source": 0,
+    "rms_count": 5927,
+    "rms_missing": 0,
+    "rms_invalid": 0,
+    "rms_min_km": 0.113,
+    "rms_median_km": 0.198,
+    "rms_p90_km": 0.27,
+    "rms_p95_km": 0.3067,
+    "rms_max_km": 2.036,
+    "required_field_missing": 0,
+    "invalid_numeric": 0,
+    "sgp4_omm_initialization_errors": 0,
+    "header_consistent": true,
+    "filename_content_norad_consistent": true,
+    "rms_semantics": "REFERENCE_ONLY; no acceptance cutoff"
+  },
+  "duplicates": {
+    "duplicate_epoch_count": 0,
+    "duplicate_epoch_group_count": 0,
+    "exact_duplicate_record_count": 0,
+    "same_epoch_variant_group_count": 0,
+    "same_epoch_variant_record_count": 0,
+    "same_epoch_source_variant_group_count": 0,
+    "same_epoch_rms_variant_group_count": 0,
+    "same_epoch_element_variant_group_count": 0
+  },
+  "daily_coverage": {
+    "dates_with_any_records": 30,
+    "dates_with_20_satellites": 30,
+    "minimum_records_per_day": 126,
+    "minimum_satellites_per_day": 20,
+    "abnormal_dates": []
+  },
+  "gap_audit": {
+    "satellites_with_gt_48h_gap": 0,
+    "total_gt_48h_intervals": 0,
+    "march_style_archive_gap": "NO",
+    "descriptive_all_cohort_pauses_gt_12h": []
+  },
+  "simulated_gate": {
+    "READY": 20,
+    "PARTIAL": 0,
+    "NO_REFERENCE": 0
+  },
+  "decision": {
+    "code": "A",
+    "status": "JUNE_CONFIRMATORY_WINDOW_ACCEPTABLE"
+  },
+  "blindness": {
+    "ordinary_gp_read_or_acquired": false,
+    "residual_calculated": false,
+    "frozen_model_loaded_or_scored": false,
+    "confirmatory_coverage_calculated": false,
+    "security_classification_calculated": false,
+    "june_scientific_rows_read": 0,
+    "forbidden_confirmatory_fields_present": []
+  },
+  "frozen_artifact_protection": {
+    "all_match_expected_before": true,
+    "all_match_expected_after": true,
+    "before_after_equal": true,
+    "artifacts": [
+      {
+        "path": "outputs/metrics/orbit_uncertainty_stage1f_lite_frozen_parameters.csv",
+        "expected_sha256": "6F17F8340BA14B5B48F7AEAFFD776F1D0A07B4D50F882B2AFCA73756F9FF55D1",
+        "observed_sha256": "6F17F8340BA14B5B48F7AEAFFD776F1D0A07B4D50F882B2AFCA73756F9FF55D1",
+        "exists": true,
+        "matches_expected": true
+      },
+      {
+        "path": "outputs/metrics/orbit_uncertainty_stage1f_lite_manifest.json",
+        "expected_sha256": "E18F19B0AF191DC3599228BC00CA1BAADE31FD8AC513A2533D19279982CF5660",
+        "observed_sha256": "E18F19B0AF191DC3599228BC00CA1BAADE31FD8AC513A2533D19279982CF5660",
+        "exists": true,
+        "matches_expected": true
+      },
+      {
+        "path": "outputs/reports/orbit_uncertainty_stage1f_lite_design_freeze_report.md",
+        "expected_sha256": "001CF7C56661B1243CE6AAE06766537F9F7D1B8805C041F6A0DF33332678CA71",
+        "observed_sha256": "001CF7C56661B1243CE6AAE06766537F9F7D1B8805C041F6A0DF33332678CA71",
+        "exists": true,
+        "matches_expected": true
+      },
+      {
+        "path": "outputs/datasets/orbit_uncertainty_stage1b_20260401_20260430_rtn_residual_library.csv",
+        "expected_sha256": "2B02C40FDEA69F6079D256B5E274652ABAB2D5BC2F9899866C7F1CAFFB469F23",
+        "observed_sha256": "2B02C40FDEA69F6079D256B5E274652ABAB2D5BC2F9899866C7F1CAFFB469F23",
+        "exists": true,
+        "matches_expected": true
+      },
+      {
+        "path": "outputs/datasets/orbit_uncertainty_stage1b_20260501_20260531_rtn_residual_library.csv",
+        "expected_sha256": "119F2DAA3896476E120F010A436D0B250E404D41326B57FAABFEAA9F2F73EF3F",
+        "observed_sha256": "119F2DAA3896476E120F010A436D0B250E404D41326B57FAABFEAA9F2F73EF3F",
+        "exists": true,
+        "matches_expected": true
+      },
+      {
+        "path": "outputs/metrics/orbit_uncertainty_stage1b_20260401_20260430_manifest.json",
+        "expected_sha256": "81FC7EF0F4E6401A316A893C1C010840136AA43BEBEC48094A74F06FE020E4E3",
+        "observed_sha256": "81FC7EF0F4E6401A316A893C1C010840136AA43BEBEC48094A74F06FE020E4E3",
+        "exists": true,
+        "matches_expected": true
+      },
+      {
+        "path": "outputs/metrics/orbit_uncertainty_stage1b_20260501_20260531_manifest.json",
+        "expected_sha256": "9631AF3F4B4AA0F9D4C9804AE05A2C5F7608428CC0D1B2D7C22CC145F6EF38CD",
+        "observed_sha256": "9631AF3F4B4AA0F9D4C9804AE05A2C5F7608428CC0D1B2D7C22CC145F6EF38CD",
+        "exists": true,
+        "matches_expected": true
+      },
+      {
+        "path": "outputs/metrics/orbit_uncertainty_stage1d_20260401_20260430_manifest.json",
+        "expected_sha256": "834917C94E18E1AD8E643687AF4312A88B28DFADA4E6FE25C407F091E04C0617",
+        "observed_sha256": "834917C94E18E1AD8E643687AF4312A88B28DFADA4E6FE25C407F091E04C0617",
+        "exists": true,
+        "matches_expected": true
+      },
+      {
+        "path": "outputs/metrics/orbit_uncertainty_stage1e_20260401_20260430_manifest.json",
+        "expected_sha256": "888FACF353F5F6FC0B011F45521187781BE007943D8DB84AAF3B961DB300883D",
+        "observed_sha256": "888FACF353F5F6FC0B011F45521187781BE007943D8DB84AAF3B961DB300883D",
+        "exists": true,
+        "matches_expected": true
+      },
+      {
+        "path": "outputs/metrics/orbit_uncertainty_stage1_external_202605_partial_manifest.json",
+        "expected_sha256": "720797459ABAE320C341F785D8425B0B08C8904B003C149B7F6C5A0DF9E2B311",
+        "observed_sha256": "720797459ABAE320C341F785D8425B0B08C8904B003C149B7F6C5A0DF9E2B311",
+        "exists": true,
+        "matches_expected": true
+      },
+      {
+        "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_satellite_selection.csv",
+        "expected_sha256": "30D7A846DDDE5850645CD3C1C03C061E7971AE40A2EE052FFB4E8BA3E7F4ED36",
+        "observed_sha256": "30D7A846DDDE5850645CD3C1C03C061E7971AE40A2EE052FFB4E8BA3E7F4ED36",
+        "exists": true,
+        "matches_expected": true
+      }
+    ]
+  },
+  "implementation": {
+    "script_path": "scripts/audit_orbit_uncertainty_stage1f_june_supgp_candidate.py",
+    "script_sha256": "27071254FAE60B05ECFF12733D3A439A57BA78C5A869BEB9EB484414FB34347F",
+    "reused_gate_script": "scripts/audit_orbit_uncertainty_stage1a_supgp.py",
+    "reused_gate_script_sha256": "CA625980B03FE6EA8614B1D4AAB31131F4B1F2CFFFE04480CB95110F76A9E270",
+    "git_commit": null,
+    "git_note": "project root is not a Git worktree"
+  },
+  "outputs": {
+    "inventory": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1f_june_supgp_candidate_raw_inventory.csv",
+      "sha256": "CBDB2596EFD808F6D4A9815FBD484710F0EDD9420F0CC312AA685F1F1316D566"
+    },
+    "quality": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1f_june_supgp_candidate_reference_quality.csv",
+      "sha256": "7EB4091E79338C0D136C447B0D9A0DDC34FC0982175609CBFCE3DB8EC53C6CB9"
+    },
+    "per_satellite": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1f_june_supgp_candidate_per_satellite.csv",
+      "sha256": "61487EFA5CC106A2BAE077EB376C60A2C06F1322D4C5AF02CDBB108C1CE61BEA"
+    },
+    "daily": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1f_june_supgp_candidate_daily_coverage.csv",
+      "sha256": "03E6EFEC3D2346A0C3FB37B512AA4F2E7178C26343F7F48FCC87A18013839C89"
+    },
+    "pauses": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1f_june_supgp_candidate_cohort_pause_audit.csv",
+      "sha256": "CB03B4D4A4B1118C4C82BA258E163870DDC3D9AF515C771876827445D10484EA"
+    },
+    "duplicates": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1f_june_supgp_candidate_duplicate_epoch_audit.csv",
+      "sha256": "064BE66F476A840E1AC99249FF88C7C66860844E9D6D70DAA3638487FD7E344A"
+    },
+    "correctness": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1f_june_supgp_candidate_correctness_audit.csv",
+      "sha256": "818F68E682235B9BCFFD5714554AA5B2ED72FB892D322BD3624D8E13C4835C0F"
+    },
+    "report": {
+      "path": "outputs/reports/orbit_uncertainty_stage1f_june_supgp_candidate_audit_report.md",
+      "sha256": "92AD799AEBD9342545C3A2BEBE035D7B953994522D7FB7AC239C2D2E9736D09D"
+    }
+  }
+}

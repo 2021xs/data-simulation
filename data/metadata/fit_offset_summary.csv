@@ -1,0 +1,11 @@
+observation_id,norad_id,site_id,fitted_frequency_mhz,fitted_frequency_hz,reference_frequency_hz,registered_frequency_offset_hz,rms_khz,measurements,tca_utc,reference_frequency_source,offset_interpretation
+8493026,42803,9999,1623.195623,1623195623.0,1623192000.0,3623.0,0.086,146,2023-11-10T21:51:23,bridge/input/<obs_id>/strf_ready.json:center_freq_hz,registered_frequency_offset_hz
+8535896,42803,9999,1623.195365,1623195365.0,1623192000.0,3365.0,0.085,151,2023-11-17T21:18:09,bridge/input/<obs_id>/strf_ready.json:center_freq_hz,registered_frequency_offset_hz
+8641460,42803,9999,1623.193980,1623193980.0,1623192000.0,1980.0,0.055,157,2023-12-03T04:19:47,bridge/input/<obs_id>/strf_ready.json:center_freq_hz,registered_frequency_offset_hz
+8707816,42803,9999,1623.195179,1623195179.0,1623192000.0,3179.0,0.042,141,2023-12-14T03:12:57,bridge/input/<obs_id>/strf_ready.json:center_freq_hz,registered_frequency_offset_hz
+8733468,42803,9999,1623.195728,1623195728.0,1623192000.0,3728.0,0.192,149,2023-12-18T06:01:03,bridge/input/<obs_id>/strf_ready.json:center_freq_hz,registered_frequency_offset_hz
+8788317,42803,9999,1623.196049,1623196049.0,1623192000.0,4049.0,0.103,154,2023-12-28T02:06:29,bridge/input/<obs_id>/strf_ready.json:center_freq_hz,registered_frequency_offset_hz
+8814142,42803,9999,1623.195010,1623195010.0,1623192000.0,3010.0,0.064,156,2024-01-02T04:21:05,bridge/input/<obs_id>/strf_ready.json:center_freq_hz,registered_frequency_offset_hz
+8823291,42803,9999,1623.196174,1623196174.0,1623192000.0,4174.0,0.199,129,2024-01-04T01:33:15,bridge/input/<obs_id>/strf_ready.json:center_freq_hz,registered_frequency_offset_hz
+9424971,42803,9999,1623.196409,1623196409.0,1623192000.0,4409.0,0.035,161,2024-04-25T17:47:15,bridge/input/<obs_id>/strf_ready.json:center_freq_hz,registered_frequency_offset_hz
+9462382,42803,9999,1623.196692,1623196692.0,1623192000.0,4692.0,0.179,141,2024-05-02T17:13:51,bridge/input/<obs_id>/strf_ready.json:center_freq_hz,registered_frequency_offset_hz

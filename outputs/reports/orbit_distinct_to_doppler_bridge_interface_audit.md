@@ -1,0 +1,65 @@
+# Orbit-distinct 到 Doppler security bridge 接口审计
+
+## 正式结论
+
+`ORBIT_DISTINCT_TO_DOPPLER_SECURITY_BRIDGE_INTERFACE_AUDIT_COMPLETE`。
+
+Stage-1B 的确切残差为 `dr = x_A_public - x_reference`，并投影到 reference-defined RTN。候选 B 的自然位移是 `d_B = x_B - x_A_public`；因此冻结模型的输入必须是 `z_B = -RTN_public(d_B) = RTN_public(x_A_public - x_B)`。这是确定性的符号变换，不修改冻结中心。
+
+后续 operational gate 使用 claimed-A-public-defined RTN；SupGP 只保留为 uncertainty calibration provenance，不进入 Doppler verifier 或候选 B scoring。
+
+## RTN basis equivalence
+
+对 April/May/June 全部 within-support canonical rows（pooled n=17145）从 manifest 绑定的 ordinary GP 与 SupGP raw 确定性重建。reference-defined canonical 重建最大误差为 `7.143e-08 km`。
+
+Pooled U95/U99/三状态 agreement 分别为 `99.842520%` / `99.889181%` / `99.731700%`；分类变化数分别为 `27` / `19` / `46`。
+
+June reference/public-basis P99 coverage 为 `99.461867%` / `99.461867%`；U99 仅 6 rows 变化，且 3 rows 向内、3 rows 向外，pooled endpoint 与冻结的 June primary conclusion均未改变。因此接口判定为 `PUBLIC_DEFINED_RTN_INTERFACE_SUPPORTED`。
+
+| month   |     n |   coordinate_vector_difference_norm_km_p50 |   coordinate_vector_difference_norm_km_p95 |   coordinate_vector_difference_norm_km_p99 |   coordinate_vector_difference_norm_km_p100 |   D2_relative_difference_p50 |   D2_relative_difference_p95 |   D2_relative_difference_p99 |   D2_relative_difference_p100 |   U95_agreement_rate |   U99_agreement_rate |   three_state_agreement_rate |
+|:--------|------:|-------------------------------------------:|-------------------------------------------:|-------------------------------------------:|--------------------------------------------:|-----------------------------:|-----------------------------:|-----------------------------:|------------------------------:|---------------------:|---------------------:|-----------------------------:|
+| APRIL   |  5662 |                                 0.0013537  |                                  0.0623059 |                                    1.66517 |                                    100.883  |                   0.00413422 |                     0.107988 |                     0.278282 |                       1.27837 |             0.99841  |             0.999294 |                     0.997704 |
+| MAY     |  6094 |                                 0.00122324 |                                  0.0619046 |                                    3.98785 |                                    693.806  |                   0.00380464 |                     0.139002 |                     0.368088 |                       8.88458 |             0.998523 |             0.998523 |                     0.997046 |
+| JUNE    |  5389 |                                 0.00229686 |                                  0.102134  |                                    1.11354 |                                     35.1399 |                   0.00699602 |                     0.196115 |                     0.41997  |                       1.2685  |             0.99833  |             0.998887 |                     0.997217 |
+| POOLED  | 17145 |                                 0.00153409 |                                  0.0763696 |                                    2.31254 |                                    693.806  |                   0.00475036 |                     0.152715 |                     0.362478 |                       8.88458 |             0.998425 |             0.998892 |                     0.997317 |
+
+P99 与三状态 agreement 很高，但不是逐行完全等价；尤其极端 residual 因椭球强各向异性可出现较大的 D2 相对/绝对差异。这是 operational representation limitation，不可解释成两套坐标恒等。判定依据是 June endpoint 完全不变、P99 label change 为平衡的 3/3、U99 agreement>99.8%、三状态 agreement>99.7%，而不是新增 uncertainty threshold。
+
+完整 P50/P90/P95/P99/max coordinate、norm 和 D2 差异及所有分类变化 rows 记录在 `orbit_distinct_rtn_basis_equivalence_audit.csv`。本轮没有 refit center/covariance/threshold/bin。
+
+## Freshness 与 evaluation time
+
+正式分析单位是 `claimed A × candidate B × evaluation segment/time`，不是永久 pair label。对 single-window/full-pass artifact，evaluation time 是该窗口时间中心；对 `segment_local / fixed_site_segment_center / single-window` artifact，冻结为实际 service segment 的中心时刻。60 s 左右 segment 只定义一个 orbit label。
+
+必须在该时刻重新执行 claimed A 的 causal public-GP selection：`CREATION_DATE <= evaluation_time`，再按 latest creation date、latest epoch、GP_ID 选择。freshness 是 `evaluation_time - selected GP EPOCH`；只有 `0 < age <=36 h` 可评分，否则 `DEFER`。旧 artifact 中仅有 TLE epoch/age 不等价于 causal provenance。
+
+## 既有 Doppler artifact 兼容性
+
+现有主要 Doppler artifacts 没有保存 claimed A 的 `GP_ID/CREATION_DATE`，大多来自 static/current TLE 或 synthetic orbit，因此没有任何 family 可直接宣称已经满足 frozen orbit-distinct gate。部分 family 保留了 A/B identity、绝对 segment time 和可重建 B 的定义，可在不重跑 verifier 的情况下先重建 causal A 与同刻 A/B state，再 relabel。
+
+| experiment_family                               | artifact                                                                           | A_identity             | B_definition_available                                                  | evaluation_time_available                                       | A_public_GP_traceable                                     | B_state_reconstructable                                   | freshness_reconstructable   | orbit_distinct_scoring_possible_without_verifier_rerun   | status                        | notes                                                                                        |
+|:------------------------------------------------|:-----------------------------------------------------------------------------------|:-----------------------|:------------------------------------------------------------------------|:----------------------------------------------------------------|:----------------------------------------------------------|:----------------------------------------------------------|:----------------------------|:---------------------------------------------------------|:------------------------------|:---------------------------------------------------------------------------------------------|
+| score_only_verifier_and_synthetic_orbit_attacks | outputs/datasets/doppler_verifier_orbit_similarity_attack_dataset.csv              | YES:NORAD              | YES:synthetic same-plane construction parameters and A state dependency | YES:full timestamp grid; use segment midpoint                   | NO:static TLE only; no GP_ID/CREATION_DATE                | RECONSTRUCTABLE_FROM_FROZEN_GENERATOR_AND_BOUND_TLE_INPUT | NO                          | YES_AFTER_CAUSAL_A_AND_B_STATE_RECONSTRUCTION            | NEEDS_CAUSAL_A_RECONSTRUCTION | Do not treat the static TLE epoch as causal publication provenance.                          |
+| verifier_v2_gate_ablation                       | outputs/metrics/verifier_v2_sequence_eval.csv                                      | YES:NORAD              | INHERITED_FROM_INITIAL_ATTACK_DATASET                                   | YES:window start/end                                            | NO:inherits static-TLE provenance                         | RECONSTRUCTABLE_VIA_SOURCE_ATTACK_DATASET                 | NO                          | YES_AFTER_CAUSAL_A_AND_B_STATE_RECONSTRUCTION            | NEEDS_CAUSAL_A_RECONSTRUCTION | Gate metrics can be joined after orbit relabeling; the verifier need not rerun.              |
+| controlled_multitarget_legitimate_baseline      | outputs/datasets/controlled_starlink_multitarget_dataset.csv                       | YES:NORAD              | NO:legitimate A-only baseline                                           | YES:pass grid; use pass midpoint                                | NO:static TLE only                                        | NOT_APPLICABLE                                            | NO                          | NO                                                       | NOT_COMPATIBLE                | Not a pair/candidate security artifact.                                                      |
+| active_compensation_first_pass                  | outputs/datasets/active_compensation_first_pass_dataset.csv                        | YES:NORAD              | YES:attacker NORAD and compensation construction                        | YES:time_utc grid; use segment midpoint                         | NO:static TLE only                                        | RECONSTRUCTABLE_FROM_A/B_TLE_AND_TIME                     | NO                          | YES_AFTER_CAUSAL_A_AND_B_STATE_RECONSTRUCTION            | NEEDS_CAUSAL_A_RECONSTRUCTION | SupGP must not enter the operational relabeling path.                                        |
+| fixed_point_active_compensation_summary         | outputs/datasets/fixed_point_active_compensation_dataset.csv                       | YES:NORAD              | PARTIAL:attack parameters but no full B state/time                      | PARTIAL:relative windows only                                   | NO                                                        | NO_FROM_THIS_ARTIFACT_ALONE                               | NO                          | NO                                                       | NEEDS_STATE_RECONSTRUCTION    | Use its upstream time-series/generator provenance, not the summary row alone.                |
+| segment_local_heatmap_and_direction_sensitivity | outputs/datasets/m2_segment_local_expanded_sample_dataset.csv                      | YES:NORAD              | YES:real-TLE or synthetic definition plus geometry fields               | DERIVABLE:pass_id plus segment bounds; freeze at segment center | NO:static/current TLE has no GP_ID/CREATION_DATE          | RECONSTRUCTABLE_FROM_BOUND_GENERATOR_INPUTS               | NO                          | YES_AFTER_CAUSAL_A_AND_STATE_RECONSTRUCTION              | NEEDS_CAUSAL_A_RECONSTRUCTION | Includes segment_local/fixed_site_segment_center/single-window semantics.                    |
+| same_pair_multi_pass_real_TLE                   | outputs/datasets/same_pair_multi_pass_realization_dataset.csv                      | YES:NORAD              | YES:attacker NORAD and selected TLE epoch                               | YES:service segment start/end                                   | NO:target TLE epoch exists but CREATION_DATE/GP_ID do not | YES:bound TLE history/current TLE                         | NO                          | YES_AFTER_CAUSAL_A_RECONSTRUCTION                        | NEEDS_CAUSAL_A_RECONSTRUCTION | Orbit score can be attached without rerunning the Doppler verifier.                          |
+| historical_TLE_multi_pass_real_TLE              | outputs/datasets/historical_tle_multi_pass_realization_dataset.csv                 | YES:NORAD              | YES:attacker historical TLE epoch                                       | YES:service segment start/end                                   | NO:historical TLE lacks publication provenance            | YES:historical TLE lines are upstream-traceable           | NO                          | YES_AFTER_CAUSAL_A_RECONSTRUCTION                        | NEEDS_CAUSAL_A_RECONSTRUCTION | TLE age is not a substitute for causal element age.                                          |
+| controlled_altitude_difference_synthetic_B      | outputs/datasets/controlled_altitude_difference_realization_dataset.csv            | YES:NORAD              | YES:delta_h, synthetic radius/rate and deterministic construction       | YES:service segment start/end                                   | NO:static target TLE has no GP_ID/CREATION_DATE           | YES_FROM_BOUND_SYNTHETIC_CONSTRUCTION                     | NO                          | YES_AFTER_CAUSAL_A_AND_B_STATE_RECONSTRUCTION            | NEEDS_CAUSAL_A_RECONSTRUCTION | Preserves segment_local/fixed_site_segment_center/single-window and direction fields.        |
+| differential_doppler_mechanism_representatives  | outputs/datasets/differential_doppler_mechanism_full_representative_timeseries.csv | DERIVABLE_FROM_PAIR_ID | DERIVABLE_FROM_PAIR_ID                                                  | PARTIAL:relative time only in this artifact                     | NO                                                        | NO_FROM_THIS_ARTIFACT_ALONE                               | NO                          | NO                                                       | NEEDS_STATE_RECONSTRUCTION    | Relabel the upstream pair-instance artifact, then join; do not infer from Doppler residuals. |
+
+## 冻结 bridge 输出字段
+
+下一阶段 security dataset 至少增加：`orbit_support_status`、`orbit_element_age_hours`、`orbit_freshness_bin`、`orbit_score_d2`、`orbit_c95`、`orbit_c99`、`orbit_decision`、`orbit_normalized_p99_distance`。其中 `rho_99=sqrt(D2/c99)` 只是归一化椭球距离，不是概率。
+
+后续核心区域是 `ORBIT_DISTINCT + Doppler accepted`；`NOT_ORBIT_DISTINCT + accepted` 不能单独作为强 security vulnerability，`DEFER` 不作强结论。
+
+## Integrity 与边界
+
+Frozen parameter SHA 为 `6F17F8340BA14B5B48F7AEAFFD776F1D0A07B4D50F882B2AFCA73756F9FF55D1`；全部保护对象 before/after SHA 一致=`true`。本轮未生成 synthetic B、未运行 verifier、未修改 b/k、未进行 uncertainty refit，也未修改 historical outputs。
+
+## 下一步
+
+`EXISTING_DOPPLER_CASE_ORBIT_DISTINCT_RELABELING`。先重建 causal A 与必要的 B state，再把 orbit label join 到既有 verifier 结果；不要重跑 verifier。

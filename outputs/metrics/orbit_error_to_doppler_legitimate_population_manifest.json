@@ -1,0 +1,86 @@
+{
+  "stage": "LEGITIMATE_POPULATION_FREEZE",
+  "status": "POPULATION_FROZEN_NO_DOPPLER_SCIENCE",
+  "generated_utc": "2026-09-13T12:08:28.585705Z",
+  "protocol": {
+    "path": "outputs/metrics/orbit_error_to_doppler_legitimate_population_protocol.json",
+    "sha256": "75C051F0A3D61D38FF043A37D9B4E2DBB5588959FAB6D26C1DFF4EA212AC77B7",
+    "size_bytes": 11488
+  },
+  "science_execution_performed": false,
+  "june_science_touched": false,
+  "selection_uses_forbidden_outcomes": false,
+  "satellites": 20,
+  "segments": 2088,
+  "passes": 696,
+  "month_segments": {
+    "2026-04": 678,
+    "2026-05": 708,
+    "2026-06": 702
+  },
+  "freshness_segments": {
+    "0-6 h": 351,
+    "12-18 h": 362,
+    "18-24 h": 359,
+    "24-36 h": 300,
+    "6-9 h": 359,
+    "9-12 h": 357
+  },
+  "inputs": [
+    {
+      "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_satellite_selection.csv",
+      "sha256": "30D7A846DDDE5850645CD3C1C03C061E7971AE40A2EE052FFB4E8BA3E7F4ED36",
+      "size_bytes": 920
+    },
+    {
+      "path": "data/orbit_uncertainty_stage1/raw/spacetrack_gp/spacetrack_gp_history_20260329_20260501_20sat_omm.json",
+      "sha256": "079DD7846CE44950DB4818CB66F155CB338B2C8154CA66D3F6609F6459B3FEFE",
+      "size_bytes": 2571878
+    },
+    {
+      "path": "data/orbit_uncertainty_stage1/raw/spacetrack_gp/spacetrack_gp_history_20260428_20260601_20sat_omm.json",
+      "sha256": "E2023C9370EE0018E5F7AC5887E5D8ACDAF0D0761A1D75B7E2FDD4E55B0E77F1",
+      "size_bytes": 2606503
+    },
+    {
+      "path": "data/orbit_uncertainty_stage1/raw/spacetrack_gp/spacetrack_gp_history_20260529_20260701_20sat_omm.json",
+      "sha256": "1F5A8BA23D1C8AE605C4142F44E424711D1D85014DB46C28BBC18C3ABC326A96",
+      "size_bytes": 1923028
+    },
+    {
+      "path": "outputs/metrics/orbit_uncertainty_stage1b_20260401_20260430_manifest.json",
+      "sha256": "81FC7EF0F4E6401A316A893C1C010840136AA43BEBEC48094A74F06FE020E4E3",
+      "size_bytes": 14409
+    },
+    {
+      "path": "outputs/metrics/orbit_uncertainty_stage1b_20260501_20260531_manifest.json",
+      "sha256": "9631AF3F4B4AA0F9D4C9804AE05A2C5F7608428CC0D1B2D7C22CC145F6EF38CD",
+      "size_bytes": 65945
+    },
+    {
+      "path": "outputs/metrics/orbit_uncertainty_stage1b_20260601_20260630_manifest.json",
+      "sha256": "580856B1011F9D172A84589EFF4D622847B5BE1DB31326E91B0EABA133D37FEC",
+      "size_bytes": 110216
+    }
+  ],
+  "outputs": [
+    {
+      "path": "outputs/datasets/orbit_error_to_doppler_legitimate_population.csv",
+      "sha256": "4C4C0D1B96CE66CDA18FEF56144812CBD49FDEF4A1B42E5141BE32C90268DB81",
+      "size_bytes": 2106913
+    },
+    {
+      "path": "outputs/metrics/orbit_error_to_doppler_legitimate_population_audit.csv",
+      "sha256": "528EAF6581C8BE6F0C34C3677B784F1B0159765974D28E2F791033F3C68C1647",
+      "size_bytes": 50526
+    },
+    {
+      "path": "outputs/metrics/orbit_error_to_doppler_legitimate_freshness_coverage.csv",
+      "sha256": "4BA6D79FA711C101DF2F9E59EFAA5A497940E3EF99DA35CBE495202DFB17209B",
+      "size_bytes": 41779
+    }
+  ],
+  "population_sha256": "4C4C0D1B96CE66CDA18FEF56144812CBD49FDEF4A1B42E5141BE32C90268DB81",
+  "coverage_sha256": "4BA6D79FA711C101DF2F9E59EFAA5A497940E3EF99DA35CBE495202DFB17209B",
+  "new_random_draw_count": 0
+}

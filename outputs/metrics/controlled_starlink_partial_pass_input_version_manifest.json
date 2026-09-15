@@ -1,0 +1,42 @@
+{
+  "generated_at": "2026-05-05T19:43:56",
+  "purpose": "fix Stage 2 / Stage 2.5 input versions before Stage 3A partial-pass stress",
+  "files": [
+    {
+      "path": "outputs\\datasets\\controlled_starlink_ku_band_near_neighbor_stress_dataset.csv",
+      "exists": true,
+      "file_size_bytes": 905590383,
+      "modified_time": "2026-05-05T16:12:53",
+      "sha256": "1946929ab97f228c90d1329c897dce1b7c840b1fba8d036a6331a97c75b763ab",
+      "row_count": 1393600
+    },
+    {
+      "path": "outputs\\datasets\\controlled_starlink_ku_band_near_neighbor_candidate_library_1000.csv",
+      "exists": true,
+      "file_size_bytes": 77803974,
+      "modified_time": "2026-05-05T16:13:23",
+      "sha256": "47e0ba29d6b9267061724de9c99997dfd60e66516e45cf3287e1163c5df385a3",
+      "row_count": 268000
+    },
+    {
+      "path": "outputs\\metrics\\controlled_starlink_ku_band_near_neighbor_stress_matching_results.csv",
+      "exists": true,
+      "file_size_bytes": 13767892,
+      "modified_time": "2026-05-05T16:44:11",
+      "sha256": "b23da7c9cc1a502c6e5c459ad43237e776bc1539c9ecd2da8fbd4fbb6a5f97bb",
+      "row_count": 33600
+    },
+    {
+      "path": "outputs\\reports\\controlled_starlink_near_neighbor_failure_case_diagnosis.md",
+      "exists": true,
+      "file_size_bytes": 4983,
+      "modified_time": "2026-05-05T17:00:14",
+      "sha256": "8467b96e2197c83591e954c61e9d6cbffa0b75b069d4a0ea017e384c875e15ae"
+    }
+  ],
+  "notes": [
+    "mode remains controlled_starlink",
+    "observation_id remains null",
+    "9424971 is not used for Starlink controlled simulation"
+  ]
+}

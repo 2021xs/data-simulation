@@ -1,0 +1,75 @@
+{
+  "stage": "Orbit Uncertainty Stage-1B smoke",
+  "status": "PASS",
+  "window_tag": "20260601_20260630",
+  "generated_utc": "2026-09-07T01:34:11Z",
+  "builder": {
+    "path": "D:/Project/data-simulation/scripts/run_orbit_uncertainty_stage1b_residual_library.py",
+    "sha256": "222F3936881C2CE9C16C87CD30497D8AB9377A35E65D783861A0486572A2871D"
+  },
+  "stage1a_manifest_sha256": {
+    "design": null,
+    "acquisition": "E7DBD29FE53B7598EDACEF5D6C8792F4AB1DCAF4FFDE195968A6799E29060423",
+    "reference_quality": "DAFAD315CB8C147319C44EF2FB705F06380E342C765E3A5E535B02D78EECC468",
+    "causal_support_audit": "65277899D27598D5D9E7E333FD4ACD9D98975E264BB2D65DBBAA8DD3C7E8A1A1",
+    "cohort_selection": "30D7A846DDDE5850645CD3C1C03C061E7971AE40A2EE052FFB4E8BA3E7F4ED36",
+    "readiness_adjudication": "4619CE76869628C1FA907F3AE248F8283974933574F3A0CC2065E2B2430D3DA9"
+  },
+  "ordinary_raw_sha256": "1F5A8BA23D1C8AE605C4142F44E424711D1D85014DB46C28BBC18C3ABC326A96",
+  "supgp_raw_sha256": {
+    "data/orbit_uncertainty_stage1/june/sat000044714.csv": "F91F0DA10678FA8B4BBDEBC15B9D96435ECFD92205FFA13417B9E47754646E40",
+    "data/orbit_uncertainty_stage1/june/sat000045230.csv": "A086445B48BCEA5D6D786487B3F9BAAB43C341130589A86BCBB60E49241950E8",
+    "data/orbit_uncertainty_stage1/june/sat000047383.csv": "6A97ABED011A96AE20108B2FFAB622CC78ED39D918CC694CBFCE03E18290B2FA",
+    "data/orbit_uncertainty_stage1/june/sat000047749.csv": "0CE3EE486737D6898F4E0960379BB2CF5D672CBD2C80BC161C0E3F96D2261670",
+    "data/orbit_uncertainty_stage1/june/sat000047767.csv": "6E26A6FFCB0389E48C81BEEAD935A847B2444F9441CBE4C1AD8107642DE7DD5F",
+    "data/orbit_uncertainty_stage1/june/sat000047844.csv": "FE1F3D11E12AC1E3987E760842AEC279FE294DEAF66BE25CA508FB5254D084DD",
+    "data/orbit_uncertainty_stage1/june/sat000048111.csv": "63E98DFF9634CD904EDA2CF3528E739282097399B04E926A453B20B62792D5D5",
+    "data/orbit_uncertainty_stage1/june/sat000048309.csv": "79D62147447BEB30EC557417B61811EF138EF8094DC33D3F68D9F90E474F7689",
+    "data/orbit_uncertainty_stage1/june/sat000048458.csv": "091BB60895838155D6E08F3AB53CB4B529B9EB7F826CA2A0FB9BFADE0198C1C6",
+    "data/orbit_uncertainty_stage1/june/sat000048672.csv": "9CCC0F6B332261080A38A7EF3636C88202FADE4135B08985F943785C7A1E9415",
+    "data/orbit_uncertainty_stage1/june/sat000058380.csv": "3EDD695EBC2FD369BB6D3F364CEB1C354CEB8FF41D75D9C0E85CB4203365E2E7",
+    "data/orbit_uncertainty_stage1/june/sat000060265.csv": "310CEC01430FB37300D0520AC911958B04898B003A2B2906A630DA9E075D20EF",
+    "data/orbit_uncertainty_stage1/june/sat000065405.csv": "10707AFA6592FB845A94CB76E13C89BAD9EFA77F9A31B0B3C5036D80E7E87A62",
+    "data/orbit_uncertainty_stage1/june/sat000065407.csv": "1D5D20428BDA125132468A3B81A5A0011425555B1C761A0A7A4BD8F31D76DA01",
+    "data/orbit_uncertainty_stage1/june/sat000065409.csv": "C82A923C1B14CF8F30B1B5DDBB30C6CB9AE3A8DB51A9A3F182BEC8348A9F0DF5",
+    "data/orbit_uncertainty_stage1/june/sat000065410.csv": "480E0881CFF425F783D504E2B784746BB847F6C9A822B6001FD1AFCD7FF9CBC4",
+    "data/orbit_uncertainty_stage1/june/sat000065411.csv": "26E105CAB95698D658010132E70DA6D62EE0D10BD67ED831612077EEE7C12C95",
+    "data/orbit_uncertainty_stage1/june/sat000065421.csv": "47F2014ECBC8E7384C87E8BF3D80DB676A195CA775414C519EDF2550466E6CB3",
+    "data/orbit_uncertainty_stage1/june/sat000065686.csv": "B6BC6FF15B3CA146A8A5647889EB05C3E5134E71663266D0DFF94290D3AA7A5B",
+    "data/orbit_uncertainty_stage1/june/sat000065693.csv": "D31425DC1D7BF768E17AFC34A7D7E516943AB5AC5C7598CCE830821EDB62E3E7"
+  },
+  "case_count": 12,
+  "satellite_count": 3,
+  "max_numeric_abs_difference": 0.0,
+  "numeric_tolerance": 1e-10,
+  "iers": {
+    "table_class": "IERS_A",
+    "mjd_min": 41684.0,
+    "mjd_max": 61645.0,
+    "formal_start_mjd": 61192.0,
+    "formal_stop_mjd": 61222.0,
+    "formal_window_covered": true,
+    "data_url": "",
+    "data_path": "C:\\Users\\ASUS\\.astropy\\cache\\download\\url\\0b082426cda92b3d734756d6020dd07d\\contents",
+    "data_sha256": "59AA390FDBCAD0B4905EE2887C53FDB488D95B5968A111C5BF4C4FD31653405B",
+    "auto_download_at_open": false,
+    "auto_download_during_build": false,
+    "auto_max_age": null,
+    "explicit_frozen_data_file": true
+  },
+  "april_protection": {
+    "artifact_count": 81,
+    "aggregate_sha256": "04AFD461FB882B373DCEFB683666625A4D98AD734CFA87F26929DAB9F93681A4",
+    "canonical_stage1b_dataset_sha256": "2B02C40FDEA69F6079D256B5E274652ABAB2D5BC2F9899866C7F1CAFFB469F23"
+  },
+  "outputs": {
+    "crosscheck": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1b_20260601_20260630_smoke_crosscheck.csv",
+      "sha256": "50E4E1A4029FFCA3B1424C7EE4B305C8A39360C557C65A2DD038D941F6517FD7"
+    },
+    "correctness": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1b_20260601_20260630_smoke_correctness_audit.csv",
+      "sha256": "74F1CCA5E72BF501B9049785D2DA7612D844CBF0FBA49165CB91AB133060B42C"
+    }
+  }
+}

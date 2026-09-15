@@ -1,0 +1,35 @@
+{
+  "audit": "A2-R reference-point-constrained regional attacker",
+  "created_at": "2026-08-23T15:34:13.671278",
+  "R_cell_km": 500.0,
+  "station_distribution": "uniform_area_controlled_disk",
+  "new_environment_noise_realizations": false,
+  "verifier_modified": false,
+  "threshold_recalibrated": false,
+  "grid": {
+    "coarse_step_km": 125.0,
+    "refine_step_km": 31.25,
+    "fine_step_km": 15.625,
+    "S_main": [
+      3,
+      24
+    ],
+    "S_check": [
+      5,
+      32
+    ]
+  },
+  "selected_geometry_ids": [
+    "geometry_7ac7712edd76c5ae96f1671f",
+    "geometry_e51710366902774f39f711f3",
+    "geometry_eb38e83b6c57deb8d05ca302"
+  ],
+  "audit_all_passed": true,
+  "verifier_aware_location_stable_cases": 2,
+  "verifier_aware_location_total_cases": 3,
+  "unresolved_verifier_aware_geometry_ids": [
+    "geometry_7ac7712edd76c5ae96f1671f"
+  ],
+  "correctness_audit_passed": 10,
+  "correctness_audit_total": 10
+}

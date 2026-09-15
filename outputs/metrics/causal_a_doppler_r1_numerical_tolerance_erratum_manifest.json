@@ -1,0 +1,136 @@
+{
+  "stage": "R1_NUMERICAL_TOLERANCE_PROTOCOL_ERRATUM_DECISION",
+  "status": "R1_NUMERICAL_TOLERANCE_ERRATUM_PUBLISHED",
+  "eligibility": {
+    "same_scientific_formulas": true,
+    "same_states_and_inputs": true,
+    "serialization_quantization_fully_explains_difference": true,
+    "bounds_independent_of_observed_max": true,
+    "categorical_decisions_unchanged": true,
+    "reproduction_scope_only": true
+  },
+  "scientific_method_changed": false,
+  "scientific_threshold_changed": false,
+  "verifier_behavior_changed": false,
+  "population_changed": false,
+  "categorical_match_requirement": "UNCHANGED_EXACT_ZERO_MISMATCH",
+  "R1_rerun_performed": false,
+  "R2_authorized": false,
+  "next_step": "CAUSAL_A_DOPPLER_RECONSTRUCTION_REPRODUCTION_VALIDATION_FINAL_RERUN",
+  "geometry_spacing_hz": {
+    "min": 1.9073486328125e-06,
+    "median": 1.9073486328125e-06,
+    "max": 1.9073486328125e-06
+  },
+  "effective_tolerances": {
+    "evaluation_time_and_time_grid_s": 1e-12,
+    "A_position_km": 1e-06,
+    "A_velocity_km_s": 1e-09,
+    "B_position_km": 1e-06,
+    "B_velocity_km_s": 1e-09,
+    "Doppler_geometry_hz": 3.9e-06,
+    "active_compensation_hz": 8e-06,
+    "observation_and_raw_residual_hz": 1.6e-05,
+    "b_hat_hz": 1.7e-05,
+    "k_hat_hz_per_s": 2e-07,
+    "score_hz": 1.6e-05
+  },
+  "protected_artifact_changes": [],
+  "bound_sources": [
+    {
+      "path": "outputs/metrics/doppler_semantic_reconstruction_protocol.json",
+      "sha256": "59E58BADE00B6F0866EE6767A0FCB04B0BB69B1ACA2C1159B8B79384F96EBCAB"
+    },
+    {
+      "path": "outputs/metrics/doppler_semantic_reconstruction_manifest.json",
+      "sha256": "D2F711EACDB15194E1AD4F29794B3DE427C0B0C1F6189E71F93BA9532779EAAF"
+    },
+    {
+      "path": "outputs/metrics/doppler_semantic_reconstruction_r0_population_erratum_manifest.json",
+      "sha256": "6309E66C57D691A47345E38638B03171635F836DF81BCD267113790C428E8DEC"
+    },
+    {
+      "path": "outputs/metrics/doppler_semantic_reconstruction_r1_corrected_population_binding.csv",
+      "sha256": "5F0E58DB6F2CD1B5BFB641800C6873DDF7010C94B54A8F49291C6A81F097052D"
+    },
+    {
+      "path": "outputs/metrics/causal_a_doppler_r1_rerun_manifest.json",
+      "sha256": "CB823BDAC93088E4E8FCC3A9023974451DAB2C7BFD2D2A9279155E1969A2D864"
+    },
+    {
+      "path": "outputs/reports/causal_a_doppler_reconstruction_reproduction_validation_rerun_report.md",
+      "sha256": "2A6AFD9F00C7C4B0FEE800A9C7D9484160752F0A62B0557914B4DC58B34DC435"
+    },
+    {
+      "path": "outputs/metrics/causal_a_doppler_r1_numerical_divergence_manifest.json",
+      "sha256": "61621DD3AA531C1AB428F75EF14DCD21D51ED508BC53F576152FCC06ABFC6822"
+    },
+    {
+      "path": "outputs/reports/causal_a_doppler_r1_level4_numerical_divergence_root_cause_audit.md",
+      "sha256": "E392B3BF1871ACFC470363BE0DE26019D9C29EAAD2489E9183579C67F5EBE5F4"
+    },
+    {
+      "path": "outputs/metrics/causal_a_doppler_r1_high_precision_reference.csv",
+      "sha256": "549A9740B3AF748E26DF065FAC7B26C7AF85836B441750B1EAA2FA5DD95237D9"
+    },
+    {
+      "path": "outputs/metrics/causal_a_doppler_r1_geometry_ulp_audit.csv",
+      "sha256": "389F5C19D3314C1C7D7B2BF00A6DFE8DD7C9654C693CE3D009C69FA0381A9A6D"
+    },
+    {
+      "path": "outputs/metrics/causal_a_doppler_r1_error_propagation_audit.csv",
+      "sha256": "F936ECD25CD1703978910613AA4E0581214B6A3B27E739BB29ADED67F3296FB3"
+    },
+    {
+      "path": "outputs/metrics/causal_a_doppler_r1_implementation_path_comparison.csv",
+      "sha256": "D562FD7AFAC6E180915284DDFB21B36BC10146DC955BABE399E78A2AAB646296"
+    },
+    {
+      "path": "outputs/metrics/causal_a_doppler_r1_rerun_fit_score_reproduction.csv",
+      "sha256": "E53FBEEE8AC96F433F102FBDFFA7889CC42559B70560DFCD52125F24B28F38FD"
+    },
+    {
+      "path": "outputs/datasets/doppler_verifier_orbit_similarity_attack_dataset.csv",
+      "sha256": "F90ED60F4BBC54573423931672811C0B5B00473B7032C212D91D08C2F9D80312"
+    },
+    {
+      "path": "outputs/datasets/active_compensation_first_pass_dataset.csv",
+      "sha256": "34BBBC7076252A1F4A0B90972F48D29098FD08598669E59F0C732E76E4779B1B"
+    },
+    {
+      "path": "outputs/metrics/orbit_uncertainty_stage1f_lite_frozen_parameters.csv",
+      "sha256": "6F17F8340BA14B5B48F7AEAFFD776F1D0A07B4D50F882B2AFCA73756F9FF55D1"
+    },
+    {
+      "path": "outputs/metrics/orbit_distinct_frozen_scoring_interface.json",
+      "sha256": "C5433AA6A4C67F2142DA472A65B51779564326044457B5159FC1A61D31E725B7"
+    }
+  ],
+  "generator": {
+    "path": "scripts/publish_causal_a_doppler_r1_numerical_tolerance_protocol_erratum.py",
+    "sha256": "71A02CAEFE46460DB6E388C3C1B9DA3DC7FB67465D53E6DC3265D7A21D12B8B6"
+  },
+  "outputs": [
+    {
+      "path": "outputs/reports/causal_a_doppler_r1_numerical_tolerance_protocol_erratum.md",
+      "sha256": "F04192D4025AD504FF3B1997D33AAC3306552CE1DB727BE54786B856B78C404A",
+      "size_bytes": 6587
+    },
+    {
+      "path": "outputs/metrics/causal_a_doppler_r1_numerical_tolerance_bound_derivation.csv",
+      "sha256": "15B292B916A8454CB69F44DD58877433310DA9773E68A73FC5AA5CE6F36ADE06",
+      "size_bytes": 8856
+    },
+    {
+      "path": "outputs/metrics/causal_a_doppler_r1_numerical_tolerance_erratum.csv",
+      "sha256": "CB32EE650970E5F885EFEC6288521D37B0611E1BEE4B31168478B64030AAD1EE",
+      "size_bytes": 1562
+    },
+    {
+      "path": "outputs/metrics/causal_a_doppler_r1_effective_reproduction_tolerances.json",
+      "sha256": "EB02AE886425DD503C46B9B2A9168F263FA17C1A8EE98AC35772FB3901C44C84",
+      "size_bytes": 1368
+    }
+  ],
+  "generated_utc": "2026-09-07T12:16:20.546298Z"
+}

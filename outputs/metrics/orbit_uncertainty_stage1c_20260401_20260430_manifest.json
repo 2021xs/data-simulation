@@ -1,0 +1,163 @@
+{
+  "stage": "Orbit Uncertainty Stage-1C",
+  "status": "STAGE1C_RESIDUAL_STRUCTURE_CHARACTERIZATION_COMPLETE",
+  "generated_utc": "2026-09-02T04:45:38Z",
+  "window_tag": "20260401_20260430",
+  "formal_window": "[2026-04-01T00:00:00Z, 2026-05-01T00:00:00Z)",
+  "input": {
+    "stage1b_dataset": "outputs/datasets/orbit_uncertainty_stage1b_20260401_20260430_rtn_residual_library.csv",
+    "stage1b_dataset_sha256": "2B02C40FDEA69F6079D256B5E274652ABAB2D5BC2F9899866C7F1CAFFB469F23",
+    "stage1b_manifest": "outputs/metrics/orbit_uncertainty_stage1b_20260401_20260430_manifest.json",
+    "stage1b_manifest_sha256": "81FC7EF0F4E6401A316A893C1C010840136AA43BEBEC48094A74F06FE020E4E3",
+    "rows": 5675,
+    "satellites": 20,
+    "nominal": 5675,
+    "stage1b_rebuilt": false,
+    "hashes_before_after_equal": true
+  },
+  "definitions": {
+    "element_age": "evaluation_time - ordinary GP EPOCH",
+    "publication_age": "evaluation_time - ordinary GP CREATION_DATE",
+    "freshness_bins_hours": [
+      [
+        0.0,
+        6.0
+      ],
+      [
+        6.0,
+        12.0
+      ],
+      [
+        12.0,
+        24.0
+      ],
+      [
+        24.0,
+        36.0
+      ],
+      [
+        36.0,
+        48.0
+      ],
+      [
+        48.0,
+        72.0
+      ]
+    ],
+    "global_top1": "largest ceil(0.01*n) position_error_norm_km rows; 57 rows",
+    "global_top0_5": "largest ceil(0.005*n) position_error_norm_km rows; 29 rows",
+    "within_satellite_trim": "diagnostic only: largest ceil(0.01*n_sat) rows removed separately per satellite",
+    "episode_grouping": "same-satellite adjacent global-top1 rows; bridge at most one non-top1 row only when bridge position >= pooled P95",
+    "episode_patterns": {
+      "A": "single top1 row without bridge",
+      "B": "multiple consecutive/bridged elevated epochs not meeting C or D",
+      "C": "at least 2 top1 rows, onset >=3x pre5 median, post5 below top1 threshold, recovery <=0.5x episode median",
+      "D": "duration >=24 h or at least 8 top1 rows"
+    },
+    "orbital_angular_difference": "signed circular difference in [-180, 180) degrees",
+    "label_semantics": "descriptive candidates only; never confirmed maneuver"
+  },
+  "builder": {
+    "path": "D:/Project/data-simulation/scripts/analyze_orbit_uncertainty_stage1c_residual_structure.py",
+    "sha256": "1474354BAA5AE0637FCC9DE70BCA28AA91AA5A8CE1B76CA6F54B6D68FA0B149F",
+    "python": "3.13.5",
+    "git_state": "NOT_A_GIT_WORK_TREE"
+  },
+  "thresholds_for_description_only": {
+    "global_top1_count": 57,
+    "global_top0_5_count": 29,
+    "top20_count": 20,
+    "within_satellite_top1_count": 60,
+    "global_top1_threshold_km": 127.19704491811414,
+    "global_top0_5_threshold_km": 264.093558075776,
+    "pooled_p95_km": 21.076597992839666
+  },
+  "result": {
+    "freshness_rows": 399,
+    "rtn_rows": 126,
+    "satellite_rows": 20,
+    "extreme_rows": 57,
+    "episode_rows": 12,
+    "rms_rows": 21,
+    "episode_pattern_counts": {
+      "several_consecutive_epochs_elevated": 5,
+      "candidate_transition": 4,
+      "persistent_high_disagreement": 2,
+      "isolated_single_point_spike": 1
+    },
+    "figure_satellites": [
+      "48309",
+      "60265",
+      "47844",
+      "47767"
+    ],
+    "correctness_passed": 12,
+    "correctness_total": 12
+  },
+  "outputs": {
+    "orbit_uncertainty_stage1c_20260401_20260430_freshness_summary.csv": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1c_20260401_20260430_freshness_summary.csv",
+      "sha256": "EB86025EE30B07E61B58325970E62D1B87665437AEB228418932BE3080C3C657",
+      "size_bytes": 94731
+    },
+    "orbit_uncertainty_stage1c_20260401_20260430_rtn_component_summary.csv": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1c_20260401_20260430_rtn_component_summary.csv",
+      "sha256": "F1F89A1687F779256F434040A302CA52FDF237D75AB274C394B99FF177C99C7C",
+      "size_bytes": 22268
+    },
+    "orbit_uncertainty_stage1c_20260401_20260430_satellite_summary.csv": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1c_20260401_20260430_satellite_summary.csv",
+      "sha256": "4B25395C4529A40504039A79A764AC15BB9B908DDF8CB16F82D5DDCCAC3FE128",
+      "size_bytes": 8111
+    },
+    "orbit_uncertainty_stage1c_20260401_20260430_extreme_episode_audit.csv": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1c_20260401_20260430_extreme_episode_audit.csv",
+      "sha256": "44D6B094FF8652302A082A198E4F8BA8A0CEC7FFF0BBBDE2DD44A1EA384417B0",
+      "size_bytes": 55134
+    },
+    "orbit_uncertainty_stage1c_20260401_20260430_regime_candidate_summary.csv": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1c_20260401_20260430_regime_candidate_summary.csv",
+      "sha256": "321D3CF20D4A0334B77B2F115D9FFCC0521C405702759B23D0EE6DE28F01F5AF",
+      "size_bytes": 8331
+    },
+    "orbit_uncertainty_stage1c_20260401_20260430_rms_association_summary.csv": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1c_20260401_20260430_rms_association_summary.csv",
+      "sha256": "BC7E04CE01680E69D749F5F4F304D5092C7CA10A9153B982D83BC8A8EBDB2038",
+      "size_bytes": 4870
+    },
+    "orbit_uncertainty_stage1c_20260401_20260430_correctness_audit.csv": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1c_20260401_20260430_correctness_audit.csv",
+      "sha256": "D9680573C925DEC938ADD7EA09E9026D3373747EDB8DDE7AAEE3BD354074827A",
+      "size_bytes": 1639
+    },
+    "orbit_uncertainty_stage1c_20260401_20260430_residual_structure_report.md": {
+      "path": "outputs/reports/orbit_uncertainty_stage1c_20260401_20260430_residual_structure_report.md",
+      "sha256": "ACD94964343F8BC42B093B34A45AA1E5BD2371E817EB9EB88D6479DEC9A70715",
+      "size_bytes": 5720
+    },
+    "position_disagreement_vs_element_age.png": {
+      "path": "outputs/figures/orbit_uncertainty_stage1c_20260401_20260430/position_disagreement_vs_element_age.png",
+      "sha256": "CEBC23D52D844339BF9218A523410CC8A2AC9960EB3DEF724AFAF919322E0215",
+      "size_bytes": 192691
+    },
+    "rtn_disagreement_vs_element_age.png": {
+      "path": "outputs/figures/orbit_uncertainty_stage1c_20260401_20260430/rtn_disagreement_vs_element_age.png",
+      "sha256": "832473984D98735A655FA3DB2816B7C56CEF378F78838087BBC1CFAF4F994B41",
+      "size_bytes": 196970
+    },
+    "regime_candidate_timeseries.png": {
+      "path": "outputs/figures/orbit_uncertainty_stage1c_20260401_20260430/regime_candidate_timeseries.png",
+      "sha256": "69EEF24F005795A6E8A70B5AF0739C9F1075830102231C37BCA858BDC0FC3937",
+      "size_bytes": 653564
+    }
+  },
+  "scope_guards": {
+    "final_uncertainty_boundary_built": false,
+    "residual_rows_deleted": false,
+    "rms_hard_filter_applied": false,
+    "maneuver_detector_built": false,
+    "synthetic_b_analyzed": false,
+    "doppler_verifier_run": false,
+    "final_calibration_run": false
+  }
+}

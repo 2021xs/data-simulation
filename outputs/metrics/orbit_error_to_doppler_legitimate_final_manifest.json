@@ -1,0 +1,118 @@
+{
+  "stage": "LEGITIMATE_ORBIT_ERROR_TO_DOPPLER_FINAL",
+  "status": "COMPLETE",
+  "generated_utc": "2026-09-14T00:06:02.871676Z",
+  "verdict": "GEOMETRY_EFFECT_DOMINATES_OR_INTERACTS_STRONGLY",
+  "stage_b_warranted": true,
+  "stage_b_focus": "delta_k, geometry",
+  "protocol": {
+    "path": "outputs/metrics/orbit_error_to_doppler_legitimate_population_protocol.json",
+    "sha256": "75C051F0A3D61D38FF043A37D9B4E2DBB5588959FAB6D26C1DFF4EA212AC77B7",
+    "size_bytes": 11488
+  },
+  "population": {
+    "path": "outputs/datasets/orbit_error_to_doppler_legitimate_population.csv",
+    "sha256": "4C4C0D1B96CE66CDA18FEF56144812CBD49FDEF4A1B42E5141BE32C90268DB81",
+    "size_bytes": 2106913
+  },
+  "population_manifest": {
+    "path": "outputs/metrics/orbit_error_to_doppler_legitimate_population_manifest.json",
+    "sha256": "ED6157C7B9BDE29BCEA61C6D7764F98E9AB13D811B3047D730AA1B0847E60326",
+    "size_bytes": 3336
+  },
+  "exploratory_manifest": {
+    "path": "outputs/metrics/orbit_error_to_doppler_legitimate_exploratory_manifest.json",
+    "sha256": "3A35EE2ECAD279C7DE8898A773F4159EE0954BB076517E5F5316FDF1A7D288B5",
+    "size_bytes": 1334
+  },
+  "confirmatory_manifest": {
+    "path": "outputs/metrics/orbit_error_to_doppler_legitimate_june_confirmatory_manifest.json",
+    "sha256": "714F25C90CDF93AA928CB8B4F0FCC22617201712AB16DEC628F66EF6A9BB404E",
+    "size_bytes": 1328
+  },
+  "segments": 2088,
+  "exploratory_segments": 1386,
+  "confirmatory_segments": 702,
+  "production_bk_gate_executions": 0,
+  "false_reject_endpoints": 0,
+  "new_random_draw_count": 0,
+  "protected_source_modifications": [],
+  "outputs": [
+    {
+      "path": "outputs/datasets/legitimate_orbit_error_to_doppler_segments.csv",
+      "sha256": "FBF51D27F136CB1631F8362C4B7FBA11A1E72DA21446CB3380D5C39AA2F56F3C",
+      "size_bytes": 2921975
+    },
+    {
+      "path": "outputs/metrics/legitimate_orbit_error_freshness_summary.csv",
+      "sha256": "A4C19EEDC6CEDD73239312CCF8A0D1A908F2553579C54CE1551F7ED6830C86E6",
+      "size_bytes": 15323
+    },
+    {
+      "path": "outputs/metrics/orbit_error_to_doppler_legitimate_spearman_correlations.csv",
+      "sha256": "9B7CED3610B7EEBD60DA28290F961676A3CBBAC1A3D2977AD862B52D08D88C0D",
+      "size_bytes": 2148
+    },
+    {
+      "path": "outputs/metrics/legitimate_orbit_error_geometry_summary.csv",
+      "sha256": "F72EF27BC32FF220A60BBA7D741401262927ABD1D7BAB52BB38D3DA9C8BFFD3F",
+      "size_bytes": 108716
+    },
+    {
+      "path": "outputs/metrics/orbit_error_to_doppler_legitimate_geometry_effect_audit.csv",
+      "sha256": "4275547C8698570F88B0C71781E44FD10863601401D528ACCD22A8866D925863",
+      "size_bytes": 1035
+    },
+    {
+      "path": "outputs/metrics/orbit_error_to_doppler_legitimate_june_replication.csv",
+      "sha256": "C405539FDA805DD3B652190F5B51799FA1E6DEE07754F73A08C37BDFB20A015D",
+      "size_bytes": 781
+    },
+    {
+      "path": "outputs/reports/legitimate_orbit_error_to_doppler_stage_a_report.md",
+      "sha256": "EC24B7703E2103E1B67CECCAB4718FA96ED84F096D0F8546FB02C4A0E8C8E248",
+      "size_bytes": 18524
+    },
+    {
+      "path": "outputs/figures/orbit_error_to_doppler_legitimate/orbit_error_raw_doppler_vs_freshness.png",
+      "sha256": "6B2BE37B47C0CF50CF83F5612997C49C8445EF5BEBD0CA3C6044C2864391E7B1",
+      "size_bytes": 65813
+    },
+    {
+      "path": "outputs/figures/orbit_error_to_doppler_legitimate/orbit_error_score_vs_freshness.png",
+      "sha256": "B879134F89A21193DF3270737CEEB05CE314D4950C647047EF13C865434C5308",
+      "size_bytes": 54344
+    },
+    {
+      "path": "outputs/figures/orbit_error_to_doppler_legitimate/orbit_error_delta_k_vs_freshness.png",
+      "sha256": "6432EAA9AEDBBCF25D0E3FA636A6E1BD2F736FAD4EE78F8E3D2016BAFBB781C6",
+      "size_bytes": 50973
+    },
+    {
+      "path": "outputs/figures/orbit_error_to_doppler_legitimate/orbit_error_ols_absorption_vs_freshness.png",
+      "sha256": "FC1E3741CDC6A116796E40E7A185583EBB9E7BB03715E2D121BE0E287072BCC6",
+      "size_bytes": 64295
+    }
+  ],
+  "software": {
+    "python": "3.13.5",
+    "numpy": "2.1.3",
+    "pandas": "2.2.3"
+  },
+  "protected_frozen_bindings": {
+    "status": "PASS",
+    "checked_bindings": 52,
+    "passed_bindings": 52,
+    "failed_bindings": 0,
+    "audit": {
+      "path": "outputs/metrics/orbit_error_to_doppler_legitimate_protected_frozen_bindings.csv",
+      "sha256": "0E61A1E85424B02459021AD77450877B534D1C53B8269A1EC7AF98213D631567",
+      "size_bytes": 12211
+    },
+    "manifest": {
+      "path": "outputs/metrics/orbit_error_to_doppler_legitimate_protected_frozen_bindings_manifest.json",
+      "sha256": "35EA12DB5962FD655EDA8427A5ADA6049379DF24C200C21DA199DDBEDADD4F17",
+      "size_bytes": 926
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "stage": "Orbit Uncertainty Stage-1B smoke",
+  "status": "PASS",
+  "window_tag": "20260501_20260531",
+  "generated_utc": "2026-09-06T00:43:33Z",
+  "builder": {
+    "path": "D:/Project/data-simulation/scripts/run_orbit_uncertainty_stage1b_residual_library.py",
+    "sha256": "BCFCCC1F25C012AB1B01F115196E738506F12B0BDF1E1A21304DFAAA304A90DD"
+  },
+  "stage1a_manifest_sha256": {
+    "design": null,
+    "acquisition": "1B069590257660C5683A3232E2A7BB914FA8C5A4EAD35FC238914FF10BDDA2E1",
+    "reference_quality": "7EFC2606B6B5FE6DDE7ABA2CF6954C996D85728C90CCCBD4A7745402422B22BB",
+    "causal_support_audit": "86DBA6187CB6BE4F37F4D7B4021DB6309957549E7C1826024A687F2250BEDBED",
+    "cohort_selection": "30D7A846DDDE5850645CD3C1C03C061E7971AE40A2EE052FFB4E8BA3E7F4ED36"
+  },
+  "ordinary_raw_sha256": "E2023C9370EE0018E5F7AC5887E5D8ACDAF0D0761A1D75B7E2FDD4E55B0E77F1",
+  "supgp_raw_sha256": {
+    "data/orbit_uncertainty_stage1/respecialdatarequest (4)/sat000044714.csv": "B4C4ABC6C0069F9959CEAFCAA4B4B81EE1716F45F5A42956D60225FEBA4173F8",
+    "data/orbit_uncertainty_stage1/respecialdatarequest (4)/sat000045230.csv": "41BA26E07776CD5178C5E7A9D5D7A943E0EE3C5F86A44AF4219A9AF97031320A",
+    "data/orbit_uncertainty_stage1/respecialdatarequest (4)/sat000047383.csv": "6658F503805C81E739B310D8EDE940CB4130B7B089E329CCA48ADDED1DCA5275",
+    "data/orbit_uncertainty_stage1/respecialdatarequest (4)/sat000047749.csv": "6D825CEB65F2BFCF3802594C8EAAFD5D21ACAB331613800EE40D0DA6CA4055FF",
+    "data/orbit_uncertainty_stage1/respecialdatarequest (4)/sat000047767.csv": "75ECF71E8F8FF5B99F590AC96F2E3037E409024A4DC33635D96850002A2C28DF",
+    "data/orbit_uncertainty_stage1/respecialdatarequest (4)/sat000047844.csv": "7637865C98F568E548B2893E5688D188E8D238A16E9B0D524612511DF86C4A11",
+    "data/orbit_uncertainty_stage1/respecialdatarequest (4)/sat000048111.csv": "B067C1BE0567D6B9569AFB4250DA7D8121277FF0C6B29B2BCE1B05C06245860B",
+    "data/orbit_uncertainty_stage1/respecialdatarequest (4)/sat000048309.csv": "08609C78A36E22D83016AB84A023335BA832708AB47F19C7DBB9ECDD3BE66D85",
+    "data/orbit_uncertainty_stage1/respecialdatarequest (4)/sat000048458.csv": "CA9F570E892C0EA1A9A3BE00CC7460BE89877A1AD166BDB5BCE0CBC9206E18BF",
+    "data/orbit_uncertainty_stage1/respecialdatarequest (4)/sat000048672.csv": "C52E96C7E2D8E9B2C8F655E9753D2E8415575ED99480B51157446CA98AC2E573",
+    "data/orbit_uncertainty_stage1/respecialdatarequest (4)/sat000058380.csv": "5AA5AE7FAA3D6CF67E0A3D4B2B91E02FFC7830B5F42C2105BE4085F89A8517F0",
+    "data/orbit_uncertainty_stage1/respecialdatarequest (4)/sat000060265.csv": "DED2DD25E9F7875F34DD7C617F6701E3E9E7C3DBC47A74E9467AF853231AB756",
+    "data/orbit_uncertainty_stage1/respecialdatarequest (4)/sat000065405.csv": "F59E665E7392DF3215975FCDCCE978590639C14E34B9BB2646EA4BE41E922CCA",
+    "data/orbit_uncertainty_stage1/respecialdatarequest (4)/sat000065407.csv": "CAFB6D2D609727A95334A690D6FDDBE10FEA4E38D6EA6BD4CE409A7B729832A2",
+    "data/orbit_uncertainty_stage1/respecialdatarequest (4)/sat000065409.csv": "4FCC9DB2EADC4705EB0859F1CC9CEE11C2CE2CB59A65D27550617ED751D1ACC3",
+    "data/orbit_uncertainty_stage1/respecialdatarequest (4)/sat000065410.csv": "DFCA65DA89C49E8ED5AE2140478D6602768ED848DC2CEFB165B9AE3F0C5AB5A6",
+    "data/orbit_uncertainty_stage1/respecialdatarequest (4)/sat000065411.csv": "F38410BB5D5D19415791DEACEB7FC598525374D061D5EDA92521334B9E906A95",
+    "data/orbit_uncertainty_stage1/respecialdatarequest (4)/sat000065421.csv": "98FD709B5D350488F653699497E4AD02AD34D77DAB3F195664C94E08C96C2EEF",
+    "data/orbit_uncertainty_stage1/respecialdatarequest (4)/sat000065686.csv": "B237EE65C4008347069F443F5E42D3A73F58CBDA92AAB542E8A9CA9135AB4DB7",
+    "data/orbit_uncertainty_stage1/respecialdatarequest (4)/sat000065693.csv": "70176ED2916A7E16CE08E4376BFA3D0467B3DFF47F0BB0077B490D82C7DAC6A1"
+  },
+  "case_count": 12,
+  "satellite_count": 3,
+  "max_numeric_abs_difference": 0.0,
+  "numeric_tolerance": 1e-10,
+  "iers": {
+    "table_class": "IERS_A",
+    "mjd_min": 41684.0,
+    "mjd_max": 61645.0,
+    "formal_start_mjd": 61161.0,
+    "formal_stop_mjd": 61192.0,
+    "formal_window_covered": true,
+    "data_url": "",
+    "data_path": "C:\\Users\\ASUS\\.astropy\\cache\\download\\url\\0b082426cda92b3d734756d6020dd07d\\contents",
+    "data_sha256": "59AA390FDBCAD0B4905EE2887C53FDB488D95B5968A111C5BF4C4FD31653405B",
+    "auto_download_at_open": false,
+    "auto_download_during_build": false,
+    "auto_max_age": null,
+    "explicit_frozen_data_file": true
+  },
+  "april_protection": {
+    "artifact_count": 81,
+    "aggregate_sha256": "04AFD461FB882B373DCEFB683666625A4D98AD734CFA87F26929DAB9F93681A4",
+    "canonical_stage1b_dataset_sha256": "2B02C40FDEA69F6079D256B5E274652ABAB2D5BC2F9899866C7F1CAFFB469F23"
+  },
+  "outputs": {
+    "crosscheck": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1b_20260501_20260531_smoke_crosscheck.csv",
+      "sha256": "3FC7CF78367AAEF1F93B56AE87A028A5407D05EACCD2B6D2EF39744807859041"
+    },
+    "correctness": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1b_20260501_20260531_smoke_correctness_audit.csv",
+      "sha256": "BA3A6C9732EE3BB339B73E1F672E07124F5B6D141A26C70C8B55C5EFF6C8D83E"
+    }
+  }
+}

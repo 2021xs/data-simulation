@@ -1,0 +1,2396 @@
+{
+  "stage": "Orbit Uncertainty Stage-1B",
+  "status": "JUNE_STAGE1B_RESIDUAL_LIBRARY_COMPLETE",
+  "generated_utc": "2026-09-07T01:34:36Z",
+  "window_tag": "20260601_20260630",
+  "formal_window": "[2026-06-01T00:00:00Z, 2026-07-01T00:00:00Z)",
+  "cohort": [
+    "44714",
+    "65686",
+    "65421",
+    "65409",
+    "65410",
+    "47749",
+    "47383",
+    "65411",
+    "48309",
+    "45230",
+    "47844",
+    "65407",
+    "47767",
+    "65405",
+    "48672",
+    "48111",
+    "65693",
+    "60265",
+    "58380",
+    "48458"
+  ],
+  "comparison_semantics": "ordinary-GP prediction disagreement relative to SpaceX-E/SupGP higher-quality historical reference; not ground-truth error",
+  "selection_policy": "CREATION_DATE <= evaluation_time; latest CREATION_DATE, then EPOCH, then GP_ID",
+  "causal_readiness_protocol": "CAUSAL_DATA_READINESS_V2",
+  "builder": {
+    "path": "D:/Project/data-simulation/scripts/run_orbit_uncertainty_stage1b_residual_library.py",
+    "sha256": "222F3936881C2CE9C16C87CD30497D8AB9377A35E65D783861A0486572A2871D",
+    "version_basis": "builder SHA256; repository is not a git work tree",
+    "git_state": "NOT_A_GIT_WORK_TREE",
+    "package_versions": {
+      "python": "3.13.5",
+      "numpy": "2.1.3",
+      "pandas": "2.2.3",
+      "astropy": "7.0.0",
+      "sgp4": "2.25"
+    }
+  },
+  "authoritative_stage1b_method_binding": {
+    "april_manifest": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1b_20260401_20260430_manifest.json",
+      "sha256": "81FC7EF0F4E6401A316A893C1C010840136AA43BEBEC48094A74F06FE020E4E3",
+      "builder_sha256": "E92AB4BE7AC12014E7EDB807947F397BB8ECECF7E59035F3C544F36F2AB46468"
+    },
+    "may_manifest": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1b_20260501_20260531_manifest.json",
+      "sha256": "9631AF3F4B4AA0F9D4C9804AE05A2C5F7608428CC0D1B2D7C22CC145F6EF38CD",
+      "builder_sha256": "BCFCCC1F25C012AB1B01F115196E738506F12B0BDF1E1A21304DFAAA304A90DD"
+    },
+    "numerical_method_reused": "SGP4 TEME propagation -> Astropy GCRS -> SupGP/reference-defined RTN; ordinary minus reference"
+  },
+  "input_manifests": {
+    "acquisition": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1_20260601_20260630_acquisition_download_manifest.json",
+      "sha256": "E7DBD29FE53B7598EDACEF5D6C8792F4AB1DCAF4FFDE195968A6799E29060423"
+    },
+    "reference_quality": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1_20260601_20260630_supgp_reference_quality_manifest.json",
+      "sha256": "DAFAD315CB8C147319C44EF2FB705F06380E342C765E3A5E535B02D78EECC468"
+    },
+    "june_supgp_candidate": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1f_june_supgp_candidate_manifest.json",
+      "sha256": "3FD73D1F9D116E83D12DB17C13CF43784734734F07FA9A08524E6DACF2F549F5"
+    },
+    "causal_support_audit": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1_20260601_20260630_ordinary_gp_causal_support_audit.csv",
+      "sha256": "65277899D27598D5D9E7E333FD4ACD9D98975E264BB2D65DBBAA8DD3C7E8A1A1"
+    },
+    "gt72_completeness": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1_20260601_20260630_gt72_causal_completeness_manifest.json",
+      "sha256": "645D320FDC766201B7F8C3745420C40EADA9C900ECCDC10B5FD51525A7734798"
+    },
+    "readiness_adjudication": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1_june_readiness_protocol_adjudication_manifest.json",
+      "sha256": "4619CE76869628C1FA907F3AE248F8283974933574F3A0CC2065E2B2430D3DA9"
+    },
+    "cohort_selection": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_satellite_selection.csv",
+      "sha256": "30D7A846DDDE5850645CD3C1C03C061E7971AE40A2EE052FFB4E8BA3E7F4ED36"
+    }
+  },
+  "input_raw": {
+    "ordinary": {
+      "path": "data/orbit_uncertainty_stage1/raw/spacetrack_gp/spacetrack_gp_history_20260529_20260701_20sat_omm.json",
+      "sha256": "1F5A8BA23D1C8AE605C4142F44E424711D1D85014DB46C28BBC18C3ABC326A96",
+      "record_count": 1693
+    },
+    "supgp": {
+      "directory": "data/orbit_uncertainty_stage1/june",
+      "file_count": 20,
+      "record_count": 5927,
+      "files": [
+        {
+          "path": "data/orbit_uncertainty_stage1/june/sat000044714.csv",
+          "sha256": "F91F0DA10678FA8B4BBDEBC15B9D96435ECFD92205FFA13417B9E47754646E40",
+          "expected_sha256": "F91F0DA10678FA8B4BBDEBC15B9D96435ECFD92205FFA13417B9E47754646E40",
+          "row_count": 300
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/june/sat000045230.csv",
+          "sha256": "A086445B48BCEA5D6D786487B3F9BAAB43C341130589A86BCBB60E49241950E8",
+          "expected_sha256": "A086445B48BCEA5D6D786487B3F9BAAB43C341130589A86BCBB60E49241950E8",
+          "row_count": 293
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/june/sat000047383.csv",
+          "sha256": "6A97ABED011A96AE20108B2FFAB622CC78ED39D918CC694CBFCE03E18290B2FA",
+          "expected_sha256": "6A97ABED011A96AE20108B2FFAB622CC78ED39D918CC694CBFCE03E18290B2FA",
+          "row_count": 297
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/june/sat000047749.csv",
+          "sha256": "0CE3EE486737D6898F4E0960379BB2CF5D672CBD2C80BC161C0E3F96D2261670",
+          "expected_sha256": "0CE3EE486737D6898F4E0960379BB2CF5D672CBD2C80BC161C0E3F96D2261670",
+          "row_count": 295
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/june/sat000047767.csv",
+          "sha256": "6E26A6FFCB0389E48C81BEEAD935A847B2444F9441CBE4C1AD8107642DE7DD5F",
+          "expected_sha256": "6E26A6FFCB0389E48C81BEEAD935A847B2444F9441CBE4C1AD8107642DE7DD5F",
+          "row_count": 291
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/june/sat000047844.csv",
+          "sha256": "FE1F3D11E12AC1E3987E760842AEC279FE294DEAF66BE25CA508FB5254D084DD",
+          "expected_sha256": "FE1F3D11E12AC1E3987E760842AEC279FE294DEAF66BE25CA508FB5254D084DD",
+          "row_count": 295
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/june/sat000048111.csv",
+          "sha256": "63E98DFF9634CD904EDA2CF3528E739282097399B04E926A453B20B62792D5D5",
+          "expected_sha256": "63E98DFF9634CD904EDA2CF3528E739282097399B04E926A453B20B62792D5D5",
+          "row_count": 297
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/june/sat000048309.csv",
+          "sha256": "79D62147447BEB30EC557417B61811EF138EF8094DC33D3F68D9F90E474F7689",
+          "expected_sha256": "79D62147447BEB30EC557417B61811EF138EF8094DC33D3F68D9F90E474F7689",
+          "row_count": 290
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/june/sat000048458.csv",
+          "sha256": "091BB60895838155D6E08F3AB53CB4B529B9EB7F826CA2A0FB9BFADE0198C1C6",
+          "expected_sha256": "091BB60895838155D6E08F3AB53CB4B529B9EB7F826CA2A0FB9BFADE0198C1C6",
+          "row_count": 295
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/june/sat000048672.csv",
+          "sha256": "9CCC0F6B332261080A38A7EF3636C88202FADE4135B08985F943785C7A1E9415",
+          "expected_sha256": "9CCC0F6B332261080A38A7EF3636C88202FADE4135B08985F943785C7A1E9415",
+          "row_count": 297
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/june/sat000058380.csv",
+          "sha256": "3EDD695EBC2FD369BB6D3F364CEB1C354CEB8FF41D75D9C0E85CB4203365E2E7",
+          "expected_sha256": "3EDD695EBC2FD369BB6D3F364CEB1C354CEB8FF41D75D9C0E85CB4203365E2E7",
+          "row_count": 297
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/june/sat000060265.csv",
+          "sha256": "310CEC01430FB37300D0520AC911958B04898B003A2B2906A630DA9E075D20EF",
+          "expected_sha256": "310CEC01430FB37300D0520AC911958B04898B003A2B2906A630DA9E075D20EF",
+          "row_count": 296
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/june/sat000065405.csv",
+          "sha256": "10707AFA6592FB845A94CB76E13C89BAD9EFA77F9A31B0B3C5036D80E7E87A62",
+          "expected_sha256": "10707AFA6592FB845A94CB76E13C89BAD9EFA77F9A31B0B3C5036D80E7E87A62",
+          "row_count": 298
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/june/sat000065407.csv",
+          "sha256": "1D5D20428BDA125132468A3B81A5A0011425555B1C761A0A7A4BD8F31D76DA01",
+          "expected_sha256": "1D5D20428BDA125132468A3B81A5A0011425555B1C761A0A7A4BD8F31D76DA01",
+          "row_count": 296
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/june/sat000065409.csv",
+          "sha256": "C82A923C1B14CF8F30B1B5DDBB30C6CB9AE3A8DB51A9A3F182BEC8348A9F0DF5",
+          "expected_sha256": "C82A923C1B14CF8F30B1B5DDBB30C6CB9AE3A8DB51A9A3F182BEC8348A9F0DF5",
+          "row_count": 298
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/june/sat000065410.csv",
+          "sha256": "480E0881CFF425F783D504E2B784746BB847F6C9A822B6001FD1AFCD7FF9CBC4",
+          "expected_sha256": "480E0881CFF425F783D504E2B784746BB847F6C9A822B6001FD1AFCD7FF9CBC4",
+          "row_count": 302
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/june/sat000065411.csv",
+          "sha256": "26E105CAB95698D658010132E70DA6D62EE0D10BD67ED831612077EEE7C12C95",
+          "expected_sha256": "26E105CAB95698D658010132E70DA6D62EE0D10BD67ED831612077EEE7C12C95",
+          "row_count": 299
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/june/sat000065421.csv",
+          "sha256": "47F2014ECBC8E7384C87E8BF3D80DB676A195CA775414C519EDF2550466E6CB3",
+          "expected_sha256": "47F2014ECBC8E7384C87E8BF3D80DB676A195CA775414C519EDF2550466E6CB3",
+          "row_count": 301
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/june/sat000065686.csv",
+          "sha256": "B6BC6FF15B3CA146A8A5647889EB05C3E5134E71663266D0DFF94290D3AA7A5B",
+          "expected_sha256": "B6BC6FF15B3CA146A8A5647889EB05C3E5134E71663266D0DFF94290D3AA7A5B",
+          "row_count": 293
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/june/sat000065693.csv",
+          "sha256": "D31425DC1D7BF768E17AFC34A7D7E516943AB5AC5C7598CCE830821EDB62E3E7",
+          "expected_sha256": "D31425DC1D7BF768E17AFC34A7D7E516943AB5AC5C7598CCE830821EDB62E3E7",
+          "row_count": 297
+        }
+      ]
+    },
+    "hashes_before_after_equal": true
+  },
+  "frame_time_assumptions": {
+    "ordinary_initialization": "TLE_LINE1/2 embedded in Space-Track OMM JSON via Satrec.twoline2rv",
+    "supgp_initialization": "CelesTrak historical SupGP OMM via sgp4.omm.initialize",
+    "native_frame_both": "TEME from SGP4",
+    "common_frame": "GCRS via Astropy TEME transform at the common UTC evaluation epoch",
+    "rtn_basis": "SupGP/reference GCRS position and velocity",
+    "residual_sign": "ordinary minus reference",
+    "iers": {
+      "table_class": "IERS_A",
+      "mjd_min": 41684.0,
+      "mjd_max": 61645.0,
+      "formal_start_mjd": 61192.0,
+      "formal_stop_mjd": 61222.0,
+      "formal_window_covered": true,
+      "data_url": "",
+      "data_path": "C:\\Users\\ASUS\\.astropy\\cache\\download\\url\\0b082426cda92b3d734756d6020dd07d\\contents",
+      "data_sha256": "59AA390FDBCAD0B4905EE2887C53FDB488D95B5968A111C5BF4C4FD31653405B",
+      "auto_download_at_open": false,
+      "auto_download_during_build": false,
+      "auto_max_age": null,
+      "explicit_frozen_data_file": true
+    }
+  },
+  "freshness_eligibility": {
+    "support": "0 < element_age_hours <= 36",
+    "within_stage1f_support_rows": 5389,
+    "outside_stage1f_support_rows": 538,
+    "engineering_staleness_gt72h_rows": 25,
+    "gt72_subset_of_outside_support": true,
+    "outside_support_decision": "DEFER",
+    "rows_removed_for_freshness": 0
+  },
+  "failure_accounting": {
+    "input_rows": 5927,
+    "output_rows": 5927,
+    "nominal_rows": 5927,
+    "excluded_rows": 0,
+    "excluded_reasons": {},
+    "propagation_failures": 0,
+    "frame_conversion_failures": 0,
+    "rtn_failures": 0,
+    "nonfinite_failures": 0
+  },
+  "smoke_binding": {
+    "manifest": "outputs/metrics/orbit_uncertainty_stage1b_20260601_20260630_smoke_manifest.json",
+    "manifest_sha256": "EABEE2BB7B2350A224DB1C60048D6858485EC27ED32807CBEC92163912531944",
+    "status": "PASS",
+    "case_count": 12,
+    "max_numeric_abs_difference": 0.0
+  },
+  "protected_artifacts": {
+    "april_before": {
+      "artifact_count": 81,
+      "aggregate_sha256": "04AFD461FB882B373DCEFB683666625A4D98AD734CFA87F26929DAB9F93681A4",
+      "canonical_stage1b_dataset_sha256": "2B02C40FDEA69F6079D256B5E274652ABAB2D5BC2F9899866C7F1CAFFB469F23",
+      "entries": [
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000044714.csv",
+          "sha256": "C1198C15083467800821DFC90FD3B7EBC91AD77331A317D12C84E0F66BCD6112",
+          "size_bytes": 45622
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000045230.csv",
+          "sha256": "6E4EA753E35C23ABED40BF9A20B78F6D481E296EFF07A89104EC8822866AC952",
+          "size_bytes": 44443
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000047383.csv",
+          "sha256": "D380077CB9A274956D6560FCECD4282B07BC293112F8BF29C8D9843B8F0DAD43",
+          "size_bytes": 45023
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000047749.csv",
+          "sha256": "234D58000CD20A78D81F98DDE02141E4C92C40DF245CEA6B9BAF27A0F59ADDDC",
+          "size_bytes": 46304
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000047767.csv",
+          "sha256": "2BA2859FDDCF3096A0419BFA0973A15C657AE45EE9214AE8A6A4FF325BCF4362",
+          "size_bytes": 46281
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000047844.csv",
+          "sha256": "13ED32757396F0E0460918282AC0FF804941CD505D1B1E85AF57C8661AD30D3A",
+          "size_bytes": 46091
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000048111.csv",
+          "sha256": "67FA9BECA6B156383638EBA8BD9CD769E4CA9007382EAC708148734F98D5877B",
+          "size_bytes": 45821
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000048309.csv",
+          "sha256": "4A35CFB55807315F3FDBD9D56287516128DD78172699442EACCC768E4186D183",
+          "size_bytes": 46331
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000048458.csv",
+          "sha256": "C5A96D1822F9FE2C1504B0DA9B34DFE7C998FD2527520AE8970FF7A392A39A0D",
+          "size_bytes": 45360
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000048672.csv",
+          "sha256": "3987F6F00151DAB5F5625A7F46E54078106613C1F071DD56BFD8AEDBC244C1F4",
+          "size_bytes": 46288
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000058380.csv",
+          "sha256": "89A756DC559E4390A2DB37060BADD9FCE883A16B8A6FEBA42CBC06B1F018C7C0",
+          "size_bytes": 46307
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000060265.csv",
+          "sha256": "99CD8C87F0401B599908AABA06305A403EFBB3F3A586112B06C7D1B0CE16780D",
+          "size_bytes": 46187
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000065405.csv",
+          "sha256": "E2F76A2DB824BE96B24A828F741E6E55BAF6AC15C7D3E539463E4DD6A7628444",
+          "size_bytes": 45618
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000065407.csv",
+          "sha256": "95C30B4B0E132D8CD629A744FCF7F2FE41ED0FA925EA214FC498E942681B4D62",
+          "size_bytes": 45141
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000065409.csv",
+          "sha256": "97F00416FE20C85F57271D0353744E2833C12F61BE433E973267F156C1D409CB",
+          "size_bytes": 45315
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000065410.csv",
+          "sha256": "F394774F20AC648BD563EE8D63CD4A7036E45DA11CD2D1301CD38E518433739F",
+          "size_bytes": 45608
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000065411.csv",
+          "sha256": "F194EE557C0630476207867F4787900A1CC27B97E55D27B9C6B5F3EC800E477A",
+          "size_bytes": 45604
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000065421.csv",
+          "sha256": "33EEF08A580949ECBEDAB93FECF7B1C26947FE9F38C3715B20AE067105B2A9AA",
+          "size_bytes": 46437
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000065686.csv",
+          "sha256": "D87B19925CFB5BF1AD5F5EB02CF374F863FE14423A806F1F874744B154D567F4",
+          "size_bytes": 46484
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000065693.csv",
+          "sha256": "86A513CBE633BE9A289FE378369ED1D37A4B67B743313BEDC74497AE3518E0C9",
+          "size_bytes": 45524
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/spacetrack_gp/spacetrack_gp_history_20260329_20260501_20sat_omm.json",
+          "sha256": "079DD7846CE44950DB4818CB66F155CB338B2C8154CA66D3F6609F6459B3FEFE",
+          "size_bytes": 2571878
+        },
+        {
+          "path": "outputs/datasets/orbit_uncertainty_stage1b_20260401_20260430_rtn_residual_library.csv",
+          "sha256": "2B02C40FDEA69F6079D256B5E274652ABAB2D5BC2F9899866C7F1CAFFB469F23",
+          "size_bytes": 6114322
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_acquisition_cohort_readiness.csv",
+          "sha256": "8BC32F8C70C2AFDC20789AB7FC387B6944BFEA1064DE8F168CEA69CC65B34967",
+          "size_bytes": 1535
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_acquisition_correctness_audit.csv",
+          "sha256": "8543634B17CF0CDAD155A666D5CF9B76B91A2F71BF2BDE049C06C951FFA45395",
+          "size_bytes": 1145
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_acquisition_download_manifest.json",
+          "sha256": "92CE9423E677E9E5B2351C4EF5309D61519543E9AB8E40DEDEAF083541A7E325",
+          "size_bytes": 7344
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_acquisition_gp_coverage_audit.csv",
+          "sha256": "86D96F54A752CB8F1BBD8A85661F7EEEEA822D962996432B71D60BE482B7245F",
+          "size_bytes": 5428
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_acquisition_gp_raw_inventory.csv",
+          "sha256": "2E477052058F97A97C77C26409AE4F4F18B1E98BA1321B7FDD897B2EE8879395",
+          "size_bytes": 1456
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_acquisition_supgp_coverage_audit.csv",
+          "sha256": "361CCA286265AFE734E722A0279A0B5A0FBE150673112E5EF35C4D8B5813E42A",
+          "size_bytes": 3795
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_acquisition_supgp_raw_inventory.csv",
+          "sha256": "30C3A723ED30813DD2BA3D57EEA5B8669A3FC4A1A2205EF2DB62A85B166A0B36",
+          "size_bytes": 12201
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_candidate_audit.csv",
+          "sha256": "255016226A10367F598C5F24D2598526B40C0640E6C4779D9613028C5A69A7B1",
+          "size_bytes": 13527
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_design_manifest.json",
+          "sha256": "C06B9C05F96827C70188ACA2DDD05C91A7C3BDB9008DCF7EE8F950280A95D56F",
+          "size_bytes": 15969
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_ordinary_gp_causal_readiness_summary.csv",
+          "sha256": "2008A975D73EA0CCFEC96D96ED5308C937B97940BACACAF6B3C94A9522589A23",
+          "size_bytes": 1929
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_ordinary_gp_causal_support_audit.csv",
+          "sha256": "D1F9AE9499D75181CA47A615CFF1C2320908DE492C0CD27E49C52A827BCD562E",
+          "size_bytes": 1230826
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_satellite_selection.csv",
+          "sha256": "30D7A846DDDE5850645CD3C1C03C061E7971AE40A2EE052FFB4E8BA3E7F4ED36",
+          "size_bytes": 920
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_spacetrack_acquisition_plan.csv",
+          "sha256": "3C8EB9811AB1939D393E59A368411436F85A34B474C1FFFEB4D62D5EFB9AA128",
+          "size_bytes": 3421
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_supgp_duplicate_epoch_audit.csv",
+          "sha256": "064BE66F476A840E1AC99249FF88C7C66860844E9D6D70DAA3638487FD7E344A",
+          "size_bytes": 191
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_supgp_raw_inventory.csv",
+          "sha256": "3CF07BC90F0D73B5E0160AD0AD18D0C5FD0782DC4736C2ABE5DAB3C2C492C1A6",
+          "size_bytes": 11002
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_supgp_reference_quality.csv",
+          "sha256": "909BBEDE174751C5A51367CB4C06FB444DA43E8777B605EFA87E8376FC185271",
+          "size_bytes": 26181
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_supgp_reference_quality_manifest.json",
+          "sha256": "406341CDC76B9C6999EAFD08443F7802192DE53B7E5EB8B6020E629430558050",
+          "size_bytes": 18895
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1b_20260401_20260430_correctness_audit.csv",
+          "sha256": "9220FCC93C94FC6575A52C9B418E92F1EF06C3676ECA6601EB2B177F7B639B7B",
+          "size_bytes": 1613
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1b_20260401_20260430_failure_audit.csv",
+          "sha256": "678AC26604A4E7CD0122E611D70E70EA2A526FF72AA9106D7DBBB0263EA633D4",
+          "size_bytes": 208
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1b_20260401_20260430_manifest.json",
+          "sha256": "81FC7EF0F4E6401A316A893C1C010840136AA43BEBEC48094A74F06FE020E4E3",
+          "size_bytes": 14409
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1b_20260401_20260430_residual_summary.csv",
+          "sha256": "5F4804AC914C7D483A54E439B0219A77FDCF1B482D78C9649EC2854D7E24989E",
+          "size_bytes": 8742
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1b_20260401_20260430_smoke_correctness_audit.csv",
+          "sha256": "36269C933502F616AB98FCA078151F5D2E74D5F313492DEDF2B8DD40D14FAE93",
+          "size_bytes": 1173
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1b_20260401_20260430_smoke_crosscheck.csv",
+          "sha256": "D01D6BFF252B39F0F3CD80ED8C0E6DDC9AE8F9D58667B8E760C7856C7B187E9C",
+          "size_bytes": 6511
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1b_20260401_20260430_smoke_manifest.json",
+          "sha256": "E5058E54237647C747CAAB820CC7724E58EBD262E0FDC662D870F7B1522C9753",
+          "size_bytes": 4794
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1c_20260401_20260430_correctness_audit.csv",
+          "sha256": "D9680573C925DEC938ADD7EA09E9026D3373747EDB8DDE7AAEE3BD354074827A",
+          "size_bytes": 1639
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1c_20260401_20260430_extreme_episode_audit.csv",
+          "sha256": "44D6B094FF8652302A082A198E4F8BA8A0CEC7FFF0BBBDE2DD44A1EA384417B0",
+          "size_bytes": 55134
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1c_20260401_20260430_freshness_summary.csv",
+          "sha256": "EB86025EE30B07E61B58325970E62D1B87665437AEB228418932BE3080C3C657",
+          "size_bytes": 94731
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1c_20260401_20260430_manifest.json",
+          "sha256": "8589867109B1AEC49B7FD0184ABF7166B5C1976C2A36E9DF64CA051B67E423D3",
+          "size_bytes": 6946
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1c_20260401_20260430_regime_candidate_summary.csv",
+          "sha256": "321D3CF20D4A0334B77B2F115D9FFCC0521C405702759B23D0EE6DE28F01F5AF",
+          "size_bytes": 8331
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1c_20260401_20260430_rms_association_summary.csv",
+          "sha256": "BC7E04CE01680E69D749F5F4F304D5092C7CA10A9153B982D83BC8A8EBDB2038",
+          "size_bytes": 4870
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1c_20260401_20260430_rtn_component_summary.csv",
+          "sha256": "F1F89A1687F779256F434040A302CA52FDF237D75AB274C394B99FF177C99C7C",
+          "size_bytes": 22268
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1c_20260401_20260430_satellite_summary.csv",
+          "sha256": "4B25395C4529A40504039A79A764AC15BB9B908DDF8CB16F82D5DDCCAC3FE128",
+          "size_bytes": 8111
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1d_20260401_20260430_conditional_model_grid.csv",
+          "sha256": "609B6412B370CC4961A35406CF491AD8032BF0DDBD23D9A74024486F81331CB2",
+          "size_bytes": 104806
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1d_20260401_20260430_correctness_audit.csv",
+          "sha256": "BB5442766FEC8E61E9F931C0E1B860E9C1213080D52579E07141126CCDFDDA07",
+          "size_bytes": 1351
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1d_20260401_20260430_coverage_validation.csv",
+          "sha256": "8FE742DE46FC7CA131F1BC2F266FCEB9416B57220FBA0E81F367941457B6AD2F",
+          "size_bytes": 50162
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1d_20260401_20260430_freshness_quantiles.csv",
+          "sha256": "E29E25CBE55B1EBA040D83408BBEDB14475425A20049AB55A2FB72A648591DC0",
+          "size_bytes": 103170
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1d_20260401_20260430_manifest.json",
+          "sha256": "834917C94E18E1AD8E643687AF4312A88B28DFADA4E6FE25C407F091E04C0617",
+          "size_bytes": 7632
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1d_20260401_20260430_regime_sensitivity.csv",
+          "sha256": "E4268AB0C5D084273155E13A0FC8F731DD9652C7A94B8D24B1F8AD6BAAD98B5F",
+          "size_bytes": 98274
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1d_20260401_20260430_satellite_validation.csv",
+          "sha256": "C39081FCB6DAB06CF3ECF9EFAC0EDA789E482678149DA1A0E35748CAFF6F859E",
+          "size_bytes": 31465
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1d_20260401_20260430_timeblock_validation.csv",
+          "sha256": "D7C4651A5EBF87F3BEED6119608EAA822E0741360F9020753FBC55CCA1C2FB49",
+          "size_bytes": 9450
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1e_20260401_20260430_causal_regime_features.csv",
+          "sha256": "434F1C9CBA569B96B5C4990BA68F69CEBA43817659794A5900A5F3016E670CD4",
+          "size_bytes": 3180439
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1e_20260401_20260430_componentwise_calibration.csv",
+          "sha256": "215F155A382C08A4515E1EB69DF7B3C337F10BEA7B936ED997974680DFA94E6D",
+          "size_bytes": 118442
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1e_20260401_20260430_correctness_audit.csv",
+          "sha256": "7328FE9F8B8AD66606E1BDD0019CCBB9D8C9E1057B95B48D3497024282FE4B73",
+          "size_bytes": 1579
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1e_20260401_20260430_loso_validation.csv",
+          "sha256": "6A6E3720BA71A350289C5E9DE67DC0A5DFE6103D1CDDADFFA7B1C42626897318",
+          "size_bytes": 4958526
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1e_20260401_20260430_manifest.json",
+          "sha256": "888FACF353F5F6FC0B011F45521187781BE007943D8DB84AAF3B961DB300883D",
+          "size_bytes": 15857
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1e_20260401_20260430_model_comparison.csv",
+          "sha256": "B01016B9F688ED43E58B810DE4EC06F048F9D14F470B8D6BC1AA70A69FFFD293",
+          "size_bytes": 8417
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1e_20260401_20260430_per_satellite_coverage.csv",
+          "sha256": "D117B904B7B826B814828AA856F2496AC1E2593D90FD47CF8620F1FEB9DC736D",
+          "size_bytes": 1837915
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1e_20260401_20260430_regime_feature_association.csv",
+          "sha256": "5A794DE74E6BD54C3CF97F41C28C0F60D6E222A19AC9887B43A514D75BCD83A4",
+          "size_bytes": 17885
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1e_20260401_20260430_rms_diagnostic.csv",
+          "sha256": "11C6BDD15FB62161CDBFA19CC7EE486DC441019EC05694195A74C5B4B14F89FC",
+          "size_bytes": 51672
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1e_20260401_20260430_satellite_heterogeneity.csv",
+          "sha256": "50122877F31F4791613F90DAA24F8BC9D4257A71577BCBCD2EDB27B594C2FF99",
+          "size_bytes": 342714
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1e_20260401_20260430_timeblock_validation.csv",
+          "sha256": "31319DFE13EBAA3F42A7D94A3F0E0485A87AC8BE05A7A5032F059F5A67F8FA88",
+          "size_bytes": 531871
+        },
+        {
+          "path": "outputs/reports/orbit_uncertainty_stage1_20260401_20260430_acquisition_report.md",
+          "sha256": "44E5B7C16650B8DE19E26247BF827C023F3BF3D8252E7235C4BECB1A692B3A6A",
+          "size_bytes": 3436
+        },
+        {
+          "path": "outputs/reports/orbit_uncertainty_stage1_20260401_20260430_celestrak_request.txt",
+          "sha256": "E793BB53EF92C13F4AA106A42BD0D739793F54AF910EDA9333A5E9991359B24D",
+          "size_bytes": 217
+        },
+        {
+          "path": "outputs/reports/orbit_uncertainty_stage1_20260401_20260430_design_report.md",
+          "sha256": "6A3C7647979844AA704DF8641BDCCF11549213C85DD44901BC41D4590BB473B5",
+          "size_bytes": 4188
+        },
+        {
+          "path": "outputs/reports/orbit_uncertainty_stage1_20260401_20260430_supgp_ingestion_audit.md",
+          "sha256": "308EF53297759585EE1D883AC5143EE8B2D3562FD22EB4BEAC66701F1A814B19",
+          "size_bytes": 11673
+        },
+        {
+          "path": "outputs/reports/orbit_uncertainty_stage1b_20260401_20260430_report.md",
+          "sha256": "8917403F341E241327D3B0643A95DF0DC935AD00673F3EEA1590B096F509C6C4",
+          "size_bytes": 19786
+        },
+        {
+          "path": "outputs/reports/orbit_uncertainty_stage1c_20260401_20260430_residual_structure_report.md",
+          "sha256": "ACD94964343F8BC42B093B34A45AA1E5BD2371E817EB9EB88D6479DEC9A70715",
+          "size_bytes": 5720
+        },
+        {
+          "path": "outputs/reports/orbit_uncertainty_stage1d_20260401_20260430_freshness_calibration_report.md",
+          "sha256": "69B49382048569F89E1F47DBEA22E39B1AD6CAFDEC427C7C57F4C93BAB2853D1",
+          "size_bytes": 5053
+        },
+        {
+          "path": "outputs/reports/orbit_uncertainty_stage1e_20260401_20260430_heterogeneity_regime_report.md",
+          "sha256": "12421BDD394C3BEE4F8C7E57859F1532EC78C5DBE700899DDBBD536FAC292230",
+          "size_bytes": 12597
+        }
+      ]
+    },
+    "april_after": {
+      "artifact_count": 81,
+      "aggregate_sha256": "04AFD461FB882B373DCEFB683666625A4D98AD734CFA87F26929DAB9F93681A4",
+      "canonical_stage1b_dataset_sha256": "2B02C40FDEA69F6079D256B5E274652ABAB2D5BC2F9899866C7F1CAFFB469F23",
+      "entries": [
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000044714.csv",
+          "sha256": "C1198C15083467800821DFC90FD3B7EBC91AD77331A317D12C84E0F66BCD6112",
+          "size_bytes": 45622
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000045230.csv",
+          "sha256": "6E4EA753E35C23ABED40BF9A20B78F6D481E296EFF07A89104EC8822866AC952",
+          "size_bytes": 44443
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000047383.csv",
+          "sha256": "D380077CB9A274956D6560FCECD4282B07BC293112F8BF29C8D9843B8F0DAD43",
+          "size_bytes": 45023
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000047749.csv",
+          "sha256": "234D58000CD20A78D81F98DDE02141E4C92C40DF245CEA6B9BAF27A0F59ADDDC",
+          "size_bytes": 46304
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000047767.csv",
+          "sha256": "2BA2859FDDCF3096A0419BFA0973A15C657AE45EE9214AE8A6A4FF325BCF4362",
+          "size_bytes": 46281
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000047844.csv",
+          "sha256": "13ED32757396F0E0460918282AC0FF804941CD505D1B1E85AF57C8661AD30D3A",
+          "size_bytes": 46091
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000048111.csv",
+          "sha256": "67FA9BECA6B156383638EBA8BD9CD769E4CA9007382EAC708148734F98D5877B",
+          "size_bytes": 45821
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000048309.csv",
+          "sha256": "4A35CFB55807315F3FDBD9D56287516128DD78172699442EACCC768E4186D183",
+          "size_bytes": 46331
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000048458.csv",
+          "sha256": "C5A96D1822F9FE2C1504B0DA9B34DFE7C998FD2527520AE8970FF7A392A39A0D",
+          "size_bytes": 45360
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000048672.csv",
+          "sha256": "3987F6F00151DAB5F5625A7F46E54078106613C1F071DD56BFD8AEDBC244C1F4",
+          "size_bytes": 46288
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000058380.csv",
+          "sha256": "89A756DC559E4390A2DB37060BADD9FCE883A16B8A6FEBA42CBC06B1F018C7C0",
+          "size_bytes": 46307
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000060265.csv",
+          "sha256": "99CD8C87F0401B599908AABA06305A403EFBB3F3A586112B06C7D1B0CE16780D",
+          "size_bytes": 46187
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000065405.csv",
+          "sha256": "E2F76A2DB824BE96B24A828F741E6E55BAF6AC15C7D3E539463E4DD6A7628444",
+          "size_bytes": 45618
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000065407.csv",
+          "sha256": "95C30B4B0E132D8CD629A744FCF7F2FE41ED0FA925EA214FC498E942681B4D62",
+          "size_bytes": 45141
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000065409.csv",
+          "sha256": "97F00416FE20C85F57271D0353744E2833C12F61BE433E973267F156C1D409CB",
+          "size_bytes": 45315
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000065410.csv",
+          "sha256": "F394774F20AC648BD563EE8D63CD4A7036E45DA11CD2D1301CD38E518433739F",
+          "size_bytes": 45608
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000065411.csv",
+          "sha256": "F194EE557C0630476207867F4787900A1CC27B97E55D27B9C6B5F3EC800E477A",
+          "size_bytes": 45604
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000065421.csv",
+          "sha256": "33EEF08A580949ECBEDAB93FECF7B1C26947FE9F38C3715B20AE067105B2A9AA",
+          "size_bytes": 46437
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000065686.csv",
+          "sha256": "D87B19925CFB5BF1AD5F5EB02CF374F863FE14423A806F1F874744B154D567F4",
+          "size_bytes": 46484
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000065693.csv",
+          "sha256": "86A513CBE633BE9A289FE378369ED1D37A4B67B743313BEDC74497AE3518E0C9",
+          "size_bytes": 45524
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/spacetrack_gp/spacetrack_gp_history_20260329_20260501_20sat_omm.json",
+          "sha256": "079DD7846CE44950DB4818CB66F155CB338B2C8154CA66D3F6609F6459B3FEFE",
+          "size_bytes": 2571878
+        },
+        {
+          "path": "outputs/datasets/orbit_uncertainty_stage1b_20260401_20260430_rtn_residual_library.csv",
+          "sha256": "2B02C40FDEA69F6079D256B5E274652ABAB2D5BC2F9899866C7F1CAFFB469F23",
+          "size_bytes": 6114322
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_acquisition_cohort_readiness.csv",
+          "sha256": "8BC32F8C70C2AFDC20789AB7FC387B6944BFEA1064DE8F168CEA69CC65B34967",
+          "size_bytes": 1535
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_acquisition_correctness_audit.csv",
+          "sha256": "8543634B17CF0CDAD155A666D5CF9B76B91A2F71BF2BDE049C06C951FFA45395",
+          "size_bytes": 1145
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_acquisition_download_manifest.json",
+          "sha256": "92CE9423E677E9E5B2351C4EF5309D61519543E9AB8E40DEDEAF083541A7E325",
+          "size_bytes": 7344
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_acquisition_gp_coverage_audit.csv",
+          "sha256": "86D96F54A752CB8F1BBD8A85661F7EEEEA822D962996432B71D60BE482B7245F",
+          "size_bytes": 5428
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_acquisition_gp_raw_inventory.csv",
+          "sha256": "2E477052058F97A97C77C26409AE4F4F18B1E98BA1321B7FDD897B2EE8879395",
+          "size_bytes": 1456
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_acquisition_supgp_coverage_audit.csv",
+          "sha256": "361CCA286265AFE734E722A0279A0B5A0FBE150673112E5EF35C4D8B5813E42A",
+          "size_bytes": 3795
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_acquisition_supgp_raw_inventory.csv",
+          "sha256": "30C3A723ED30813DD2BA3D57EEA5B8669A3FC4A1A2205EF2DB62A85B166A0B36",
+          "size_bytes": 12201
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_candidate_audit.csv",
+          "sha256": "255016226A10367F598C5F24D2598526B40C0640E6C4779D9613028C5A69A7B1",
+          "size_bytes": 13527
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_design_manifest.json",
+          "sha256": "C06B9C05F96827C70188ACA2DDD05C91A7C3BDB9008DCF7EE8F950280A95D56F",
+          "size_bytes": 15969
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_ordinary_gp_causal_readiness_summary.csv",
+          "sha256": "2008A975D73EA0CCFEC96D96ED5308C937B97940BACACAF6B3C94A9522589A23",
+          "size_bytes": 1929
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_ordinary_gp_causal_support_audit.csv",
+          "sha256": "D1F9AE9499D75181CA47A615CFF1C2320908DE492C0CD27E49C52A827BCD562E",
+          "size_bytes": 1230826
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_satellite_selection.csv",
+          "sha256": "30D7A846DDDE5850645CD3C1C03C061E7971AE40A2EE052FFB4E8BA3E7F4ED36",
+          "size_bytes": 920
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_spacetrack_acquisition_plan.csv",
+          "sha256": "3C8EB9811AB1939D393E59A368411436F85A34B474C1FFFEB4D62D5EFB9AA128",
+          "size_bytes": 3421
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_supgp_duplicate_epoch_audit.csv",
+          "sha256": "064BE66F476A840E1AC99249FF88C7C66860844E9D6D70DAA3638487FD7E344A",
+          "size_bytes": 191
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_supgp_raw_inventory.csv",
+          "sha256": "3CF07BC90F0D73B5E0160AD0AD18D0C5FD0782DC4736C2ABE5DAB3C2C492C1A6",
+          "size_bytes": 11002
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_supgp_reference_quality.csv",
+          "sha256": "909BBEDE174751C5A51367CB4C06FB444DA43E8777B605EFA87E8376FC185271",
+          "size_bytes": 26181
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_supgp_reference_quality_manifest.json",
+          "sha256": "406341CDC76B9C6999EAFD08443F7802192DE53B7E5EB8B6020E629430558050",
+          "size_bytes": 18895
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1b_20260401_20260430_correctness_audit.csv",
+          "sha256": "9220FCC93C94FC6575A52C9B418E92F1EF06C3676ECA6601EB2B177F7B639B7B",
+          "size_bytes": 1613
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1b_20260401_20260430_failure_audit.csv",
+          "sha256": "678AC26604A4E7CD0122E611D70E70EA2A526FF72AA9106D7DBBB0263EA633D4",
+          "size_bytes": 208
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1b_20260401_20260430_manifest.json",
+          "sha256": "81FC7EF0F4E6401A316A893C1C010840136AA43BEBEC48094A74F06FE020E4E3",
+          "size_bytes": 14409
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1b_20260401_20260430_residual_summary.csv",
+          "sha256": "5F4804AC914C7D483A54E439B0219A77FDCF1B482D78C9649EC2854D7E24989E",
+          "size_bytes": 8742
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1b_20260401_20260430_smoke_correctness_audit.csv",
+          "sha256": "36269C933502F616AB98FCA078151F5D2E74D5F313492DEDF2B8DD40D14FAE93",
+          "size_bytes": 1173
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1b_20260401_20260430_smoke_crosscheck.csv",
+          "sha256": "D01D6BFF252B39F0F3CD80ED8C0E6DDC9AE8F9D58667B8E760C7856C7B187E9C",
+          "size_bytes": 6511
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1b_20260401_20260430_smoke_manifest.json",
+          "sha256": "E5058E54237647C747CAAB820CC7724E58EBD262E0FDC662D870F7B1522C9753",
+          "size_bytes": 4794
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1c_20260401_20260430_correctness_audit.csv",
+          "sha256": "D9680573C925DEC938ADD7EA09E9026D3373747EDB8DDE7AAEE3BD354074827A",
+          "size_bytes": 1639
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1c_20260401_20260430_extreme_episode_audit.csv",
+          "sha256": "44D6B094FF8652302A082A198E4F8BA8A0CEC7FFF0BBBDE2DD44A1EA384417B0",
+          "size_bytes": 55134
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1c_20260401_20260430_freshness_summary.csv",
+          "sha256": "EB86025EE30B07E61B58325970E62D1B87665437AEB228418932BE3080C3C657",
+          "size_bytes": 94731
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1c_20260401_20260430_manifest.json",
+          "sha256": "8589867109B1AEC49B7FD0184ABF7166B5C1976C2A36E9DF64CA051B67E423D3",
+          "size_bytes": 6946
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1c_20260401_20260430_regime_candidate_summary.csv",
+          "sha256": "321D3CF20D4A0334B77B2F115D9FFCC0521C405702759B23D0EE6DE28F01F5AF",
+          "size_bytes": 8331
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1c_20260401_20260430_rms_association_summary.csv",
+          "sha256": "BC7E04CE01680E69D749F5F4F304D5092C7CA10A9153B982D83BC8A8EBDB2038",
+          "size_bytes": 4870
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1c_20260401_20260430_rtn_component_summary.csv",
+          "sha256": "F1F89A1687F779256F434040A302CA52FDF237D75AB274C394B99FF177C99C7C",
+          "size_bytes": 22268
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1c_20260401_20260430_satellite_summary.csv",
+          "sha256": "4B25395C4529A40504039A79A764AC15BB9B908DDF8CB16F82D5DDCCAC3FE128",
+          "size_bytes": 8111
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1d_20260401_20260430_conditional_model_grid.csv",
+          "sha256": "609B6412B370CC4961A35406CF491AD8032BF0DDBD23D9A74024486F81331CB2",
+          "size_bytes": 104806
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1d_20260401_20260430_correctness_audit.csv",
+          "sha256": "BB5442766FEC8E61E9F931C0E1B860E9C1213080D52579E07141126CCDFDDA07",
+          "size_bytes": 1351
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1d_20260401_20260430_coverage_validation.csv",
+          "sha256": "8FE742DE46FC7CA131F1BC2F266FCEB9416B57220FBA0E81F367941457B6AD2F",
+          "size_bytes": 50162
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1d_20260401_20260430_freshness_quantiles.csv",
+          "sha256": "E29E25CBE55B1EBA040D83408BBEDB14475425A20049AB55A2FB72A648591DC0",
+          "size_bytes": 103170
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1d_20260401_20260430_manifest.json",
+          "sha256": "834917C94E18E1AD8E643687AF4312A88B28DFADA4E6FE25C407F091E04C0617",
+          "size_bytes": 7632
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1d_20260401_20260430_regime_sensitivity.csv",
+          "sha256": "E4268AB0C5D084273155E13A0FC8F731DD9652C7A94B8D24B1F8AD6BAAD98B5F",
+          "size_bytes": 98274
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1d_20260401_20260430_satellite_validation.csv",
+          "sha256": "C39081FCB6DAB06CF3ECF9EFAC0EDA789E482678149DA1A0E35748CAFF6F859E",
+          "size_bytes": 31465
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1d_20260401_20260430_timeblock_validation.csv",
+          "sha256": "D7C4651A5EBF87F3BEED6119608EAA822E0741360F9020753FBC55CCA1C2FB49",
+          "size_bytes": 9450
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1e_20260401_20260430_causal_regime_features.csv",
+          "sha256": "434F1C9CBA569B96B5C4990BA68F69CEBA43817659794A5900A5F3016E670CD4",
+          "size_bytes": 3180439
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1e_20260401_20260430_componentwise_calibration.csv",
+          "sha256": "215F155A382C08A4515E1EB69DF7B3C337F10BEA7B936ED997974680DFA94E6D",
+          "size_bytes": 118442
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1e_20260401_20260430_correctness_audit.csv",
+          "sha256": "7328FE9F8B8AD66606E1BDD0019CCBB9D8C9E1057B95B48D3497024282FE4B73",
+          "size_bytes": 1579
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1e_20260401_20260430_loso_validation.csv",
+          "sha256": "6A6E3720BA71A350289C5E9DE67DC0A5DFE6103D1CDDADFFA7B1C42626897318",
+          "size_bytes": 4958526
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1e_20260401_20260430_manifest.json",
+          "sha256": "888FACF353F5F6FC0B011F45521187781BE007943D8DB84AAF3B961DB300883D",
+          "size_bytes": 15857
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1e_20260401_20260430_model_comparison.csv",
+          "sha256": "B01016B9F688ED43E58B810DE4EC06F048F9D14F470B8D6BC1AA70A69FFFD293",
+          "size_bytes": 8417
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1e_20260401_20260430_per_satellite_coverage.csv",
+          "sha256": "D117B904B7B826B814828AA856F2496AC1E2593D90FD47CF8620F1FEB9DC736D",
+          "size_bytes": 1837915
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1e_20260401_20260430_regime_feature_association.csv",
+          "sha256": "5A794DE74E6BD54C3CF97F41C28C0F60D6E222A19AC9887B43A514D75BCD83A4",
+          "size_bytes": 17885
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1e_20260401_20260430_rms_diagnostic.csv",
+          "sha256": "11C6BDD15FB62161CDBFA19CC7EE486DC441019EC05694195A74C5B4B14F89FC",
+          "size_bytes": 51672
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1e_20260401_20260430_satellite_heterogeneity.csv",
+          "sha256": "50122877F31F4791613F90DAA24F8BC9D4257A71577BCBCD2EDB27B594C2FF99",
+          "size_bytes": 342714
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1e_20260401_20260430_timeblock_validation.csv",
+          "sha256": "31319DFE13EBAA3F42A7D94A3F0E0485A87AC8BE05A7A5032F059F5A67F8FA88",
+          "size_bytes": 531871
+        },
+        {
+          "path": "outputs/reports/orbit_uncertainty_stage1_20260401_20260430_acquisition_report.md",
+          "sha256": "44E5B7C16650B8DE19E26247BF827C023F3BF3D8252E7235C4BECB1A692B3A6A",
+          "size_bytes": 3436
+        },
+        {
+          "path": "outputs/reports/orbit_uncertainty_stage1_20260401_20260430_celestrak_request.txt",
+          "sha256": "E793BB53EF92C13F4AA106A42BD0D739793F54AF910EDA9333A5E9991359B24D",
+          "size_bytes": 217
+        },
+        {
+          "path": "outputs/reports/orbit_uncertainty_stage1_20260401_20260430_design_report.md",
+          "sha256": "6A3C7647979844AA704DF8641BDCCF11549213C85DD44901BC41D4590BB473B5",
+          "size_bytes": 4188
+        },
+        {
+          "path": "outputs/reports/orbit_uncertainty_stage1_20260401_20260430_supgp_ingestion_audit.md",
+          "sha256": "308EF53297759585EE1D883AC5143EE8B2D3562FD22EB4BEAC66701F1A814B19",
+          "size_bytes": 11673
+        },
+        {
+          "path": "outputs/reports/orbit_uncertainty_stage1b_20260401_20260430_report.md",
+          "sha256": "8917403F341E241327D3B0643A95DF0DC935AD00673F3EEA1590B096F509C6C4",
+          "size_bytes": 19786
+        },
+        {
+          "path": "outputs/reports/orbit_uncertainty_stage1c_20260401_20260430_residual_structure_report.md",
+          "sha256": "ACD94964343F8BC42B093B34A45AA1E5BD2371E817EB9EB88D6479DEC9A70715",
+          "size_bytes": 5720
+        },
+        {
+          "path": "outputs/reports/orbit_uncertainty_stage1d_20260401_20260430_freshness_calibration_report.md",
+          "sha256": "69B49382048569F89E1F47DBEA22E39B1AD6CAFDEC427C7C57F4C93BAB2853D1",
+          "size_bytes": 5053
+        },
+        {
+          "path": "outputs/reports/orbit_uncertainty_stage1e_20260401_20260430_heterogeneity_regime_report.md",
+          "sha256": "12421BDD394C3BEE4F8C7E57859F1532EC78C5DBE700899DDBBD536FAC292230",
+          "size_bytes": 12597
+        }
+      ]
+    },
+    "april_unchanged": true,
+    "stage1f_may_june_readiness_before": {
+      "artifact_count": 54,
+      "aggregate_sha256": "DAF4A6A65D6CB93AEBF7FC9CDF5761535F812FBCE18FD45A4FA01C4274A0CB2B",
+      "entries": [
+        {
+          "path": "data/orbit_uncertainty_stage1/audits/spacetrack_gp_history_20260618_20260625_7sat_gt72_completeness.json",
+          "sha256": "A96A1A8426F0AE27994FA871A0CF08FC378C23C9894B01170502E03E1A75E126",
+          "size_bytes": 73846
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/spacetrack_gp/spacetrack_gp_history_20260529_20260701_20sat_omm.json",
+          "sha256": "1F5A8BA23D1C8AE605C4142F44E424711D1D85014DB46C28BBC18C3ABC326A96",
+          "size_bytes": 1923028
+        },
+        {
+          "path": "outputs/datasets/orbit_uncertainty_stage1b_20260401_20260430_rtn_residual_library.csv",
+          "sha256": "2B02C40FDEA69F6079D256B5E274652ABAB2D5BC2F9899866C7F1CAFFB469F23",
+          "size_bytes": 6114322
+        },
+        {
+          "path": "outputs/datasets/orbit_uncertainty_stage1b_20260501_20260531_rtn_residual_library.csv",
+          "sha256": "119F2DAA3896476E120F010A436D0B250E404D41326B57FAABFEAA9F2F73EF3F",
+          "size_bytes": 6791749
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_acquisition_cohort_readiness.csv",
+          "sha256": "8BC32F8C70C2AFDC20789AB7FC387B6944BFEA1064DE8F168CEA69CC65B34967",
+          "size_bytes": 1535
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_acquisition_correctness_audit.csv",
+          "sha256": "8543634B17CF0CDAD155A666D5CF9B76B91A2F71BF2BDE049C06C951FFA45395",
+          "size_bytes": 1145
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_acquisition_download_manifest.json",
+          "sha256": "92CE9423E677E9E5B2351C4EF5309D61519543E9AB8E40DEDEAF083541A7E325",
+          "size_bytes": 7344
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_acquisition_gp_coverage_audit.csv",
+          "sha256": "86D96F54A752CB8F1BBD8A85661F7EEEEA822D962996432B71D60BE482B7245F",
+          "size_bytes": 5428
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_acquisition_gp_raw_inventory.csv",
+          "sha256": "2E477052058F97A97C77C26409AE4F4F18B1E98BA1321B7FDD897B2EE8879395",
+          "size_bytes": 1456
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_acquisition_supgp_coverage_audit.csv",
+          "sha256": "361CCA286265AFE734E722A0279A0B5A0FBE150673112E5EF35C4D8B5813E42A",
+          "size_bytes": 3795
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_acquisition_supgp_raw_inventory.csv",
+          "sha256": "30C3A723ED30813DD2BA3D57EEA5B8669A3FC4A1A2205EF2DB62A85B166A0B36",
+          "size_bytes": 12201
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_ordinary_gp_causal_readiness_summary.csv",
+          "sha256": "2008A975D73EA0CCFEC96D96ED5308C937B97940BACACAF6B3C94A9522589A23",
+          "size_bytes": 1929
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_ordinary_gp_causal_support_audit.csv",
+          "sha256": "D1F9AE9499D75181CA47A615CFF1C2320908DE492C0CD27E49C52A827BCD562E",
+          "size_bytes": 1230826
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_satellite_selection.csv",
+          "sha256": "30D7A846DDDE5850645CD3C1C03C061E7971AE40A2EE052FFB4E8BA3E7F4ED36",
+          "size_bytes": 920
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260501_20260531_acquisition_cohort_readiness.csv",
+          "sha256": "8BC32F8C70C2AFDC20789AB7FC387B6944BFEA1064DE8F168CEA69CC65B34967",
+          "size_bytes": 1535
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260501_20260531_acquisition_correctness_audit.csv",
+          "sha256": "0FFBF17BEFAD06A85B230FAF80DF65A01AA57892DB2D5DD7828CBD8789C87F41",
+          "size_bytes": 1555
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260501_20260531_acquisition_download_manifest.json",
+          "sha256": "1B069590257660C5683A3232E2A7BB914FA8C5A4EAD35FC238914FF10BDDA2E1",
+          "size_bytes": 9158
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260501_20260531_acquisition_gp_coverage_audit.csv",
+          "sha256": "364FD1C000EBC754432970C46FCADBFE91F5EBD572202BBAD82864B000467756",
+          "size_bytes": 5515
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260501_20260531_acquisition_gp_raw_inventory.csv",
+          "sha256": "EAFBB85C1A1B4C428C75738CD726B023A0C550FD7F53D8CA3764D0F155E09E0F",
+          "size_bytes": 1456
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260501_20260531_acquisition_supgp_coverage_audit.csv",
+          "sha256": "ED67C241BE6E64EA570D1FC460FA3F6EEE30D4AB8359F3EFAB0CE86FE3AB1772",
+          "size_bytes": 3817
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260501_20260531_acquisition_supgp_raw_inventory.csv",
+          "sha256": "A7002F46F6248734CCB53C7988F53F74D5C55C3657B0CAD34A2C582319718E82",
+          "size_bytes": 12322
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260501_20260531_ordinary_gp_causal_readiness_summary.csv",
+          "sha256": "F837AA374F1DEC0F3D2F9DF15411601519FCBB1482E8DC8A0977D47F9EAB1BCD",
+          "size_bytes": 2689
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260501_20260531_ordinary_gp_causal_support_audit.csv",
+          "sha256": "86DBA6187CB6BE4F37F4D7B4021DB6309957549E7C1826024A687F2250BEDBED",
+          "size_bytes": 1445215
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260601_20260630_acquisition_download_manifest.json",
+          "sha256": "E7DBD29FE53B7598EDACEF5D6C8792F4AB1DCAF4FFDE195968A6799E29060423",
+          "size_bytes": 17621
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260601_20260630_gt72_causal_completeness_cases.csv",
+          "sha256": "EA152DD7B96ECEACC19E63243091AAF3E306B3E8CF5C44562707ACAA313827FF",
+          "size_bytes": 3067
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260601_20260630_gt72_causal_completeness_correctness_audit.csv",
+          "sha256": "E81D515861B42352C9829240AECFDBE3A321D8AC0355770501E9E53841CDDC78",
+          "size_bytes": 747
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260601_20260630_gt72_causal_completeness_manifest.json",
+          "sha256": "645D320FDC766201B7F8C3745420C40EADA9C900ECCDC10B5FD51525A7734798",
+          "size_bytes": 11752
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260601_20260630_gt72_causal_completeness_recent_causal_publications.csv",
+          "sha256": "1B4A5DC505B9E4A478228A942A893EC0310DCB82AD5151E188CF646D071E0426",
+          "size_bytes": 13131
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260601_20260630_gt72_causal_completeness_targeted_not_in_raw.csv",
+          "sha256": "4CAF4F8F15BD3A421171B56E6D2EF06BF62F65FD3C5BD48FBADDF0E35D159DEB",
+          "size_bytes": 196
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260601_20260630_gt72_causal_completeness_targeted_query_summary.csv",
+          "sha256": "6B9E2483C274CC8719EC14FF68ADB93F6704595B003769E3F59BF19FD71B4161",
+          "size_bytes": 389
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_external_202605_partial_manifest.json",
+          "sha256": "720797459ABAE320C341F785D8425B0B08C8904B003C149B7F6C5A0DF9E2B311",
+          "size_bytes": 10867
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_june_readiness_protocol_adjudication.csv",
+          "sha256": "893214CE480F155A0D812E66AA33E9D9A4203DC801B50A8843665517D804B25A",
+          "size_bytes": 10001
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_june_readiness_protocol_adjudication_manifest.json",
+          "sha256": "4619CE76869628C1FA907F3AE248F8283974933574F3A0CC2065E2B2430D3DA9",
+          "size_bytes": 29024
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1b_20260401_20260430_manifest.json",
+          "sha256": "81FC7EF0F4E6401A316A893C1C010840136AA43BEBEC48094A74F06FE020E4E3",
+          "size_bytes": 14409
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1b_20260501_20260531_manifest.json",
+          "sha256": "9631AF3F4B4AA0F9D4C9804AE05A2C5F7608428CC0D1B2D7C22CC145F6EF38CD",
+          "size_bytes": 65945
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1d_20260401_20260430_manifest.json",
+          "sha256": "834917C94E18E1AD8E643687AF4312A88B28DFADA4E6FE25C407F091E04C0617",
+          "size_bytes": 7632
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1e_20260401_20260430_manifest.json",
+          "sha256": "888FACF353F5F6FC0B011F45521187781BE007943D8DB84AAF3B961DB300883D",
+          "size_bytes": 15857
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1f_june_supgp_candidate_manifest.json",
+          "sha256": "3FD73D1F9D116E83D12DB17C13CF43784734734F07FA9A08524E6DACF2F549F5",
+          "size_bytes": 29799
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1f_lite_candidate_internal_validation.csv",
+          "sha256": "8398D48DF373CD3E77861326A0D97F55B947B93DD71E461D9C242863DB6F87B0",
+          "size_bytes": 121971
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1f_lite_candidate_volume.csv",
+          "sha256": "97DB9AABBE196D1E1C7500A5B401A211CBF40C1FDE31AD2C4E6C77BB7C4B2592",
+          "size_bytes": 90120
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1f_lite_correctness_audit.csv",
+          "sha256": "7803E1075D1DF9BAA93E8D7390C22B9FAA4ED61516D16B2CD4A2FD6C0FE4FF43",
+          "size_bytes": 2524
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1f_lite_frozen_parameters.csv",
+          "sha256": "6F17F8340BA14B5B48F7AEAFFD776F1D0A07B4D50F882B2AFCA73756F9FF55D1",
+          "size_bytes": 7508
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1f_lite_manifest.json",
+          "sha256": "E18F19B0AF191DC3599228BC00CA1BAADE31FD8AC513A2533D19279982CF5660",
+          "size_bytes": 15919
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1f_lite_reference_sensitivity.csv",
+          "sha256": "D29635C3FEAC8B0E2B0CD90646D316A2E3990091F3E0FEBAFA769A499B6AB6B7",
+          "size_bytes": 1520
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1f_lite_signed_rtn_summary.csv",
+          "sha256": "31A64D200388C62122263AB152BCD5EAE1E4532F8F996B9BED7F252E5A5E9DD9",
+          "size_bytes": 24161
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1f_lite_velocity_diagnostic.csv",
+          "sha256": "46E879269FD7A87C78FFF7809378BF80ABA080911E39466D981248D4B621D361",
+          "size_bytes": 1103
+        },
+        {
+          "path": "outputs/reports/orbit_uncertainty_stage1_20260401_20260430_acquisition_report.md",
+          "sha256": "44E5B7C16650B8DE19E26247BF827C023F3BF3D8252E7235C4BECB1A692B3A6A",
+          "size_bytes": 3436
+        },
+        {
+          "path": "outputs/reports/orbit_uncertainty_stage1_20260501_20260531_acquisition_report.md",
+          "sha256": "7654CBFCBAF995927B6ED6265C38C5169E2527323C86C3AAF93ACD95D73171E5",
+          "size_bytes": 4120
+        },
+        {
+          "path": "outputs/reports/orbit_uncertainty_stage1_20260601_20260630_acquisition_report.md",
+          "sha256": "0B3002F7FCE9FD656F609FE65950B8A837999DA4FFED3D786A591DC87A6DB82E",
+          "size_bytes": 7190
+        },
+        {
+          "path": "outputs/reports/orbit_uncertainty_stage1_20260601_20260630_gt72_causal_completeness_report.md",
+          "sha256": "ADEB9AE11A04EA0B0766F6295177EDE15E17535F9EACCEF935E900EC380E1642",
+          "size_bytes": 5053
+        },
+        {
+          "path": "outputs/reports/orbit_uncertainty_stage1_june_readiness_protocol_adjudication.md",
+          "sha256": "1EF2A12B3A7CFC56C47B32BE0DBDE014CB075B96D10996CB086383CB98E89B63",
+          "size_bytes": 4907
+        },
+        {
+          "path": "outputs/reports/orbit_uncertainty_stage1b_20260401_20260430_report.md",
+          "sha256": "8917403F341E241327D3B0643A95DF0DC935AD00673F3EEA1590B096F509C6C4",
+          "size_bytes": 19786
+        },
+        {
+          "path": "outputs/reports/orbit_uncertainty_stage1b_20260501_20260531_report.md",
+          "sha256": "B7504FC5650A799965350DE871C4D2ABE143E4919760B4644D8D991128282698",
+          "size_bytes": 27983
+        },
+        {
+          "path": "outputs/reports/orbit_uncertainty_stage1f_lite_design_freeze_report.md",
+          "sha256": "001CF7C56661B1243CE6AAE06766537F9F7D1B8805C041F6A0DF33332678CA71",
+          "size_bytes": 19660
+        }
+      ]
+    },
+    "stage1f_may_june_readiness_after": {
+      "artifact_count": 54,
+      "aggregate_sha256": "DAF4A6A65D6CB93AEBF7FC9CDF5761535F812FBCE18FD45A4FA01C4274A0CB2B",
+      "entries": [
+        {
+          "path": "data/orbit_uncertainty_stage1/audits/spacetrack_gp_history_20260618_20260625_7sat_gt72_completeness.json",
+          "sha256": "A96A1A8426F0AE27994FA871A0CF08FC378C23C9894B01170502E03E1A75E126",
+          "size_bytes": 73846
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/spacetrack_gp/spacetrack_gp_history_20260529_20260701_20sat_omm.json",
+          "sha256": "1F5A8BA23D1C8AE605C4142F44E424711D1D85014DB46C28BBC18C3ABC326A96",
+          "size_bytes": 1923028
+        },
+        {
+          "path": "outputs/datasets/orbit_uncertainty_stage1b_20260401_20260430_rtn_residual_library.csv",
+          "sha256": "2B02C40FDEA69F6079D256B5E274652ABAB2D5BC2F9899866C7F1CAFFB469F23",
+          "size_bytes": 6114322
+        },
+        {
+          "path": "outputs/datasets/orbit_uncertainty_stage1b_20260501_20260531_rtn_residual_library.csv",
+          "sha256": "119F2DAA3896476E120F010A436D0B250E404D41326B57FAABFEAA9F2F73EF3F",
+          "size_bytes": 6791749
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_acquisition_cohort_readiness.csv",
+          "sha256": "8BC32F8C70C2AFDC20789AB7FC387B6944BFEA1064DE8F168CEA69CC65B34967",
+          "size_bytes": 1535
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_acquisition_correctness_audit.csv",
+          "sha256": "8543634B17CF0CDAD155A666D5CF9B76B91A2F71BF2BDE049C06C951FFA45395",
+          "size_bytes": 1145
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_acquisition_download_manifest.json",
+          "sha256": "92CE9423E677E9E5B2351C4EF5309D61519543E9AB8E40DEDEAF083541A7E325",
+          "size_bytes": 7344
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_acquisition_gp_coverage_audit.csv",
+          "sha256": "86D96F54A752CB8F1BBD8A85661F7EEEEA822D962996432B71D60BE482B7245F",
+          "size_bytes": 5428
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_acquisition_gp_raw_inventory.csv",
+          "sha256": "2E477052058F97A97C77C26409AE4F4F18B1E98BA1321B7FDD897B2EE8879395",
+          "size_bytes": 1456
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_acquisition_supgp_coverage_audit.csv",
+          "sha256": "361CCA286265AFE734E722A0279A0B5A0FBE150673112E5EF35C4D8B5813E42A",
+          "size_bytes": 3795
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_acquisition_supgp_raw_inventory.csv",
+          "sha256": "30C3A723ED30813DD2BA3D57EEA5B8669A3FC4A1A2205EF2DB62A85B166A0B36",
+          "size_bytes": 12201
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_ordinary_gp_causal_readiness_summary.csv",
+          "sha256": "2008A975D73EA0CCFEC96D96ED5308C937B97940BACACAF6B3C94A9522589A23",
+          "size_bytes": 1929
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_ordinary_gp_causal_support_audit.csv",
+          "sha256": "D1F9AE9499D75181CA47A615CFF1C2320908DE492C0CD27E49C52A827BCD562E",
+          "size_bytes": 1230826
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_satellite_selection.csv",
+          "sha256": "30D7A846DDDE5850645CD3C1C03C061E7971AE40A2EE052FFB4E8BA3E7F4ED36",
+          "size_bytes": 920
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260501_20260531_acquisition_cohort_readiness.csv",
+          "sha256": "8BC32F8C70C2AFDC20789AB7FC387B6944BFEA1064DE8F168CEA69CC65B34967",
+          "size_bytes": 1535
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260501_20260531_acquisition_correctness_audit.csv",
+          "sha256": "0FFBF17BEFAD06A85B230FAF80DF65A01AA57892DB2D5DD7828CBD8789C87F41",
+          "size_bytes": 1555
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260501_20260531_acquisition_download_manifest.json",
+          "sha256": "1B069590257660C5683A3232E2A7BB914FA8C5A4EAD35FC238914FF10BDDA2E1",
+          "size_bytes": 9158
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260501_20260531_acquisition_gp_coverage_audit.csv",
+          "sha256": "364FD1C000EBC754432970C46FCADBFE91F5EBD572202BBAD82864B000467756",
+          "size_bytes": 5515
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260501_20260531_acquisition_gp_raw_inventory.csv",
+          "sha256": "EAFBB85C1A1B4C428C75738CD726B023A0C550FD7F53D8CA3764D0F155E09E0F",
+          "size_bytes": 1456
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260501_20260531_acquisition_supgp_coverage_audit.csv",
+          "sha256": "ED67C241BE6E64EA570D1FC460FA3F6EEE30D4AB8359F3EFAB0CE86FE3AB1772",
+          "size_bytes": 3817
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260501_20260531_acquisition_supgp_raw_inventory.csv",
+          "sha256": "A7002F46F6248734CCB53C7988F53F74D5C55C3657B0CAD34A2C582319718E82",
+          "size_bytes": 12322
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260501_20260531_ordinary_gp_causal_readiness_summary.csv",
+          "sha256": "F837AA374F1DEC0F3D2F9DF15411601519FCBB1482E8DC8A0977D47F9EAB1BCD",
+          "size_bytes": 2689
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260501_20260531_ordinary_gp_causal_support_audit.csv",
+          "sha256": "86DBA6187CB6BE4F37F4D7B4021DB6309957549E7C1826024A687F2250BEDBED",
+          "size_bytes": 1445215
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260601_20260630_acquisition_download_manifest.json",
+          "sha256": "E7DBD29FE53B7598EDACEF5D6C8792F4AB1DCAF4FFDE195968A6799E29060423",
+          "size_bytes": 17621
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260601_20260630_gt72_causal_completeness_cases.csv",
+          "sha256": "EA152DD7B96ECEACC19E63243091AAF3E306B3E8CF5C44562707ACAA313827FF",
+          "size_bytes": 3067
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260601_20260630_gt72_causal_completeness_correctness_audit.csv",
+          "sha256": "E81D515861B42352C9829240AECFDBE3A321D8AC0355770501E9E53841CDDC78",
+          "size_bytes": 747
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260601_20260630_gt72_causal_completeness_manifest.json",
+          "sha256": "645D320FDC766201B7F8C3745420C40EADA9C900ECCDC10B5FD51525A7734798",
+          "size_bytes": 11752
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260601_20260630_gt72_causal_completeness_recent_causal_publications.csv",
+          "sha256": "1B4A5DC505B9E4A478228A942A893EC0310DCB82AD5151E188CF646D071E0426",
+          "size_bytes": 13131
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260601_20260630_gt72_causal_completeness_targeted_not_in_raw.csv",
+          "sha256": "4CAF4F8F15BD3A421171B56E6D2EF06BF62F65FD3C5BD48FBADDF0E35D159DEB",
+          "size_bytes": 196
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_20260601_20260630_gt72_causal_completeness_targeted_query_summary.csv",
+          "sha256": "6B9E2483C274CC8719EC14FF68ADB93F6704595B003769E3F59BF19FD71B4161",
+          "size_bytes": 389
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_external_202605_partial_manifest.json",
+          "sha256": "720797459ABAE320C341F785D8425B0B08C8904B003C149B7F6C5A0DF9E2B311",
+          "size_bytes": 10867
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_june_readiness_protocol_adjudication.csv",
+          "sha256": "893214CE480F155A0D812E66AA33E9D9A4203DC801B50A8843665517D804B25A",
+          "size_bytes": 10001
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1_june_readiness_protocol_adjudication_manifest.json",
+          "sha256": "4619CE76869628C1FA907F3AE248F8283974933574F3A0CC2065E2B2430D3DA9",
+          "size_bytes": 29024
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1b_20260401_20260430_manifest.json",
+          "sha256": "81FC7EF0F4E6401A316A893C1C010840136AA43BEBEC48094A74F06FE020E4E3",
+          "size_bytes": 14409
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1b_20260501_20260531_manifest.json",
+          "sha256": "9631AF3F4B4AA0F9D4C9804AE05A2C5F7608428CC0D1B2D7C22CC145F6EF38CD",
+          "size_bytes": 65945
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1d_20260401_20260430_manifest.json",
+          "sha256": "834917C94E18E1AD8E643687AF4312A88B28DFADA4E6FE25C407F091E04C0617",
+          "size_bytes": 7632
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1e_20260401_20260430_manifest.json",
+          "sha256": "888FACF353F5F6FC0B011F45521187781BE007943D8DB84AAF3B961DB300883D",
+          "size_bytes": 15857
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1f_june_supgp_candidate_manifest.json",
+          "sha256": "3FD73D1F9D116E83D12DB17C13CF43784734734F07FA9A08524E6DACF2F549F5",
+          "size_bytes": 29799
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1f_lite_candidate_internal_validation.csv",
+          "sha256": "8398D48DF373CD3E77861326A0D97F55B947B93DD71E461D9C242863DB6F87B0",
+          "size_bytes": 121971
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1f_lite_candidate_volume.csv",
+          "sha256": "97DB9AABBE196D1E1C7500A5B401A211CBF40C1FDE31AD2C4E6C77BB7C4B2592",
+          "size_bytes": 90120
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1f_lite_correctness_audit.csv",
+          "sha256": "7803E1075D1DF9BAA93E8D7390C22B9FAA4ED61516D16B2CD4A2FD6C0FE4FF43",
+          "size_bytes": 2524
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1f_lite_frozen_parameters.csv",
+          "sha256": "6F17F8340BA14B5B48F7AEAFFD776F1D0A07B4D50F882B2AFCA73756F9FF55D1",
+          "size_bytes": 7508
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1f_lite_manifest.json",
+          "sha256": "E18F19B0AF191DC3599228BC00CA1BAADE31FD8AC513A2533D19279982CF5660",
+          "size_bytes": 15919
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1f_lite_reference_sensitivity.csv",
+          "sha256": "D29635C3FEAC8B0E2B0CD90646D316A2E3990091F3E0FEBAFA769A499B6AB6B7",
+          "size_bytes": 1520
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1f_lite_signed_rtn_summary.csv",
+          "sha256": "31A64D200388C62122263AB152BCD5EAE1E4532F8F996B9BED7F252E5A5E9DD9",
+          "size_bytes": 24161
+        },
+        {
+          "path": "outputs/metrics/orbit_uncertainty_stage1f_lite_velocity_diagnostic.csv",
+          "sha256": "46E879269FD7A87C78FFF7809378BF80ABA080911E39466D981248D4B621D361",
+          "size_bytes": 1103
+        },
+        {
+          "path": "outputs/reports/orbit_uncertainty_stage1_20260401_20260430_acquisition_report.md",
+          "sha256": "44E5B7C16650B8DE19E26247BF827C023F3BF3D8252E7235C4BECB1A692B3A6A",
+          "size_bytes": 3436
+        },
+        {
+          "path": "outputs/reports/orbit_uncertainty_stage1_20260501_20260531_acquisition_report.md",
+          "sha256": "7654CBFCBAF995927B6ED6265C38C5169E2527323C86C3AAF93ACD95D73171E5",
+          "size_bytes": 4120
+        },
+        {
+          "path": "outputs/reports/orbit_uncertainty_stage1_20260601_20260630_acquisition_report.md",
+          "sha256": "0B3002F7FCE9FD656F609FE65950B8A837999DA4FFED3D786A591DC87A6DB82E",
+          "size_bytes": 7190
+        },
+        {
+          "path": "outputs/reports/orbit_uncertainty_stage1_20260601_20260630_gt72_causal_completeness_report.md",
+          "sha256": "ADEB9AE11A04EA0B0766F6295177EDE15E17535F9EACCEF935E900EC380E1642",
+          "size_bytes": 5053
+        },
+        {
+          "path": "outputs/reports/orbit_uncertainty_stage1_june_readiness_protocol_adjudication.md",
+          "sha256": "1EF2A12B3A7CFC56C47B32BE0DBDE014CB075B96D10996CB086383CB98E89B63",
+          "size_bytes": 4907
+        },
+        {
+          "path": "outputs/reports/orbit_uncertainty_stage1b_20260401_20260430_report.md",
+          "sha256": "8917403F341E241327D3B0643A95DF0DC935AD00673F3EEA1590B096F509C6C4",
+          "size_bytes": 19786
+        },
+        {
+          "path": "outputs/reports/orbit_uncertainty_stage1b_20260501_20260531_report.md",
+          "sha256": "B7504FC5650A799965350DE871C4D2ABE143E4919760B4644D8D991128282698",
+          "size_bytes": 27983
+        },
+        {
+          "path": "outputs/reports/orbit_uncertainty_stage1f_lite_design_freeze_report.md",
+          "sha256": "001CF7C56661B1243CE6AAE06766537F9F7D1B8805C041F6A0DF33332678CA71",
+          "size_bytes": 19660
+        }
+      ]
+    },
+    "stage1f_may_june_readiness_unchanged": true,
+    "stage1f_parameter": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1f_lite_frozen_parameters.csv",
+      "sha256": "6F17F8340BA14B5B48F7AEAFFD776F1D0A07B4D50F882B2AFCA73756F9FF55D1",
+      "role": "PROTECTED_DEPENDENCY_ONLY_NOT_SCORING_INPUT"
+    }
+  },
+  "result": {
+    "rows": 5927,
+    "nominal_rows": 5927,
+    "excluded_rows": 0,
+    "future_publication_violations": 0,
+    "negative_element_age": 0,
+    "element_age_gt_72h": 25,
+    "negative_publication_age": 0,
+    "evaluation_supgp_epoch_mismatch": 0,
+    "stage1a_causal_key_mismatch": 0,
+    "selected_gp_id_mismatch": 0,
+    "selected_gp_epoch_mismatch": 0,
+    "selected_gp_creation_date_mismatch": 0,
+    "max_element_age_stage1a_abs_diff_seconds": 0.0,
+    "max_publication_age_stage1a_abs_diff_seconds": 0.0,
+    "element_age_gt_36h": 538,
+    "within_stage1f_support_rows": 5389,
+    "outside_stage1f_support_rows": 538,
+    "engineering_staleness_gt72h_rows": 25,
+    "gt72_subset_of_outside_stage1f_support": true,
+    "stage1a_element_age_gt_36h": 538,
+    "propagation_failure_rows": 0,
+    "frame_transform_failure_rows": 0,
+    "invalid_rtn_basis_rows": 0,
+    "archive_pause_calendar_day_evaluation_rows": 0,
+    "stage1a_archive_pause_calendar_day_evaluation_rows": 0,
+    "provenance_missing_rows": 0,
+    "finite_failure_rows": 0,
+    "max_position_rtn_reconstruction_abs_error_km": 3.228085657724633e-13,
+    "max_position_rtn_reconstruction_relative_error": 7.856637002523651e-16,
+    "max_velocity_rtn_reconstruction_abs_error_km_s": 2.220446049250313e-16,
+    "max_velocity_rtn_reconstruction_relative_error": 5.809525680151118e-16,
+    "max_cartesian_rtn_position_norm_error_km": 2.2737367544323206e-13,
+    "max_cartesian_rtn_velocity_norm_error_km_s": 2.220446049250313e-16,
+    "max_rtn_orthonormality_error": 6.661338147750939e-16,
+    "max_rtn_unit_norm_error": 3.3306690738754696e-16,
+    "max_rtn_pairwise_dot_abs": 2.220446049250313e-16,
+    "max_rtn_right_handedness_error": 4.996003610813204e-16,
+    "input_raw_hashes_unchanged": true,
+    "deterministic_correctness_sample": {
+      "selection_rule": "per-satellite earliest/middle/latest union all >72h rows union first available row in each frozen support bin",
+      "row_count": 90,
+      "satellite_count": 20,
+      "freshness_bin_counts": {
+        "0-6h": 8,
+        "12-18h": 14,
+        "18-24h": 16,
+        "24-36h": 6,
+        "6-9h": 11,
+        "9-12h": 10,
+        "OUTSIDE_SUPPORT": 25
+      },
+      "gt36_rows": 25,
+      "gt72_rows": 25,
+      "early_middle_late_month_covered": true,
+      "max_rtn_orthonormality_error": 4.440892098500626e-16,
+      "max_position_reconstruction_error_km": 5.684341886080802e-14,
+      "max_velocity_reconstruction_error_km_s": 8.326672684688674e-17,
+      "all_propagation_frame_rtn_finite_ok": true,
+      "rows": [
+        {
+          "NORAD_CAT_ID": "60265",
+          "evaluation_time": "2026-06-01T00:11:42Z",
+          "freshness_bin": "18-24h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "47844",
+          "evaluation_time": "2026-06-01T00:17:42.000029Z",
+          "freshness_bin": "24-36h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "65410",
+          "evaluation_time": "2026-06-01T00:19:42.000038Z",
+          "freshness_bin": "0-6h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "65407",
+          "evaluation_time": "2026-06-01T00:24:42.000019Z",
+          "freshness_bin": "9-12h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "65405",
+          "evaluation_time": "2026-06-01T00:26:42.000029Z",
+          "freshness_bin": "9-12h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "47767",
+          "evaluation_time": "2026-06-01T00:30:41.999962Z",
+          "freshness_bin": "12-18h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "48309",
+          "evaluation_time": "2026-06-01T00:45:41.999990Z",
+          "freshness_bin": "24-36h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "45230",
+          "evaluation_time": "2026-06-01T00:54:41.999990Z",
+          "freshness_bin": "6-9h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "47383",
+          "evaluation_time": "2026-06-01T00:57:41.999962Z",
+          "freshness_bin": "9-12h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "65686",
+          "evaluation_time": "2026-06-01T00:59:41.999971Z",
+          "freshness_bin": "0-6h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "48672",
+          "evaluation_time": "2026-06-01T01:05:42Z",
+          "freshness_bin": "18-24h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "58380",
+          "evaluation_time": "2026-06-01T01:07:42.000010Z",
+          "freshness_bin": "9-12h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "65693",
+          "evaluation_time": "2026-06-01T01:11:42.000029Z",
+          "freshness_bin": "6-9h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "65409",
+          "evaluation_time": "2026-06-01T01:29:42.000029Z",
+          "freshness_bin": "0-6h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "65421",
+          "evaluation_time": "2026-06-01T01:42:41.999962Z",
+          "freshness_bin": "12-18h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "65411",
+          "evaluation_time": "2026-06-01T01:47:42.000029Z",
+          "freshness_bin": "12-18h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "44714",
+          "evaluation_time": "2026-06-01T02:55:42.000010Z",
+          "freshness_bin": "18-24h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "47749",
+          "evaluation_time": "2026-06-01T02:57:42.000019Z",
+          "freshness_bin": "6-9h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "48458",
+          "evaluation_time": "2026-06-01T02:58:41.999981Z",
+          "freshness_bin": "18-24h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "48111",
+          "evaluation_time": "2026-06-01T03:01:42.000038Z",
+          "freshness_bin": "18-24h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "44714",
+          "evaluation_time": "2026-06-01T07:57:41.999990Z",
+          "freshness_bin": "24-36h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "44714",
+          "evaluation_time": "2026-06-01T19:47:42.000029Z",
+          "freshness_bin": "9-12h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "44714",
+          "evaluation_time": "2026-06-01T23:13:41.999981Z",
+          "freshness_bin": "12-18h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "44714",
+          "evaluation_time": "2026-06-03T08:51:41.999990Z",
+          "freshness_bin": "0-6h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "44714",
+          "evaluation_time": "2026-06-03T13:37:41.999981Z",
+          "freshness_bin": "6-9h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "47844",
+          "evaluation_time": "2026-06-15T09:36:41.999990Z",
+          "freshness_bin": "0-6h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "48309",
+          "evaluation_time": "2026-06-15T10:01:41.999981Z",
+          "freshness_bin": "12-18h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "47383",
+          "evaluation_time": "2026-06-15T10:07:42.000010Z",
+          "freshness_bin": "18-24h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "65686",
+          "evaluation_time": "2026-06-15T11:03:42.000019Z",
+          "freshness_bin": "18-24h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "65693",
+          "evaluation_time": "2026-06-15T11:32:42.000029Z",
+          "freshness_bin": "12-18h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "48458",
+          "evaluation_time": "2026-06-15T11:57:42.000019Z",
+          "freshness_bin": "9-12h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "65405",
+          "evaluation_time": "2026-06-15T12:51:42.000019Z",
+          "freshness_bin": "6-9h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "65409",
+          "evaluation_time": "2026-06-15T13:12:41.999990Z",
+          "freshness_bin": "6-9h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "65407",
+          "evaluation_time": "2026-06-15T14:22:41.999981Z",
+          "freshness_bin": "9-12h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "48111",
+          "evaluation_time": "2026-06-15T14:34:42.000038Z",
+          "freshness_bin": "12-18h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "45230",
+          "evaluation_time": "2026-06-15T15:25:41.999981Z",
+          "freshness_bin": "0-6h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "60265",
+          "evaluation_time": "2026-06-15T15:34:41.999981Z",
+          "freshness_bin": "12-18h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "58380",
+          "evaluation_time": "2026-06-15T15:57:41.999962Z",
+          "freshness_bin": "0-6h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "65421",
+          "evaluation_time": "2026-06-15T16:12:41.999990Z",
+          "freshness_bin": "9-12h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "65411",
+          "evaluation_time": "2026-06-15T16:24:41.999962Z",
+          "freshness_bin": "9-12h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "47767",
+          "evaluation_time": "2026-06-15T16:33:41.999962Z",
+          "freshness_bin": "12-18h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "47749",
+          "evaluation_time": "2026-06-15T17:38:41.999971Z",
+          "freshness_bin": "0-6h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "65410",
+          "evaluation_time": "2026-06-15T18:21:41.999962Z",
+          "freshness_bin": "9-12h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "44714",
+          "evaluation_time": "2026-06-15T18:56:42Z",
+          "freshness_bin": "12-18h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "48672",
+          "evaluation_time": "2026-06-15T19:38:42.000029Z",
+          "freshness_bin": "18-24h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "47383",
+          "evaluation_time": "2026-06-22T14:14:42.000029Z",
+          "freshness_bin": "OUTSIDE_SUPPORT",
+          "stage1f_support_status": "OUTSIDE_CALIBRATED_FRESHNESS_SUPPORT",
+          "engineering_staleness_gt72h": true
+        },
+        {
+          "NORAD_CAT_ID": "65421",
+          "evaluation_time": "2026-06-22T14:23:42.000029Z",
+          "freshness_bin": "OUTSIDE_SUPPORT",
+          "stage1f_support_status": "OUTSIDE_CALIBRATED_FRESHNESS_SUPPORT",
+          "engineering_staleness_gt72h": true
+        },
+        {
+          "NORAD_CAT_ID": "47383",
+          "evaluation_time": "2026-06-22T15:46:42.000038Z",
+          "freshness_bin": "OUTSIDE_SUPPORT",
+          "stage1f_support_status": "OUTSIDE_CALIBRATED_FRESHNESS_SUPPORT",
+          "engineering_staleness_gt72h": true
+        },
+        {
+          "NORAD_CAT_ID": "60265",
+          "evaluation_time": "2026-06-22T16:07:42.000010Z",
+          "freshness_bin": "OUTSIDE_SUPPORT",
+          "stage1f_support_status": "OUTSIDE_CALIBRATED_FRESHNESS_SUPPORT",
+          "engineering_staleness_gt72h": true
+        },
+        {
+          "NORAD_CAT_ID": "65421",
+          "evaluation_time": "2026-06-22T16:22:42.000038Z",
+          "freshness_bin": "OUTSIDE_SUPPORT",
+          "stage1f_support_status": "OUTSIDE_CALIBRATED_FRESHNESS_SUPPORT",
+          "engineering_staleness_gt72h": true
+        },
+        {
+          "NORAD_CAT_ID": "60265",
+          "evaluation_time": "2026-06-22T17:33:41.999990Z",
+          "freshness_bin": "OUTSIDE_SUPPORT",
+          "stage1f_support_status": "OUTSIDE_CALIBRATED_FRESHNESS_SUPPORT",
+          "engineering_staleness_gt72h": true
+        },
+        {
+          "NORAD_CAT_ID": "65421",
+          "evaluation_time": "2026-06-22T17:49:41.999981Z",
+          "freshness_bin": "OUTSIDE_SUPPORT",
+          "stage1f_support_status": "OUTSIDE_CALIBRATED_FRESHNESS_SUPPORT",
+          "engineering_staleness_gt72h": true
+        },
+        {
+          "NORAD_CAT_ID": "47383",
+          "evaluation_time": "2026-06-22T18:17:42.000029Z",
+          "freshness_bin": "OUTSIDE_SUPPORT",
+          "stage1f_support_status": "OUTSIDE_CALIBRATED_FRESHNESS_SUPPORT",
+          "engineering_staleness_gt72h": true
+        },
+        {
+          "NORAD_CAT_ID": "47844",
+          "evaluation_time": "2026-06-22T19:31:42.000038Z",
+          "freshness_bin": "OUTSIDE_SUPPORT",
+          "stage1f_support_status": "OUTSIDE_CALIBRATED_FRESHNESS_SUPPORT",
+          "engineering_staleness_gt72h": true
+        },
+        {
+          "NORAD_CAT_ID": "60265",
+          "evaluation_time": "2026-06-22T19:42:41.999962Z",
+          "freshness_bin": "OUTSIDE_SUPPORT",
+          "stage1f_support_status": "OUTSIDE_CALIBRATED_FRESHNESS_SUPPORT",
+          "engineering_staleness_gt72h": true
+        },
+        {
+          "NORAD_CAT_ID": "65421",
+          "evaluation_time": "2026-06-22T19:53:41.999971Z",
+          "freshness_bin": "OUTSIDE_SUPPORT",
+          "stage1f_support_status": "OUTSIDE_CALIBRATED_FRESHNESS_SUPPORT",
+          "engineering_staleness_gt72h": true
+        },
+        {
+          "NORAD_CAT_ID": "47383",
+          "evaluation_time": "2026-06-22T20:46:42.000010Z",
+          "freshness_bin": "OUTSIDE_SUPPORT",
+          "stage1f_support_status": "OUTSIDE_CALIBRATED_FRESHNESS_SUPPORT",
+          "engineering_staleness_gt72h": true
+        },
+        {
+          "NORAD_CAT_ID": "47383",
+          "evaluation_time": "2026-06-22T21:09:41.999990Z",
+          "freshness_bin": "OUTSIDE_SUPPORT",
+          "stage1f_support_status": "OUTSIDE_CALIBRATED_FRESHNESS_SUPPORT",
+          "engineering_staleness_gt72h": true
+        },
+        {
+          "NORAD_CAT_ID": "47844",
+          "evaluation_time": "2026-06-22T22:47:42.000029Z",
+          "freshness_bin": "OUTSIDE_SUPPORT",
+          "stage1f_support_status": "OUTSIDE_CALIBRATED_FRESHNESS_SUPPORT",
+          "engineering_staleness_gt72h": true
+        },
+        {
+          "NORAD_CAT_ID": "60265",
+          "evaluation_time": "2026-06-22T23:06:41.999990Z",
+          "freshness_bin": "OUTSIDE_SUPPORT",
+          "stage1f_support_status": "OUTSIDE_CALIBRATED_FRESHNESS_SUPPORT",
+          "engineering_staleness_gt72h": true
+        },
+        {
+          "NORAD_CAT_ID": "65421",
+          "evaluation_time": "2026-06-22T23:30:42.000019Z",
+          "freshness_bin": "OUTSIDE_SUPPORT",
+          "stage1f_support_status": "OUTSIDE_CALIBRATED_FRESHNESS_SUPPORT",
+          "engineering_staleness_gt72h": true
+        },
+        {
+          "NORAD_CAT_ID": "65409",
+          "evaluation_time": "2026-06-22T23:37:42.000010Z",
+          "freshness_bin": "OUTSIDE_SUPPORT",
+          "stage1f_support_status": "OUTSIDE_CALIBRATED_FRESHNESS_SUPPORT",
+          "engineering_staleness_gt72h": true
+        },
+        {
+          "NORAD_CAT_ID": "48458",
+          "evaluation_time": "2026-06-23T00:55:42.000038Z",
+          "freshness_bin": "OUTSIDE_SUPPORT",
+          "stage1f_support_status": "OUTSIDE_CALIBRATED_FRESHNESS_SUPPORT",
+          "engineering_staleness_gt72h": true
+        },
+        {
+          "NORAD_CAT_ID": "47383",
+          "evaluation_time": "2026-06-23T01:00:42.000019Z",
+          "freshness_bin": "OUTSIDE_SUPPORT",
+          "stage1f_support_status": "OUTSIDE_CALIBRATED_FRESHNESS_SUPPORT",
+          "engineering_staleness_gt72h": true
+        },
+        {
+          "NORAD_CAT_ID": "47844",
+          "evaluation_time": "2026-06-23T01:53:41.999971Z",
+          "freshness_bin": "OUTSIDE_SUPPORT",
+          "stage1f_support_status": "OUTSIDE_CALIBRATED_FRESHNESS_SUPPORT",
+          "engineering_staleness_gt72h": true
+        },
+        {
+          "NORAD_CAT_ID": "60265",
+          "evaluation_time": "2026-06-23T02:30:42.000019Z",
+          "freshness_bin": "OUTSIDE_SUPPORT",
+          "stage1f_support_status": "OUTSIDE_CALIBRATED_FRESHNESS_SUPPORT",
+          "engineering_staleness_gt72h": true
+        },
+        {
+          "NORAD_CAT_ID": "65421",
+          "evaluation_time": "2026-06-23T02:56:41.999971Z",
+          "freshness_bin": "OUTSIDE_SUPPORT",
+          "stage1f_support_status": "OUTSIDE_CALIBRATED_FRESHNESS_SUPPORT",
+          "engineering_staleness_gt72h": true
+        },
+        {
+          "NORAD_CAT_ID": "65409",
+          "evaluation_time": "2026-06-23T03:03:41.999962Z",
+          "freshness_bin": "OUTSIDE_SUPPORT",
+          "stage1f_support_status": "OUTSIDE_CALIBRATED_FRESHNESS_SUPPORT",
+          "engineering_staleness_gt72h": true
+        },
+        {
+          "NORAD_CAT_ID": "48458",
+          "evaluation_time": "2026-06-23T03:38:42Z",
+          "freshness_bin": "OUTSIDE_SUPPORT",
+          "stage1f_support_status": "OUTSIDE_CALIBRATED_FRESHNESS_SUPPORT",
+          "engineering_staleness_gt72h": true
+        },
+        {
+          "NORAD_CAT_ID": "47767",
+          "evaluation_time": "2026-06-24T00:52:41.999981Z",
+          "freshness_bin": "OUTSIDE_SUPPORT",
+          "stage1f_support_status": "OUTSIDE_CALIBRATED_FRESHNESS_SUPPORT",
+          "engineering_staleness_gt72h": true
+        },
+        {
+          "NORAD_CAT_ID": "65693",
+          "evaluation_time": "2026-06-30T18:07:41.999981Z",
+          "freshness_bin": "12-18h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "48309",
+          "evaluation_time": "2026-06-30T18:12:41.999962Z",
+          "freshness_bin": "6-9h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "65407",
+          "evaluation_time": "2026-06-30T19:16:42.000010Z",
+          "freshness_bin": "18-24h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "65411",
+          "evaluation_time": "2026-06-30T19:50:42Z",
+          "freshness_bin": "18-24h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "60265",
+          "evaluation_time": "2026-06-30T19:51:41.999962Z",
+          "freshness_bin": "6-9h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "45230",
+          "evaluation_time": "2026-06-30T19:53:41.999971Z",
+          "freshness_bin": "12-18h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "47383",
+          "evaluation_time": "2026-06-30T21:58:42.000010Z",
+          "freshness_bin": "12-18h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "48111",
+          "evaluation_time": "2026-06-30T21:58:42.000010Z",
+          "freshness_bin": "24-36h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "48672",
+          "evaluation_time": "2026-06-30T22:15:41.999962Z",
+          "freshness_bin": "18-24h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "58380",
+          "evaluation_time": "2026-06-30T22:17:41.999971Z",
+          "freshness_bin": "18-24h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "47749",
+          "evaluation_time": "2026-06-30T22:39:41.999990Z",
+          "freshness_bin": "6-9h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "47767",
+          "evaluation_time": "2026-06-30T22:41:42Z",
+          "freshness_bin": "6-9h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "65410",
+          "evaluation_time": "2026-06-30T22:44:41.999971Z",
+          "freshness_bin": "18-24h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "65686",
+          "evaluation_time": "2026-06-30T22:48:41.999990Z",
+          "freshness_bin": "12-18h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "47844",
+          "evaluation_time": "2026-06-30T22:58:42.000038Z",
+          "freshness_bin": "18-24h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "65405",
+          "evaluation_time": "2026-06-30T23:07:42.000038Z",
+          "freshness_bin": "18-24h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "48458",
+          "evaluation_time": "2026-06-30T23:24:41.999990Z",
+          "freshness_bin": "18-24h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "65421",
+          "evaluation_time": "2026-06-30T23:34:42.000038Z",
+          "freshness_bin": "6-9h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "65409",
+          "evaluation_time": "2026-06-30T23:47:41.999971Z",
+          "freshness_bin": "24-36h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        },
+        {
+          "NORAD_CAT_ID": "44714",
+          "evaluation_time": "2026-06-30T23:49:41.999981Z",
+          "freshness_bin": "24-36h",
+          "stage1f_support_status": "WITHIN_STAGE1F_SUPPORT",
+          "engineering_staleness_gt72h": false
+        }
+      ]
+    },
+    "correctness_passed": 35,
+    "correctness_total": 35
+  },
+  "outputs": {
+    "orbit_uncertainty_stage1b_20260601_20260630_rtn_residual_library.csv": {
+      "path": "outputs/datasets/orbit_uncertainty_stage1b_20260601_20260630_rtn_residual_library.csv",
+      "sha256": "DBE3551373D5EFDAF33CFB16296A564ADA29AA49E9852A92F599AD49B00934ED",
+      "size_bytes": 7552697
+    },
+    "orbit_uncertainty_stage1b_20260601_20260630_correctness_audit.csv": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1b_20260601_20260630_correctness_audit.csv",
+      "sha256": "0D7C9F8D67C5F6CFEA2F0B4253F55A0DED16409A03A9FA08D28C01CC2836952E",
+      "size_bytes": 3637
+    },
+    "orbit_uncertainty_stage1b_20260601_20260630_failure_audit.csv": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1b_20260601_20260630_failure_audit.csv",
+      "sha256": "678AC26604A4E7CD0122E611D70E70EA2A526FF72AA9106D7DBBB0263EA633D4",
+      "size_bytes": 208
+    },
+    "orbit_uncertainty_stage1b_20260601_20260630_report.md": {
+      "path": "outputs/reports/orbit_uncertainty_stage1b_20260601_20260630_report.md",
+      "sha256": "88491220AE19127F383227C0A77A51B275E460E784524E1E3148CD68F4DB6A1A",
+      "size_bytes": 25978
+    }
+  },
+  "blindness_firewall": {
+    "residual_descriptive_summary_generated": false,
+    "residual_distribution_analyzed": false,
+    "residual_ranking_generated": false,
+    "figures_generated": false,
+    "stage1f_parameter_values_read": false,
+    "stage1f_scoring_code_called": false,
+    "ellipsoid_d2_computed": false,
+    "box_score_computed": false,
+    "p95_or_p99_coverage_computed": false,
+    "false_orbit_distinct_rate_computed": false,
+    "per_satellite_confirmatory_performance_computed": false
+  },
+  "scope_guards": {
+    "residual_based_exclusion_applied": false,
+    "rms_cutoff_applied": false,
+    "model_recalibrated": false,
+    "stage1f_confirmatory_validation_run": false,
+    "synthetic_b_analyzed": false,
+    "doppler_verifier_run": false
+  }
+}

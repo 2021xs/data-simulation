@@ -1,0 +1,221 @@
+{
+  "stage": "orbit_uncertainty_stage1_acquisition",
+  "status": "SUPGP_INGESTED",
+  "window_tag": "20260501_20260531",
+  "formal_window": "[2026-05-01T00:00:00Z, 2026-06-01T00:00:00Z)",
+  "ordinary_gp_acquisition_window": "[2026-04-28T00:00:00Z, 2026-06-01T00:00:00Z)",
+  "updated_utc": "2026-09-03T16:09:38Z",
+  "authoritative_selection": {
+    "path": "outputs\\metrics\\orbit_uncertainty_stage1_20260401_20260430_satellite_selection.csv",
+    "sha256": "30D7A846DDDE5850645CD3C1C03C061E7971AE40A2EE052FFB4E8BA3E7F4ED36",
+    "row_count": 20,
+    "unique_norad_count": 20
+  },
+  "ordinary_gp": {
+    "source": "Space-Track",
+    "api_class": "gp_history",
+    "request_object_ids": [
+      "44714",
+      "65686",
+      "65421",
+      "65409",
+      "65410",
+      "47749",
+      "47383",
+      "65411",
+      "48309",
+      "45230",
+      "47844",
+      "65407",
+      "47767",
+      "65405",
+      "48672",
+      "48111",
+      "65693",
+      "60265",
+      "58380",
+      "48458"
+    ],
+    "time_predicate_field": "EPOCH",
+    "time_range": "[2026-04-28T00:00:00Z, 2026-06-01T00:00:00Z)",
+    "format": "OMM JSON",
+    "ordering": "NORAD_CAT_ID asc,EPOCH asc",
+    "request_fingerprint": "1D018CA1F06049C2A8691045A0D5AFF8E61ED961C8E8E0BA581837A0874E756C",
+    "download_utc": "2026-09-03T16:06:49Z",
+    "login_http_status": 200,
+    "http_status": 200,
+    "content_type": "application/json",
+    "raw_file": "data\\orbit_uncertainty_stage1\\raw\\spacetrack_gp\\spacetrack_gp_history_20260428_20260601_20sat_omm.json",
+    "file_size_bytes": 2606503,
+    "sha256": "E2023C9370EE0018E5F7AC5887E5D8ACDAF0D0761A1D75B7E2FDD4E55B0E77F1",
+    "record_count": 2295
+  },
+  "ordinary_gp_raw_reused_without_network": true,
+  "ordinary_gp_audit": {
+    "record_count": 2295,
+    "formal_window_record_count": 2041,
+    "returned_satellite_count": 20,
+    "creation_date_available_count": 2295,
+    "gp_id_available_count": 2295,
+    "required_field_missing_value_count": 0,
+    "duplicate_gp_id_excess_count": 0,
+    "duplicate_epoch_group_count": 292,
+    "duplicate_epoch_excess_count": 298
+  },
+  "causal_support": {
+    "evaluation_count": 6181,
+    "candidate_available_count": 6181,
+    "candidate_missing_count": 0,
+    "future_publication_use_count": 0,
+    "selected_gp_epoch_after_evaluation_count": 0,
+    "gp_age_gt_72h_count": 0,
+    "element_age_seconds_min": 2380.001011,
+    "element_age_seconds_median": 42420.347309,
+    "element_age_seconds_max": 255228.856416,
+    "publication_age_seconds_min": 1e-05,
+    "publication_age_seconds_median": 14510.000029,
+    "publication_age_seconds_max": 192899.0,
+    "selection_policy": "CREATION_DATE <= evaluation_time; latest CREATION_DATE, then EPOCH, then GP_ID",
+    "detail_output": "outputs\\metrics\\orbit_uncertainty_stage1_20260501_20260531_ordinary_gp_causal_support_audit.csv",
+    "summary_output": "outputs\\metrics\\orbit_uncertainty_stage1_20260501_20260531_ordinary_gp_causal_readiness_summary.csv"
+  },
+  "historical_supgp": {
+    "status": "SUPGP_INGESTED",
+    "raw_directory": "data\\orbit_uncertainty_stage1\\respecialdatarequest (4)",
+    "raw_file_count": 20,
+    "raw_files": [
+      {
+        "path": "data\\orbit_uncertainty_stage1\\respecialdatarequest (4)\\sat000044714.csv",
+        "sha256": "B4C4ABC6C0069F9959CEAFCAA4B4B81EE1716F45F5A42956D60225FEBA4173F8",
+        "row_count": 312
+      },
+      {
+        "path": "data\\orbit_uncertainty_stage1\\respecialdatarequest (4)\\sat000045230.csv",
+        "sha256": "41BA26E07776CD5178C5E7A9D5D7A943E0EE3C5F86A44AF4219A9AF97031320A",
+        "row_count": 312
+      },
+      {
+        "path": "data\\orbit_uncertainty_stage1\\respecialdatarequest (4)\\sat000047383.csv",
+        "sha256": "6658F503805C81E739B310D8EDE940CB4130B7B089E329CCA48ADDED1DCA5275",
+        "row_count": 307
+      },
+      {
+        "path": "data\\orbit_uncertainty_stage1\\respecialdatarequest (4)\\sat000047749.csv",
+        "sha256": "6D825CEB65F2BFCF3802594C8EAAFD5D21ACAB331613800EE40D0DA6CA4055FF",
+        "row_count": 310
+      },
+      {
+        "path": "data\\orbit_uncertainty_stage1\\respecialdatarequest (4)\\sat000047767.csv",
+        "sha256": "75ECF71E8F8FF5B99F590AC96F2E3037E409024A4DC33635D96850002A2C28DF",
+        "row_count": 309
+      },
+      {
+        "path": "data\\orbit_uncertainty_stage1\\respecialdatarequest (4)\\sat000047844.csv",
+        "sha256": "7637865C98F568E548B2893E5688D188E8D238A16E9B0D524612511DF86C4A11",
+        "row_count": 307
+      },
+      {
+        "path": "data\\orbit_uncertainty_stage1\\respecialdatarequest (4)\\sat000048111.csv",
+        "sha256": "B067C1BE0567D6B9569AFB4250DA7D8121277FF0C6B29B2BCE1B05C06245860B",
+        "row_count": 310
+      },
+      {
+        "path": "data\\orbit_uncertainty_stage1\\respecialdatarequest (4)\\sat000048309.csv",
+        "sha256": "08609C78A36E22D83016AB84A023335BA832708AB47F19C7DBB9ECDD3BE66D85",
+        "row_count": 308
+      },
+      {
+        "path": "data\\orbit_uncertainty_stage1\\respecialdatarequest (4)\\sat000048458.csv",
+        "sha256": "CA9F570E892C0EA1A9A3BE00CC7460BE89877A1AD166BDB5BCE0CBC9206E18BF",
+        "row_count": 310
+      },
+      {
+        "path": "data\\orbit_uncertainty_stage1\\respecialdatarequest (4)\\sat000048672.csv",
+        "sha256": "C52E96C7E2D8E9B2C8F655E9753D2E8415575ED99480B51157446CA98AC2E573",
+        "row_count": 308
+      },
+      {
+        "path": "data\\orbit_uncertainty_stage1\\respecialdatarequest (4)\\sat000058380.csv",
+        "sha256": "5AA5AE7FAA3D6CF67E0A3D4B2B91E02FFC7830B5F42C2105BE4085F89A8517F0",
+        "row_count": 312
+      },
+      {
+        "path": "data\\orbit_uncertainty_stage1\\respecialdatarequest (4)\\sat000060265.csv",
+        "sha256": "DED2DD25E9F7875F34DD7C617F6701E3E9E7C3DBC47A74E9467AF853231AB756",
+        "row_count": 309
+      },
+      {
+        "path": "data\\orbit_uncertainty_stage1\\respecialdatarequest (4)\\sat000065405.csv",
+        "sha256": "F59E665E7392DF3215975FCDCCE978590639C14E34B9BB2646EA4BE41E922CCA",
+        "row_count": 308
+      },
+      {
+        "path": "data\\orbit_uncertainty_stage1\\respecialdatarequest (4)\\sat000065407.csv",
+        "sha256": "CAFB6D2D609727A95334A690D6FDDBE10FEA4E38D6EA6BD4CE409A7B729832A2",
+        "row_count": 310
+      },
+      {
+        "path": "data\\orbit_uncertainty_stage1\\respecialdatarequest (4)\\sat000065409.csv",
+        "sha256": "4FCC9DB2EADC4705EB0859F1CC9CEE11C2CE2CB59A65D27550617ED751D1ACC3",
+        "row_count": 306
+      },
+      {
+        "path": "data\\orbit_uncertainty_stage1\\respecialdatarequest (4)\\sat000065410.csv",
+        "sha256": "DFCA65DA89C49E8ED5AE2140478D6602768ED848DC2CEFB165B9AE3F0C5AB5A6",
+        "row_count": 311
+      },
+      {
+        "path": "data\\orbit_uncertainty_stage1\\respecialdatarequest (4)\\sat000065411.csv",
+        "sha256": "F38410BB5D5D19415791DEACEB7FC598525374D061D5EDA92521334B9E906A95",
+        "row_count": 309
+      },
+      {
+        "path": "data\\orbit_uncertainty_stage1\\respecialdatarequest (4)\\sat000065421.csv",
+        "sha256": "98FD709B5D350488F653699497E4AD02AD34D77DAB3F195664C94E08C96C2EEF",
+        "row_count": 308
+      },
+      {
+        "path": "data\\orbit_uncertainty_stage1\\respecialdatarequest (4)\\sat000065686.csv",
+        "sha256": "B237EE65C4008347069F443F5E42D3A73F58CBDA92AAB542E8A9CA9135AB4DB7",
+        "row_count": 309
+      },
+      {
+        "path": "data\\orbit_uncertainty_stage1\\respecialdatarequest (4)\\sat000065693.csv",
+        "sha256": "70176ED2916A7E16CE08E4376BFA3D0467B3DFF47F0BB0077B490D82C7DAC6A1",
+        "row_count": 306
+      }
+    ],
+    "substitution_forbidden": [
+      "later GP",
+      "Stage-0 SupGP",
+      "current SupGP",
+      "other source"
+    ],
+    "reference_availability_fact": {
+      "descriptive_min_gap_hours_exclusive": 12.0,
+      "max_simultaneous_satellites_between_records": 20,
+      "longest_all_cohort_between_record_interval_start": "2026-05-13T01:42:41.999962Z",
+      "longest_all_cohort_between_record_interval_end": "2026-05-13T22:13:42.000038Z",
+      "longest_all_cohort_between_record_interval_hours": 20.516667,
+      "exceeds_frozen_48h_internal_gap_threshold": false,
+      "semantics": "descriptive overlap of per-satellite gaps longer than the stated minimum; does not alter per-satellite 48 h reference-quality gate"
+    },
+    "formal_reference_quality_gate": {
+      "status": "VERIFIED",
+      "path": "outputs\\metrics\\orbit_uncertainty_stage1_20260501_20260531_supgp_reference_quality_manifest.json",
+      "sha256": "7EFC2606B6B5FE6DDE7ABA2CF6954C996D85728C90CCCBD4A7745402422B22BB",
+      "window_tag": "20260501_20260531",
+      "status_counts": {
+        "READY": 20
+      },
+      "raw_file_count": 20,
+      "raw_sha_inventory_match": true
+    }
+  },
+  "scope_guards": {
+    "formal_residual_computed": false,
+    "calibration_computed": false,
+    "synthetic_b_used": false,
+    "doppler_propagated": false
+  }
+}

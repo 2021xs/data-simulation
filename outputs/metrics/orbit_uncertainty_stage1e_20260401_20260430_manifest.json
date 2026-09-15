@@ -1,0 +1,338 @@
+{
+  "status": "STAGE1E_HETEROGENEITY_CAUSAL_REGIME_ASSESSMENT_COMPLETE",
+  "model_freeze_decision": "HETEROGENEITY_OR_REGIME_NOT_RESOLVED",
+  "generated_at_utc": "2026-09-02T14:39:34Z",
+  "window_tag": "20260401_20260430",
+  "formal_window": "[2026-04-01T00:00:00Z, 2026-05-01T00:00:00Z)",
+  "primary_support": {
+    "lower_hours_exclusive": 0.0,
+    "upper_hours_inclusive": 36.0
+  },
+  "input": {
+    "stage1b_dataset": "outputs/datasets/orbit_uncertainty_stage1b_20260401_20260430_rtn_residual_library.csv",
+    "stage1b_dataset_sha256": "2B02C40FDEA69F6079D256B5E274652ABAB2D5BC2F9899866C7F1CAFFB469F23",
+    "ordinary_raw": "data/orbit_uncertainty_stage1/raw/spacetrack_gp/spacetrack_gp_history_20260329_20260501_20sat_omm.json",
+    "ordinary_raw_sha256": "079DD7846CE44950DB4818CB66F155CB338B2C8154CA66D3F6609F6459B3FEFE",
+    "stage1b_manifest_sha256": "81FC7EF0F4E6401A316A893C1C010840136AA43BEBEC48094A74F06FE020E4E3",
+    "stage1c_manifest_sha256": "8589867109B1AEC49B7FD0184ABF7166B5C1976C2A36E9DF64CA051B67E423D3",
+    "stage1d_manifest_sha256": "834917C94E18E1AD8E643687AF4312A88B28DFADA4E6FE25C407F091E04C0617",
+    "hashes_before_after_equal": true
+  },
+  "method": {
+    "targets": [
+      "abs_delta_R_km",
+      "abs_delta_T_km",
+      "abs_delta_N_km",
+      "position_error_norm_km"
+    ],
+    "velocity_role": "parallel descriptive only",
+    "quantiles": [
+      0.9,
+      0.95
+    ],
+    "models": [
+      "M0",
+      "M1",
+      "M2",
+      "M3",
+      "M4",
+      "M_RMS_DIAGNOSTIC"
+    ],
+    "satellite_adjustment": "multiplicative quantile-ratio partial pooling; strength=100.0",
+    "regime_label_role": "retrospective evaluation only",
+    "regime_features": [
+      "publication_age_hours",
+      "selected_gp_just_changed",
+      "hours_since_selected_gp_switch",
+      "previous_publication_interval_hours",
+      "gp_epoch_jump_hours",
+      "abs_delta_mean_motion",
+      "abs_delta_eccentricity",
+      "abs_delta_inclination_deg",
+      "abs_delta_raan_deg",
+      "abs_delta_arg_perigee_deg",
+      "abs_delta_mean_anomaly_deg",
+      "abs_delta_bstar",
+      "selected_mean_motion",
+      "selected_eccentricity",
+      "selected_inclination_deg",
+      "selected_bstar"
+    ],
+    "validation": [
+      "leave-one-satellite-out",
+      "continuous Apr1-20/Apr21-30 bidirectional"
+    ],
+    "rms_role": "REFERENCE_ONLY diagnostic; not operational model input",
+    "no_extrapolation_above_36h": true
+  },
+  "result": {
+    "rows": 5675,
+    "supported_rows": 5662,
+    "outside_support_rows": 13,
+    "regime_candidate_rows_supported": 50,
+    "causal_feature_audit": {
+      "raw_records": 2265,
+      "raw_satellites": 20,
+      "selected_gp_mismatch": 0,
+      "selected_future_publication": 0,
+      "previous_future_publication": 0,
+      "feature_rows": 5675,
+      "feature_future_gp_access": 0
+    },
+    "stage1c_mapping": {
+      "episode_count": 12,
+      "mapped_rows": 58,
+      "frozen_episode_rows": 58,
+      "mismatches": [],
+      "reproducible": true
+    },
+    "best_evaluated_operational_model": "M4",
+    "selection_metrics": [
+      {
+        "view": "FULL_SUPPORTED",
+        "validation_design": "time_contiguous",
+        "model": "M0",
+        "operational_candidate": true,
+        "evaluated_rows_across_folds_targets_quantiles": 45296,
+        "mean_abs_calibration_error_all": 0.022690799579594127,
+        "mean_abs_calibration_error_components": 0.026163695529145426,
+        "mean_p90_coverage": 0.9009342913735953,
+        "mean_p95_coverage": 0.9506503153043899,
+        "mean_pinball_loss_all": 2.2772890378280986,
+        "per_satellite_mean_abs_calibration_error": 0.05523461662058719,
+        "worst_satellite_p95_coverage": 0.719626168224299,
+        "bidirectional_worst_satellite_component_p95_coverage": 0.8754448398576512,
+        "special_satellite_position_p95_min_coverage": 0.8754448398576512,
+        "p95_timeblock_asymmetry": 0.050736720834343885,
+        "model_definition": "pooled element-age curve",
+        "loso_component_calibration_error": 0.03748512337836249,
+        "loso_worst_satellite_p95_coverage": 0.8666666666666667,
+        "improves_component_calibration": false,
+        "improves_per_satellite_calibration": false,
+        "improves_worst_satellite_p95": false,
+        "improves_timeblock_asymmetry": false,
+        "loso_not_materially_degraded": true,
+        "overall_p90_reasonable": true,
+        "overall_p95_reasonable": true,
+        "worst_component_not_severe": false,
+        "special_position_undercoverage_resolved": false,
+        "meets_freeze_screen": false,
+        "selection_score": 0.34999398813814
+      },
+      {
+        "view": "FULL_SUPPORTED",
+        "validation_design": "time_contiguous",
+        "model": "M1",
+        "operational_candidate": true,
+        "evaluated_rows_across_folds_targets_quantiles": 45296,
+        "mean_abs_calibration_error_all": 0.02094355091357427,
+        "mean_abs_calibration_error_components": 0.024873170830301567,
+        "mean_p90_coverage": 0.8975784976554289,
+        "mean_p95_coverage": 0.9486569245694882,
+        "mean_pinball_loss_all": 2.2261105610817973,
+        "per_satellite_mean_abs_calibration_error": 0.05466585998455351,
+        "worst_satellite_p95_coverage": 0.7289719626168224,
+        "bidirectional_worst_satellite_component_p95_coverage": 0.8754448398576512,
+        "special_satellite_position_p95_min_coverage": 0.8754448398576512,
+        "p95_timeblock_asymmetry": 0.045810089740480286,
+        "model_definition": "M0 x partial-pooled publication-age stratum factor",
+        "loso_component_calibration_error": 0.03769136006160845,
+        "loso_worst_satellite_p95_coverage": 0.8701754385964913,
+        "improves_component_calibration": true,
+        "improves_per_satellite_calibration": true,
+        "improves_worst_satellite_p95": true,
+        "improves_timeblock_asymmetry": true,
+        "loso_not_materially_degraded": true,
+        "overall_p90_reasonable": true,
+        "overall_p95_reasonable": true,
+        "worst_component_not_severe": false,
+        "special_position_undercoverage_resolved": false,
+        "meets_freeze_screen": false,
+        "selection_score": 0.33406851800012144
+      },
+      {
+        "view": "FULL_SUPPORTED",
+        "validation_design": "time_contiguous",
+        "model": "M2",
+        "operational_candidate": true,
+        "evaluated_rows_across_folds_targets_quantiles": 45296,
+        "mean_abs_calibration_error_all": 0.019104780600695287,
+        "mean_abs_calibration_error_components": 0.023157187323146578,
+        "mean_p90_coverage": 0.8990381700218287,
+        "mean_p95_coverage": 0.9437296618562534,
+        "mean_pinball_loss_all": 2.3787884459014332,
+        "per_satellite_mean_abs_calibration_error": 0.05623778224056482,
+        "worst_satellite_p95_coverage": 0.7289719626168224,
+        "bidirectional_worst_satellite_component_p95_coverage": 0.8825622775800712,
+        "special_satellite_position_p95_min_coverage": 0.9217081850533808,
+        "p95_timeblock_asymmetry": 0.037130376344086,
+        "model_definition": "M0 x partial-pooled satellite scale",
+        "loso_component_calibration_error": 0.037388150209495485,
+        "loso_worst_satellite_p95_coverage": 0.8666666666666667,
+        "improves_component_calibration": true,
+        "improves_per_satellite_calibration": false,
+        "improves_worst_satellite_p95": true,
+        "improves_timeblock_asymmetry": true,
+        "loso_not_materially_degraded": true,
+        "overall_p90_reasonable": true,
+        "overall_p95_reasonable": true,
+        "worst_component_not_severe": false,
+        "special_position_undercoverage_resolved": true,
+        "meets_freeze_screen": false,
+        "selection_score": 0.3249415335004705
+      },
+      {
+        "view": "FULL_SUPPORTED",
+        "validation_design": "time_contiguous",
+        "model": "M3",
+        "operational_candidate": true,
+        "evaluated_rows_across_folds_targets_quantiles": 45296,
+        "mean_abs_calibration_error_all": 0.017489919354838693,
+        "mean_abs_calibration_error_components": 0.021769224809335158,
+        "mean_p90_coverage": 0.8974458575875172,
+        "mean_p95_coverage": 0.9455942022394697,
+        "mean_pinball_loss_all": 2.615500692791211,
+        "per_satellite_mean_abs_calibration_error": 0.052366831923024416,
+        "worst_satellite_p95_coverage": 0.719626168224299,
+        "bidirectional_worst_satellite_component_p95_coverage": 0.8596491228070176,
+        "special_satellite_position_p95_min_coverage": 0.8596491228070176,
+        "p95_timeblock_asymmetry": 0.029581261621796417,
+        "model_definition": "M0 x causal-logistic risk-stratum factor",
+        "loso_component_calibration_error": 0.035762743354337906,
+        "loso_worst_satellite_p95_coverage": 0.8526315789473684,
+        "improves_component_calibration": true,
+        "improves_per_satellite_calibration": true,
+        "improves_worst_satellite_p95": false,
+        "improves_timeblock_asymmetry": true,
+        "loso_not_materially_degraded": true,
+        "overall_p90_reasonable": true,
+        "overall_p95_reasonable": true,
+        "worst_component_not_severe": false,
+        "special_position_undercoverage_resolved": false,
+        "meets_freeze_screen": false,
+        "selection_score": 0.3198538934841949
+      },
+      {
+        "view": "FULL_SUPPORTED",
+        "validation_design": "time_contiguous",
+        "model": "M4",
+        "operational_candidate": true,
+        "evaluated_rows_across_folds_targets_quantiles": 45296,
+        "mean_abs_calibration_error_all": 0.019171921739833453,
+        "mean_abs_calibration_error_components": 0.022082086937774543,
+        "mean_p90_coverage": 0.8961706180774517,
+        "mean_p95_coverage": 0.9369858618319993,
+        "mean_pinball_loss_all": 2.5035234840241385,
+        "per_satellite_mean_abs_calibration_error": 0.057809701772215824,
+        "worst_satellite_p95_coverage": 0.7289719626168224,
+        "bidirectional_worst_satellite_component_p95_coverage": 0.8597122302158273,
+        "special_satellite_position_p95_min_coverage": 0.9181494661921709,
+        "p95_timeblock_asymmetry": 0.02387773870159271,
+        "model_definition": "M0 x satellite scale x causal-risk factor",
+        "loso_component_calibration_error": 0.03726187567759273,
+        "loso_worst_satellite_p95_coverage": 0.8631578947368421,
+        "improves_component_calibration": true,
+        "improves_per_satellite_calibration": false,
+        "improves_worst_satellite_p95": true,
+        "improves_timeblock_asymmetry": true,
+        "loso_not_materially_degraded": true,
+        "overall_p90_reasonable": true,
+        "overall_p95_reasonable": true,
+        "worst_component_not_severe": false,
+        "special_position_undercoverage_resolved": true,
+        "meets_freeze_screen": false,
+        "selection_score": 0.31205944047235346
+      }
+    ],
+    "model_freeze_decision": "HETEROGENEITY_OR_REGIME_NOT_RESOLVED",
+    "correctness_passed": 16,
+    "correctness_total": 16
+  },
+  "environment": {
+    "python": "3.13.5",
+    "platform": "Windows-11-10.0.26100-SP0",
+    "pandas": "2.2.3",
+    "numpy": "2.1.3"
+  },
+  "outputs": {
+    "orbit_uncertainty_stage1e_20260401_20260430_satellite_heterogeneity.csv": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1e_20260401_20260430_satellite_heterogeneity.csv",
+      "sha256": "50122877F31F4791613F90DAA24F8BC9D4257A71577BCBCD2EDB27B594C2FF99",
+      "bytes": 342714
+    },
+    "orbit_uncertainty_stage1e_20260401_20260430_causal_regime_features.csv": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1e_20260401_20260430_causal_regime_features.csv",
+      "sha256": "434F1C9CBA569B96B5C4990BA68F69CEBA43817659794A5900A5F3016E670CD4",
+      "bytes": 3180439
+    },
+    "orbit_uncertainty_stage1e_20260401_20260430_regime_feature_association.csv": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1e_20260401_20260430_regime_feature_association.csv",
+      "sha256": "5A794DE74E6BD54C3CF97F41C28C0F60D6E222A19AC9887B43A514D75BCD83A4",
+      "bytes": 17885
+    },
+    "orbit_uncertainty_stage1e_20260401_20260430_model_comparison.csv": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1e_20260401_20260430_model_comparison.csv",
+      "sha256": "B01016B9F688ED43E58B810DE4EC06F048F9D14F470B8D6BC1AA70A69FFFD293",
+      "bytes": 8417
+    },
+    "orbit_uncertainty_stage1e_20260401_20260430_componentwise_calibration.csv": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1e_20260401_20260430_componentwise_calibration.csv",
+      "sha256": "215F155A382C08A4515E1EB69DF7B3C337F10BEA7B936ED997974680DFA94E6D",
+      "bytes": 118442
+    },
+    "orbit_uncertainty_stage1e_20260401_20260430_loso_validation.csv": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1e_20260401_20260430_loso_validation.csv",
+      "sha256": "6A6E3720BA71A350289C5E9DE67DC0A5DFE6103D1CDDADFFA7B1C42626897318",
+      "bytes": 4958526
+    },
+    "orbit_uncertainty_stage1e_20260401_20260430_timeblock_validation.csv": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1e_20260401_20260430_timeblock_validation.csv",
+      "sha256": "31319DFE13EBAA3F42A7D94A3F0E0485A87AC8BE05A7A5032F059F5A67F8FA88",
+      "bytes": 531871
+    },
+    "orbit_uncertainty_stage1e_20260401_20260430_per_satellite_coverage.csv": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1e_20260401_20260430_per_satellite_coverage.csv",
+      "sha256": "D117B904B7B826B814828AA856F2496AC1E2593D90FD47CF8620F1FEB9DC736D",
+      "bytes": 1837915
+    },
+    "orbit_uncertainty_stage1e_20260401_20260430_rms_diagnostic.csv": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1e_20260401_20260430_rms_diagnostic.csv",
+      "sha256": "11C6BDD15FB62161CDBFA19CC7EE486DC441019EC05694195A74C5B4B14F89FC",
+      "bytes": 51672
+    },
+    "orbit_uncertainty_stage1e_20260401_20260430_heterogeneity_regime_report.md": {
+      "path": "outputs/reports/orbit_uncertainty_stage1e_20260401_20260430_heterogeneity_regime_report.md",
+      "sha256": "12421BDD394C3BEE4F8C7E57859F1532EC78C5DBE700899DDBBD536FAC292230",
+      "bytes": 12597
+    },
+    "per_satellite_calibration_ratios.png": {
+      "path": "outputs/figures/orbit_uncertainty_stage1e_20260401_20260430/per_satellite_calibration_ratios.png",
+      "sha256": "4EAD9DD718C0D70A9639B4E5283E3D238B9B7DA6EFFD6BA6781AF715CE8F6768",
+      "bytes": 129279
+    },
+    "causal_regime_feature_timeline.png": {
+      "path": "outputs/figures/orbit_uncertainty_stage1e_20260401_20260430/causal_regime_feature_timeline.png",
+      "sha256": "830DA1AE9AB952EAE3CB1DBDCF26BDD4FEA2CA41CBDCD4BA3ADFEDBF805D438F",
+      "bytes": 238350
+    },
+    "m0_vs_best_per_satellite_p95_coverage.png": {
+      "path": "outputs/figures/orbit_uncertainty_stage1e_20260401_20260430/m0_vs_best_per_satellite_p95_coverage.png",
+      "sha256": "134ED5E9C4E66C36EE7AB077A101D93141E0C08E03020BD8F792C744421D185F",
+      "bytes": 97456
+    },
+    "orbit_uncertainty_stage1e_20260401_20260430_correctness_audit.csv": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1e_20260401_20260430_correctness_audit.csv",
+      "sha256": "7328FE9F8B8AD66606E1BDD0019CCBB9D8C9E1057B95B48D3497024282FE4B73",
+      "bytes": 1579
+    }
+  },
+  "prohibitions_confirmed": {
+    "stage1b_modified": false,
+    "future_gp_used": false,
+    "residual_threshold_regime_filter": false,
+    "rms_hard_cutoff": false,
+    "synthetic_b": false,
+    "doppler": false,
+    "final_6d_boundary": false
+  }
+}

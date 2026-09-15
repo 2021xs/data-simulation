@@ -1,0 +1,162 @@
+{
+  "stage": "legitimate_orbit_uncertainty_stage0_source_acquisition",
+  "created_at": "2026-08-23T12:00:16.937566+00:00",
+  "credentials": {
+    "SPACETRACK_USERNAME": "configured",
+    "SPACETRACK_PASSWORD": "configured",
+    "CDSE_USERNAME": "configured",
+    "CDSE_PASSWORD": "configured"
+  },
+  "token_persisted": false,
+  "selected_poeorb_window": {
+    "validity_start_utc": "2026-06-27T22:59:42+00:00",
+    "validity_stop_utc": "2026-07-01T00:59:42+00:00",
+    "duration_hours": 74.0,
+    "product_count": 3
+  },
+  "poeorb_products": [
+    {
+      "product_type": "AUX_POEORB",
+      "mission": "Sentinel-1A",
+      "validity_start_utc": "2026-06-27T22:59:42.000000Z",
+      "validity_stop_utc": "2026-06-29T00:59:42.000000Z",
+      "product_id": "387ec906-fe68-4e14-9c7b-d40b2225c72a",
+      "original_filename": "S1A_OPER_AUX_POEORB_OPOD_20260718T070712_V20260627T225942_20260629T005942.EOF",
+      "file_size_bytes": 4653276,
+      "publication_date_utc": "2026-07-18T07:09:44.207557Z",
+      "source": "Copernicus Data Space OData catalogue",
+      "raw_file_path": "data/orbit_uncertainty_pilot/raw/sentinel_poeorb/S1A_OPER_AUX_POEORB_OPOD_20260718T070712_V20260627T225942_20260629T005942.EOF",
+      "downloaded_this_run": true,
+      "download_time_utc": "2026-08-23T12:00:08.092487+00:00",
+      "sha256": "E637649C46723D581D8DE30AE6601B6E117F1B307CDFF6BE72153C6D06F6F3E0",
+      "source_api": "https://download.dataspace.copernicus.eu/odata/v1/Products(<product_id>)/$value"
+    },
+    {
+      "product_type": "AUX_POEORB",
+      "mission": "Sentinel-1A",
+      "validity_start_utc": "2026-06-28T22:59:42.000000Z",
+      "validity_stop_utc": "2026-06-30T00:59:42.000000Z",
+      "product_id": "e886a1e0-e9d1-4405-89ac-8654440f8c71",
+      "original_filename": "S1A_OPER_AUX_POEORB_OPOD_20260719T070640_V20260628T225942_20260630T005942.EOF",
+      "file_size_bytes": 4653048,
+      "publication_date_utc": "2026-07-19T07:07:59.896889Z",
+      "source": "Copernicus Data Space OData catalogue",
+      "raw_file_path": "data/orbit_uncertainty_pilot/raw/sentinel_poeorb/S1A_OPER_AUX_POEORB_OPOD_20260719T070640_V20260628T225942_20260630T005942.EOF",
+      "downloaded_this_run": true,
+      "download_time_utc": "2026-08-23T12:00:11.263416+00:00",
+      "sha256": "F1D23BEE705140DA9D5B67C4AB3016B3409819908E864F613344E3F297EECDCE",
+      "source_api": "https://download.dataspace.copernicus.eu/odata/v1/Products(<product_id>)/$value"
+    },
+    {
+      "product_type": "AUX_POEORB",
+      "mission": "Sentinel-1A",
+      "validity_start_utc": "2026-06-29T22:59:42.000000Z",
+      "validity_stop_utc": "2026-07-01T00:59:42.000000Z",
+      "product_id": "364f0745-6903-4c85-90f9-ef95d6762066",
+      "original_filename": "S1A_OPER_AUX_POEORB_OPOD_20260720T070517_V20260629T225942_20260701T005942.EOF",
+      "file_size_bytes": 4653695,
+      "publication_date_utc": "2026-07-20T07:07:05.746322Z",
+      "source": "Copernicus Data Space OData catalogue",
+      "raw_file_path": "data/orbit_uncertainty_pilot/raw/sentinel_poeorb/S1A_OPER_AUX_POEORB_OPOD_20260720T070517_V20260629T225942_20260701T005942.EOF",
+      "downloaded_this_run": true,
+      "download_time_utc": "2026-08-23T12:00:13.885028+00:00",
+      "sha256": "5F891E0FB0901BE7D97F930C6889833577E89A45D86D339A9BE686FBDA00EDEE",
+      "source_api": "https://download.dataspace.copernicus.eu/odata/v1/Products(<product_id>)/$value"
+    }
+  ],
+  "sentinel_gp_history": {
+    "source": "Space-Track GP_HISTORY",
+    "source_api": "basicspacedata/query/class/gp_history",
+    "query_parameters": {
+      "NORAD_CAT_ID": "39634",
+      "EPOCH": "2026-06-24--2026-07-02",
+      "format": "json"
+    },
+    "requested_time_range": {
+      "start": "2026-06-24",
+      "stop": "2026-07-02"
+    },
+    "raw_file_path": "data/orbit_uncertainty_pilot/raw/spacetrack_gp/sentinel1a_gp_history_20260624_20260702.json",
+    "downloaded_this_run": true,
+    "download_time_utc": "2026-08-23T12:00:16.936800+00:00",
+    "sha256": "7B61510D609DDE5CA2284623F65D6572EBC3081B6AD6F6560FB4DCE5EF9411AF",
+    "record_count": 29,
+    "object_ids": [
+      "39634"
+    ],
+    "schema_missing_counts": {
+      "EPOCH": 0,
+      "CREATION_DATE": 0,
+      "NORAD_CAT_ID": 0,
+      "MEAN_MOTION": 0,
+      "ECCENTRICITY": 0,
+      "INCLINATION": 0,
+      "RA_OF_ASC_NODE": 0,
+      "ARG_OF_PERICENTER": 0,
+      "MEAN_ANOMALY": 0,
+      "BSTAR": 0,
+      "ELEMENT_SET_NO": 0
+    }
+  },
+  "celestrak_historical_supgp": {
+    "status": "COMPLETE",
+    "source": "CelesTrak historical SupGP special request",
+    "official_request_entry": "https://celestrak.org/NORAD/archives/sup-request.php?FORMAT=csv",
+    "requested_norad_ids": [
+      "65409",
+      "65410",
+      "65411"
+    ],
+    "requested_time_range": {
+      "start": "2026-03-08",
+      "stop": "2026-03-14"
+    },
+    "found_norad_ids": [
+      "65409",
+      "65410",
+      "65411"
+    ],
+    "missing_norad_ids": [],
+    "rms_semantics": "SGP4 position-fit RMS relative to source ephemeris",
+    "rms_unit": "km; resolved from official CelesTrak SupGP documentation because CSV header is unitless",
+    "raw_files": [
+      {
+        "original_filename": "sat000065409.csv",
+        "raw_file_path": "data/orbit_uncertainty_pilot/raw/celestrak_supgp/sat000065409.csv",
+        "sha256": "9613A42A51266EC69099188EBB93512BF9ABEBF1769E02942CB4B0FE2C4A9E1B",
+        "file_size_bytes": 3293,
+        "row_count": 19,
+        "file_observed_mtime_utc": "2026-08-23T13:42:44.891153+00:00",
+        "source": "CelesTrak historical SupGP special-request CSV attachment",
+        "requested_norad_ids": "65409,65410,65411",
+        "requested_time_range": "2026-03-08--2026-03-14",
+        "format": "CSV"
+      },
+      {
+        "original_filename": "sat000065410.csv",
+        "raw_file_path": "data/orbit_uncertainty_pilot/raw/celestrak_supgp/sat000065410.csv",
+        "sha256": "AA8A6D3A198585426A4A7723E51A7E9076A7A3DF21F13A5B07B7305E58F86E75",
+        "file_size_bytes": 3282,
+        "row_count": 19,
+        "file_observed_mtime_utc": "2026-08-23T13:42:44.900152+00:00",
+        "source": "CelesTrak historical SupGP special-request CSV attachment",
+        "requested_norad_ids": "65409,65410,65411",
+        "requested_time_range": "2026-03-08--2026-03-14",
+        "format": "CSV"
+      },
+      {
+        "original_filename": "sat000065411.csv",
+        "raw_file_path": "data/orbit_uncertainty_pilot/raw/celestrak_supgp/sat000065411.csv",
+        "sha256": "8D1E6913367E0214E5D0407E511206A417FE69014664A3710506AAD644D88A64",
+        "file_size_bytes": 3293,
+        "row_count": 19,
+        "file_observed_mtime_utc": "2026-08-23T13:42:44.912840+00:00",
+        "source": "CelesTrak historical SupGP special-request CSV attachment",
+        "requested_norad_ids": "65409,65410,65411",
+        "requested_time_range": "2026-03-08--2026-03-14",
+        "format": "CSV"
+      }
+    ],
+    "raw_files_modified": false
+  }
+}

@@ -1,0 +1,233 @@
+{
+  "stage": "Orbit Uncertainty Stage-1 May partial locked external validation",
+  "status": "MAY_PARTIAL_LOCKED_EXTERNAL_VALIDATION_COMPLETE",
+  "full_validation_status_reserved": "MAY_LOCKED_EXTERNAL_VALIDATION_COMPLETE",
+  "generated_utc": "2026-09-06T02:25:42Z",
+  "training_window": "[2026-04-01T00:00:00Z, 2026-05-01T00:00:00Z)",
+  "test_window": "[2026-05-01T00:00:00Z, 2026-06-01T00:00:00Z)",
+  "model_status": {
+    "M0": "LOCKED_RECOVERABLE_EVALUATED",
+    "M1": "LOCKED_RECOVERABLE_EVALUATED",
+    "M2": "LOCKED_RECOVERABLE_EVALUATED",
+    "M3": "NOT_EVALUATED_APRIL_FITTED_CLASSIFIER_PROVENANCE_INCOMPLETE",
+    "M4": "NOT_EVALUATED_APRIL_FITTED_CLASSIFIER_PROVENANCE_INCOMPLETE"
+  },
+  "parameter_freeze": {
+    "may_derived_fitted_parameter_count": 0,
+    "april_refit_performed": false,
+    "may_refit_performed": false,
+    "recoverability_audit": "outputs/metrics/orbit_uncertainty_stage1_external_202605_model_recoverability.csv",
+    "m3_m4_artifact_search": {
+      "search_roots": [
+        "D:/Project/data-simulation",
+        "D:/Project",
+        "C:/Users/ASUS/AppData/Local/Temp"
+      ],
+      "serialized_candidate_count": 23,
+      "proven_april_stage1e_classifier_count": 0,
+      "git_history_available": false,
+      "m3_m4_status": "M3_M4_LOCKED_VALIDATION_UNAVAILABLE"
+    }
+  },
+  "method": {
+    "targets": [
+      "abs_delta_R_km",
+      "abs_delta_T_km",
+      "abs_delta_N_km",
+      "position_error_norm_km"
+    ],
+    "quantiles": [
+      0.9,
+      0.95
+    ],
+    "freshness_bins_hours": [
+      0.0,
+      6.0,
+      9.0,
+      12.0,
+      18.0,
+      24.0,
+      36.0
+    ],
+    "support": "0 < element_age_hours <= 36",
+    "M0": "April frozen element-age curve; exact knot reconstruction from manifest-bound 13-point grid",
+    "M1": "M0 x April frozen publication-age stratum factor",
+    "M2": "M0 x April frozen partial-pooled satellite factor",
+    "satellite_persistence_diagnostic": "May within-satellite quantile of observed/M0 prediction; never fed into prediction"
+  },
+  "inputs": {
+    "april_stage1b_dataset": {
+      "path": "outputs/datasets/orbit_uncertainty_stage1b_20260401_20260430_rtn_residual_library.csv",
+      "sha256": "2B02C40FDEA69F6079D256B5E274652ABAB2D5BC2F9899866C7F1CAFFB469F23"
+    },
+    "april_stage1d_manifest": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1d_20260401_20260430_manifest.json",
+      "sha256": "834917C94E18E1AD8E643687AF4312A88B28DFADA4E6FE25C407F091E04C0617"
+    },
+    "april_stage1e_manifest": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1e_20260401_20260430_manifest.json",
+      "sha256": "888FACF353F5F6FC0B011F45521187781BE007943D8DB84AAF3B961DB300883D"
+    },
+    "april_componentwise_calibration": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1e_20260401_20260430_componentwise_calibration.csv",
+      "sha256": "215F155A382C08A4515E1EB69DF7B3C337F10BEA7B936ED997974680DFA94E6D"
+    },
+    "april_model_comparison": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1e_20260401_20260430_model_comparison.csv",
+      "sha256": "B01016B9F688ED43E58B810DE4EC06F048F9D14F470B8D6BC1AA70A69FFFD293"
+    },
+    "may_stage1b_dataset": {
+      "path": "outputs/datasets/orbit_uncertainty_stage1b_20260501_20260531_rtn_residual_library.csv",
+      "sha256": "119F2DAA3896476E120F010A436D0B250E404D41326B57FAABFEAA9F2F73EF3F"
+    },
+    "may_stage1b_manifest": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1b_20260501_20260531_manifest.json",
+      "sha256": "9631AF3F4B4AA0F9D4C9804AE05A2C5F7608428CC0D1B2D7C22CC145F6EF38CD"
+    },
+    "may_stage1a_manifests": [
+      {
+        "name": "acquisition",
+        "path": "outputs/metrics/orbit_uncertainty_stage1_20260501_20260531_acquisition_download_manifest.json",
+        "expected_sha256": "1B069590257660C5683A3232E2A7BB914FA8C5A4EAD35FC238914FF10BDDA2E1",
+        "current_sha256": "1B069590257660C5683A3232E2A7BB914FA8C5A4EAD35FC238914FF10BDDA2E1",
+        "matched": true
+      },
+      {
+        "name": "reference_quality",
+        "path": "outputs/metrics/orbit_uncertainty_stage1_20260501_20260531_supgp_reference_quality_manifest.json",
+        "expected_sha256": "7EFC2606B6B5FE6DDE7ABA2CF6954C996D85728C90CCCBD4A7745402422B22BB",
+        "current_sha256": "7EFC2606B6B5FE6DDE7ABA2CF6954C996D85728C90CCCBD4A7745402422B22BB",
+        "matched": true
+      },
+      {
+        "name": "causal_support_audit",
+        "path": "outputs/metrics/orbit_uncertainty_stage1_20260501_20260531_ordinary_gp_causal_support_audit.csv",
+        "expected_sha256": "86DBA6187CB6BE4F37F4D7B4021DB6309957549E7C1826024A687F2250BEDBED",
+        "current_sha256": "86DBA6187CB6BE4F37F4D7B4021DB6309957549E7C1826024A687F2250BEDBED",
+        "matched": true
+      },
+      {
+        "name": "cohort_selection",
+        "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_satellite_selection.csv",
+        "expected_sha256": "30D7A846DDDE5850645CD3C1C03C061E7971AE40A2EE052FFB4E8BA3E7F4ED36",
+        "current_sha256": "30D7A846DDDE5850645CD3C1C03C061E7971AE40A2EE052FFB4E8BA3E7F4ED36",
+        "matched": true
+      }
+    ]
+  },
+  "support_audit": {
+    "input_rows": 6181,
+    "primary_rows": 6094,
+    "outside_support_rows": 87,
+    "rows_removed": 0,
+    "formal_support": "0 < element_age_seconds / 3600 <= 36"
+  },
+  "april_protection": {
+    "artifact_count": 81,
+    "before_after_equal": true
+  },
+  "correctness": {
+    "passed": 21,
+    "total": 21,
+    "all_passed": true
+  },
+  "conclusions": {
+    "M0": "PARTIALLY_SUPPORTED",
+    "M1": "NOT_SUPPORTED",
+    "M2": "PARTIALLY_SUPPORTED",
+    "RTN": "SUPPORTED",
+    "NEXT": "可推进component-wise/multivariate uncertainty-set的结构设计，但不应冻结stable satellite-scale nominal model；需要another independent month继续检验temporal heterogeneity"
+  },
+  "builder": {
+    "path": "D:/Project/data-simulation/scripts/run_orbit_uncertainty_stage1_external_202605_partial_locked_validation.py",
+    "sha256": "23CE40A0B3D833833072CCF938A8B021F656C6B3943E4799373A02B5F84F3540"
+  },
+  "outputs": {
+    "orbit_uncertainty_stage1_external_202605_partial_locked_coverage.csv": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1_external_202605_partial_locked_coverage.csv",
+      "sha256": "CE2E7A67436ED4B2510A158F8828A9148737916C29C52D342392C6FE866D869D",
+      "size_bytes": 3771
+    },
+    "orbit_uncertainty_stage1_external_202605_partial_per_satellite.csv": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1_external_202605_partial_per_satellite.csv",
+      "sha256": "94F71BF5FCD3110D4A08BC42D6D31242F02C3DF8B6ADD7B038CDE8E2B606FB36",
+      "size_bytes": 74032
+    },
+    "orbit_uncertainty_stage1_external_202605_partial_freshness_bin.csv": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1_external_202605_partial_freshness_bin.csv",
+      "sha256": "EB8B1C13A7859DAE7FDA533D12B7708D186E48D2373BC7D2D9A2C0770AB60B8F",
+      "size_bytes": 25268
+    },
+    "orbit_uncertainty_stage1_external_202605_partial_time_half.csv": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1_external_202605_partial_time_half.csv",
+      "sha256": "8D661CA6839645F05A794B454E9E6B61283FC2FC4179B01903A506F52AA35BE6",
+      "size_bytes": 8229
+    },
+    "orbit_uncertainty_stage1_external_202605_satellite_scale_persistence.csv": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1_external_202605_satellite_scale_persistence.csv",
+      "sha256": "F56CCB9D11DA68961695404C4D76DDA787174688D55A859E37CD920A336BAB56",
+      "size_bytes": 31175
+    },
+    "orbit_uncertainty_stage1_external_202605_partial_model_comparison.csv": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1_external_202605_partial_model_comparison.csv",
+      "sha256": "6FE0087BB771ECCA64A1EF766E03D51612EE9E1A597D975ECB4680FC577442A8",
+      "size_bytes": 7031
+    },
+    "orbit_uncertainty_stage1_external_202605_model_recoverability.csv": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1_external_202605_model_recoverability.csv",
+      "sha256": "36B5D052D0A811D06255BC315B732FDBA7AE81FE8914FFFFDAAEA2614D7C4FFD",
+      "size_bytes": 3348
+    },
+    "orbit_uncertainty_stage1_external_202605_m3_m4_artifact_search.csv": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1_external_202605_m3_m4_artifact_search.csv",
+      "sha256": "999897D19574EF899783596414D3EF087368F1BB15044FA8400676069C7C2D0D",
+      "size_bytes": 9627
+    },
+    "orbit_uncertainty_stage1_external_202605_partial_outside_support.csv": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1_external_202605_partial_outside_support.csv",
+      "sha256": "9539E38C0E2EAB7B23A56E7D778352F26C7F4BDDE9F686ACB07E36906233015C",
+      "size_bytes": 4580
+    },
+    "orbit_uncertainty_stage1_external_202605_partial_correctness_audit.csv": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1_external_202605_partial_correctness_audit.csv",
+      "sha256": "7450760642E90320DA636692DC740272D9D6C790472FBB8A0E67022B40E9BB7E",
+      "size_bytes": 1820
+    },
+    "orbit_uncertainty_stage1_external_202605_partial_locked_validation_report.md": {
+      "path": "outputs/reports/orbit_uncertainty_stage1_external_202605_partial_locked_validation_report.md",
+      "sha256": "8043698F98E1658439496F72FE01173D277CA9996FFB045F6D1C92E7C892114D",
+      "size_bytes": 32921
+    },
+    "april_fit_vs_may_empirical_coverage.png": {
+      "path": "outputs/figures/orbit_uncertainty_stage1_external_202605_partial/april_fit_vs_may_empirical_coverage.png",
+      "sha256": "F5290BBDE0F333BBF45C6C0744BD146BAFF09032B3269F9A9B7EE8C2348DD81F",
+      "size_bytes": 56599
+    },
+    "april_satellite_scale_vs_may_observed_tendency.png": {
+      "path": "outputs/figures/orbit_uncertainty_stage1_external_202605_partial/april_satellite_scale_vs_may_observed_tendency.png",
+      "sha256": "7B6621C1B2B60862EF67BE8C2998BA6B40CBED6F25BC0E939F20FA290EB50347",
+      "size_bytes": 135674
+    },
+    "m0_vs_m2_may_per_satellite_p95.png": {
+      "path": "outputs/figures/orbit_uncertainty_stage1_external_202605_partial/m0_vs_m2_may_per_satellite_p95.png",
+      "sha256": "12E78F309C1B11A59DD145AF5602E8552061E3E1FFB73B1568A3BC702F36688D",
+      "size_bytes": 161746
+    }
+  },
+  "scope_guards": {
+    "models_evaluated": [
+      "M0",
+      "M1",
+      "M2"
+    ],
+    "m3_prediction_count": 0,
+    "m4_prediction_count": 0,
+    "outside_support_prediction_count": 0,
+    "rows_removed": 0,
+    "may_tendency_used_in_prediction": false,
+    "rms_used_operationally": false,
+    "model_selected_or_frozen": false,
+    "stage1f_entered": false,
+    "episode_discovery_or_filtering": false
+  }
+}

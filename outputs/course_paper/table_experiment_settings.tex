@@ -1,0 +1,18 @@
+\begin{table}[htbp]
+\centering
+\caption{第6节受控仿真实验设置。该表对应 controlled simulation baseline，不是真实 Starlink observation replay。}
+\label{tab:section6\_experiment\_settings}
+\begin{tabular}{p{0.33\linewidth}p{0.58\linewidth}}
+\hline
+Item & Setting \\
+\hline
+Station & lat=52.2100, lon=5.1600, alt=14 m \\
+Center frequency & 11.325 GHz (controlled simulation baseline) \\
+Residual model & b in [3179.0, 3728.0] Hz; k in [-1.110156, -0.197808] Hz/s; sigma in [23.215, 32.89] Hz \\
+Targets & 20-target controlled Starlink baseline \\
+Attack/stress tests & altitude fine sweep, phase fine sweep, hard-case temporal retest \\
+Verifier score & detrended residual RMSE after fitting b + k(t-t0) \\
+Gate & per-target/per-pass fitted k\_hat p01-p99 sanity gate \\
+\hline
+\end{tabular}
+\end{table}

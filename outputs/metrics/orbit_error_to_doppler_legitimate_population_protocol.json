@@ -1,0 +1,230 @@
+{
+  "protocol_name": "ORBIT_ERROR_TO_DOPPLER_LEGITIMATE_POPULATION_V1",
+  "protocol_status": "FROZEN_BEFORE_NUMERICAL_SCIENCE",
+  "generated_utc": "2026-09-13T11:12:46.4671727Z",
+  "independence": {
+    "reuses_old_332_windows": false,
+    "reuses_frozen_joint_security_population": false,
+    "new_population_scope": "legitimate A only",
+    "final_production_bk_gate_executed": false,
+    "false_reject_endpoint": false
+  },
+  "satellite_cohort": {
+    "source": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_satellite_selection.csv",
+    "source_sha256": "30D7A846DDDE5850645CD3C1C03C061E7971AE40A2EE052FFB4E8BA3E7F4ED36",
+    "count": 20,
+    "norad_ids": [
+      "44714",
+      "65686",
+      "65421",
+      "65409",
+      "65410",
+      "47749",
+      "47383",
+      "65411",
+      "48309",
+      "45230",
+      "47844",
+      "65407",
+      "47767",
+      "65405",
+      "48672",
+      "48111",
+      "65693",
+      "60265",
+      "58380",
+      "48458"
+    ]
+  },
+  "months": [
+    {
+      "month": "2026-04",
+      "start_utc": "2026-04-01T00:00:00Z",
+      "end_exclusive_utc": "2026-05-01T00:00:00Z",
+      "role": "EXPLORATORY"
+    },
+    {
+      "month": "2026-05",
+      "start_utc": "2026-05-01T00:00:00Z",
+      "end_exclusive_utc": "2026-06-01T00:00:00Z",
+      "role": "EXPLORATORY"
+    },
+    {
+      "month": "2026-06",
+      "start_utc": "2026-06-01T00:00:00Z",
+      "end_exclusive_utc": "2026-07-01T00:00:00Z",
+      "role": "CONFIRMATORY_UNTOUCHED_UNTIL_PROTOCOL_AND_POPULATION_FREEZE"
+    }
+  ],
+  "station_set": [
+    {
+      "station_id": "controlled_example_station",
+      "lat_deg": 52.21,
+      "lon_deg": 5.16,
+      "alt_m": 14.0,
+      "selection_reason": "existing fixed validation-station semantics; fixed before outcomes"
+    }
+  ],
+  "carrier_frequency_hz": 11325000000.0,
+  "visibility_and_pass_selection": {
+    "visibility_rule": "causal ordinary-GP predicted station elevation_deg >= 10.0",
+    "minimum_elevation_deg": 10.0,
+    "coarse_scan_cadence_s": 30.0,
+    "refinement_cadence_s": 1.0,
+    "coarse_pass_rule": "maximal consecutive above-threshold scan samples with gaps <=30 s",
+    "refinement_rule": "refine the run containing the coarse maximum over coarse bounds expanded by 60 s; choose the earliest timestamp on an exact maximum tie",
+    "pass_quota_rule": "classify each eligible pass by causal ordinary-GP element age at its refined peak; within each satellite x month x freshness bin retain the first two chronological eligible passes",
+    "pass_selection_fallback_rule": "if a chronological candidate fails a predeclared availability, propagation, visibility, or segment-validity exclusion, continue to the next chronological pass in the same satellite x month x freshness bin until two passes are retained or candidates are exhausted",
+    "maximum_passes_per_satellite_per_month": 12,
+    "outcome_dependent_supplementation": false
+  },
+  "segment_selection": {
+    "segment_length_s": 60.0,
+    "sample_cadence_s": 1.0,
+    "points_per_segment": 61,
+    "phase_labels": [
+      "RISING_25_PERCENT",
+      "PEAK",
+      "SETTING_75_PERCENT"
+    ],
+    "center_rule": "centers are max(pass_start+30 s, pass_start+0.25*duration), refined public-predicted elevation peak, and min(pass_end-30 s, pass_start+0.75*duration), rounded to the nearest integer UTC second with half-to-even disabled and 0.5 s rounded upward",
+    "duplicate_center_rule": "within a pass keep phase order RISING_25_PERCENT, PEAK, SETTING_75_PERCENT and drop later duplicate centers",
+    "segment_visibility_requirement": "all 61 public-predicted samples from the fixed segment-center causal ordinary GP must have elevation_deg >=10.0"
+  },
+  "ordinary_gp": {
+    "source_paths": [
+      {
+        "month": "2026-04",
+        "path": "data/orbit_uncertainty_stage1/raw/spacetrack_gp/spacetrack_gp_history_20260329_20260501_20sat_omm.json",
+        "sha256": "079DD7846CE44950DB4818CB66F155CB338B2C8154CA66D3F6609F6459B3FEFE"
+      },
+      {
+        "month": "2026-05",
+        "path": "data/orbit_uncertainty_stage1/raw/spacetrack_gp/spacetrack_gp_history_20260428_20260601_20sat_omm.json",
+        "sha256": "E2023C9370EE0018E5F7AC5887E5D8ACDAF0D0761A1D75B7E2FDD4E55B0E77F1"
+      },
+      {
+        "month": "2026-06",
+        "path": "data/orbit_uncertainty_stage1/raw/spacetrack_gp/spacetrack_gp_history_20260529_20260701_20sat_omm.json",
+        "sha256": "1F5A8BA23D1C8AE605C4142F44E424711D1D85014DB46C28BBC18C3ABC326A96"
+      }
+    ],
+    "causal_selection": "CREATION_DATE <= evaluation_time; latest CREATION_DATE, then latest EPOCH, then lexicographically latest GP_ID",
+    "segment_propagation": "select once at segment center and propagate that fixed ordinary GP to all 61 segment timestamps"
+  },
+  "reference": {
+    "semantics": "SpaceX-E/SupGP higher-quality historical reference; not ground truth, true orbit, or exact state",
+    "monthly_manifest_bindings": [
+      {
+        "month": "2026-04",
+        "path": "outputs/metrics/orbit_uncertainty_stage1b_20260401_20260430_manifest.json",
+        "sha256": "81FC7EF0F4E6401A316A893C1C010840136AA43BEBEC48094A74F06FE020E4E3"
+      },
+      {
+        "month": "2026-05",
+        "path": "outputs/metrics/orbit_uncertainty_stage1b_20260501_20260531_manifest.json",
+        "sha256": "9631AF3F4B4AA0F9D4C9804AE05A2C5F7608428CC0D1B2D7C22CC145F6EF38CD"
+      },
+      {
+        "month": "2026-06",
+        "path": "outputs/metrics/orbit_uncertainty_stage1b_20260601_20260630_manifest.json",
+        "sha256": "580856B1011F9D172A84589EFF4D622847B5BE1DB31326E91B0EABA133D37FEC"
+      }
+    ],
+    "selection_rule": "for each segment center select the same-satellite SupGP OMM row minimizing absolute EPOCH-to-center separation; on a tie prefer the earlier EPOCH, then the lower source row index",
+    "maximum_abs_epoch_separation_h": 3.0,
+    "interpolation_rule": "no state interpolation; initialize the selected SupGP OMM with sgp4.omm.initialize and propagate that fixed representation to all 61 segment timestamps"
+  },
+  "freshness": {
+    "definition": "element_age_hours = (segment_center_utc - selected_ordinary_GP_EPOCH)/3600",
+    "bins": [
+      {"label": "0-6 h", "lower_exclusive_h": 0.0, "upper_inclusive_h": 6.0},
+      {"label": "6-9 h", "lower_exclusive_h": 6.0, "upper_inclusive_h": 9.0},
+      {"label": "9-12 h", "lower_exclusive_h": 9.0, "upper_inclusive_h": 12.0},
+      {"label": "12-18 h", "lower_exclusive_h": 12.0, "upper_inclusive_h": 18.0},
+      {"label": "18-24 h", "lower_exclusive_h": 18.0, "upper_inclusive_h": 24.0},
+      {"label": "24-36 h", "lower_exclusive_h": 24.0, "upper_inclusive_h": 36.0}
+    ],
+    "outside_support": "age<=0 or age>36 h => OUT_OF_SUPPORT and excluded from formal aggregate"
+  },
+  "doppler": {
+    "residual_sign_convention": "delta_f_orbit_hz = F_ref_hz - F_public_hz",
+    "production_function": "scripts/build_controlled_starlink_multitarget_dataset.py::geo_curve",
+    "production_function_sha256": "9B9861ED08B0CF926B9A686EF805AB3C5D052961BEB23B5F778FFCC46100BA85",
+    "formula": "range_rate_mps=np.gradient(topocentric_range_m,1 s); doppler_hz=-carrier_hz*range_rate_mps/C_MPS; F=carrier_hz+doppler_hz",
+    "same_inputs_requirement": "same satellite, timestamps, station, carrier, Doppler implementation for public and reference"
+  },
+  "ols_and_score": {
+    "production_function": "scripts/run_doppler_verifier_initial_experiments.py::fit_bias_and_slope",
+    "production_function_sha256": "2D50AC99AF6A2DBE9137F28CE4F9EACBB25BBD176665E0AE86AD3D044FFAC57D",
+    "centered_time": "x=t_rel_s-mean(t_rel_s)",
+    "fit": "delta_f_orbit = delta_b_orbit + delta_k_orbit*x + residual",
+    "score": "sqrt(mean(residual^2))",
+    "parameter_semantics": "delta_b_orbit and delta_k_orbit are incremental shifts, not complete production b_hat/k_hat",
+    "production_bk_gate_executed": false,
+    "raw_energy": "sum(delta_f_orbit^2)",
+    "projected_energy": "sum(residual^2)",
+    "zero_energy_rule": "if raw_energy_hz2 <= 1e-24, set projection_residual_ratio=0, explained_fraction=1, and energy_status=NUMERIC_ZERO",
+    "projection_residual_ratio": "projected_energy/raw_energy otherwise",
+    "explained_fraction": "1-projection_residual_ratio"
+  },
+  "diagnostics": {
+    "raw_metrics": ["mean", "RMS", "P95 absolute", "max absolute", "end minus start"],
+    "linearity": "linear_r2=1-SSE_linear/SST; if SST<=1e-24 set linear_r2=1",
+    "curvature": "fit centered quadratic [1,x,x^2]; curvature_gain_fraction=1-SSE_quadratic/SSE_linear; if SSE_linear<=1e-24 set gain=0",
+    "obvious_curvature_flag": "curvature_gain_fraction>=0.25 and score_orbit_hz>=1.0",
+    "elevation_bins_deg": ["10-20", "20-40", "40-60", "60-90"],
+    "pass_phase_groups": ["RISING_25_PERCENT", "PEAK", "SETTING_75_PERCENT"],
+    "quantile_minimum_n": {"P90": 10, "P95": 20, "P99": 100},
+    "spearman_minimum_n": 10,
+    "geometry_effect_rule": "GEOMETRY_EFFECT_NONNEGLIGIBLE if, in at least two freshness bins with n>=20, at least one outcome among raw_rms_hz, score_orbit_hz, abs_delta_k_orbit_hz_per_s has max/min eligible elevation-or-phase group median ratio>=2 and absolute group-median range>=the pooled median of that outcome; eligible groups require n>=5",
+    "freshness_structure_replication_rule": "report, without threshold modification, whether exploratory and June Spearman signs agree and whether absolute rho>=0.3 with p<0.01 in each split; also inspect bin medians and quantiles"
+  },
+  "aggregation": {
+    "primary_unit": "satellite x month x pass_id x phase_label x station_id",
+    "primary_weighting": "one segment unit receives one weight",
+    "coverage_output": "satellite x month x freshness_bin before numerical Doppler science",
+    "science_splits": ["April+May exploratory", "June confirmatory"]
+  },
+  "population_selection_allowed_variables": [
+    "satellite identity",
+    "UTC time",
+    "causal ordinary GP identity and element age",
+    "public-predicted visibility",
+    "fixed station geometry",
+    "fixed coverage rule",
+    "ordinary GP availability",
+    "SupGP reference record availability and epoch separation"
+  ],
+  "population_selection_forbidden_variables": [
+    "F_ref-F_public",
+    "raw Doppler error",
+    "delta_b_orbit",
+    "delta_k_orbit",
+    "score_orbit",
+    "explained_fraction",
+    "any verifier outcome"
+  ],
+  "exclusion_rules": [
+    "satellite absent from frozen cohort or monthly raw source",
+    "no causal ordinary GP at pass or segment center",
+    "selected ordinary GP CREATION_DATE after center",
+    "element age <=0 h or >36 h",
+    "no same-satellite SupGP row within 3 h of segment center",
+    "coarse/refined public visibility run not recoverable",
+    "any of 61 segment samples below 10 deg under the fixed segment-center causal ordinary GP",
+    "segment does not contain exactly 61 one-second samples",
+    "ordinary or reference SGP4 propagation error/nonfinite state",
+    "duplicate segment center within a pass after fixed phase ordering"
+  ],
+  "execution_order": [
+    "freeze and hash this protocol",
+    "build population and freshness coverage using allowed variables only",
+    "freeze population CSV SHA and coverage SHA",
+    "run April+May exploratory numerical science",
+    "without changing protocol/population/methods run June confirmatory numerical science",
+    "write combined summaries/report without modifying existing frozen outputs"
+  ],
+  "existing_frozen_outputs_mutable": false,
+  "new_random_numbers_allowed": false
+}

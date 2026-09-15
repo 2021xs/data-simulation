@@ -1,0 +1,186 @@
+{
+  "stage": "orbit_uncertainty_stage1a_acquisition_design",
+  "status": "DESIGN_COMPLETE_ACQUISITION_PENDING",
+  "generated_utc": "2026-08-23T14:20:47.786736Z",
+  "input_provenance": [
+    {
+      "path": "outputs\\metrics\\controlled_starlink_20target_selection_table.csv",
+      "sha256": "C9859C98C0F4FDAB7DF33D1A14CC391A80AD305A69F57A7F610E8B317B3A9B4E"
+    },
+    {
+      "path": "data\\tle\\starlink_tle.txt",
+      "sha256": "B63220F9798B0E7B77876C28AB9E90BE6878E37A629762795BBF0DEA354D8625"
+    },
+    {
+      "path": "data\\tle\\history\\starlink_gp_history_20260301_20260320.json",
+      "sha256": "C96E23C84F5B8921B1BB7C08A237728B8821F14A1C100118AD407D67E2DE4DFA"
+    },
+    {
+      "path": "outputs\\metrics\\orbit_uncertainty_stage0_starlink_regime_audit.csv",
+      "sha256": "B689137C4163EF3FF47FEE4FC8CD54A80F342BE9F90B8B89274A85BAFF9982A1"
+    },
+    {
+      "path": "outputs\\metrics\\orbit_uncertainty_stage0_supgp_reference_quality.csv",
+      "sha256": "D235C227CE0AA619D0F55603712C8CA499DD5682F4F72F2154C0F7BF4CF71049"
+    }
+  ],
+  "cohort": {
+    "size": 20,
+    "norad_cat_ids": [
+      "44714",
+      "65686",
+      "65421",
+      "65409",
+      "65410",
+      "47749",
+      "47383",
+      "65411",
+      "48309",
+      "45230",
+      "47844",
+      "65407",
+      "47767",
+      "65405",
+      "48672",
+      "48111",
+      "65693",
+      "60265",
+      "58380",
+      "48458"
+    ],
+    "source": "outputs\\metrics\\controlled_starlink_20target_selection_table.csv",
+    "selection_gate": "Retain only if historical SupGP source/RMS and usable 28-day coverage pass Stage-1B ingestion audit",
+    "orbital_scope": "single narrow project shell: inclination about 53.16 deg; mean-altitude proxy 472.5-474.6 km"
+  },
+  "window": {
+    "start_date": "2026-03-01",
+    "stop_date_inclusive_for_manual_request": "2026-03-28",
+    "formal_half_open_interval": "[2026-03-01T00:00:00Z, 2026-03-29T00:00:00Z)",
+    "duration_days": 28,
+    "rationale": [
+      "contains the project formal TLE/pass epoch 2026-03-10",
+      "contains the successful Stage-0 historical SupGP interval 2026-03-08 through 2026-03-14",
+      "overlaps existing ordinary GP caches without claiming full 28-day local coverage",
+      "keeps possible regime changes for independent labeling instead of selecting them away"
+    ]
+  },
+  "celestrak": {
+    "manual_captcha_required": true,
+    "format": "CSV",
+    "single_request_feasible": true,
+    "official_limits": {
+      "satellites_per_request": 100,
+      "records_per_request": 20000
+    },
+    "expected_records_per_satellite_planning_estimate": 76,
+    "expected_records_total_planning_estimate": 1520,
+    "estimate_basis": "Stage-0 observed 19 SupGP records in 7 days per satellite, scaled by 4; not a guaranteed count",
+    "request_text": "outputs\\reports\\orbit_uncertainty_stage1a_celestrak_request.txt"
+  },
+  "space_track": {
+    "data_class": "GP_HISTORY",
+    "preferred_format": "OMM JSON",
+    "acquisition_interval": "[2026-02-26T00:00:00Z, 2026-03-29T00:00:00Z)",
+    "causal_lookback_hours": 72,
+    "lookback_basis": "Stage-0 max selected gp_age was 27.03 h; 72 h is >2.6x that value and spans several typical update cycles",
+    "causal_policy": {
+      "evaluation_time": "supgp_epoch",
+      "eligible": "ordinary_gp_creation_date <= evaluation_time",
+      "selection_order": [
+        "creation_date descending",
+        "epoch descending",
+        "gp_id descending"
+      ],
+      "no_candidate_action": "mark causal_missing; never select a future release"
+    }
+  },
+  "reference_sampling_policy": {
+    "evaluation_time": "each native SupGP epoch",
+    "interpolation": "no dense minute-level pseudo-independent samples",
+    "ordinary_gp": "propagate selected causal record to evaluation_time",
+    "supgp": "use at native epoch; if propagated, record supgp_propagation_age_seconds explicitly",
+    "reference_semantics": "operator-derived higher-quality SGP4-compatible reference, not precise truth"
+  },
+  "residual_schema": [
+    "satellite_id",
+    "evaluation_time",
+    "ordinary_gp_epoch",
+    "ordinary_gp_creation_date",
+    "ordinary_gp_age_seconds",
+    "supgp_epoch",
+    "supgp_source",
+    "supgp_fit_rms",
+    "delta_R",
+    "delta_T",
+    "delta_N",
+    "delta_v_R",
+    "delta_v_T",
+    "delta_v_N",
+    "position_error_norm",
+    "velocity_error_norm",
+    "ordinary_orbital_elements",
+    "supgp_orbital_elements",
+    "regime_features",
+    "reference_quality_features"
+  ],
+  "regime_design": {
+    "allowed_labels": [
+      "nominal-looking",
+      "possible_regime_change",
+      "uncertain"
+    ],
+    "features": [
+      "supgp_fit_rms",
+      "mean_motion_change",
+      "semi_major_axis_proxy_change",
+      "bstar_change",
+      "element_discontinuity",
+      "gp_supgp_disagreement_jump",
+      "reference_gap"
+    ],
+    "framework": {
+      "nominal-looking": "no aligned multi-indicator discontinuity; adequate reference continuity",
+      "possible_regime_change": "at least two independent feature families show temporally aligned change",
+      "uncertain": "isolated/conflicting evidence or insufficient reference quality/coverage",
+      "constraint": "BSTAR jump alone never establishes a maneuver"
+    },
+    "execution": "deferred to Stage-1B; no formal labels trained or thresholded in Stage-1A"
+  },
+  "freshness": {
+    "canonical_variable": "gp_age_seconds",
+    "continuous": true,
+    "descriptive_bins_hours": [
+      "0-6",
+      "6-12",
+      "12-24",
+      "24-48",
+      ">48"
+    ],
+    "bins_are_model_definition": false
+  },
+  "statistical_split_design": {
+    "primary_nominal_outer_split": "12 train/development satellites, 3 calibration satellites, 3 held-out test satellites",
+    "controls": "65411 possible-regime and 65410 uncertain remain evaluation-only controls; do not train nominal boundary with them",
+    "assignment": "after coverage audit, deterministic and stratified by cached/reference coverage and orbital proxy; freeze in manifest",
+    "inner_group_key": [
+      "satellite_id",
+      "ordinary_gp_record_id_or_propagation_arc",
+      "utc_day"
+    ],
+    "temporal_rule": "keep complete propagation arcs and adjacent same-day SupGP epochs in one partition",
+    "forbidden": "random row split"
+  },
+  "direct_spacex_ephemeris": {
+    "status": "optional_nonblocking_forward_archive",
+    "policy": "from pilot start, archive raw operator files and provenance for a small selected subset",
+    "historical_claim_forbidden": true
+  },
+  "prohibited_in_stage1a": [
+    "historical SupGP automated download",
+    "uncertainty thresholds",
+    "synthetic B",
+    "Doppler propagation",
+    "formal calibration",
+    "attack-uncertainty boundary"
+  ]
+}

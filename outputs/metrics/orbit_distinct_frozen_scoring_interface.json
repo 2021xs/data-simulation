@@ -1,0 +1,72 @@
+{
+  "interface_name": "FROZEN_ORBIT_DISTINCT_TO_DOPPLER_SECURITY_V2",
+  "model_name": "Freshness-Conditioned Robust Empirical RTN Ellipsoid",
+  "interface_status": "PUBLIC_DEFINED_RTN_INTERFACE_SUPPORTED",
+  "operational_inputs": {
+    "claimed_A_public_GP": "Causally selected GP with GP_ID, EPOCH, CREATION_DATE and CREATION_DATE <= evaluation_time",
+    "x_A_public_t": "Claimed A public GP propagated to evaluation_time in GCRS",
+    "x_B_t": "Candidate B state at the same evaluation_time in GCRS",
+    "evaluation_time": "UTC segment center"
+  },
+  "supgp_operational_input_required": false,
+  "supgp_role": "calibration provenance only",
+  "analysis_unit": "claimed_A x candidate_B x evaluation_segment/time",
+  "freshness": {
+    "formula": "element_age_hours = (evaluation_time - selected_A_GP_EPOCH)/3600",
+    "causal_constraint": "selected_A_GP_CREATION_DATE <= evaluation_time",
+    "support": "0 < element_age_hours <= 36",
+    "outside_support_decision": "DEFER",
+    "bins": [
+      "0-6 h",
+      "6-9 h",
+      "9-12 h",
+      "12-18 h",
+      "18-24 h",
+      "24-36 h"
+    ]
+  },
+  "application_rtn": {
+    "basis_source": "claimed A public predicted GCRS position and velocity",
+    "R": "r_A_public / ||r_A_public||",
+    "N": "(r_A_public x v_A_public) / ||r_A_public x v_A_public||",
+    "T": "N x R"
+  },
+  "sign_mapping": {
+    "natural_candidate_displacement": "d_B = x_B - x_A_public",
+    "frozen_score_vector": "z_B = -RTN_public(d_B) = RTN_public(x_A_public - x_B)",
+    "frozen_center_modified": false
+  },
+  "score": "D2 = (z_B - mu_k)^T Sigma_k^-1 (z_B - mu_k)",
+  "normalized_p99_distance": "rho_99 = sqrt(D2/c99_k); geometric normalization, not probability",
+  "decision": [
+    {
+      "condition": "noncausal A selection or age<=0 or age>36 h",
+      "output": "DEFER"
+    },
+    {
+      "condition": "D2<=c95_k",
+      "output": "NOT_ORBIT_DISTINCT"
+    },
+    {
+      "condition": "c95_k<D2<=c99_k",
+      "output": "AMBIGUOUS"
+    },
+    {
+      "condition": "D2>c99_k",
+      "output": "ORBIT_DISTINCT"
+    }
+  ],
+  "required_security_dataset_fields": [
+    "orbit_support_status",
+    "orbit_element_age_hours",
+    "orbit_freshness_bin",
+    "orbit_score_d2",
+    "orbit_c95",
+    "orbit_c99",
+    "orbit_decision",
+    "orbit_normalized_p99_distance"
+  ],
+  "semantic_guard": "rho_99 is not a probability; ORBIT_DISTINCT plus Doppler accepted is the security-relevant indistinguishability region.",
+  "fitting_or_recalibration_allowed": false,
+  "frozen_parameter_sha256": "6F17F8340BA14B5B48F7AEAFFD776F1D0A07B4D50F882B2AFCA73756F9FF55D1"
+}

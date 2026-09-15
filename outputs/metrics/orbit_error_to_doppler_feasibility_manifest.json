@@ -1,0 +1,157 @@
+{
+  "stage": "ORBIT_ERROR_TO_DOPPLER_FEASIBILITY",
+  "status": "SEMANTIC_BLOCKER_FOUND",
+  "generated_utc": "2026-09-13T09:10:25.771920Z",
+  "verdict": "INSUFFICIENT_COVERAGE_FOR_DECISION",
+  "science_execution_performed": false,
+  "orbit_propagation_count": 0,
+  "doppler_evaluation_count": 0,
+  "ols_fit_count": 0,
+  "verifier_execution_count": 0,
+  "new_random_draw_count": 0,
+  "frozen_level_a_units": 407,
+  "frozen_observation_rows": 26780,
+  "deduplicated_analysis_units": 332,
+  "unique_A_segment_time_units": 41,
+  "unique_satellites": 10,
+  "reference_overlap_units": 0,
+  "ambiguous_threshold_profile_units": 62,
+  "protocol": {
+    "path": "outputs/metrics/orbit_error_to_doppler_feasibility_protocol.json",
+    "sha256": "914E91A4C6E7F58D827DC3E3DE425872EC41CD03EB6075D143FAD43A2224A273"
+  },
+  "frozen_bindings": [
+    {
+      "path": "outputs/datasets/causal_a_doppler_r3_observation_rows.csv",
+      "expected_sha256": "DA966FF6660CCE1E4E3F6E1774D2A7E7CC10E97542464E6145B2CE80218B3353",
+      "actual_sha256": "DA966FF6660CCE1E4E3F6E1774D2A7E7CC10E97542464E6145B2CE80218B3353",
+      "binding_status": "PASS"
+    },
+    {
+      "path": "outputs/datasets/causal_a_doppler_r3_unit_summary.csv",
+      "expected_sha256": "9C5EB780673C584DE7D92D14C55D2D6DB6FB9B0C523A02625BE32C31E2AD13CE",
+      "actual_sha256": "9C5EB780673C584DE7D92D14C55D2D6DB6FB9B0C523A02625BE32C31E2AD13CE",
+      "binding_status": "PASS"
+    },
+    {
+      "path": "outputs/metrics/causal_a_doppler_r3_manifest.json",
+      "expected_sha256": "6A8EDB1AC90F1F138DAFCBFE836285B7D030C40774CA70A26F404AE2BDFFCF1F",
+      "actual_sha256": "6A8EDB1AC90F1F138DAFCBFE836285B7D030C40774CA70A26F404AE2BDFFCF1F",
+      "binding_status": "PASS"
+    },
+    {
+      "path": "outputs/metrics/causal_a_doppler_r2_core_population.csv",
+      "expected_sha256": "68C1A150438A17D74CD8CB3FEF1C13F03EE452BB42BA43C4519DD8ED6FB87074",
+      "actual_sha256": "68C1A150438A17D74CD8CB3FEF1C13F03EE452BB42BA43C4519DD8ED6FB87074",
+      "binding_status": "PASS"
+    },
+    {
+      "path": "outputs/datasets/m2_segment_local_expanded_sample_dataset.csv",
+      "expected_sha256": "196023C2F8F701A020A4E73D2945DA742057A6BBE5F902A0290DF56270E719D5",
+      "actual_sha256": "196023C2F8F701A020A4E73D2945DA742057A6BBE5F902A0290DF56270E719D5",
+      "binding_status": "PASS"
+    },
+    {
+      "path": "outputs/datasets/controlled_altitude_difference_realization_dataset.csv",
+      "expected_sha256": "46CF795973E3EC812298D12F5E5AD8D3CD21E53EE93B6D2DD630B35345F78A71",
+      "actual_sha256": "46CF795973E3EC812298D12F5E5AD8D3CD21E53EE93B6D2DD630B35345F78A71",
+      "binding_status": "PASS"
+    },
+    {
+      "path": "outputs/datasets/same_pair_multi_pass_realization_dataset.csv",
+      "expected_sha256": "AB69C57B110CEFB613EF3F9CC885CC20E1A71C58D8768992DAF88CF9D006041E",
+      "actual_sha256": "AB69C57B110CEFB613EF3F9CC885CC20E1A71C58D8768992DAF88CF9D006041E",
+      "binding_status": "PASS"
+    },
+    {
+      "path": "outputs/metrics/active_compensation_first_pass_sequence_eval.csv",
+      "expected_sha256": "8556EECD8E4CFECF7A3F0210EDEBF2ACA490E729CAB2CBF5840F37536D3E1492",
+      "actual_sha256": "8556EECD8E4CFECF7A3F0210EDEBF2ACA490E729CAB2CBF5840F37536D3E1492",
+      "binding_status": "PASS"
+    },
+    {
+      "path": "configs/orbit_simulation_cases.yaml",
+      "expected_sha256": "EF08BD64A1EC14AAF17639979EBC11E5070CE055D2C32EC4BFC5333B5D5DCFA6",
+      "actual_sha256": "EF08BD64A1EC14AAF17639979EBC11E5070CE055D2C32EC4BFC5333B5D5DCFA6",
+      "binding_status": "PASS"
+    },
+    {
+      "path": "scripts/run_doppler_verifier_initial_experiments.py",
+      "expected_sha256": "2D50AC99AF6A2DBE9137F28CE4F9EACBB25BBD176665E0AE86AD3D044FFAC57D",
+      "actual_sha256": "2D50AC99AF6A2DBE9137F28CE4F9EACBB25BBD176665E0AE86AD3D044FFAC57D",
+      "binding_status": "PASS"
+    },
+    {
+      "path": "scripts/run_segmented_service_center_compensation.py",
+      "expected_sha256": "3EC7F759AAFF35BDC7E2DC3CAFC07FE4CCEAA00191163E5C2E77185B26E6C44B",
+      "actual_sha256": "3EC7F759AAFF35BDC7E2DC3CAFC07FE4CCEAA00191163E5C2E77185B26E6C44B",
+      "binding_status": "PASS"
+    }
+  ],
+  "reference_inventory": [
+    {
+      "month": "2026-04",
+      "directory": "data/orbit_uncertainty_stage1/raw/celestrak_supgp",
+      "file_count": 20,
+      "record_count": 5675,
+      "min_epoch": "2026-04-01T00:04:42.000010Z",
+      "max_epoch": "2026-04-30T23:46:42.000010Z",
+      "status": "AVAILABLE"
+    },
+    {
+      "month": "2026-05",
+      "directory": "data/orbit_uncertainty_stage1/respecialdatarequest (4)",
+      "file_count": 20,
+      "record_count": 6181,
+      "min_epoch": "2026-05-01T00:00:41.999990Z",
+      "max_epoch": "2026-05-31T23:55:42.000010Z",
+      "status": "AVAILABLE"
+    },
+    {
+      "month": "2026-06",
+      "directory": "data/orbit_uncertainty_stage1/june",
+      "file_count": 20,
+      "record_count": 5927,
+      "min_epoch": "2026-06-01T00:11:42Z",
+      "max_epoch": "2026-06-30T23:49:41.999981Z",
+      "status": "AVAILABLE"
+    }
+  ],
+  "protected_source_modifications": [],
+  "generator": {
+    "path": "scripts/run_orbit_error_to_doppler_feasibility.py",
+    "sha256": "BE4B54355BDB7B9B807F8075CE841E47B1E3480F3930FE143B2EAFED7C336D18",
+    "size_bytes": 35448
+  },
+  "outputs": [
+    {
+      "path": "outputs/datasets/orbit_error_to_doppler_segment_dataset.csv",
+      "sha256": "57427867F5269BAB4682FC1E1442D905862B8D099ED53CC8F9F77CEC1522B8B7",
+      "size_bytes": 323306
+    },
+    {
+      "path": "outputs/metrics/orbit_error_to_doppler_freshness_summary.csv",
+      "sha256": "7EB9A34DE7419E30B893734FEE634083250728C98E5F35C5BD904736606AD8C7",
+      "size_bytes": 1059
+    },
+    {
+      "path": "outputs/metrics/orbit_error_to_verifier_gate_summary.csv",
+      "sha256": "7461C63F695D2A732E2D5A6812E2D830EA636E26939ECF3B36ED6E8F0E6BC228",
+      "size_bytes": 1103
+    },
+    {
+      "path": "outputs/metrics/orbit_error_to_doppler_feasibility_protocol.json",
+      "sha256": "914E91A4C6E7F58D827DC3E3DE425872EC41CD03EB6075D143FAD43A2224A273",
+      "size_bytes": 1614
+    },
+    {
+      "path": "outputs/reports/orbit_error_to_doppler_feasibility_report.md",
+      "sha256": "FA655BADA618549DCA01287BE59170F010152A1B2D4A6EE9F4BF7F6EA20F7900",
+      "size_bytes": 7926
+    }
+  ],
+  "software": {
+    "python": "3.13.5",
+    "pandas": "2.2.3"
+  }
+}

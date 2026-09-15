@@ -1,0 +1,36 @@
+{
+  "stage": "LEGITIMATE_ORBIT_ERROR_DOPPLER_EXPLORATORY",
+  "status": "COMPLETE",
+  "generated_utc": "2026-09-14T00:03:38.498619Z",
+  "protocol": {
+    "path": "outputs/metrics/orbit_error_to_doppler_legitimate_population_protocol.json",
+    "sha256": "75C051F0A3D61D38FF043A37D9B4E2DBB5588959FAB6D26C1DFF4EA212AC77B7",
+    "size_bytes": 11488
+  },
+  "population_manifest": {
+    "path": "outputs/metrics/orbit_error_to_doppler_legitimate_population_manifest.json",
+    "sha256": "ED6157C7B9BDE29BCEA61C6D7764F98E9AB13D811B3047D730AA1B0847E60326",
+    "size_bytes": 3336
+  },
+  "population_sha256": "4C4C0D1B96CE66CDA18FEF56144812CBD49FDEF4A1B42E5141BE32C90268DB81",
+  "months": [
+    "2026-04",
+    "2026-05"
+  ],
+  "segments": 1386,
+  "timeseries_rows": 84546,
+  "production_bk_gate_executions": 0,
+  "new_random_draw_count": 0,
+  "outputs": [
+    {
+      "path": "outputs/datasets/orbit_error_to_doppler_legitimate_exploratory_segment_results.csv",
+      "sha256": "39D66B238F2039AA4DA1D77DE3AE0EFE7C55F411B2B85B1C8B36E3B00AEF60E4",
+      "size_bytes": 1958405
+    },
+    {
+      "path": "outputs/datasets/orbit_error_to_doppler_legitimate_exploratory_timeseries.csv",
+      "sha256": "036D35253FD27D6D323DDAA990C418747311C3A13B96EF6724B8E23FD5BAD262",
+      "size_bytes": 18435939
+    }
+  ]
+}

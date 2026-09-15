@@ -1,0 +1,57 @@
+model:
+  name: effective_cfo_simulation_v1
+  formula: "f_obs(t) = f_geo(t) + b + k*(t-t0) + noise"
+  default_order: linear
+  second_order: extension_only
+  noise_model: gaussian_first_order_approximation
+  notes:
+    - "registered_frequency_offset_hz is not pure CFO ground truth"
+    - "TLE/perturbation/modeling residuals are included in residual noise/model error at this stage"
+
+parameters:
+  b_hz:
+    role: effective_constant_frequency_bias
+    source_field: registered_frequency_offset_hz
+    main_range: [3179.0, 3728.0]
+    extended_range: [1980.0, 4692.0]
+    stress_range: [1980.0, 4692.0]
+    typical_value: 3365.0
+    sampling: uniform
+    unit: Hz
+  k_hz_per_s:
+    role: linear_slow_drift
+    source_field: linear_slope_hz_per_s
+    main_range: [-1.110156, -0.197808]
+    extended_range: [-4.052513, 4.03749]
+    stress_range: [-4.052513, 4.03749]
+    typical_value: -0.768749
+    sampling: scenario_based_or_uniform
+    unit: Hz/s
+    note: "Do not reduce to a single mean because distribution is asymmetric"
+  sigma_hz:
+    role: residual_noise_scale
+    source_field: detrended_std_hz
+    main_range: [23.215, 32.89]
+    extended_range: [10.917, 55.951]
+    stress_range: [10.917, 84.073]
+    typical_value: 30.882
+    sampling: uniform_or_fixed_median
+    unit: Hz
+
+scenarios:
+  clean:
+    use_b: false
+    use_k: false
+    use_noise: false
+  offset_only:
+    use_b: true
+    use_k: false
+    use_noise: false
+  offset_plus_noise:
+    use_b: true
+    use_k: false
+    use_noise: true
+  offset_linear_noise:
+    use_b: true
+    use_k: true
+    use_noise: true

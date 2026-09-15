@@ -1,0 +1,69 @@
+{
+  "stage": "orbit_uncertainty_stage1_acquisition",
+  "status": "WAITING_FOR_SUPGP",
+  "updated_utc": "2026-08-23T14:43:30Z",
+  "authoritative_selection": {
+    "path": "outputs\\metrics\\orbit_uncertainty_stage1a_satellite_selection.csv",
+    "sha256": "66C96C66604AF80F0E61DF1F8180DA7A6DF3511ABE3FA3925E7A4AB53E5ED591",
+    "row_count": 20,
+    "unique_norad_count": 20
+  },
+  "ordinary_gp": {
+    "source": "Space-Track",
+    "api_class": "gp_history",
+    "request_object_ids": [
+      "44714",
+      "65686",
+      "65421",
+      "65409",
+      "65410",
+      "47749",
+      "47383",
+      "65411",
+      "48309",
+      "45230",
+      "47844",
+      "65407",
+      "47767",
+      "65405",
+      "48672",
+      "48111",
+      "65693",
+      "60265",
+      "58380",
+      "48458"
+    ],
+    "time_predicate_field": "EPOCH",
+    "time_range": "[2026-02-26T00:00:00Z, 2026-03-29T00:00:00Z)",
+    "format": "OMM JSON",
+    "ordering": "NORAD_CAT_ID asc,EPOCH asc",
+    "request_fingerprint": "0FC4AAEDE1930709AE21E46761B10850BE496FE49CD150F1CC1B3E1660FB3AB1",
+    "download_utc": "2026-08-23T14:41:41Z",
+    "login_http_status": 200,
+    "http_status": 200,
+    "content_type": "application/json",
+    "raw_file": "data\\orbit_uncertainty_stage1\\raw\\spacetrack_gp\\spacetrack_gp_history_20260226_20260329_20sat_omm.json",
+    "file_size_bytes": 2231475,
+    "sha256": "3E826D049CE3CEFC66875D5178617D8E388B87ED9ED41D36D700AD38005A56B1",
+    "record_count": 1965
+  },
+  "ordinary_gp_raw_reused_without_network": true,
+  "historical_supgp": {
+    "status": "WAITING_FOR_SUPGP",
+    "raw_directory": "data\\orbit_uncertainty_stage1\\raw\\celestrak_supgp",
+    "raw_file_count": 0,
+    "raw_files": [],
+    "substitution_forbidden": [
+      "later GP",
+      "Stage-0 SupGP",
+      "current SupGP",
+      "other source"
+    ]
+  },
+  "scope_guards": {
+    "formal_residual_computed": false,
+    "calibration_computed": false,
+    "synthetic_b_used": false,
+    "doppler_propagated": false
+  }
+}

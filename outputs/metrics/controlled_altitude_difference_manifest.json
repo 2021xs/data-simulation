@@ -1,0 +1,51 @@
+{
+  "experiment": "controlled_synthetic_altitude_difference_risk",
+  "preset": "confirmation",
+  "mode": "controlled_starlink",
+  "observation_id": null,
+  "target_ids": [
+    "44714",
+    "65409",
+    "65410",
+    "65421",
+    "65686"
+  ],
+  "passes_per_target": 4,
+  "delta_h_km": [
+    -100.0,
+    -50.0,
+    -20.0,
+    -10.0,
+    -5.0,
+    -2.0,
+    -1.0,
+    0.0,
+    1.0,
+    2.0,
+    5.0,
+    10.0,
+    20.0,
+    50.0,
+    100.0
+  ],
+  "realizations": 20,
+  "bk_modes": [
+    "no_bk",
+    "current_bk",
+    "wide_bk"
+  ],
+  "frequency_hz": 11325000000.0,
+  "visibility_threshold_existing_pass_deg": 10.0,
+  "reference_delta_h_zero_excluded_from_risk": true,
+  "master_seed": 20260823,
+  "input_sha256": {
+    "data\\tle\\starlink_tle.txt": "b63220f9798b0e7b77876c28ab9e90be6878e37a629762795bbf0dea354d8625",
+    "configs\\orbit_simulation_cases.yaml": "ef08bd64a1ec14aaf17639979ebc11e5070ce055d2c32ec4bfc5333b5d5dcfa6",
+    "configs\\simulation_parameter_config.yaml": "64b263d476cb721ea917111581776bb5aaacb0b41f0342a2918686012109e56b",
+    "outputs\\metrics\\same_pair_multi_pass_selected_passes.csv": "da56d5b48359604f8903282afd4ccd88951e7dabbfc4b31b5066ae2c40aa6258",
+    "outputs\\datasets\\fixed_geometry_multi_realization_dataset.csv": "3b33d7a3f2cd2f629bb27c657fbc56da25d8ecc4bf52b047a1b882faca4338c4",
+    "outputs\\datasets\\same_pair_multi_pass_realization_dataset.csv": "ab69c57b110cefb613ef3f9cc885cc20e1a71c58d8768992daf88cf9d006041e"
+  },
+  "audit_all_passed": true,
+  "formal_large_run_executed": true
+}

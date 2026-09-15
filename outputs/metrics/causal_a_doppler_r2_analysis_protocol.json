@@ -1,0 +1,122 @@
+{
+  "protocol_name": "CAUSAL_A_DOPPLER_CORE_RECONSTRUCTION_R2_V1",
+  "status": "CAUSAL_A_DOPPLER_CORE_RECONSTRUCTION_DESIGN_FROZEN",
+  "science_execution_performed": false,
+  "selection_result_blind": true,
+  "selection_forbidden_variables": [
+    "accept_flag",
+    "final_decision",
+    "orbit_D2",
+    "orbit_decision",
+    "orbit_rho99",
+    "original_verifier_accept",
+    "original_verifier_decision",
+    "original_verifier_score",
+    "score",
+    "security_joint_state"
+  ],
+  "causal_A_result_used_for_selection": false,
+  "analysis_hierarchy": {
+    "LEVEL_A_ORBIT_UNIT": "claimed A x candidate B x segment/time",
+    "CONDITION_WITHIN_LEVEL_A": "frozen receiver/service direction or active-compensation treatment; shares one orbit decision",
+    "LEVEL_B_OBSERVATION_OUTCOME": "frozen b/k/sigma/noise realization within its pre-registered condition",
+    "primary_weighting": "LEVEL_A units receive equal weight within pre-registered scientific strata; row count never weights orbit units"
+  },
+  "primary_aggregation": {
+    "endpoint": "controlled_observation_acceptance_fraction",
+    "definition": "fraction of frozen observation-model realizations accepted within a LEVEL-A unit and pre-registered condition stratum",
+    "terminology": "conditional verifier acceptance fraction under the controlled observation model",
+    "forbidden_term": "attack success probability or real-world attack success rate",
+    "primary_orbit_subset": "ORBIT_DISTINCT only (D2>c99)",
+    "summaries": [
+      "median",
+      "IQR",
+      "P90",
+      "fraction_of_units_with_nonzero_acceptance"
+    ]
+  },
+  "orbit_scoring": {
+    "model": "Freshness-Conditioned Robust Empirical RTN Ellipsoid",
+    "parameter_sha256": "6F17F8340BA14B5B48F7AEAFFD776F1D0A07B4D50F882B2AFCA73756F9FF55D1",
+    "unit_frequency": "once per LEVEL-A unit at segment center; shared by all conditions/realizations",
+    "z_B": "RTN_public(x_A_public-x_B)",
+    "support": "0<element_age_hours<=36; otherwise DEFER",
+    "decision": {
+      "D2<=c95": "NOT_ORBIT_DISTINCT",
+      "c95<D2<=c99": "AMBIGUOUS",
+      "D2>c99": "ORBIT_DISTINCT"
+    },
+    "rho99": "sqrt(D2/c99); explanatory scale, not probability",
+    "supgp_operational_use": false
+  },
+  "A_semantics": {
+    "selector": "eligible CREATION_DATE<=evaluation_time; latest CREATION_DATE, then EPOCH, then GP_ID",
+    "same_A_required_for": [
+      "orbit scoring",
+      "claimed-A Doppler",
+      "active compensation",
+      "verifier residual"
+    ]
+  },
+  "B_semantics": {
+    "REAL_B": "preserve real satellite identity and original historical physical-orbit/TLE provenance at frozen time",
+    "SYNTHETIC_RELATIVE_TO_A": "rebuild B=Perturb(A_causal,frozen factors/rule); preserve factor semantics, not legacy absolute B state",
+    "boundary_targeting_forbidden_in_R3_core": true
+  },
+  "modes": {
+    "PRIMARY_BK_MODE": "current_bk",
+    "ACTIVE_PRIMARY_EQUIVALENT": "existing p95 score plus frozen per-target current k gate",
+    "SENSITIVITY_BK_MODES": [
+      "no_bk",
+      "wide_bk"
+    ],
+    "sensitivity_execution": "registered but excluded from minimal core R3; requires separate post-core authorization without population reselection"
+  },
+  "randomness": {
+    "new_sampling_allowed": false,
+    "policy": "reuse exact saved variables/vectors or replay frozen seed and identity; validate available hashes before verifier",
+    "realization_count_posthoc_change_allowed": false
+  },
+  "time_semantics": {
+    "evaluation_scope": "segment_local",
+    "doppler_reference_mode": "fixed_site_segment_center",
+    "verification_strategy": "single-window",
+    "orbit_evaluation": "SEGMENT_CENTER",
+    "doppler_evaluation": "FULL_FROZEN_SEGMENT_TIMESERIES"
+  },
+  "orbit_state_taxonomy": [
+    "ORBIT_DEFER",
+    "NOT_ORBIT_DISTINCT_AND_DOPPLER_ACCEPTED",
+    "NOT_ORBIT_DISTINCT_AND_DOPPLER_REJECTED",
+    "ORBIT_AMBIGUOUS_AND_DOPPLER_ACCEPTED",
+    "ORBIT_AMBIGUOUS_AND_DOPPLER_REJECTED",
+    "ORBIT_DISTINCT_AND_DOPPLER_ACCEPTED",
+    "ORBIT_DISTINCT_AND_DOPPLER_REJECTED"
+  ],
+  "defer_policy": "report count/fraction separately; exclude from ORBIT_DISTINCT denominator",
+  "ambiguous_policy": "report separately; never merge into ORBIT_DISTINCT",
+  "not_orbit_distinct_policy": "retain as comparison; acceptance is not strong security-relevant indistinguishability evidence",
+  "multipass_endpoint": [
+    "passes evaluated per pair",
+    "ORBIT_DISTINCT passes",
+    "passes with nonzero conditional acceptance",
+    "fraction of passes with nonzero conditional acceptance",
+    "pass-specific conditional acceptance fraction"
+  ],
+  "R3_correctness_requirements": {
+    "A_GP_causal_violation": 0,
+    "future_publication": 0,
+    "outside_support_incorrectly_scored": 0,
+    "SupGP_operational_use": 0,
+    "new_unintended_random_draw": 0,
+    "R1_validated_verifier_path_reuse_fraction": 1.0,
+    "frozen_thresholds_modified": 0,
+    "frozen_uncertainty_parameters_modified": 0,
+    "source_artifact_modification": 0
+  },
+  "R3_stopping_rule": "execute every frozen included unit/row, audit causal provenance and randomness, assign score or DEFER, complete verifier and correctness audit; never expand based on observed result",
+  "post_R3_decision": {
+    "adequate_rho99_transition_coverage": "ORBIT_DISTINCT_DOPPLER_JOINT_SECURITY_ANALYSIS",
+    "inadequate_rho99_transition_coverage": "TARGETED_ORBIT_DISTINCT_BOUNDARY_CASE_DESIGN (new R4 preregistration)"
+  }
+}

@@ -1,0 +1,184 @@
+{
+  "stage": "orbit_uncertainty_stage1_acquisition",
+  "status": "SUPGP_INGESTED",
+  "window_tag": "20260401_20260430",
+  "formal_window": "[2026-04-01T00:00:00Z, 2026-05-01T00:00:00Z)",
+  "ordinary_gp_acquisition_window": "[2026-03-29T00:00:00Z, 2026-05-01T00:00:00Z)",
+  "updated_utc": "2026-09-02T02:53:01Z",
+  "authoritative_selection": {
+    "path": "outputs\\metrics\\orbit_uncertainty_stage1_20260401_20260430_satellite_selection.csv",
+    "sha256": "30D7A846DDDE5850645CD3C1C03C061E7971AE40A2EE052FFB4E8BA3E7F4ED36",
+    "row_count": 20,
+    "unique_norad_count": 20
+  },
+  "ordinary_gp": {
+    "source": "Space-Track",
+    "api_class": "gp_history",
+    "request_object_ids": [
+      "44714",
+      "65686",
+      "65421",
+      "65409",
+      "65410",
+      "47749",
+      "47383",
+      "65411",
+      "48309",
+      "45230",
+      "47844",
+      "65407",
+      "47767",
+      "65405",
+      "48672",
+      "48111",
+      "65693",
+      "60265",
+      "58380",
+      "48458"
+    ],
+    "time_predicate_field": "EPOCH",
+    "time_range": "[2026-03-29T00:00:00Z, 2026-05-01T00:00:00Z)",
+    "format": "OMM JSON",
+    "ordering": "NORAD_CAT_ID asc,EPOCH asc",
+    "request_fingerprint": "5C4B9C70BBEF4820211A63DC6EEF45242B1C376E341A828306899B9D3F062B10",
+    "download_utc": "2026-09-02T02:43:09Z",
+    "login_http_status": 200,
+    "http_status": 200,
+    "content_type": "application/json",
+    "raw_file": "data\\orbit_uncertainty_stage1\\raw\\spacetrack_gp\\spacetrack_gp_history_20260329_20260501_20sat_omm.json",
+    "file_size_bytes": 2571878,
+    "sha256": "079DD7846CE44950DB4818CB66F155CB338B2C8154CA66D3F6609F6459B3FEFE",
+    "record_count": 2265
+  },
+  "ordinary_gp_raw_reused_without_network": true,
+  "causal_support": {
+    "evaluation_count": 5675,
+    "candidate_available_count": 5675,
+    "candidate_missing_count": 0,
+    "future_publication_use_count": 0,
+    "selected_gp_epoch_after_evaluation_count": 0,
+    "gp_age_gt_72h_count": 0,
+    "selection_policy": "CREATION_DATE <= evaluation_time; latest CREATION_DATE, then EPOCH, then GP_ID",
+    "detail_output": "outputs\\metrics\\orbit_uncertainty_stage1_20260401_20260430_ordinary_gp_causal_support_audit.csv",
+    "summary_output": "outputs\\metrics\\orbit_uncertainty_stage1_20260401_20260430_ordinary_gp_causal_readiness_summary.csv"
+  },
+  "historical_supgp": {
+    "status": "SUPGP_INGESTED",
+    "raw_directory": "data\\orbit_uncertainty_stage1\\raw\\celestrak_supgp",
+    "raw_file_count": 20,
+    "raw_files": [
+      {
+        "path": "data\\orbit_uncertainty_stage1\\raw\\celestrak_supgp\\sat000044714.csv",
+        "sha256": "C1198C15083467800821DFC90FD3B7EBC91AD77331A317D12C84E0F66BCD6112",
+        "row_count": 285
+      },
+      {
+        "path": "data\\orbit_uncertainty_stage1\\raw\\celestrak_supgp\\sat000045230.csv",
+        "sha256": "6E4EA753E35C23ABED40BF9A20B78F6D481E296EFF07A89104EC8822866AC952",
+        "row_count": 276
+      },
+      {
+        "path": "data\\orbit_uncertainty_stage1\\raw\\celestrak_supgp\\sat000047383.csv",
+        "sha256": "D380077CB9A274956D6560FCECD4282B07BC293112F8BF29C8D9843B8F0DAD43",
+        "row_count": 278
+      },
+      {
+        "path": "data\\orbit_uncertainty_stage1\\raw\\celestrak_supgp\\sat000047749.csv",
+        "sha256": "234D58000CD20A78D81F98DDE02141E4C92C40DF245CEA6B9BAF27A0F59ADDDC",
+        "row_count": 287
+      },
+      {
+        "path": "data\\orbit_uncertainty_stage1\\raw\\celestrak_supgp\\sat000047767.csv",
+        "sha256": "2BA2859FDDCF3096A0419BFA0973A15C657AE45EE9214AE8A6A4FF325BCF4362",
+        "row_count": 287
+      },
+      {
+        "path": "data\\orbit_uncertainty_stage1\\raw\\celestrak_supgp\\sat000047844.csv",
+        "sha256": "13ED32757396F0E0460918282AC0FF804941CD505D1B1E85AF57C8661AD30D3A",
+        "row_count": 286
+      },
+      {
+        "path": "data\\orbit_uncertainty_stage1\\raw\\celestrak_supgp\\sat000048111.csv",
+        "sha256": "67FA9BECA6B156383638EBA8BD9CD769E4CA9007382EAC708148734F98D5877B",
+        "row_count": 285
+      },
+      {
+        "path": "data\\orbit_uncertainty_stage1\\raw\\celestrak_supgp\\sat000048309.csv",
+        "sha256": "4A35CFB55807315F3FDBD9D56287516128DD78172699442EACCC768E4186D183",
+        "row_count": 286
+      },
+      {
+        "path": "data\\orbit_uncertainty_stage1\\raw\\celestrak_supgp\\sat000048458.csv",
+        "sha256": "C5A96D1822F9FE2C1504B0DA9B34DFE7C998FD2527520AE8970FF7A392A39A0D",
+        "row_count": 281
+      },
+      {
+        "path": "data\\orbit_uncertainty_stage1\\raw\\celestrak_supgp\\sat000048672.csv",
+        "sha256": "3987F6F00151DAB5F5625A7F46E54078106613C1F071DD56BFD8AEDBC244C1F4",
+        "row_count": 286
+      },
+      {
+        "path": "data\\orbit_uncertainty_stage1\\raw\\celestrak_supgp\\sat000058380.csv",
+        "sha256": "89A756DC559E4390A2DB37060BADD9FCE883A16B8A6FEBA42CBC06B1F018C7C0",
+        "row_count": 287
+      },
+      {
+        "path": "data\\orbit_uncertainty_stage1\\raw\\celestrak_supgp\\sat000060265.csv",
+        "sha256": "99CD8C87F0401B599908AABA06305A403EFBB3F3A586112B06C7D1B0CE16780D",
+        "row_count": 285
+      },
+      {
+        "path": "data\\orbit_uncertainty_stage1\\raw\\celestrak_supgp\\sat000065405.csv",
+        "sha256": "E2F76A2DB824BE96B24A828F741E6E55BAF6AC15C7D3E539463E4DD6A7628444",
+        "row_count": 283
+      },
+      {
+        "path": "data\\orbit_uncertainty_stage1\\raw\\celestrak_supgp\\sat000065407.csv",
+        "sha256": "95C30B4B0E132D8CD629A744FCF7F2FE41ED0FA925EA214FC498E942681B4D62",
+        "row_count": 280
+      },
+      {
+        "path": "data\\orbit_uncertainty_stage1\\raw\\celestrak_supgp\\sat000065409.csv",
+        "sha256": "97F00416FE20C85F57271D0353744E2833C12F61BE433E973267F156C1D409CB",
+        "row_count": 281
+      },
+      {
+        "path": "data\\orbit_uncertainty_stage1\\raw\\celestrak_supgp\\sat000065410.csv",
+        "sha256": "F394774F20AC648BD563EE8D63CD4A7036E45DA11CD2D1301CD38E518433739F",
+        "row_count": 283
+      },
+      {
+        "path": "data\\orbit_uncertainty_stage1\\raw\\celestrak_supgp\\sat000065411.csv",
+        "sha256": "F194EE557C0630476207867F4787900A1CC27B97E55D27B9C6B5F3EC800E477A",
+        "row_count": 283
+      },
+      {
+        "path": "data\\orbit_uncertainty_stage1\\raw\\celestrak_supgp\\sat000065421.csv",
+        "sha256": "33EEF08A580949ECBEDAB93FECF7B1C26947FE9F38C3715B20AE067105B2A9AA",
+        "row_count": 288
+      },
+      {
+        "path": "data\\orbit_uncertainty_stage1\\raw\\celestrak_supgp\\sat000065686.csv",
+        "sha256": "D87B19925CFB5BF1AD5F5EB02CF374F863FE14423A806F1F874744B154D567F4",
+        "row_count": 287
+      },
+      {
+        "path": "data\\orbit_uncertainty_stage1\\raw\\celestrak_supgp\\sat000065693.csv",
+        "sha256": "86A513CBE633BE9A289FE378369ED1D37A4B67B743313BEDC74497AE3518E0C9",
+        "row_count": 281
+      }
+    ],
+    "substitution_forbidden": [
+      "later GP",
+      "Stage-0 SupGP",
+      "current SupGP",
+      "other source"
+    ]
+  },
+  "scope_guards": {
+    "formal_residual_computed": false,
+    "calibration_computed": false,
+    "synthetic_b_used": false,
+    "doppler_propagated": false
+  }
+}

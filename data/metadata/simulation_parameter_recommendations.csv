@@ -1,0 +1,4 @@
+parameter_name,parameter_role,accepted_min,accepted_max,accepted_mean,accepted_median,recommended_main_range,recommended_extended_range,recommended_typical_value,note
+registered_frequency_offset_hz,effective_constant_frequency_bias,1980.000000,4409.000000,3332.200000,3365.000000,"[3179.0, 3728.0] Hz","[1980.0, 4409.0] Hz",3365.0 Hz,主范围取accepted样本的核心中部区间（约IQR），扩展范围保留accepted全范围；该量是工程有效常数频移候选，不是纯CFO真值。
+linear_slope_hz_per_s,linear_slow_drift,-1.110156,4.037490,0.203759,-0.768749,"[-1.110156, -0.197808] Hz/s","[-1.110156, 4.037490] Hz/s",-0.768749 Hz/s,该分布明显不对称，4/5 accepted样本落在负漂移区，另有1个强正漂移端点（8733468）；主范围先覆盖负漂移核心区，扩展范围再纳入正向强漂移端。此参数最不适合被压成唯一单值。
+detrended_std_hz,post_detrend_noise_scale,10.916891,39.456366,27.472070,30.882012,"[23.215, 32.890] Hz","[10.917, 39.456] Hz",30.882 Hz,主范围取accepted样本中部噪声落点，扩展范围保留accepted全范围；适合作为工程级仿真中的噪声强度参考。

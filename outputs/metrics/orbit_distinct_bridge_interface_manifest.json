@@ -1,0 +1,266 @@
+{
+  "stage": "Orbit-distinct to Doppler security bridge interface audit",
+  "status": "ORBIT_DISTINCT_TO_DOPPLER_SECURITY_BRIDGE_INTERFACE_AUDIT_COMPLETE",
+  "generated_utc": "2026-09-07T05:11:03.444767Z",
+  "audit_type": "DETERMINISTIC_REPRESENTATION_AND_PROVENANCE_AUDIT_NO_NEW_SCIENCE",
+  "sign_convention": "Stage-1B e=public-reference; operational z_B=public-candidate=-d_B",
+  "rtn_interface_decision": "PUBLIC_DEFINED_RTN_INTERFACE_SUPPORTED",
+  "interface_nonmateriality_adjudication": {
+    "is_preregistered_scientific_threshold": false,
+    "requirements": [
+      "June public-basis P99 remains >=98%",
+      "June reference/public P99 covered count is identical",
+      "June U99 and three-state agreement each >=99.5%"
+    ],
+    "reason": "Representation audit only; no frozen model parameter, support rule, or scientific success criterion changed."
+  },
+  "evaluation_unit": "claimed_A x candidate_B x evaluation_segment/time",
+  "evaluation_time": "SEGMENT_CENTER",
+  "supgp_operational_input_required": false,
+  "parameter_sha256": "6F17F8340BA14B5B48F7AEAFFD776F1D0A07B4D50F882B2AFCA73756F9FF55D1",
+  "basis_summary": {
+    "APRIL": {
+      "n": 5662,
+      "U95_agreement_rate": 0.9984104556693748,
+      "U99_agreement_rate": 0.9992935358530555,
+      "three_state_agreement_rate": 0.9977039915224303,
+      "reference_P99_coverage": 0.9929353585305546,
+      "public_basis_P99_coverage": 0.9925821264570823
+    },
+    "MAY": {
+      "n": 6094,
+      "U95_agreement_rate": 0.9985231375123071,
+      "U99_agreement_rate": 0.9985231375123071,
+      "three_state_agreement_rate": 0.9970462750246144,
+      "reference_P99_coverage": 0.9873646209386282,
+      "public_basis_P99_coverage": 0.9872005251066623
+    },
+    "JUNE": {
+      "n": 5389,
+      "U95_agreement_rate": 0.9983299313416218,
+      "U99_agreement_rate": 0.9988866208944146,
+      "three_state_agreement_rate": 0.9972165522360363,
+      "reference_P99_coverage": 0.994618667656337,
+      "public_basis_P99_coverage": 0.994618667656337
+    },
+    "POOLED": {
+      "n": 17145,
+      "U95_agreement_rate": 0.9984251968503937,
+      "U99_agreement_rate": 0.9988918051910178,
+      "three_state_agreement_rate": 0.9973170020414115,
+      "reference_P99_coverage": 0.9914843977836104,
+      "public_basis_P99_coverage": 0.9913094196558764
+    }
+  },
+  "no_new_experiment_audit": {
+    "synthetic_B_generated": 0,
+    "orbit_monte_carlo_runs": 0,
+    "doppler_verifier_runs": 0,
+    "uncertainty_refits": 0,
+    "threshold_changes": 0,
+    "support_changes": 0
+  },
+  "numerical_environment": {
+    "iers_auto_download": false,
+    "iers_auto_max_age": null,
+    "observed_warning": "Polar motion beyond locally valid IERS range used Astropy 50-year mean fallback; both RTN representations used the same transform path.",
+    "canonical_reconstruction_tolerance_km": 1e-07
+  },
+  "protected_artifacts": {
+    "before": {
+      "outputs/metrics/orbit_uncertainty_stage1f_lite_frozen_parameters.csv": "6F17F8340BA14B5B48F7AEAFFD776F1D0A07B4D50F882B2AFCA73756F9FF55D1",
+      "outputs/metrics/orbit_uncertainty_final_downstream_interface.json": "B1665ECBA5FECDD873E9B58A19FDE5EA92611E363BF1036148CD92501450339A",
+      "outputs/metrics/orbit_uncertainty_final_manifest.json": "47EE69086847F5F2AF358B31C0975E02F5C6C8017044BAA10989173A5BE51746",
+      "outputs/metrics/orbit_uncertainty_stage1f_lite_manifest.json": "E18F19B0AF191DC3599228BC00CA1BAADE31FD8AC513A2533D19279982CF5660",
+      "outputs/metrics/orbit_uncertainty_stage1f_lite_june_confirmatory_manifest.json": "E8AE08296A7DFB487E5DF9886AC944C858469A7EF9FF80667688A431EC3F7106",
+      "outputs/datasets/orbit_uncertainty_stage1b_20260401_20260430_rtn_residual_library.csv": "2B02C40FDEA69F6079D256B5E274652ABAB2D5BC2F9899866C7F1CAFFB469F23",
+      "outputs/metrics/orbit_uncertainty_stage1b_20260401_20260430_manifest.json": "81FC7EF0F4E6401A316A893C1C010840136AA43BEBEC48094A74F06FE020E4E3",
+      "outputs/datasets/orbit_uncertainty_stage1b_20260501_20260531_rtn_residual_library.csv": "119F2DAA3896476E120F010A436D0B250E404D41326B57FAABFEAA9F2F73EF3F",
+      "outputs/metrics/orbit_uncertainty_stage1b_20260501_20260531_manifest.json": "9631AF3F4B4AA0F9D4C9804AE05A2C5F7608428CC0D1B2D7C22CC145F6EF38CD",
+      "outputs/datasets/orbit_uncertainty_stage1b_20260601_20260630_rtn_residual_library.csv": "DBE3551373D5EFDAF33CFB16296A564ADA29AA49E9852A92F599AD49B00934ED",
+      "outputs/metrics/orbit_uncertainty_stage1b_20260601_20260630_manifest.json": "580856B1011F9D172A84589EFF4D622847B5BE1DB31326E91B0EABA133D37FEC",
+      "outputs/datasets/doppler_verifier_orbit_similarity_attack_dataset.csv": "F90ED60F4BBC54573423931672811C0B5B00473B7032C212D91D08C2F9D80312",
+      "outputs/metrics/verifier_v2_sequence_eval.csv": "15B3C2EFB586CCF230829D0498B2937A7AFA40FB748D7944F43B1FC20389E708",
+      "outputs/datasets/controlled_starlink_multitarget_dataset.csv": "21510BF767938E809C1275437B733DCCBD18CBC32B014F62F3AED4703F52897F",
+      "outputs/datasets/active_compensation_first_pass_dataset.csv": "34BBBC7076252A1F4A0B90972F48D29098FD08598669E59F0C732E76E4779B1B",
+      "outputs/datasets/fixed_point_active_compensation_dataset.csv": "D23B8C22A84999592ABA428406B28F4EEA1AECE49FFC0935C88288839D7805DF",
+      "outputs/datasets/m2_segment_local_expanded_sample_dataset.csv": "196023C2F8F701A020A4E73D2945DA742057A6BBE5F902A0290DF56270E719D5",
+      "outputs/datasets/same_pair_multi_pass_realization_dataset.csv": "AB69C57B110CEFB613EF3F9CC885CC20E1A71C58D8768992DAF88CF9D006041E",
+      "outputs/datasets/historical_tle_multi_pass_realization_dataset.csv": "E57C362CFDC90FF74C9C9CF0A41FCCB1B836C7E04A6A70FDDDD80BD3BF32F6C9",
+      "outputs/datasets/controlled_altitude_difference_realization_dataset.csv": "46CF795973E3EC812298D12F5E5AD8D3CD21E53EE93B6D2DD630B35345F78A71",
+      "outputs/datasets/differential_doppler_mechanism_full_representative_timeseries.csv": "D13249338DE4A21889CFDF5F1A66BD509323DD65BBA6F60CBC7EC29E1B69F541",
+      "data/tle/starlink_tle.txt": "B63220F9798B0E7B77876C28AB9E90BE6878E37A629762795BBF0DEA354D8625"
+    },
+    "after": {
+      "outputs/metrics/orbit_uncertainty_stage1f_lite_frozen_parameters.csv": "6F17F8340BA14B5B48F7AEAFFD776F1D0A07B4D50F882B2AFCA73756F9FF55D1",
+      "outputs/metrics/orbit_uncertainty_final_downstream_interface.json": "B1665ECBA5FECDD873E9B58A19FDE5EA92611E363BF1036148CD92501450339A",
+      "outputs/metrics/orbit_uncertainty_final_manifest.json": "47EE69086847F5F2AF358B31C0975E02F5C6C8017044BAA10989173A5BE51746",
+      "outputs/metrics/orbit_uncertainty_stage1f_lite_manifest.json": "E18F19B0AF191DC3599228BC00CA1BAADE31FD8AC513A2533D19279982CF5660",
+      "outputs/metrics/orbit_uncertainty_stage1f_lite_june_confirmatory_manifest.json": "E8AE08296A7DFB487E5DF9886AC944C858469A7EF9FF80667688A431EC3F7106",
+      "outputs/datasets/orbit_uncertainty_stage1b_20260401_20260430_rtn_residual_library.csv": "2B02C40FDEA69F6079D256B5E274652ABAB2D5BC2F9899866C7F1CAFFB469F23",
+      "outputs/metrics/orbit_uncertainty_stage1b_20260401_20260430_manifest.json": "81FC7EF0F4E6401A316A893C1C010840136AA43BEBEC48094A74F06FE020E4E3",
+      "outputs/datasets/orbit_uncertainty_stage1b_20260501_20260531_rtn_residual_library.csv": "119F2DAA3896476E120F010A436D0B250E404D41326B57FAABFEAA9F2F73EF3F",
+      "outputs/metrics/orbit_uncertainty_stage1b_20260501_20260531_manifest.json": "9631AF3F4B4AA0F9D4C9804AE05A2C5F7608428CC0D1B2D7C22CC145F6EF38CD",
+      "outputs/datasets/orbit_uncertainty_stage1b_20260601_20260630_rtn_residual_library.csv": "DBE3551373D5EFDAF33CFB16296A564ADA29AA49E9852A92F599AD49B00934ED",
+      "outputs/metrics/orbit_uncertainty_stage1b_20260601_20260630_manifest.json": "580856B1011F9D172A84589EFF4D622847B5BE1DB31326E91B0EABA133D37FEC",
+      "outputs/datasets/doppler_verifier_orbit_similarity_attack_dataset.csv": "F90ED60F4BBC54573423931672811C0B5B00473B7032C212D91D08C2F9D80312",
+      "outputs/metrics/verifier_v2_sequence_eval.csv": "15B3C2EFB586CCF230829D0498B2937A7AFA40FB748D7944F43B1FC20389E708",
+      "outputs/datasets/controlled_starlink_multitarget_dataset.csv": "21510BF767938E809C1275437B733DCCBD18CBC32B014F62F3AED4703F52897F",
+      "outputs/datasets/active_compensation_first_pass_dataset.csv": "34BBBC7076252A1F4A0B90972F48D29098FD08598669E59F0C732E76E4779B1B",
+      "outputs/datasets/fixed_point_active_compensation_dataset.csv": "D23B8C22A84999592ABA428406B28F4EEA1AECE49FFC0935C88288839D7805DF",
+      "outputs/datasets/m2_segment_local_expanded_sample_dataset.csv": "196023C2F8F701A020A4E73D2945DA742057A6BBE5F902A0290DF56270E719D5",
+      "outputs/datasets/same_pair_multi_pass_realization_dataset.csv": "AB69C57B110CEFB613EF3F9CC885CC20E1A71C58D8768992DAF88CF9D006041E",
+      "outputs/datasets/historical_tle_multi_pass_realization_dataset.csv": "E57C362CFDC90FF74C9C9CF0A41FCCB1B836C7E04A6A70FDDDD80BD3BF32F6C9",
+      "outputs/datasets/controlled_altitude_difference_realization_dataset.csv": "46CF795973E3EC812298D12F5E5AD8D3CD21E53EE93B6D2DD630B35345F78A71",
+      "outputs/datasets/differential_doppler_mechanism_full_representative_timeseries.csv": "D13249338DE4A21889CFDF5F1A66BD509323DD65BBA6F60CBC7EC29E1B69F541",
+      "data/tle/starlink_tle.txt": "B63220F9798B0E7B77876C28AB9E90BE6878E37A629762795BBF0DEA354D8625"
+    },
+    "equal": true
+  },
+  "inputs": {
+    "outputs/metrics/orbit_uncertainty_stage1f_lite_frozen_parameters.csv": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1f_lite_frozen_parameters.csv",
+      "sha256": "6F17F8340BA14B5B48F7AEAFFD776F1D0A07B4D50F882B2AFCA73756F9FF55D1",
+      "size_bytes": 7508
+    },
+    "outputs/metrics/orbit_uncertainty_final_downstream_interface.json": {
+      "path": "outputs/metrics/orbit_uncertainty_final_downstream_interface.json",
+      "sha256": "B1665ECBA5FECDD873E9B58A19FDE5EA92611E363BF1036148CD92501450339A",
+      "size_bytes": 2125
+    },
+    "outputs/metrics/orbit_uncertainty_final_manifest.json": {
+      "path": "outputs/metrics/orbit_uncertainty_final_manifest.json",
+      "sha256": "47EE69086847F5F2AF358B31C0975E02F5C6C8017044BAA10989173A5BE51746",
+      "size_bytes": 12314
+    },
+    "outputs/metrics/orbit_uncertainty_stage1f_lite_manifest.json": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1f_lite_manifest.json",
+      "sha256": "E18F19B0AF191DC3599228BC00CA1BAADE31FD8AC513A2533D19279982CF5660",
+      "size_bytes": 15919
+    },
+    "outputs/metrics/orbit_uncertainty_stage1f_lite_june_confirmatory_manifest.json": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1f_lite_june_confirmatory_manifest.json",
+      "sha256": "E8AE08296A7DFB487E5DF9886AC944C858469A7EF9FF80667688A431EC3F7106",
+      "size_bytes": 21839
+    },
+    "outputs/datasets/orbit_uncertainty_stage1b_20260401_20260430_rtn_residual_library.csv": {
+      "path": "outputs/datasets/orbit_uncertainty_stage1b_20260401_20260430_rtn_residual_library.csv",
+      "sha256": "2B02C40FDEA69F6079D256B5E274652ABAB2D5BC2F9899866C7F1CAFFB469F23",
+      "size_bytes": 6114322
+    },
+    "outputs/metrics/orbit_uncertainty_stage1b_20260401_20260430_manifest.json": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1b_20260401_20260430_manifest.json",
+      "sha256": "81FC7EF0F4E6401A316A893C1C010840136AA43BEBEC48094A74F06FE020E4E3",
+      "size_bytes": 14409
+    },
+    "outputs/datasets/orbit_uncertainty_stage1b_20260501_20260531_rtn_residual_library.csv": {
+      "path": "outputs/datasets/orbit_uncertainty_stage1b_20260501_20260531_rtn_residual_library.csv",
+      "sha256": "119F2DAA3896476E120F010A436D0B250E404D41326B57FAABFEAA9F2F73EF3F",
+      "size_bytes": 6791749
+    },
+    "outputs/metrics/orbit_uncertainty_stage1b_20260501_20260531_manifest.json": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1b_20260501_20260531_manifest.json",
+      "sha256": "9631AF3F4B4AA0F9D4C9804AE05A2C5F7608428CC0D1B2D7C22CC145F6EF38CD",
+      "size_bytes": 65945
+    },
+    "outputs/datasets/orbit_uncertainty_stage1b_20260601_20260630_rtn_residual_library.csv": {
+      "path": "outputs/datasets/orbit_uncertainty_stage1b_20260601_20260630_rtn_residual_library.csv",
+      "sha256": "DBE3551373D5EFDAF33CFB16296A564ADA29AA49E9852A92F599AD49B00934ED",
+      "size_bytes": 7552697
+    },
+    "outputs/metrics/orbit_uncertainty_stage1b_20260601_20260630_manifest.json": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1b_20260601_20260630_manifest.json",
+      "sha256": "580856B1011F9D172A84589EFF4D622847B5BE1DB31326E91B0EABA133D37FEC",
+      "size_bytes": 110216
+    },
+    "outputs/datasets/doppler_verifier_orbit_similarity_attack_dataset.csv": {
+      "path": "outputs/datasets/doppler_verifier_orbit_similarity_attack_dataset.csv",
+      "sha256": "F90ED60F4BBC54573423931672811C0B5B00473B7032C212D91D08C2F9D80312",
+      "size_bytes": 383620967
+    },
+    "outputs/metrics/verifier_v2_sequence_eval.csv": {
+      "path": "outputs/metrics/verifier_v2_sequence_eval.csv",
+      "sha256": "15B3C2EFB586CCF230829D0498B2937A7AFA40FB748D7944F43B1FC20389E708",
+      "size_bytes": 1821483
+    },
+    "outputs/datasets/controlled_starlink_multitarget_dataset.csv": {
+      "path": "outputs/datasets/controlled_starlink_multitarget_dataset.csv",
+      "sha256": "21510BF767938E809C1275437B733DCCBD18CBC32B014F62F3AED4703F52897F",
+      "size_bytes": 287973532
+    },
+    "outputs/datasets/active_compensation_first_pass_dataset.csv": {
+      "path": "outputs/datasets/active_compensation_first_pass_dataset.csv",
+      "sha256": "34BBBC7076252A1F4A0B90972F48D29098FD08598669E59F0C732E76E4779B1B",
+      "size_bytes": 91710857
+    },
+    "outputs/datasets/fixed_point_active_compensation_dataset.csv": {
+      "path": "outputs/datasets/fixed_point_active_compensation_dataset.csv",
+      "sha256": "D23B8C22A84999592ABA428406B28F4EEA1AECE49FFC0935C88288839D7805DF",
+      "size_bytes": 3304208
+    },
+    "outputs/datasets/m2_segment_local_expanded_sample_dataset.csv": {
+      "path": "outputs/datasets/m2_segment_local_expanded_sample_dataset.csv",
+      "sha256": "196023C2F8F701A020A4E73D2945DA742057A6BBE5F902A0290DF56270E719D5",
+      "size_bytes": 85035694
+    },
+    "outputs/datasets/same_pair_multi_pass_realization_dataset.csv": {
+      "path": "outputs/datasets/same_pair_multi_pass_realization_dataset.csv",
+      "sha256": "AB69C57B110CEFB613EF3F9CC885CC20E1A71C58D8768992DAF88CF9D006041E",
+      "size_bytes": 13397071
+    },
+    "outputs/datasets/historical_tle_multi_pass_realization_dataset.csv": {
+      "path": "outputs/datasets/historical_tle_multi_pass_realization_dataset.csv",
+      "sha256": "E57C362CFDC90FF74C9C9CF0A41FCCB1B836C7E04A6A70FDDDD80BD3BF32F6C9",
+      "size_bytes": 2732078
+    },
+    "outputs/datasets/controlled_altitude_difference_realization_dataset.csv": {
+      "path": "outputs/datasets/controlled_altitude_difference_realization_dataset.csv",
+      "sha256": "46CF795973E3EC812298D12F5E5AD8D3CD21E53EE93B6D2DD630B35345F78A71",
+      "size_bytes": 81513327
+    },
+    "outputs/datasets/differential_doppler_mechanism_full_representative_timeseries.csv": {
+      "path": "outputs/datasets/differential_doppler_mechanism_full_representative_timeseries.csv",
+      "sha256": "D13249338DE4A21889CFDF5F1A66BD509323DD65BBA6F60CBC7EC29E1B69F541",
+      "size_bytes": 146730
+    },
+    "data/tle/starlink_tle.txt": {
+      "path": "data/tle/starlink_tle.txt",
+      "sha256": "B63220F9798B0E7B77876C28AB9E90BE6878E37A629762795BBF0DEA354D8625",
+      "size_bytes": 1649422
+    }
+  },
+  "builder": {
+    "path": "scripts/audit_orbit_distinct_to_doppler_bridge.py",
+    "sha256": "64DB1958CC1F045AD7617F631B8834F7A29BA8B006DB6D2048D18064EA321A96",
+    "python": "3.13.5"
+  },
+  "outputs": {
+    "orbit_distinct_rtn_basis_equivalence_audit.csv": {
+      "path": "outputs/metrics/orbit_distinct_rtn_basis_equivalence_audit.csv",
+      "sha256": "E2516BC855FDA7EF0394D8F2D9FC4B58C9BB2AB3DAD9D6C1AE63E9358058C92A",
+      "size_bytes": 29423
+    },
+    "orbit_distinct_sign_convention_audit.csv": {
+      "path": "outputs/metrics/orbit_distinct_sign_convention_audit.csv",
+      "sha256": "B75E3C3A37800FDC5ECA1F8027280914A452E62FC46DE83DE34B39962D068571",
+      "size_bytes": 639
+    },
+    "orbit_distinct_existing_doppler_artifact_compatibility.csv": {
+      "path": "outputs/metrics/orbit_distinct_existing_doppler_artifact_compatibility.csv",
+      "sha256": "903651FC4E5B7978B82CCDB770ED5D72D209DF45CC3B4D48BE6E627B5A13992D",
+      "size_bytes": 4229
+    },
+    "orbit_distinct_frozen_scoring_interface.json": {
+      "path": "outputs/metrics/orbit_distinct_frozen_scoring_interface.json",
+      "sha256": "C5433AA6A4C67F2142DA472A65B51779564326044457B5159FC1A61D31E725B7",
+      "size_bytes": 2659
+    },
+    "orbit_distinct_to_doppler_bridge_interface_audit.md": {
+      "path": "outputs/reports/orbit_distinct_to_doppler_bridge_interface_audit.md",
+      "sha256": "9A4FAA819CD5563F98B494EB01C78A0306A1A5F588EC4C2787587DB5A76FCC56",
+      "size_bytes": 14192
+    }
+  },
+  "next_step": "EXISTING_DOPPLER_CASE_ORBIT_DISTINCT_RELABELING",
+  "work_log_appended": "logs/work_log.md"
+}

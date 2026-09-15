@@ -1,0 +1,305 @@
+{
+  "stage": "Orbit Uncertainty Stage-1B",
+  "status": "APRIL_STAGE1B_RESIDUAL_LIBRARY_COMPLETE",
+  "generated_utc": "2026-09-02T03:27:00Z",
+  "window_tag": "20260401_20260430",
+  "formal_window": "[2026-04-01T00:00:00Z, 2026-05-01T00:00:00Z)",
+  "cohort": [
+    "44714",
+    "65686",
+    "65421",
+    "65409",
+    "65410",
+    "47749",
+    "47383",
+    "65411",
+    "48309",
+    "45230",
+    "47844",
+    "65407",
+    "47767",
+    "65405",
+    "48672",
+    "48111",
+    "65693",
+    "60265",
+    "58380",
+    "48458"
+  ],
+  "comparison_semantics": "ordinary-GP prediction disagreement relative to operator-derived higher-quality SupGP reference; not ground-truth error",
+  "selection_policy": "CREATION_DATE <= evaluation_time; latest CREATION_DATE, then EPOCH, then GP_ID",
+  "builder": {
+    "path": "D:/Project/data-simulation/scripts/run_orbit_uncertainty_stage1b_residual_library.py",
+    "sha256": "E92AB4BE7AC12014E7EDB807947F397BB8ECECF7E59035F3C544F36F2AB46468",
+    "version_basis": "builder SHA256; repository is not a git work tree",
+    "git_state": "NOT_A_GIT_WORK_TREE",
+    "package_versions": {
+      "python": "3.13.5",
+      "numpy": "2.1.3",
+      "pandas": "2.2.3",
+      "astropy": "7.0.0",
+      "sgp4": "2.25"
+    }
+  },
+  "input_manifests": {
+    "design": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_design_manifest.json",
+      "sha256": "C06B9C05F96827C70188ACA2DDD05C91A7C3BDB9008DCF7EE8F950280A95D56F"
+    },
+    "acquisition": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_acquisition_download_manifest.json",
+      "sha256": "92CE9423E677E9E5B2351C4EF5309D61519543E9AB8E40DEDEAF083541A7E325"
+    },
+    "reference_quality": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1_20260401_20260430_supgp_reference_quality_manifest.json",
+      "sha256": "406341CDC76B9C6999EAFD08443F7802192DE53B7E5EB8B6020E629430558050"
+    }
+  },
+  "input_raw": {
+    "ordinary": {
+      "path": "data/orbit_uncertainty_stage1/raw/spacetrack_gp/spacetrack_gp_history_20260329_20260501_20sat_omm.json",
+      "sha256": "079DD7846CE44950DB4818CB66F155CB338B2C8154CA66D3F6609F6459B3FEFE",
+      "record_count": 2265
+    },
+    "supgp": {
+      "directory": "data/orbit_uncertainty_stage1/raw/celestrak_supgp",
+      "file_count": 20,
+      "record_count": 5675,
+      "files": [
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000044714.csv",
+          "sha256": "C1198C15083467800821DFC90FD3B7EBC91AD77331A317D12C84E0F66BCD6112",
+          "expected_sha256": "C1198C15083467800821DFC90FD3B7EBC91AD77331A317D12C84E0F66BCD6112",
+          "row_count": 285
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000045230.csv",
+          "sha256": "6E4EA753E35C23ABED40BF9A20B78F6D481E296EFF07A89104EC8822866AC952",
+          "expected_sha256": "6E4EA753E35C23ABED40BF9A20B78F6D481E296EFF07A89104EC8822866AC952",
+          "row_count": 276
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000047383.csv",
+          "sha256": "D380077CB9A274956D6560FCECD4282B07BC293112F8BF29C8D9843B8F0DAD43",
+          "expected_sha256": "D380077CB9A274956D6560FCECD4282B07BC293112F8BF29C8D9843B8F0DAD43",
+          "row_count": 278
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000047749.csv",
+          "sha256": "234D58000CD20A78D81F98DDE02141E4C92C40DF245CEA6B9BAF27A0F59ADDDC",
+          "expected_sha256": "234D58000CD20A78D81F98DDE02141E4C92C40DF245CEA6B9BAF27A0F59ADDDC",
+          "row_count": 287
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000047767.csv",
+          "sha256": "2BA2859FDDCF3096A0419BFA0973A15C657AE45EE9214AE8A6A4FF325BCF4362",
+          "expected_sha256": "2BA2859FDDCF3096A0419BFA0973A15C657AE45EE9214AE8A6A4FF325BCF4362",
+          "row_count": 287
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000047844.csv",
+          "sha256": "13ED32757396F0E0460918282AC0FF804941CD505D1B1E85AF57C8661AD30D3A",
+          "expected_sha256": "13ED32757396F0E0460918282AC0FF804941CD505D1B1E85AF57C8661AD30D3A",
+          "row_count": 286
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000048111.csv",
+          "sha256": "67FA9BECA6B156383638EBA8BD9CD769E4CA9007382EAC708148734F98D5877B",
+          "expected_sha256": "67FA9BECA6B156383638EBA8BD9CD769E4CA9007382EAC708148734F98D5877B",
+          "row_count": 285
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000048309.csv",
+          "sha256": "4A35CFB55807315F3FDBD9D56287516128DD78172699442EACCC768E4186D183",
+          "expected_sha256": "4A35CFB55807315F3FDBD9D56287516128DD78172699442EACCC768E4186D183",
+          "row_count": 286
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000048458.csv",
+          "sha256": "C5A96D1822F9FE2C1504B0DA9B34DFE7C998FD2527520AE8970FF7A392A39A0D",
+          "expected_sha256": "C5A96D1822F9FE2C1504B0DA9B34DFE7C998FD2527520AE8970FF7A392A39A0D",
+          "row_count": 281
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000048672.csv",
+          "sha256": "3987F6F00151DAB5F5625A7F46E54078106613C1F071DD56BFD8AEDBC244C1F4",
+          "expected_sha256": "3987F6F00151DAB5F5625A7F46E54078106613C1F071DD56BFD8AEDBC244C1F4",
+          "row_count": 286
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000058380.csv",
+          "sha256": "89A756DC559E4390A2DB37060BADD9FCE883A16B8A6FEBA42CBC06B1F018C7C0",
+          "expected_sha256": "89A756DC559E4390A2DB37060BADD9FCE883A16B8A6FEBA42CBC06B1F018C7C0",
+          "row_count": 287
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000060265.csv",
+          "sha256": "99CD8C87F0401B599908AABA06305A403EFBB3F3A586112B06C7D1B0CE16780D",
+          "expected_sha256": "99CD8C87F0401B599908AABA06305A403EFBB3F3A586112B06C7D1B0CE16780D",
+          "row_count": 285
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000065405.csv",
+          "sha256": "E2F76A2DB824BE96B24A828F741E6E55BAF6AC15C7D3E539463E4DD6A7628444",
+          "expected_sha256": "E2F76A2DB824BE96B24A828F741E6E55BAF6AC15C7D3E539463E4DD6A7628444",
+          "row_count": 283
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000065407.csv",
+          "sha256": "95C30B4B0E132D8CD629A744FCF7F2FE41ED0FA925EA214FC498E942681B4D62",
+          "expected_sha256": "95C30B4B0E132D8CD629A744FCF7F2FE41ED0FA925EA214FC498E942681B4D62",
+          "row_count": 280
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000065409.csv",
+          "sha256": "97F00416FE20C85F57271D0353744E2833C12F61BE433E973267F156C1D409CB",
+          "expected_sha256": "97F00416FE20C85F57271D0353744E2833C12F61BE433E973267F156C1D409CB",
+          "row_count": 281
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000065410.csv",
+          "sha256": "F394774F20AC648BD563EE8D63CD4A7036E45DA11CD2D1301CD38E518433739F",
+          "expected_sha256": "F394774F20AC648BD563EE8D63CD4A7036E45DA11CD2D1301CD38E518433739F",
+          "row_count": 283
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000065411.csv",
+          "sha256": "F194EE557C0630476207867F4787900A1CC27B97E55D27B9C6B5F3EC800E477A",
+          "expected_sha256": "F194EE557C0630476207867F4787900A1CC27B97E55D27B9C6B5F3EC800E477A",
+          "row_count": 283
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000065421.csv",
+          "sha256": "33EEF08A580949ECBEDAB93FECF7B1C26947FE9F38C3715B20AE067105B2A9AA",
+          "expected_sha256": "33EEF08A580949ECBEDAB93FECF7B1C26947FE9F38C3715B20AE067105B2A9AA",
+          "row_count": 288
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000065686.csv",
+          "sha256": "D87B19925CFB5BF1AD5F5EB02CF374F863FE14423A806F1F874744B154D567F4",
+          "expected_sha256": "D87B19925CFB5BF1AD5F5EB02CF374F863FE14423A806F1F874744B154D567F4",
+          "row_count": 287
+        },
+        {
+          "path": "data/orbit_uncertainty_stage1/raw/celestrak_supgp/sat000065693.csv",
+          "sha256": "86A513CBE633BE9A289FE378369ED1D37A4B67B743313BEDC74497AE3518E0C9",
+          "expected_sha256": "86A513CBE633BE9A289FE378369ED1D37A4B67B743313BEDC74497AE3518E0C9",
+          "row_count": 281
+        }
+      ]
+    },
+    "hashes_before_after_equal": true
+  },
+  "smoke_binding": {
+    "manifest": "outputs/metrics/orbit_uncertainty_stage1b_20260401_20260430_smoke_manifest.json",
+    "manifest_sha256": "E5058E54237647C747CAAB820CC7724E58EBD262E0FDC662D870F7B1522C9753",
+    "status": "PASS",
+    "case_count": 12,
+    "max_numeric_abs_difference": 0.0
+  },
+  "frame_time_assumptions": {
+    "ordinary_initialization": "TLE_LINE1/2 embedded in the Space-Track OMM JSON via Satrec.twoline2rv; Stage-0 Starlink numerical policy",
+    "supgp_initialization": "CelesTrak SupGP OMM via sgp4.omm.initialize",
+    "native_frame_both": "TEME from SGP4",
+    "common_frame": "GCRS via Astropy TEME transform at the common UTC evaluation epoch",
+    "rtn_basis": "SupGP/reference GCRS position and velocity",
+    "residual_sign": "ordinary minus reference",
+    "iers": {
+      "table_class": "IERS_Auto",
+      "mjd_min": 41684.0,
+      "mjd_max": 61645.0,
+      "formal_start_mjd": 61131.0,
+      "formal_stop_mjd": 61161.0,
+      "formal_window_covered": true,
+      "data_url": "https://datacenter.iers.org/data/9/finals2000A.all",
+      "data_path": "C:\\Users\\ASUS\\.astropy\\cache\\download\\url\\0b082426cda92b3d734756d6020dd07d\\contents",
+      "data_sha256": "59AA390FDBCAD0B4905EE2887C53FDB488D95B5968A111C5BF4C4FD31653405B",
+      "auto_download_at_open": true,
+      "auto_download_during_build": false,
+      "auto_max_age": null
+    }
+  },
+  "result": {
+    "rows": 5675,
+    "nominal_rows": 5675,
+    "excluded_rows": 0,
+    "future_publication_violations": 0,
+    "negative_element_age": 0,
+    "element_age_gt_72h": 0,
+    "negative_publication_age": 0,
+    "evaluation_supgp_epoch_mismatch": 0,
+    "provenance_missing_rows": 0,
+    "finite_failure_rows": 0,
+    "max_position_rtn_reconstruction_abs_error_km": 1.1368683772161603e-13,
+    "max_position_rtn_reconstruction_relative_error": 5.82998624584393e-16,
+    "max_velocity_rtn_reconstruction_abs_error_km_s": 2.220446049250313e-16,
+    "max_velocity_rtn_reconstruction_relative_error": 4.2817935277429266e-16,
+    "max_cartesian_rtn_position_norm_error_km": 1.1368683772161603e-13,
+    "max_cartesian_rtn_velocity_norm_error_km_s": 2.220446049250313e-16,
+    "max_rtn_orthonormality_error": 6.661338147750939e-16,
+    "input_raw_hashes_unchanged": true,
+    "correctness_passed": 16,
+    "correctness_total": 16,
+    "descriptive": {
+      "position_error_norm_km_min": 0.033049618169579645,
+      "position_error_norm_km_median": 3.0574391430696006,
+      "position_error_norm_km_p90": 12.976919704713746,
+      "position_error_norm_km_p95": 21.076597992839666,
+      "position_error_norm_km_max": 831.0980897260552,
+      "velocity_error_norm_km_s_min": 3.90838672155279e-05,
+      "velocity_error_norm_km_s_median": 0.0033980919214600122,
+      "velocity_error_norm_km_s_p90": 0.014398814268094954,
+      "velocity_error_norm_km_s_p95": 0.023689188057596764,
+      "velocity_error_norm_km_s_max": 0.9282464893239303,
+      "element_age_seconds_min": 4180.001242,
+      "element_age_seconds_median": 39745.017878,
+      "element_age_seconds_p90": 74993.32686500001,
+      "element_age_seconds_p95": 86573.59370510001,
+      "element_age_seconds_max": 183342.732509,
+      "publication_age_seconds_min": 2.000029,
+      "publication_age_seconds_median": 13390.0,
+      "publication_age_seconds_p90": 44162.000038000006,
+      "publication_age_seconds_p95": 54002.4000076,
+      "publication_age_seconds_max": 133500.000029,
+      "supgp_rms_km_min": 0.114,
+      "supgp_rms_km_median": 0.193,
+      "supgp_rms_km_p90": 0.263,
+      "supgp_rms_km_p95": 0.293,
+      "supgp_rms_km_max": 1.316
+    }
+  },
+  "outputs": {
+    "orbit_uncertainty_stage1b_20260401_20260430_rtn_residual_library.csv": {
+      "path": "outputs/datasets/orbit_uncertainty_stage1b_20260401_20260430_rtn_residual_library.csv",
+      "sha256": "2B02C40FDEA69F6079D256B5E274652ABAB2D5BC2F9899866C7F1CAFFB469F23",
+      "size_bytes": 6114322
+    },
+    "orbit_uncertainty_stage1b_20260401_20260430_residual_summary.csv": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1b_20260401_20260430_residual_summary.csv",
+      "sha256": "5F4804AC914C7D483A54E439B0219A77FDCF1B482D78C9649EC2854D7E24989E",
+      "size_bytes": 8742
+    },
+    "orbit_uncertainty_stage1b_20260401_20260430_correctness_audit.csv": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1b_20260401_20260430_correctness_audit.csv",
+      "sha256": "9220FCC93C94FC6575A52C9B418E92F1EF06C3676ECA6601EB2B177F7B639B7B",
+      "size_bytes": 1613
+    },
+    "orbit_uncertainty_stage1b_20260401_20260430_failure_audit.csv": {
+      "path": "outputs/metrics/orbit_uncertainty_stage1b_20260401_20260430_failure_audit.csv",
+      "sha256": "678AC26604A4E7CD0122E611D70E70EA2A526FF72AA9106D7DBBB0263EA633D4",
+      "size_bytes": 208
+    },
+    "orbit_uncertainty_stage1b_20260401_20260430_report.md": {
+      "path": "outputs/reports/orbit_uncertainty_stage1b_20260401_20260430_report.md",
+      "sha256": "8917403F341E241327D3B0643A95DF0DC935AD00673F3EEA1590B096F509C6C4",
+      "size_bytes": 19786
+    }
+  },
+  "scope_guards": {
+    "uncertainty_boundary_built": false,
+    "synthetic_b_analyzed": false,
+    "doppler_verifier_run": false,
+    "residual_based_exclusion_applied": false,
+    "rms_cutoff_applied": false
+  }
+}

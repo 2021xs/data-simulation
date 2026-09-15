@@ -1,0 +1,31 @@
+station:
+  name: "satnogs_example_station"
+  lat_deg: 52.2100
+  lon_deg: 5.1600
+  alt_m: 14
+
+frequency:
+  center_freq_hz: 1623192000
+
+tle:
+  file: "data/tle/starlink_tle.txt"
+  target_name: "STARLINK-1008"
+  candidate_limit: 20
+
+time_window:
+  mode: "auto_pass_search"
+  search_start_utc: "2026-03-10T00:00:00Z"
+  search_duration_h: 24
+  min_elevation_deg: 10
+  step_s: 1
+  max_pass_duration_s: 600
+
+simulation:
+  scenarios:
+    - clean
+    - offset_only
+    - offset_plus_noise
+    - offset_linear_noise
+  range_type: "main"
+  num_sims_per_target: 100
+  seed: 42

@@ -1,0 +1,19 @@
+\begin{table}[htbp]
+\centering
+\caption{第6节 verifier 初步验证关键结果。这里的 accept/reject behavior 仅表示受控仿真设置下的判决结果。}
+\label{tab:section6\_verifier\_results}
+\begin{tabular}{lll}
+\hline
+Experiment & Controlled accept/reject result & Source \\
+\hline
+coarse verifier v2 score-only attack eval & 3 / 2000 false accepts & outputs/metrics/verifier\_v2\_gate\_ablation.csv \\
+coarse verifier v2 score + per-target k gate & 0 / 2000 false accepts & outputs/metrics/verifier\_v2\_gate\_ablation.csv \\
+altitude fine sweep p95 score-only & 56 / 1400 false accepts & outputs/metrics/verifier\_v2\_fine\_sweep\_gate\_summary.csv \\
+altitude fine sweep p95 score + per-target k p01-p99 & 17 / 1400 false accepts & outputs/metrics/verifier\_v2\_fine\_sweep\_gate\_summary.csv \\
+phase fine sweep p95 score-only & 0 / 1200 false accepts & outputs/metrics/verifier\_v2\_fine\_sweep\_gate\_summary.csv \\
+hard-case multipass p95 score-only & 84 / 640 = 0.13125 & outputs/metrics/verifier\_v2\_hard\_case\_multipass\_sequence\_eval.csv \\
+hard-case multipass p95 per-pass k gate & 50 / 640 = 0.078125 & outputs/metrics/verifier\_v2\_hard\_case\_multipass\_sequence\_eval.csv \\
+multiwindow 30s/60s/120s all-windows & 30s: legit 0.4125, attack 0.2333; 60s: legit 0.4625, attack 0.3792; 120s: legit 0.6750, attack 0.3208 & outputs/metrics/verifier\_v2\_hard\_case\_multiwindow\_summary.csv \\
+\hline
+\end{tabular}
+\end{table}

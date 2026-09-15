@@ -1,0 +1,36 @@
+{
+  "protocol_name": "ORBIT_ERROR_TO_DOPPLER_FEASIBILITY_V1",
+  "status": "SEMANTIC_BLOCKER_FOUND",
+  "science_execution_performed": false,
+  "protocol_frozen_before_new_doppler_results": true,
+  "residual_sign_convention": "delta_f_orbit_hz = F_ref_hz - F_public_hz",
+  "reference_semantics": "ordinary public GP relative to SpaceX-E/SupGP higher-quality historical reference; not ground truth",
+  "aggregation_unit": "A x frozen segment/time x station",
+  "freshness_bins": [
+    "0-6 h",
+    "6-9 h",
+    "9-12 h",
+    "12-18 h",
+    "18-24 h",
+    "24-36 h"
+  ],
+  "support": "0 < element_age_hours <= 36; otherwise OUT_OF_SUPPORT/DEFER",
+  "production_ols": "centered-time OLS; unchanged; not executed because prerequisites failed",
+  "score": "production residual RMSE; unchanged; not executed",
+  "thresholds": "frozen thresholds unchanged",
+  "randomness": "no random number generation",
+  "config_binding": {
+    "path": "configs/orbit_simulation_cases.yaml",
+    "sha256": "EF08BD64A1EC14AAF17639979EBC11E5070CE055D2C32EC4BFC5333B5D5DCFA6"
+  },
+  "frozen_R3_manifest_binding": {
+    "path": "outputs/metrics/causal_a_doppler_r3_manifest.json",
+    "sha256": "6A8EDB1AC90F1F138DAFCBFE836285B7D030C40774CA70A26F404AE2BDFFCF1F"
+  },
+  "exclusions": [
+    "no SupGP reference raw epoch overlap with frozen March windows",
+    "orbit-only additive b/k to production total-parameter b/k gate anchoring is not frozen",
+    "some deduplicated A x segment/time x station units map to multiple frozen threshold profiles"
+  ],
+  "verdict": "INSUFFICIENT_COVERAGE_FOR_DECISION"
+}
